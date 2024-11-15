@@ -12,7 +12,6 @@ function App() {
             <li><a href="#sobre-mi">Sobre mí</a></li>
             <li><a href="#educación">Educación</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
-
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
@@ -32,15 +31,6 @@ function App() {
             <p>Desarrollador Full Stack Junior</p>
           </div>
         </div>
-      {/* Sección Tecnologías */}
-      <section id="tecnologias" className="technologies">
-        <h2>Tecnologías</h2>
-        <p>
-          *Buscar las imágenes de esto:
-          Html, CSS, GIT, Bootstrap, JavaScript, React, Python, Flask, 
-          SQLAlchemy, JWT, PostgreSQL, Postman, Figma
-        </p>
-      </section>
       </section>
 
       {/* Flecha para navegar */}
@@ -55,19 +45,43 @@ function App() {
     </section>
   </div>
 
-  {/* Sección Educación */}
-  <div className="estudios">
-    <section id="educación" className="educación">
-      <h2>Educación</h2>
-      <p>4Geeks Academy</p>
+  {/* Sección Experiencia */}
+    <section id="experiencia" className="experiencia my-3">
+      <h2>Experiencia</h2>
+      <p>Proyectos personales</p>
     </section>
-  </div>
+  
 </div>
 
+      {/* Sección Tecnologías */}
+      <section id="tecnologias" className="technologies my-3">
+        <h2>Tecnologías</h2>
+        <p>
+        <div className="icon-container my-3">
+  <img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png" alt="HTML Logo" className="icon" />
+  <img src="https://logodownload.org/wp-content/uploads/2017/04/css-3-logo.png" alt="CSS Logo" className="icon" />
+  <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" className="icon" />
+  <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" className="icon" />
+  <img src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png" alt="JavaScript Logo" className="icon" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" className="icon" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" alt="Vite Logo" className="icon"/>
+  <img src="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png" alt="Jest Logo" className="icon"  />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma Logo" className="icon" />
+  <img src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api" alt="Python Logo" className="icon" />
+  <img src="/logo-postgreSQL.png" alt="PostgreSQL Logo" className="icon" />
+  <img src="/logo-Flask.png" alt="Flask Logo" className="icon" />
+  <img src="https://icon.icepanel.io/Technology/svg/SQLAlchemy.svg" alt="SQLAlchemy Logo" className="icon" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png" alt="Postman Logo" className="icon"/>
+
+  
+  
+</div>
+        </p>
+      </section>
 
 
       {/* Sección Proyectos */}
-      <section id="proyectos" className="projects">
+      <section id="proyectos" className="projects my-3">
         <h2>Proyectos</h2>
         <div className="project-card">
           <h3>Proyecto 1</h3>
@@ -82,7 +96,7 @@ function App() {
       </section>
 
       {/* Sección Contacto */}
-      <section id="contacto" className="contact">
+      <section id="contacto" className="contact my-3">
         <h2>Contacto</h2>
         <div className="lista-contacto">
           <p>Correo: oteiza.jor@gmail.com</p>
