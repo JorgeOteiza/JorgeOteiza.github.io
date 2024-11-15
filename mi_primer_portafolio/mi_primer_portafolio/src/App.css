@@ -16,7 +16,7 @@ body {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .header li {
@@ -28,33 +28,99 @@ body {
   text-decoration: none;
 }
 
-.hero {
+.Home {
   background-color: #eae0d5;
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
   text-align: center;
 }
 
-.arrow-down {
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.home-text {
   text-align: center;
-  font-size: 2rem;
-  color: #666;
-  padding: 1rem;
 }
 
-.projects, .skills, .technologies, .contact {
-  padding: 2rem 1rem;
+.sobre-mi-foto {
+  display: flex;
 }
 
-.project-card {
-  background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  margin: 1rem 0;
+.estudios {
+background-color: darkseagreen;
+padding: 3rem 1rem;
+text-align: center;
+margin: 15px;
+width: auto;
+height: 39vh;
+border-radius: 33px;
+justify-items: start;
 }
 
+.green-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.hero {
+  background-color: darkseagreen;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin: 15px;
+  width: auto;
+  height: 39vh;
+  border-radius: 33px;
+  justify-items: start;
+}
+
+.educación, .technologies, .projects {
+  padding: 1rem 3rem;
+  margin-top: 20px;
+}
+
+.contact {
+  padding: 1rem 3rem;
+  display: block;
+  justify-items: center;
+  background-color: darkgoldenrod;
+  margin: 63px;
+  padding: 50px;
+  border-radius: 120px;
+}
+
+.lista-contacto {
+  display: list-item;
+}
+
+.teléfono {
+  display: list-item;
+}
+
+/* Footer */
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 1rem;
 }
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 3px;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+
