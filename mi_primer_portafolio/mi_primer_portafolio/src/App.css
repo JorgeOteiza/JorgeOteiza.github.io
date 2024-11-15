@@ -59,6 +59,14 @@ body {
   display: flex;
 }
 
+.arrow-down {
+  text-align: center;
+  font-size: 2rem;
+  color: #666;
+  padding: 1rem; 
+}
+
+
 
 .green-cards {
   display: flex;
