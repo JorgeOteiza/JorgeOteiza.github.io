@@ -1,38 +1,152 @@
 .App {
+  justify-self: center;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f5f2;
+  color: #333;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header li {
+  margin: 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Home {
+  background-color: #eae0d5;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.home-text {
+  text-align: center;
+}
+
+.sobre-mi-foto {
+  display: flex;
+}
+
+.arrow-down {
+  text-align: center;
+  font-size: 2rem;
+  color: #666;
+  padding: 1rem; 
+}
+
+
+
+.green-cards {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero {
+  background-color: darkseagreen;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin: 15px;
+  width: 500px;
+  height: 39vh;
+  border-radius: 33px;
+  justify-items: start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.experiencia {
+background-color: darkseagreen;
+padding: 3rem 1rem;
+text-align: center;
+margin: 15px;
+width: 500px;
+height: 39vh;
+border-radius: 33px;
+justify-items: start;
 }
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.educación, .technologies, .projects {
+  padding: 1rem 3rem;
+  margin-top: 20px;
+  padding-bottom: 9px;
+}
+
+.contact {
+  padding: 1rem 3rem;
+  display: block;
+  justify-items: center;
+  background-color: darkgoldenrod;
+  margin: 63px;
+  padding: 50px;
+  border-radius: 120px;
+}
+
+.lista-contacto {
+  display: list-item;
+}
+
+.teléfono {
+  display: list-item;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 3px;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
