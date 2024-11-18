@@ -1,3 +1,5 @@
+---> Este proyecto es un portafolio desarrollado en React. Incluye tecnologías como HTML, CSS, Bootstrap, JavaScript y React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
