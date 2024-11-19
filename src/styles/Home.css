@@ -1,23 +1,20 @@
 .Home {
-    background-color: #eae0d5;
-    padding: 6rem 1rem;
-    text-align: center;
-  }
-  
-  .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profile-photo img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  .home-text {
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Home h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.Home p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.6;
+}
