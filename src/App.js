@@ -8,7 +8,6 @@ import SobreMi from './components/SobreMi';
 import Experiencia from './components/Experiencia';
 import Tecnologías from './components/Tecnologías';
 import Proyectos from './components/Proyectos';
-import Contacto from './components/Contacto';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
       <Experiencia />
       <Tecnologías />
       <Proyectos />
-      <Contacto />
       <Footer />
     </div>
   );

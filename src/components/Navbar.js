@@ -3,16 +3,31 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#educacion">Educación</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#inicio">Portafolio</a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item"><a className="nav-link" href="#inicio">Inicio</a></li>
+            <li className="nav-item"><a className="nav-link" href="#sobre-mi">Sobre mí</a></li>
+            <li className="nav-item"><a className="nav-link" href="#tecnologías">Tecnologías</a></li>
+            <li className="nav-item"><a className="nav-link" href="#experiencia">Experiencia</a></li>
+            <li className="nav-item"><a className="nav-link" href="#proyectos">Proyectos</a></li>
+            <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

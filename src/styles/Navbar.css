@@ -1,32 +1,38 @@
-.Navbar {
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregado para destacar */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.Navbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* Centrado horizontal */
-}
-
-.Navbar li {
-  margin: 0 15px;
-}
-
-.Navbar a {
-  color: #fff;
-  text-decoration: none;
+.navbar-nav .nav-link {
+  color: #ffffff;
   font-size: 1rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
-.Navbar a:hover {
+.navbar-nav .nav-link:hover {
   color: #007bff;
+}
+
+.contact {
+  padding: 1rem 3rem;
+  display: block;
+  justify-items: center;
+  background-color: darkgoldenrod;
+  margin: 63px;
+  padding: 50px;
+  border-radius: 120px;
+  text-align: center;
+}
+
+.lista-contacto {
+  display: list-item;
+  margin: 10px 0;
+}
+
+.teléfono {
+  display: list-item;
 }
