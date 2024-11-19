@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Tecnologías.css';
 
 const Tecnologías = () => {
   return (

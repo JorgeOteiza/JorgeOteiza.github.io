@@ -1,0 +1,23 @@
+.Home {
+    background-color: #eae0d5;
+    padding: 6rem 1rem;
+    text-align: center;
+  }
+  
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .home-text {
+    text-align: center;
+  }
+  

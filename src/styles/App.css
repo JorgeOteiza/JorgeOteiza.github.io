@@ -4,6 +4,8 @@
   align-items: center;
   min-height: 100vh;
   text-align: center;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 body {
@@ -11,4 +13,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f5f2;
   color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 30px;
 }

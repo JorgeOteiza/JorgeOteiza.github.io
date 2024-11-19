@@ -3,7 +3,7 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
   return (
-    <Navbar className="navbar">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <nav>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
@@ -13,7 +13,7 @@ const Navbar = () => {
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-    </Navbar>
+    </nav>
   );
 };
 
