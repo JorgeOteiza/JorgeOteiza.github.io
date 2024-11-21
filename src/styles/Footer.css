@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  max-height: 200px; /* Limita el alto del footer */
+  max-height: 350px;
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -14,14 +14,22 @@ footer {
 }
 
 .contact {
-  max-width: 800px;
-  width: 100%;
-  margin-bottom: 1rem;
+  max-width: 1200px;
+  padding: 3rem 3rem;
+  display: block;
+  justify-items: center;
+  background-color: #3d3b37;
+  margin: 3px;
+  border-radius: 50px;
+  text-align: center;
 }
 
 .lista-contacto p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
+  display: list-item;
+  margin: 10px 10px;
+  border: solid, cadetblue;
+  border-radius: 6px;
+  padding: 6px;
 }
 
 .lista-contacto span {
@@ -30,7 +38,11 @@ footer {
 }
 
 .social-links {
-  margin-top: 1rem;
+  margin: 12px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .social-link {
@@ -52,7 +64,24 @@ footer {
 }
 
 .footer-note {
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
   color: #ccc;
+}
+
+.dates-person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 606px;
+}
+
+.RRSS {
+  display: block;
+  border: solid, transparent;
+  padding: 21px;
+  margin: 3px;
+  box-shadow: 0px 0px 15px 17px rgb(97 115 193 / 35%);
+  border-radius: 39px;
 }
