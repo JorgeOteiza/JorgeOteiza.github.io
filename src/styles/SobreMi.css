@@ -1,11 +1,26 @@
 .hero {
-    background-color: darkseagreen;
-    padding: 3rem 1rem;
-    text-align: center;
-    margin: 15px;
-    width: 500px;
-    height: 39vh;
-    border-radius: 33px;
-    justify-items: start;
-  }
-  
+  background: linear-gradient(135deg, #5f3a59, #49dfb5);
+  color: #fff;
+  padding: 2rem;
+  text-align: left;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
+}
+
+.hero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}

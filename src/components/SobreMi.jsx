@@ -5,7 +5,7 @@ const SobreMi = () => {
   return (
     <section id="sobre-mi" className="hero">
       <h1>Sobre mí</h1>
-      <p>Si pudiera definirme en sólo una palabra, no podría.</p>
+      <p>En búsqueda de oportunidades y experiencias en el ámbito digital y desarrollo de software; estoy expectante a nuevas oportunidades y utilizar lo aprendido en un contexto real</p>
     </section>
   );
 };

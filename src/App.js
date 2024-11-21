@@ -14,8 +14,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Home />
+      <div className="section-container">
       <SobreMi />
       <Experiencia />
+      </div>
       <Tecnologías />
       <Proyectos />
       <Footer />
