@@ -5,14 +5,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  display: block;
 }
 
-.project-card {
-  background-color: #f8f5f2;
+.project-card-vino {
+  background: #c13030a3;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  position: relative;
+  text-align: center;
+}
+
+.project-card-en-proceso {
+  background: #f8f5f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
 }
 
 .project-card h3 {
@@ -26,7 +37,52 @@
   line-height: 1.5;
 }
 
-.proyectos h2 {
-  font-size: 39px;
+.project-card h5 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.prjct {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: inherit;
+  justify-items: center;
+  box-sizing: border-box;
+  padding: 3px;
+  margin: 3px;
+}
+
+.title-prjct {
+  margin-bottom: 20px;
   color: beige;
+  font-size: 39px;
+  margin-bottom: 39px;
+}
+
+.titleE-commerce {
+  color: black;
+}
+
+.párrafo-vino {
+  color: wheat;
 }

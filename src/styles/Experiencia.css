@@ -1,5 +1,5 @@
 .experiencia {
-  background: linear-gradient(135deg, #5f3a59, #49dfb5);
+  background: linear-gradient(135deg, #5f3a59, #49dfb5a8);
   color: #fff;
   padding: 2rem;
   text-align: left;
@@ -8,6 +8,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 300px;
+  box-sizing: content-box;
 }
 
 .experiencia:hover {

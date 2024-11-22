@@ -6,9 +6,11 @@ const SobreMi = () => {
     <section id="sobre-mi" className="hero">
       <h1>Sobre mí</h1>
       <p>
-        En búsqueda de oportunidades y experiencias en el ámbito digital y
-        desarrollo de software; estoy expectante a nuevas oportunidades y
-        utilizar lo aprendido en un contexto real
+        Desarrollador Full Stack trainee; a lo largo de mi experiencia como
+        programador he adquirido conocimientos de front-end y de backend,
+        utilizando herramientas actualizadas para el desarrollo. Actualmente
+        estoy en búsqueda activa de oportunidades laborales y expectante ante
+        las nuevas experiencias del mundo TI que me toquen experimentar.
       </p>
     </section>
   );

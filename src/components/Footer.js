@@ -34,7 +34,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="social-link"
             >
-              <i class="fa-brands fa-linkedin"></i> Linkedin
+              <i className="fa-brands fa-linkedin"></i> Linkedin
             </a>
           </div>
         </div>

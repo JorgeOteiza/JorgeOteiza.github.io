@@ -44,7 +44,7 @@ body::before {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 60px;
   margin: 50px auto;
   max-width: 1200px;
 }
