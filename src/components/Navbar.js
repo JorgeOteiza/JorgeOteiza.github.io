@@ -1,11 +1,13 @@
-import React from 'react';
-import '../styles/Navbar.css';
+import React from "react";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#inicio">Portafolio</a>
+        <a className="navbar-brand" href="#inicio">
+          Portafolio
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,12 +21,36 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item"><a className="nav-link" href="#inicio">Inicio</a></li>
-            <li className="nav-item"><a className="nav-link" href="#sobre-mi">Sobre mí</a></li>
-            <li className="nav-item"><a className="nav-link" href="#experiencia">Experiencia</a></li>
-            <li className="nav-item"><a className="nav-link" href="#tecnologías">Tecnologías</a></li>
-            <li className="nav-item"><a className="nav-link" href="#proyectos">Proyectos</a></li>
-            <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
+            <li className="nav-item">
+              <a className="nav-link" href="#inicio">
+                Inicio
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#sobre-mi">
+                Sobre mí
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#experiencia">
+                Experiencia
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#tecnologías">
+                Tecnologías
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#proyectos">
+                Proyectos
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#contacto">
+                Contacto
+              </a>
+            </li>
           </ul>
         </div>
       </div>

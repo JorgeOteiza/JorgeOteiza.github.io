@@ -9,10 +9,14 @@ const Footer = () => {
           <h2>Contacto</h2>
           <div className="lista-contacto">
             <p>
-              <span>Correo:</span> oteiza.jor@gmail.com
+              <div className="spanCorreo">
+                <span>Correo:</span> oteiza.jor@gmail.com
+              </div>
             </p>
             <p>
-              <span>Teléfono:</span> +569 649-XX-XXX
+              <div className="spanCorreo">
+                <span>Teléfono:</span> +569 649-XX-XXX
+              </div>
             </p>
           </div>
         </section>
