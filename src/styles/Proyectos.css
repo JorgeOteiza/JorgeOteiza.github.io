@@ -2,87 +2,77 @@
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  display: block;
-}
-
-.project-card-vino {
-  background: #c13030a3;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  text-align: center;
-}
-
-.project-card-en-proceso {
-  background: #f8f5f2;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  text-align: center;
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.project-card p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.project-card h5 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.icon-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-}
-
-.icon:hover {
-  transform: scale(1.1);
 }
 
 .prjct {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: inherit;
-  justify-items: center;
-  box-sizing: border-box;
-  padding: 3px;
-  margin: 3px;
+  justify-content: flex-end; /* Alinea a la derecha */
+  flex-wrap: wrap; /* Permite ajuste en pantallas pequeñas */
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #f8f5f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Tamaño uniforme */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Efecto hover */
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon-mini {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .title-prjct {
   margin-bottom: 20px;
   color: beige;
   font-size: 39px;
-  margin-bottom: 39px;
 }
 
-.titleE-commerce {
+.title {
   color: black;
 }
 
 .párrafo-vino {
   color: wheat;
+}
+
+.project-card {
+  background-color: #f8f5f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Tamaño uniforme */
+  text-align: center;
+  transition: transform 0.3s ease;
 }

@@ -4,8 +4,8 @@ import "../styles/Tecnologías.css";
 const Tecnologías = () => {
   return (
     <section id="tecnologías" className="tecnologias">
-      <h2>Tecnologías</h2>
-      <div className="icon-container">
+      <h2 className="d-none">Tecnologías</h2>
+      <div className="icon-container col col-12">
         <img
           src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
           alt="HTML Logo"
