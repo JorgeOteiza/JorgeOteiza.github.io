@@ -11,7 +11,7 @@ import Proyectos from "./components/Proyectos";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App mx-4">
       <Navbar />
       <Home />
       <div className="section-container">

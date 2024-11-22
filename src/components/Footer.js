@@ -3,16 +3,13 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer py-5">
       <div className="dates-person">
         <section id="contacto" className="contact">
           <h2>Contacto</h2>
           <div className="lista-contacto">
             <p>
               <span>Correo:</span> oteiza.jor@gmail.com
-            </p>
-            <p>
-              <span>Teléfono:</span> +569 649-XX-XXX
             </p>
             <p>
               <span>Teléfono:</span> +569 649-XX-XXX

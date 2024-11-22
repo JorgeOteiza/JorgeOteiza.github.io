@@ -1,18 +1,18 @@
-import React from 'react';
-import '../styles/Home.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import "../styles/Home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const handleScroll = () => {
-    const nextSection = document.querySelector('#sobre-mi');
+    const nextSection = document.querySelector("#sobre-mi");
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="inicio" className="Home">
+    <section id="inicio" className="Home my-5">
       <div className="home-container">
         <div className="profile-photo">
           <img
