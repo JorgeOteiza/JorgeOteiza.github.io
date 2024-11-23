@@ -14,7 +14,7 @@ function App() {
     <div className="App mx-4">
       <Navbar />
       <Home />
-      <div className="section-container my-5 mx-5 px-5">
+      <div className="section-container m-5 m-5 p-5 p-5">
         <SobreMi />
         <Experiencia />
       </div>

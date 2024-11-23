@@ -7,9 +7,8 @@ const Experiencia = () => {
       <h2>Formación/Experiencia</h2>
       <p>
         Como Full-Stack, en un equipo de 4 personas, elaboramos una aplicación
-        web funcional, de tipo e-commerce, en las cuáles sus características
-        contaban con log-in, barra de búsqueda, filtrado de productos y carrito
-        de compras.
+        web funcional, de tipo e-commerce. Utilizamos las historias de usuario,
+        Figma y modelo kanban.
       </p>
     </section>
   );

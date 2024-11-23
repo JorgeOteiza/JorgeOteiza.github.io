@@ -3,9 +3,9 @@ import "../styles/Proyectos.css";
 
 const Proyectos = () => {
   return (
-    <section id="proyectos" className="proyectos">
+    <section id="proyectos" className="proyectos row col-12 m-5 p-5">
       <h2 className="title-prjct">Proyectos</h2>
-      <div className="prjct">
+      <div className="prjct col col-auto m-5 p-5">
         {/* Primera tarjeta */}
         <div className="project-card">
           <img
@@ -14,10 +14,7 @@ const Proyectos = () => {
             alt="Logo del proyecto e-commerce"
           />
           <h3 className="title">e-commerce</h3>
-          <p>
-            Trabajo en equipo de 4 personas. Como medios de organización
-            utilizamos historias de usuario, Figma y modelo kanban.
-          </p>
+          <p>Sitio para ventas de vinos elaborados en Chile.</p>
           <div className="icon-container">
             <img
               src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"

@@ -51,11 +51,7 @@ const Tecnologías = () => {
           alt="Figma Logo"
           className="icon"
         />
-        <img
-          src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-          alt="Python Logo"
-          className="icon"
-        />
+        <img src="/LogoPython.png" alt="Python Logo" className="icon" />
         <img
           src="/logo-postgreSQL.png"
           alt="PostgreSQL Logo"
@@ -71,11 +67,7 @@ const Tecnologías = () => {
           alt="SQLAlchemy Logo"
           className="icon"
         />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png"
-          alt="Postman Logo"
-          className="icon"
-        />
+        <img src="/LogoPostman.png" alt="Postman Logo" className="icon" />
       </div>
     </section>
   );
