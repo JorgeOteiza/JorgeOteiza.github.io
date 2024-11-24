@@ -4,7 +4,7 @@ import "../styles/Tecnologías.css";
 const Tecnologías = () => {
   return (
     <section id="tecnologías" className="tecnologias">
-      <h2 className="d-none">Tecnologías</h2>
+      <h2 className="title-tecnologías">Tecnologías</h2>
       <div className="icon-container col col-12">
         <img
           src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
@@ -21,11 +21,7 @@ const Tecnologías = () => {
           alt="Git Logo"
           className="icon"
         />
-        <img
-          src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png"
-          alt="Bootstrap Logo"
-          className="icon"
-        />
+        <img src="/logoBootstrap.png" alt="Bootstrap Logo" className="icon" />
         <img
           src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
           alt="JavaScript Logo"
@@ -63,7 +59,7 @@ const Tecnologías = () => {
           className="icon"
         />
         <img
-          src="https://blog.desdelinux.net/wp-content/uploads/2023/02/sqlalchemy-1024x463.png.webp"
+          src="https://blog.desdelinux.net/wp-content/uploads/2023/02/sqlalchemy.png.webp"
           alt="SQLAlchemy Logo"
           className="icon"
         />
