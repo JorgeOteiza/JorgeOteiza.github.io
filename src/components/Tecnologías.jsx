@@ -4,7 +4,7 @@ import "../styles/Tecnologías.css";
 const Tecnologías = () => {
   return (
     <section id="tecnologías" className="tecnologias">
-      <h2 className="title-tecnologías">Tecnologías</h2>
+      <h2 className="title-tecnologías">Stack Tecnológico</h2>
       <div className="icon-container col col-12">
         <img
           src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
@@ -47,7 +47,7 @@ const Tecnologías = () => {
           alt="Figma Logo"
           className="icon"
         />
-        <img src="/LogoPython.png" alt="Python Logo" className="icon" />
+        <img src="/LogoNewPython.png" alt="Python Logo" className="icon" />
         <img
           src="/logo-postgreSQL.png"
           alt="PostgreSQL Logo"
