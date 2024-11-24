@@ -15,7 +15,7 @@ const Proyectos = () => {
           />
           <h3 className="title">e-commerce</h3>
           <p>Aplicación de ventas de vinos elaborados en Chile.</p>
-          <div className="icon-container">
+          <div className="logos-proyect">
             <img
               src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
               alt="HTML Logo"
@@ -41,7 +41,7 @@ const Proyectos = () => {
             Un proyecto Full-Stack diseñado para facilitar la búsqueda de
             objetos mediante millones de posibilidades, en tan sólo segundos.
           </p>
-          <div className="icon-container">
+          <div className="logos-proyect">
             <img
               src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
               alt="JavaScript Logo"
@@ -62,7 +62,7 @@ const Proyectos = () => {
             Aplicación para organizar tareas, con funcionalidades de
             autenticación y categorías.
           </p>
-          <div className="icon-container">
+          <div className="logos-proyect">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
               alt="React Logo"

@@ -41,7 +41,9 @@
   margin-bottom: 15px;
 }
 
-.icon-container {
+.logos-proyect {
+  margin: 1px;
+  padding: 1px;
   display: flex;
   gap: 10px;
   justify-content: center;
