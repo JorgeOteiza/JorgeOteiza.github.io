@@ -1,12 +1,14 @@
 .proyectos {
   max-width: 1200px;
+  margin: 0 auto; /* Centra la sección de proyectos en la página */
+  padding: 20px;
 }
 
 .prjct {
   display: flex;
-  justify-content: flex-end; /* Alinea a la derecha */
-  flex-wrap: wrap; /* Permite ajuste en pantallas pequeñas */
-  gap: 20px;
+  justify-content: center; /* Centra las cards */
+  flex-wrap: wrap; /* Permite que las cards se ajusten en filas */
+  gap: 20px; /* Espaciado entre las cards */
 }
 
 .project-card {
@@ -52,25 +54,13 @@
 }
 
 .title-prjct {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: beige;
   font-size: 39px;
+  text-align: center; /* Asegura que el título esté centrado */
+  text-shadow: 0px 12px 12px rgb(74 188 191 / 60%);
 }
 
 .title {
   color: black;
-}
-
-.párrafo-vino {
-  color: wheat;
-}
-
-.project-card {
-  background-color: #f8f5f2;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Tamaño uniforme */
-  text-align: center;
-  transition: transform 0.3s ease;
 }

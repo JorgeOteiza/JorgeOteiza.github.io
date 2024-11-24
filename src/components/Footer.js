@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer py-5">
       <div className="dates-person">
         <section id="contacto" className="contact">
-          <h2>Contacto</h2>
+          <h2 className="title-contact">Contacto</h2>
           <div className="lista-contacto">
             <p>
               <div className="spanCorreo">

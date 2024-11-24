@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  max-height: 350px;
+  max-height: 100%;
   background-color: #000000ad;
   color: #fff;
   text-align: center;
@@ -25,6 +25,14 @@ footer {
   text-align: center;
   padding: 15px;
   box-shadow: 0px 0px 15px 17px rgb(97 115 193 / 35%);
+}
+
+.title-contact {
+  margin-bottom: 9px;
+  color: beige;
+  font-size: 39px;
+  text-align: center;
+  text-shadow: 0px 12px 12px rgb(74 188 191 / 60%);
 }
 
 .lista-contacto p {
