@@ -1,17 +1,28 @@
 .navbar {
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0px 20px 9px rgb(66 67 79 / 42%);
-  border-radius: 9px;
-  background: #000000ad;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  box-shadow: 0px 4px 9px rgba(66, 67, 79, 0.42);
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link {
   color: #ffffff;
   font-size: 1rem;
   margin: 0 10px;
-  transition: color 0.3s ease;
+}
+
+.navbar-toggler {
+  border: none;
+  color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
 }
 
 .navbar-nav .nav-link:hover {

@@ -1,103 +1,52 @@
-footer {
-  width: 100%;
-  max-height: 100%;
-  background-color: #000000ad;
+.footer {
+  background-color: #1a1a1a;
   color: #fff;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
+  padding: 2rem;
+  border-radius: 15px 15px 0 0;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 9px;
-}
-
-.contact {
-  max-width: 1200px;
-  padding: 3rem 3rem;
-  display: block;
-  justify-items: center;
-  background-color: #00000000;
-  margin: 3px;
-  border-radius: 50px;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0px 0px 15px 17px rgb(97 115 193 / 35%);
 }
 
 .title-contact {
-  margin-bottom: 15px;
-  color: beige;
-  font-size: 39px;
-  text-align: center;
-  text-shadow: 0px 12px 12px rgb(74 188 191 / 60%);
-}
-
-.lista-contacto p {
-  margin: 10px 10px;
-  border: solid, cadetblue;
-  border-radius: 6px;
-  padding: 6px;
-}
-
-.lista-contacto span {
-  font-weight: bold;
+  font-size: 1.8rem;
   color: #ffcc00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.social-links {
-  margin: 12px;
-  padding: 3px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.footer-link {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ffdf85;
 }
 
 .social-link {
-  color: darkgoldenrod;
+  display: inline-block;
+  margin: 0 15px;
+  color: #ffcc00;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-}
-
-.social-link i {
-  margin-right: 8px;
   font-size: 1.5rem;
 }
 
 .social-link:hover {
-  color: #ffcc00;
+  color: #ffdf85;
 }
 
-.footer-note {
-  margin-top: 2rem;
+.copyright {
+  color: #888;
   font-size: 0.9rem;
-  color: #ccc;
+  margin-top: 1.5rem;
 }
 
-.dates-person {
-  flex-direction: row;
-  width: 606px;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.RRSS {
-  display: block;
-  border: solid, transparent;
-  padding: 21px;
-  margin: 3px;
-  box-shadow: 0px 0px 15px 17px rgb(97 115 193 / 35%);
-  border-radius: 39px;
-  background: #00000000;
-  align-self: self-end;
-}
-
-.spanCorreo {
-  justify-self: start;
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .social-link {
+    font-size: 1.2rem;
+    margin: 0 10px;
+  }
 }

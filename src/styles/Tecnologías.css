@@ -1,8 +1,5 @@
 .tecnologias {
   padding: 1rem 3rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 9px;
   text-align: center;
 }
 
@@ -10,7 +7,6 @@
   margin-bottom: 50px;
   color: beige;
   font-size: 39px;
-  text-align: center;
   text-shadow: 0px 12px 12px rgb(74 188 191 / 60%);
 }
 

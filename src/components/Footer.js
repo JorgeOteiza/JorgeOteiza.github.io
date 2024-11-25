@@ -4,42 +4,53 @@ import "../styles/Footer.css";
 const Footer = () => {
   return (
     <footer className="footer py-5">
-      <div className="dates-person">
-        <section id="contacto" className="contact">
-          <h2 className="title-contact">Contacto</h2>
-          <div className="lista-contacto">
+      <div className="container">
+        <div className="row">
+          {/* Sección de contacto */}
+          <div className="col-md-6 mb-4 text-center">
+            <h2 className="title-contact">Contacto</h2>
             <p>
-              <div className="spanCorreo">
-                <span>Correo:</span> oteiza.jor@gmail.com
-              </div>
+              Correo:{" "}
+              <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
+                oteiza.jor@gmail.com
+              </a>
             </p>
             <p>
-              <div className="spanCorreo">
-                <span>Teléfono:</span> +569 649-XX-XXX
-              </div>
+              Teléfono:{" "}
+              <a href="tel:+569649XXXX" className="footer-link">
+                +569 649-XX-XXX
+              </a>
             </p>
           </div>
-        </section>
-        <div className="RRSS">
-          <div className="social-links">
+
+          {/* Redes Sociales */}
+          <div className="col-md-6 text-center">
+            <h2 className="title-contact">Redes Sociales</h2>
             <a
               href="https://github.com/JorgeOteiza"
+              className="social-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
             >
               <i className="fab fa-github"></i> GitHub
             </a>
-          </div>
-          <div className="social-links">
             <a
-              href="https://www.linkedin.com/in/jorgecancinoote%C3%ADza/"
+              href="https://linkedin.com/in/jorgeoteiza"
+              className="social-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
             >
-              <i className="fa-brands fa-linkedin"></i> Linkedin
+              <i className="fab fa-linkedin"></i> LinkedIn
             </a>
+          </div>
+        </div>
+
+        {/* Línea de derechos de autor */}
+        <div className="row mt-4">
+          <div className="col-12 text-center">
+            <small className="copyright">
+              © 2024 Jorge Oteiza | Desarrollador Full Stack |
+            </small>
           </div>
         </div>
       </div>
