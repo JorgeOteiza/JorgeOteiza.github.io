@@ -14,7 +14,7 @@ const Proyectos = () => {
             alt="Logo del proyecto e-commerce"
           />
           <h3 className="title">e-commerce</h3>
-          <p>Aplicación de ventas de vinos elaborados en Chile.</p>
+          <p>Aplicación para ventas de vinos elaborados en Chile.</p>
           <div className="logos-proyect">
             <img
               src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
