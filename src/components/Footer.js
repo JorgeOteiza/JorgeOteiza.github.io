@@ -3,7 +3,7 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer py-5">
+    <footer className="footer p-3 m-auto">
       <div className="container">
         <div className="row">
           {/* Sección de contacto */}

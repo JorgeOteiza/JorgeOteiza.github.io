@@ -3,7 +3,7 @@ import "../styles/Proyectos.css";
 
 const Proyectos = () => {
   return (
-    <section id="proyectos" className="proyectos py-5 my-5">
+    <section id="proyectos" className="proyectos py-5 my-5 mx-1">
       <h2 className="title-prjct">Proyectos</h2>
       <div className="prjct">
         {/* Primera tarjeta */}
@@ -57,11 +57,8 @@ const Proyectos = () => {
 
         {/* Tercera tarjeta */}
         <div className="project-card">
-          <h3>Gestor de Tareas</h3>
-          <p>
-            Aplicación para organizar tareas, con funcionalidades de
-            autenticación y categorías.
-          </p>
+          <h3>Acortador de Url</h3>
+          <p>Aplicación para acortar links.</p>
           <div className="logos-proyect">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"

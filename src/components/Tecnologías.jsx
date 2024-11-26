@@ -64,7 +64,7 @@ const Tecnologías = () => {
   return (
     <section id="tecnologías" className="tecnologias">
       <h2 className="title-tecnologías">Stack Tecnológico</h2>
-      <div className="icon-container">
+      <div className="icon-container row col">
         {icons.map((icon, index) => (
           <img src={icon.src} alt={icon.alt} className="icon" key={index} />
         ))}

@@ -11,10 +11,10 @@ import Proyectos from "./components/Proyectos";
 
 function App() {
   return (
-    <div className="App mx-4">
+    <div className="App mx-4 col col-12">
       <Navbar />
       <Home />
-      <div className="container my-5">
+      <div className="container my-5 col col-10">
         <div className="row gy-4">
           <div className="col-lg-6 col-12">
             <SobreMi />
