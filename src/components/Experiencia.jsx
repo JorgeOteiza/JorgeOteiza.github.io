@@ -4,11 +4,15 @@ import "../styles/Experiencia.css";
 const Experiencia = () => {
   return (
     <section id="experiencia" className="experiencia">
-      <h2>Formación/Experiencia</h2>
+      <h2>Experiencia</h2>
       <p>
-        Como Full-Stack, en un equipo de 4 personas, elaboramos una aplicación
-        web funcional, de tipo e-commerce. Utilizamos las historias de usuario,
-        Figma y modelo kanban.
+        Desarrollador Full Stack – Proyecto E-commerce (Trabajo en equipo)
+        Participé en la creación de una aplicación web de tipo e-commerce como
+        parte de un equipo de 4 desarrolladores. Mis responsabilidades
+        incluyeron: Implementación de funcionalidades clave siguiendo historias
+        de usuario. Uso de Figma para diseñar y validar interfaces. Aplicación
+        de la metodología Kanban para la gestión de tareas y tiempos. Desarrollo
+        y mantenimiento del código.
       </p>
     </section>
   );

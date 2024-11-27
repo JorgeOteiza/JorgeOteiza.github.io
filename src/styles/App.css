@@ -42,6 +42,10 @@ body {
   width: 100%;
 }
 
+.descripcionExp {
+  justify-items: center;
+}
+
 *,
 ::after,
 ::before {
