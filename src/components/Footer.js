@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           {/* Sección de contacto */}
-          <div className="col-md-6 mb-4 text-center">
+          <div className="contenedorContacto col-md-6 mb-4 text-center">
             <h2 className="title-contact">Contacto</h2>
             <p>
               Correo:{" "}
@@ -25,7 +25,6 @@ const Footer = () => {
 
           {/* Redes Sociales */}
           <div className="col-md-6 text-center">
-            <h2 className="title-contact">Redes Sociales</h2>
             <a
               href="https://github.com/JorgeOteiza"
               className="social-link"

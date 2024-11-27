@@ -12,6 +12,7 @@
   font-size: 1.8rem;
   color: #ffcc00;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -27,9 +28,13 @@
 .social-link {
   display: inline-block;
   margin: 0 15px;
-  color: #ffcc00;
+  color: #00e9ff;
   text-decoration: none;
   font-size: 1.5rem;
+}
+
+.contenedorContacto {
+  margin-top: 25px;
 }
 
 .social-link:hover {
