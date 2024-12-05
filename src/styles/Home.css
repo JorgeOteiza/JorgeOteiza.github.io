@@ -15,12 +15,11 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  background: #8283994f;
+  background: #829999b5;
   border-radius: 150px;
   padding: 0px;
   box-sizing: border-box;
   text-align: center;
-  justify-content: space-between;
   margin: auto;
   margin-left: 63px;
   margin-right: 63px;
@@ -46,7 +45,7 @@
 }
 
 .home-text p {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: #63ddff;
   padding: 6px;
   align-self: flex-start;
