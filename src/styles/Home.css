@@ -32,10 +32,11 @@
 }
 
 .home-text h1 {
+  align-self: flex-start;
+  font-family: fantasy;
   font-size: 4rem;
   color: black;
   font-weight: bold;
-  box-shadow: 0px 12px 20px 0px currentColor;
   border-bottom-right-radius: 9px;
   border-bottom-left-radius: 9px;
   padding: 6px;

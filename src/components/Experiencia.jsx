@@ -4,15 +4,32 @@ import "../styles/Experiencia.css";
 const Experiencia = () => {
   return (
     <section id="experiencia" className="experiencia">
-      <h2>Experiencia</h2>
       <p>
-        Desarrollador Full Stack – Proyecto E-commerce (Trabajo en equipo)
-        Participé en la creación de una aplicación web de tipo e-commerce como
-        parte de un equipo de 4 desarrolladores. Mis responsabilidades
-        incluyeron: Implementación de funcionalidades clave siguiendo historias
-        de usuario. Uso de Figma para diseñar y validar interfaces. Aplicación
-        de la metodología Kanban para la gestión de tareas y tiempos. Desarrollo
-        y mantenimiento del código.
+        <h4 className="title-exp">
+          Proyecto Full Stack – Aplicación web E-commerce
+        </h4>
+        <ul>
+          <li>
+            Participé en el desarrollo de una aplicación web de e-commerce como
+            parte de un equipo de 4 desarrolladores.
+          </li>
+          <li>
+            <strong>Implementación:</strong> Funcionalidades clave basadas en
+            historias de usuario.
+          </li>
+          <li>
+            <strong>Diseño:</strong> Creación y validación de interfaces con{" "}
+            <em>Figma</em>.
+          </li>
+          <li>
+            <strong>Gestión:</strong> Organización de tareas y tiempos
+            utilizando la metodología <em>Kanban</em>.
+          </li>
+          <li>
+            <strong>Código:</strong> Desarrollo y mantenimiento de las
+            funcionalidades del proyecto.
+          </li>
+        </ul>
       </p>
     </section>
   );

@@ -6,17 +6,34 @@
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  height: 50vh;
+  height: 60vh;
   width: auto;
 }
 
 .experiencia h2 {
-  font-size: 1.8rem;
+  font-size: 1.99rem;
   margin-bottom: 1rem;
+  color: black;
+}
+
+.title-exp {
+  color: black;
+  font-size: xx-large;
+  -webkit-text-stroke: thin;
 }
 
 .experiencia p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: antiquewhite;
+}
+
+ul {
+  padding-left: 20px;
+  color: wheat;
+}
+
+li {
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
