@@ -36,10 +36,15 @@ const Proyectos = () => {
 
         {/* Segunda tarjeta */}
         <div className="project-card">
-          <h3>Búsqueda indexada</h3>
+          <img
+            src="/registroCreadoAutenticacion.png"
+            className="card-img-top"
+            alt="usuario creado"
+          />
+          <h3>Sistema de Autenticación</h3>
           <p>
-            Un proyecto Full-Stack diseñado para facilitar la búsqueda de
-            objetos mediante millones de posibilidades, en tan sólo segundos.
+            Proyecto Full-Stack diseñado para crear registros con id únicas y
+            encriptación de contraseñas.
           </p>
           <div className="logos-proyect">
             <img
@@ -57,14 +62,14 @@ const Proyectos = () => {
 
         {/* Tercera tarjeta */}
         <div className="project-card">
-          <h3>Acortador de Url</h3>
-          <p>Aplicación para acortar links.</p>
+          <img
+            src="/DarthVaderCharacter.png"
+            className="DarthVaderPJ"
+            alt="Yo soy tu padre"
+          />
+          <h3>Blog de Star Wars</h3>
+          <p>Simulador informativo, complementado con API "SWAPI".</p>
           <div className="logos-proyect">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-              alt="React Logo"
-              className="icon-mini"
-            />
             <img
               src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
               alt="Python Logo"
