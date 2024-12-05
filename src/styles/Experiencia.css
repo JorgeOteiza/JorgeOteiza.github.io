@@ -12,7 +12,7 @@
 
 .experiencia h2 {
   font-size: 1.99rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: black;
 }
 
@@ -20,6 +20,11 @@
   color: black;
   font-size: xx-large;
   -webkit-text-stroke: thin;
+  background: linear-gradient(52deg, #3c8cab, #00000024);
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 6pc 6px cornflowerblue;
+  margin-bottom: 12px;
 }
 
 .experiencia p {
@@ -36,4 +41,5 @@ ul {
 li {
   margin-bottom: 10px;
   line-height: 1.5;
+  font-size: 1.2rem;
 }

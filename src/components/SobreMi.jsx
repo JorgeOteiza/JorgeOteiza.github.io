@@ -7,16 +7,27 @@ const SobreMi = () => {
       <div className="sobreMi">
         <h3>Sobre mí</h3>
         <p>
-          Soy desarrollador Full Stack trainee con experiencia en tecnologías
-          modernas de front-end y back-end. He trabajado en proyectos
-          colaborativos aplicando herramientas y metodologías ágiles para crear
-          soluciones innovadoras y funcionales.
+          ¡Hola! bienvenido a mi portafolio. Soy un desarrollador Full Stack
+          trainee con experiencia en tecnologías modernas de front-end y
+          back-end. He trabajado en proyectos colaborativos aplicando
+          herramientas y metodologías ágiles para crear soluciones innovadoras y
+          funcionales.
         </p>
         <p>
           Actualmente, estoy buscando oportunidades laborales que me permitan
           seguir aprendiendo y contribuyendo en el dinámico mundo de la
           tecnología.
         </p>
+        <div className="CV">
+          <a
+            href="https://app.enhancv.com/share/685e7835/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+            className="cv-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-regular fa-file"></i>
+          </a>
+        </div>
       </div>
     </section>
   );
