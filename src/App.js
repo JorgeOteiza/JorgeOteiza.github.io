@@ -14,7 +14,7 @@ function App() {
     <div className="App mx-4 col col-12">
       <Navbar />
       <Home />
-      <div className="descripcionExp container my-5 col col-12 col-lg-12">
+      <div className="descripcionExp container my-3 col col-12 col-lg-12">
         <div className="row gy-4 m-1 mb-5 p-3 col col-lg-10">
           <div className="col-lg-6 col-12">
             <SobreMi />

@@ -8,7 +8,7 @@ const SobreMi = () => {
         <h3>Sobre mí</h3>
         <p>
           ¡Hola! bienvenido a mi portafolio. Soy un desarrollador Full Stack
-          trainee con experiencia en tecnologías modernas de front-end y
+          junior con experiencia en tecnologías modernas de front-end y
           back-end. He trabajado en proyectos colaborativos aplicando
           herramientas y metodologías ágiles para crear soluciones innovadoras y
           funcionales.

@@ -9,18 +9,20 @@ const Footer = () => {
           {/* Sección de contacto */}
           <div className="contenedorContacto col-md-6 mb-4 text-center">
             <h2 className="title-contact">Contacto</h2>
-            <p>
-              Correo:{" "}
-              <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
-                oteiza.jor@gmail.com
-              </a>
-            </p>
-            <p>
-              Teléfono:{" "}
-              <a href="tel:+569649XXXX" className="footer-link">
-                +569 649-XX-XXX
-              </a>
-            </p>
+            <div className="datesContact">
+              <p>
+                Correo:{" "}
+                <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
+                  oteiza.jor@gmail.com
+                </a>
+              </p>
+              <p>
+                Teléfono:{" "}
+                <a href="tel:+569649XXXX" className="footer-link">
+                  +569 649-XX-XXX
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Redes Sociales */}

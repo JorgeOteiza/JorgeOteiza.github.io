@@ -35,16 +35,22 @@
 
 .contenedorContacto {
   margin-top: 25px;
+  justify-items: center;
 }
 
 .social-link:hover {
-  color: #ffdf85;
+  color: #ffffff;
 }
 
 .copyright {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 1.5rem;
+}
+
+.datesContact {
+  grid-column-start: auto;
+  justify-items: left;
 }
 
 @media (max-width: 768px) {

@@ -18,7 +18,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 339px;
-  height: 58vh;
+  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;

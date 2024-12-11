@@ -15,6 +15,14 @@ const Proyectos = () => {
           />
           <h3 className="title">e-commerce</h3>
           <p>Aplicación para ventas de vinos elaborados en Chile.</p>
+          <a
+            href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
+            className="repositorios-target"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-solid fa-link repositorios-targets"></i>
+          </a>
           <div className="logos-proyect">
             <img
               src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
@@ -41,7 +49,7 @@ const Proyectos = () => {
             className="card-img-top"
             alt="usuario creado"
           />
-          <h3>Sistema de Autenticación</h3>
+          <h3>Autenticación</h3>
           <p>
             Proyecto Full-Stack diseñado para crear registros con id únicas y
             encriptación de contraseñas.
