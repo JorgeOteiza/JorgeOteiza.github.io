@@ -79,7 +79,7 @@ const Proyectos = () => {
         {/* Tercera tarjeta */}
         <div className="project-card">
           <img
-            src="/swCharacters.png"
+            src="/characterslistportfolio.png"
             className="card-img-top"
             alt="Characters add"
           />
