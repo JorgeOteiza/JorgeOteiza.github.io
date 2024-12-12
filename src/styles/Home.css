@@ -29,15 +29,14 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 1px solid #007bffa6;
-  box-shadow: 0px 0px 20px 9px rgb(105 97 157 / 72%);
+  box-shadow: 0px 0px 20px 30px rgb(100 90 130 / 54%);
 }
 
 .home-text h1 {
   align-self: flex-start;
   font-family: fantasy;
   font-size: 4rem;
-  color: black;
+  color: #5eb5cd;
   font-weight: bold;
   border-bottom-right-radius: 9px;
   border-bottom-left-radius: 9px;
@@ -46,7 +45,7 @@
 
 .home-text p {
   font-size: 1.9rem;
-  color: #63ddff;
+  color: #dbff63f0;
   padding: 6px;
   align-self: flex-start;
 }

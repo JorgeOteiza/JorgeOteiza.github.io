@@ -18,9 +18,9 @@ const SobreMi = () => {
           seguir aprendiendo y contribuyendo en el dinámico mundo de la
           tecnología.
         </p>
-        <div className="CV">
+        <div className="CV p-1">
           <a
-            href="https://app.enhancv.com/share/685e7835/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+            href="https://app.enhancv.com/share/f7f1a2ba/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
             className="cv-link"
             target="_blank"
             rel="noopener noreferrer"

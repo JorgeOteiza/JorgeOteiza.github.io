@@ -19,7 +19,7 @@ const Footer = () => {
               <p>
                 Teléfono:{" "}
                 <a href="tel:+569649XXXX" className="footer-link">
-                  +569 649-XX-XXX
+                  +569-649-44-102
                 </a>
               </p>
             </div>

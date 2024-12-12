@@ -1,13 +1,14 @@
 .experiencia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 20px;
   background: linear-gradient(135deg, #5f3a59, #49dfb54f);
-  color: #fff;
-  padding: 1.5rem;
-  text-align: left;
-  width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  height: auto;
-  width: auto;
+  color: #fff;
+  height: 54vh;
 }
 
 .experiencia h2 {
@@ -17,14 +18,16 @@
 }
 
 .title-exp {
-  color: black;
-  font-size: xx-large;
+  color: #000000;
+  margin-bottom: 33px;
+  font-family: monospace;
+  font-size: 2.1rem;
   -webkit-text-stroke: thin;
   background: linear-gradient(52deg, #3c8cab, #00000024);
   padding: 6px;
   border-radius: 6px;
   box-shadow: 3px 3px 6pc 6px cornflowerblue;
-  margin-bottom: 12px;
+  text-align: left;
 }
 
 .experiencia p {
@@ -36,6 +39,7 @@
 ul {
   padding-left: 20px;
   color: wheat;
+  text-align: left;
 }
 
 li {

@@ -5,9 +5,7 @@ const Experiencia = () => {
   return (
     <section id="experiencia" className="experiencia">
       <p>
-        <h4 className="title-exp">
-          Proyecto Full Stack – Aplicación web E-commerce
-        </h4>
+        <h4 className="title-exp">Experiencia</h4>
         <ul>
           <li>
             Participé en el desarrollo de una aplicación web de e-commerce como

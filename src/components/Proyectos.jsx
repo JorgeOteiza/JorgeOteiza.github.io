@@ -21,7 +21,7 @@ const Proyectos = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-solid fa-link repositorios-targets"></i>
+            <i className="repositorios-targets fa-solid fa-link"></i>
           </a>
           <div className="logos-proyect">
             <img
@@ -54,6 +54,14 @@ const Proyectos = () => {
             Proyecto Full-Stack diseñado para crear registros con id únicas y
             encriptación de contraseñas.
           </p>
+          <a
+            href="https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask"
+            className="repositorios-target"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="repositorios-targets fa-solid fa-link"></i>
+          </a>
           <div className="logos-proyect">
             <img
               src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
@@ -71,12 +79,24 @@ const Proyectos = () => {
         {/* Tercera tarjeta */}
         <div className="project-card">
           <img
-            src="/DarthVaderCharacter.png"
-            className="DarthVaderPJ"
-            alt="Yo soy tu padre"
+            src="/swCharacters.png"
+            className="card-img-top"
+            alt="Characters add"
           />
           <h3>Blog de Star Wars</h3>
-          <p>Simulador informativo, complementado con API "SWAPI".</p>
+          <p>
+            Desarrollo de un blog informativo sobre Star Wars, utilizando la API
+            "SWAPI" para obtener datos y almacenamiento local en localhost para
+            gestionar la información.
+          </p>
+          <a
+            href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
+            className="repositorios-target"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="repositorios-targets fa-solid fa-link"></i>
+          </a>
           <div className="logos-proyect">
             <img
               src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
