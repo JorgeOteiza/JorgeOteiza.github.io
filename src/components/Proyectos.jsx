@@ -86,8 +86,7 @@ const Proyectos = () => {
           <h3>Blog de Star Wars</h3>
           <p>
             Desarrollo de un blog informativo sobre Star Wars, utilizando la API
-            "SWAPI" para obtener datos y almacenamiento local en localhost para
-            gestionar la información.
+            "SWAPI" para obtener datos y almacenamiento local en localhost.
           </p>
           <a
             href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
