@@ -4,7 +4,7 @@ import "../styles/Experiencia.css";
 const Experiencia = () => {
   return (
     <section id="experiencia" className="experiencia">
-      <p>
+      <div>
         <h4 className="title-exp">Experiencia</h4>
         <ul>
           <li>
@@ -28,7 +28,7 @@ const Experiencia = () => {
             funcionalidades del proyecto.
           </li>
         </ul>
-      </p>
+      </div>
     </section>
   );
 };
