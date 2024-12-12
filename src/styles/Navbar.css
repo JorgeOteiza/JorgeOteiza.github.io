@@ -8,16 +8,16 @@
   box-shadow: 0px 4px 9px rgba(66, 67, 79, 0.42);
   background: rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease-in-out;
-  padding: 10px 20px; /* Controla el alto del navbar */
+  padding: 10px 20px;
   display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
+  align-items: center;
 }
 
 .logo-portafolio {
-  width: auto; /* Deja que el ancho sea dinámico */
-  max-width: 60px; /* Limita el tamaño máximo */
-  max-height: 60px; /* Limita la altura */
-  object-fit: contain; /* Evita deformaciones */
+  width: auto;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 .navbar-nav .nav-link {
