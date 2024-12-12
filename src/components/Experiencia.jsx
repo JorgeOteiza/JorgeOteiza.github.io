@@ -3,9 +3,9 @@ import "../styles/Experiencia.css";
 
 const Experiencia = () => {
   return (
-    <section id="experiencia" className="experiencia">
+    <section id="experiencia" className="experiencia h-auto">
       <div>
-        <h4 className="title-exp">Experiencia</h4>
+        <h4 className="title-exp h-auto">Experiencia</h4>
         <ul>
           <li>
             Participé en el desarrollo de una aplicación web de e-commerce como
@@ -21,7 +21,8 @@ const Experiencia = () => {
           </li>
           <li>
             <strong>Gestión:</strong> Organización de tareas y tiempos
-            utilizando la metodología <em>Kanban</em>.
+            utilizando la metodología <em>Kanban</em>, equilibrando el esfuerzo
+            del equipo.
           </li>
           <li>
             <strong>Código:</strong> Desarrollo y mantenimiento de las

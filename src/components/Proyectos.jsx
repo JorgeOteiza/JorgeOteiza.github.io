@@ -7,7 +7,7 @@ const Proyectos = () => {
       <h2 className="title-prjct">Proyectos</h2>
       <div className="prjct">
         {/* Primera tarjeta */}
-        <div className="project-card">
+        <div className="project-card h-auto">
           <img
             src="/logoElRinconDelVino.png"
             className="card-img-top"
@@ -43,7 +43,7 @@ const Proyectos = () => {
         </div>
 
         {/* Segunda tarjeta */}
-        <div className="project-card">
+        <div className="project-card h-auto">
           <img
             src="/registroCreadoAutenticacion.png"
             className="card-img-top"
@@ -77,7 +77,7 @@ const Proyectos = () => {
         </div>
 
         {/* Tercera tarjeta */}
-        <div className="project-card">
+        <div className="project-card h-auto">
           <img
             src="/characterslistportfolio.png"
             className="card-img-top"
@@ -86,7 +86,8 @@ const Proyectos = () => {
           <h3>Blog de Star Wars</h3>
           <p>
             Desarrollo de un blog informativo sobre Star Wars, utilizando la API
-            "SWAPI" para obtener datos y almacenamiento local en localhost.
+            "SWAPI" para obtener datos y almacenamiento local en localhost para
+            la gestión de datos.
           </p>
           <a
             href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"

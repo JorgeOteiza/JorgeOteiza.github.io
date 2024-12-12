@@ -3,8 +3,8 @@ import "../styles/SobreMi.css";
 
 const SobreMi = () => {
   return (
-    <section id="sobre-mi" className="hero">
-      <div className="sobreMi">
+    <section id="sobre-mi" className="hero h-auto">
+      <div className="sobreMi h-auto">
         <h3>Sobre mí</h3>
         <p>
           ¡Hola! bienvenido a mi portafolio. Soy un desarrollador Full Stack
