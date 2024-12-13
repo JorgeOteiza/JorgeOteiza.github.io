@@ -10,33 +10,24 @@
   flex-wrap: wrap;
   gap: 15px;
   align-items: stretch;
+  justify-self: center;
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  max-width: 340px;
-  min-height: 300px;
-  padding: 20px;
   background-color: #f8f5f2;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 58vh;
-}
-
-.prjct {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: stretch;
+  width: 339px;
+  height: 512px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   position: relative;
   transform: translateY(-5px); /* Efecto hover */
-  height: 58vh;
+  height: 63vh;
 }
 
 .project-card img {

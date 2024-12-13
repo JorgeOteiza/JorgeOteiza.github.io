@@ -5,9 +5,9 @@ const Proyectos = () => {
   return (
     <section id="proyectos" className="proyectos py-5 my-5 mx-1">
       <h2 className="title-prjct">Proyectos</h2>
-      <div className="prjct">
+      <div className="col col-md-7 col-sm-11 col-lg-auto prjct">
         {/* Primera tarjeta */}
-        <div className="project-card h-auto">
+        <div className="project-card">
           <img
             src="/logoElRinconDelVino.png"
             className="card-img-top"
@@ -43,7 +43,7 @@ const Proyectos = () => {
         </div>
 
         {/* Segunda tarjeta */}
-        <div className="project-card h-auto">
+        <div className="project-card">
           <img
             src="/registroCreadoAutenticacion.png"
             className="card-img-top"
@@ -77,7 +77,7 @@ const Proyectos = () => {
         </div>
 
         {/* Tercera tarjeta */}
-        <div className="project-card h-auto">
+        <div className="project-card">
           <img
             src="/characterslistportfolio.png"
             className="card-img-top"
@@ -86,8 +86,7 @@ const Proyectos = () => {
           <h3>Blog de Star Wars</h3>
           <p>
             Desarrollo de un blog informativo sobre Star Wars, utilizando la API
-            "SWAPI" para obtener datos y almacenamiento local en localhost para
-            la gestión de datos.
+            "SWAPI" para obtener datos.
           </p>
           <a
             href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
