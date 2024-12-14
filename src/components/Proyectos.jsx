@@ -109,6 +109,40 @@ const Proyectos = () => {
             />
           </div>
         </div>
+
+        {/* Cuarta tarjeta */}
+        <div className="project-card">
+          <img
+            src="/URL-SHORT-portfolio.png"
+            className="card-img-top"
+            alt="Characters add"
+          />
+          <h3>Acortador de Links</h3>
+          <p>
+            Aplicación para acortar URLs utilizando la API de TinyURL, con
+            lógica Backend y diseño intuitivo.
+          </p>
+          <a
+            href="https://github.com/JorgeOteiza/Short-url"
+            className="repositorios-target"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="repositorios-targets fa-solid fa-link"></i>
+          </a>
+          <div className="logos-proyect">
+            <img
+              src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
+              alt="Python Logo"
+              className="icon-mini"
+            />
+            <img
+              src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+              alt="Flask Logo"
+              className="icon-mini"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
