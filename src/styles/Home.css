@@ -55,17 +55,6 @@
     width: 150px;
     height: 150px;
   }
-
-  .home-text h1 {
-    font-size: 4rem;
-    color: black;
-    font-weight: bold;
-    box-shadow: 0px 12px 20px 0px currentColor;
-    border-bottom-right-radius: 9px;
-    border-bottom-left-radius: 9px;
-    padding: 9px;
-    align-self: flex-start;
-  }
 }
 
 .home-text {
