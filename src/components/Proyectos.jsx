@@ -1,146 +1,252 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Proyectos.css";
 
 const Proyectos = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".project-card");
+
+    if (cards.length > 0) {
+      let maxHeight = 0;
+
+      // Encuentra la altura máxima
+      cards.forEach((card) => {
+        const cardHeight = card.offsetHeight;
+        if (cardHeight > maxHeight) {
+          maxHeight = cardHeight;
+        }
+      });
+
+      // Asigna la altura máxima a todas las tarjetas
+      cards.forEach((card) => {
+        card.style.height = `${maxHeight}px`;
+      });
+    }
+  }, []);
   return (
     <section id="proyectos" className="proyectos py-5 my-5 mx-1">
       <h2 className="title-prjct">Proyectos</h2>
       <div className="col col-md-7 col-sm-11 col-lg-auto prjct">
         {/* Primera tarjeta */}
         <div className="project-card">
-          <img
-            src="/logoElRinconDelVino.png"
-            className="card-img-top"
-            alt="Logo del proyecto e-commerce"
-          />
-          <h3 className="title">e-commerce</h3>
-          <p>Aplicación para ventas de vinos elaborados en Chile.</p>
-          <a
-            href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
-            className="repositorios-target"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="repositorios-targets fa-solid fa-link"></i>
-          </a>
-          <div className="logos-proyect">
+          <div className="image-container">
             <img
-              src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png"
-              alt="HTML Logo"
-              className="icon-mini"
+              src="/logoElRinconDelVino.png"
+              className="card-img-top"
+              alt="Logo del proyecto e-commerce"
             />
-            <img
-              src="https://logodownload.org/wp-content/uploads/2017/04/css-3-logo.png"
-              alt="CSS Logo"
-              className="icon-mini"
-            />
-            <img
-              src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-              alt="JavaScript Logo"
-              className="icon-mini"
-            />
+          </div>
+          <div className="content-container">
+            <h3 className="title">e-commerce</h3>
+            <p>Aplicación para ventas de vinos elaborados en Chile.</p>
+            <a
+              href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
+              className="repositorios-target"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="repositorios-targets fa-solid fa-link"></i>
+            </a>
+            <div className="logos-proyect">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+                alt="Figma Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
+                alt="JavaScript Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                className="icon-mini"
+              />{" "}
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
+                alt="Python Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                alt="Flask Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/logo-postgreSQL.png"
+                alt="PostgreSQL Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
+                alt="SQLAlchemy Logo"
+                className="icon-mini"
+              />
+            </div>
           </div>
         </div>
 
         {/* Segunda tarjeta */}
         <div className="project-card">
-          <img
-            src="/registroCreadoAutenticacion.png"
-            className="card-img-top"
-            alt="usuario creado"
-          />
-          <h3>Autenticación</h3>
-          <p>
-            Proyecto Full-Stack diseñado para crear registros con id únicas y
-            encriptación de contraseñas.
-          </p>
-          <a
-            href="https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask"
-            className="repositorios-target"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="repositorios-targets fa-solid fa-link"></i>
-          </a>
-          <div className="logos-proyect">
+          <div className="image-container">
             <img
-              src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-              alt="JavaScript Logo"
-              className="icon-mini"
+              src="/registroCreadoAutenticacion.png"
+              className="card-img-top"
+              alt="usuario creado"
             />
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-              alt="React Logo"
-              className="icon-mini"
-            />
+          </div>
+          <div className="content-container">
+            <h3>Autenticación</h3>
+            <p>
+              Proyecto Full-Stack diseñado para crear registros con id únicas y
+              encriptación de contraseñas.
+            </p>
+            <a
+              href="https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask"
+              className="repositorios-target"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="repositorios-targets fa-solid fa-link"></i>
+            </a>
+            <div className="logos-proyect">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
+                alt="JavaScript Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
+                alt="Python Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                alt="Flask Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/logo-postgreSQL.png"
+                alt="PostgreSQL Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
+                alt="SQLAlchemy Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/LogoPostman.png"
+                alt="Postman logo"
+                className="icon-mini"
+              />
+            </div>
           </div>
         </div>
 
         {/* Tercera tarjeta */}
         <div className="project-card">
-          <img
-            src="/characterslistportfolio.png"
-            className="card-img-top"
-            alt="Characters add"
-          />
-          <h3>Blog de Star Wars</h3>
-          <p>
-            Desarrollo de un blog informativo sobre Star Wars, utilizando la API
-            "SWAPI" para obtener datos.
-          </p>
-          <a
-            href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
-            className="repositorios-target"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="repositorios-targets fa-solid fa-link"></i>
-          </a>
-          <div className="logos-proyect">
+          <div className="image-container">
             <img
-              src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-              alt="Python Logo"
-              className="icon-mini"
+              src="/characterslistportfolio.png"
+              className="card-img-top"
+              alt="Characters add"
             />
-            <img
-              src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
-              alt="Flask Logo"
-              className="icon-mini"
-            />
+          </div>
+          <div className="content-container">
+            <h3>Blog de Star Wars</h3>
+            <p>
+              Desarrollo de un blog informativo sobre Star Wars, utilizando la
+              API "SWAPI" para obtener datos.
+            </p>
+            <a
+              href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
+              className="repositorios-target"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="repositorios-targets fa-solid fa-link"></i>
+            </a>
+            <div className="logos-proyect">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+                alt="Figma Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/logoBootstrap.png"
+                alt="Bootstrap logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
+                alt="JavaScript Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                className="icon-mini"
+              />
+            </div>
           </div>
         </div>
 
         {/* Cuarta tarjeta */}
         <div className="project-card">
-          <img
-            src="/URL-SHORT-portfolio.png"
-            className="card-img-top"
-            alt="Characters add"
-          />
-          <h3>Acortador de Links</h3>
-          <p>
-            Aplicación para acortar URLs utilizando la API de TinyURL, con
-            lógica Backend y diseño intuitivo.
-          </p>
-          <a
-            href="https://github.com/JorgeOteiza/Short-url"
-            className="repositorios-target"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="repositorios-targets fa-solid fa-link"></i>
-          </a>
-          <div className="logos-proyect">
+          <div className="image-container">
             <img
-              src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-              alt="Python Logo"
-              className="icon-mini"
+              src="/URL-SHORT-portfolio.png"
+              className="card-img-top"
+              alt="Characters add"
             />
-            <img
-              src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
-              alt="Flask Logo"
-              className="icon-mini"
-            />
+          </div>
+          <div className="content-container">
+            <h3>Acortador de Links</h3>
+            <p>
+              Aplicación web para acortar URLs utilizando la API de TinyURL, con
+              lógica backend en FastAPI e interfaz moderna en React.
+            </p>
+            <a
+              href="https://github.com/JorgeOteiza/Short-url"
+              className="repositorios-target"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="repositorios-targets fa-solid fa-link"></i>
+            </a>
+            <div className="logos-proyect">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
+                alt="JavaScript Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
+                alt="Vite Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
+                alt="Python Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/pngwing.com.png"
+                alt="Fast API"
+                className="icon-mini"
+              />
+            </div>
           </div>
         </div>
       </div>

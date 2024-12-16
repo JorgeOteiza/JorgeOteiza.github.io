@@ -11,13 +11,13 @@ const Footer = () => {
             <h2 className="title-contact">Contacto</h2>
             <div className="datesContact">
               <p>
-                Correo:{" "}
+                CORREO:{" "}
                 <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
-                  oteiza.jor@gmail.com
+                  OTEIZA.JOR@GMAIL.COM
                 </a>
               </p>
               <p>
-                Teléfono:{" "}
+                TELÉFONO:{" "}
                 <a href="tel:+569649XXXX" className="footer-link">
                   +569-649-44-102
                 </a>

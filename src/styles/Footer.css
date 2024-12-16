@@ -9,7 +9,7 @@
 }
 
 .title-contact {
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   color: #ffcc00;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -51,6 +51,7 @@
 .datesContact {
   grid-column-start: auto;
   justify-items: left;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

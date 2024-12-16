@@ -39,17 +39,6 @@
   color: #007bff;
 }
 
-.contact {
-  padding: 1rem 3rem;
-  display: block;
-  justify-items: center;
-  background-color: darkgoldenrod;
-  margin: 63px;
-  padding: 50px;
-  border-radius: 120px;
-  text-align: center;
-}
-
 .lista-contacto {
   display: list-item;
   margin: 10px 0;
