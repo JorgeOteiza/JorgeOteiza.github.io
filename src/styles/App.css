@@ -67,7 +67,7 @@ body {
 }
 
 /* Media Query */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 528px) {
   .descripcionExp {
     flex-direction: column; /* Se apila en pantallas pequeñas */
   }
