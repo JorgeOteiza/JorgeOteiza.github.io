@@ -46,7 +46,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Línea de derechos de autor */}
         <div className="row mt-4">
           <div className="col-12 text-center">
             <small className="copyright">
