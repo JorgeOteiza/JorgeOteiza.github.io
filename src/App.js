@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles/App.css";
 import "./styles/Sections.css";
 import Navbar from "./components/Navbar";
@@ -10,6 +10,29 @@ import Tecnologías from "./components/Tecnologías";
 import Proyectos from "./components/Proyectos";
 
 function App() {
+  useEffect(() => {
+    // Ajuste dinámico de alturas
+    const ajustarAlturas = () => {
+      const columnas = document.querySelectorAll(".col-lg-6.col-12");
+      let alturaMaxima = 0;
+
+      columnas.forEach((col) => {
+        col.style.height = "auto"; // Resetear altura
+        const altura = col.offsetHeight;
+        if (altura > alturaMaxima) alturaMaxima = altura;
+      });
+
+      columnas.forEach((col) => {
+        col.style.height = `${alturaMaxima}px`;
+      });
+    };
+
+    ajustarAlturas();
+    window.addEventListener("resize", ajustarAlturas);
+
+    return () => window.removeEventListener("resize", ajustarAlturas);
+  }, []);
+
   return (
     <div className="App mx-4 col col-12">
       <Navbar />
@@ -24,7 +47,6 @@ function App() {
           </div>
         </div>
       </div>
-
       <Tecnologías />
       <Proyectos />
       <Footer />

@@ -3,7 +3,7 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer p-3 m-auto">
+    <footer className="footer p-3 m-auto" id="contacto">
       <div className="container">
         <div className="row">
           {/* Sección de contacto */}
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           {/* Redes Sociales */}
-          <div className="col-md-6 text-center">
+          <div className="text-center col-md-6 align-content-center">
             <a
               href="https://github.com/JorgeOteiza"
               className="social-link"
@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="row mt-4">
           <div className="col-12 text-center">
             <small className="copyright">
-              © 2024 Jorge Oteiza | Desarrollador Full Stack |
+              2024 Jorge Oteiza | Desarrollador Full Stack |
             </small>
           </div>
         </div>

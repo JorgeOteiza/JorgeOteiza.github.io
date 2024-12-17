@@ -9,7 +9,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  align-items: stretch; /* Asegura que las tarjetas tengan la misma altura */
+  align-items: stretch;
 }
 
 .project-card {
@@ -17,23 +17,23 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 339px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   text-align: center;
   transition: transform 0.3s ease;
   overflow: hidden;
-  /* Altura mínima asegurada para tarjetas */
-  min-height: 500px; /* Ajustar según diseño */
+  min-height: 500px;
+  border: solid chocolate;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* Contenedor de la imagen */
 .image-container {
   flex-shrink: 0;
-  height: 150px; /* Altura fija */
+  height: 169px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +47,6 @@
   border-radius: 8px;
 }
 
-/* Contenedor del contenido textual */
 .content-container {
   padding: 20px;
   display: flex;
@@ -56,21 +55,18 @@
   flex-grow: 1; /* Asegura que se expandan de manera uniforme */
 }
 
-/* Títulos */
 .project-card h3 {
   font-size: 1.5rem;
   margin: 10px 0;
   min-height: 50px; /* Uniforma los títulos */
 }
 
-/* Descripciones */
 .project-card p {
   font-size: 1rem;
   margin: 10px 0;
   flex-grow: 1; /* Permite que las descripciones se expandan */
 }
 
-/* Logos */
 .logos-proyect {
   display: flex;
   gap: 10px;
@@ -84,16 +80,14 @@
   object-fit: contain;
 }
 
-/* Título principal */
 .title-prjct {
   margin-bottom: 50px;
   color: beige;
   font-size: 39px;
   text-align: center;
-  text-shadow: 0px 12px 12px rgb(74 188 191 / 60%);
+  text-shadow: 0px 12px 12px rgb(74 188 191 / 111%);
 }
 
-/* Enlaces del repositorio */
 .repositorios-targets {
   font-size: x-large;
   margin-top: 15px;

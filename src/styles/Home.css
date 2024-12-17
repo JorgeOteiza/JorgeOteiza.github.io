@@ -35,8 +35,8 @@
 .home-text h1 {
   align-self: flex-start;
   font-family: fantasy;
-  font-size: 4rem;
-  color: #5eb5cd;
+  font-size: 5rem;
+  color: darkturquoise;
   font-weight: bold;
   border-bottom-right-radius: 9px;
   border-bottom-left-radius: 9px;
@@ -72,9 +72,10 @@
 .arrow-down {
   padding-top: 69px;
   font-size: 2.5rem;
-  color: #00ffb6;
+  color: #ffffffe3;
   cursor: pointer;
   animation: bounce 1.5s infinite;
+  font-size: 60px;
 }
 
 .arrow-down:hover {

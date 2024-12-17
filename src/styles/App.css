@@ -1,3 +1,7 @@
+:root {
+  align-self: center;
+}
+
 body {
   margin: 20px;
   font-family: Arial, sans-serif;
@@ -5,7 +9,7 @@ body {
   color: #333;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   padding-top: 30px;
   background-attachment: fixed;
@@ -32,71 +36,39 @@ body {
     5px 0 34px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor SobreMi y Experiencia */
 .descripcionExp {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  align-items: stretch;
+  gap: 20px;
+  align-items: stretch; /* Estira las columnas para alturas iguales */
 }
 
 .col-lg-6.col-12 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 54vh;
-}
-
-.section-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin: 50px auto;
-  max-width: 1200px;
-  width: 100%;
-}
-
-/* Sección Proyectos */
-.prjct {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: stretch;
-}
-
-.project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
-  max-width: 340px;
-  min-height: 300px;
-  background-color: #f8f5f2;
+  border-radius: 39px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  padding-right: 4px;
+  padding-left: 4px;
+  text-align: left;
+  border: 1px;
 }
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  align-self: center;
+/* Asegura que las secciones hijas ocupen toda la altura */
+.hero,
+.experiencia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-/* Media query para pantallas pequeñas */
-@media screen and (max-width: 576px) {
-  .App {
-    padding: 10px;
-  }
-
-  .section-container {
-    gap: 15px;
-  }
-
-  .project-card {
-    width: 100%;
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .descripcionExp {
+    flex-direction: column; /* Se apila en pantallas pequeñas */
   }
 }

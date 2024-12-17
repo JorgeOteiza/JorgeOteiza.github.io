@@ -18,6 +18,7 @@ const SobreMi = () => {
           tecnología.
         </p>
         <div className="CV p-1">
+          <h6 className="currículum">CV:</h6>
           <a
             href="https://app.enhancv.com/share/f7f1a2ba/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
             className="cv-link"

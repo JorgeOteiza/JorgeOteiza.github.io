@@ -5,10 +5,10 @@
   flex: 1;
   background: linear-gradient(135deg, #5f3a59, #49dfb54f);
   color: #fff;
-  padding: 20px;
+  padding: 30px;
   text-align: left;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   height: 54vh;
 }
@@ -47,10 +47,21 @@ p {
   margin-bottom: 20px;
 }
 
+.CV {
+  display: flex;
+  justify-content: end;
+}
+
+.currículum {
+  padding: 3px;
+  margin-right: 6px;
+  color: blanchedalmond;
+}
+
 .cv-link {
   display: flex;
   justify-content: end;
-  color: #ffc107;
+  color: lawngreen;
   font-size: x-large;
   padding-right: 9px;
 }
