@@ -20,7 +20,7 @@ const SobreMi = () => {
         <div className="CV p-1">
           <h6 className="currículum">CV:</h6>
           <a
-            href="https://app.enhancv.com/share/f7f1a2ba/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+            href="https://storage.googleapis.com/breathecode-user-attachments/78cf50be9bd854a08d1c19a013bda739c326fcd7dd69f6a3133d36568957d822"
             className="cv-link"
             target="_blank"
             rel="noopener noreferrer"
