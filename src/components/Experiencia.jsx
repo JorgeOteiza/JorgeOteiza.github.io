@@ -8,7 +8,7 @@ const Experiencia = () => {
         <h4 className="title-exp h-auto">Experiencia</h4>
         <ul>
           <li>
-            Participé en el desarrollo de una aplicación web de e-commerce como
+            Participé en el desarrollo de una aplicación web e-commerce como
             parte de un equipo de 4 desarrolladores.
           </li>
           <li>

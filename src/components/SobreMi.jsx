@@ -7,15 +7,10 @@ const SobreMi = () => {
       <div className="sobreMi h-auto">
         <h3>Sobre mí</h3>
         <p>
-          ¡Hola! bienvenido a mi portafolio. Soy un desarrollador Full Stack con
-          experiencia en tecnologías modernas de front-end y back-end. He
-          trabajado en proyectos colaborativos aplicando herramientas y
-          metodologías ágiles para crear soluciones innovadoras y funcionales.
+        ¡Hola! Bienvenido a mi portafolio. Soy desarrollador Full Stack con experiencia en tecnologías modernas de Frontend y Backend. He trabajado en proyectos colaborativos aplicando herramientas y metodologías ágiles para crear soluciones funcionales e innovadoras.
         </p>
         <p>
-          Actualmente, estoy buscando oportunidades laborales que me permitan
-          seguir aprendiendo y contribuyendo en el dinámico mundo de la
-          tecnología.
+        Actualmente, busco oportunidades laborales que me permitan seguir creciendo profesionalmente mientras aporto valor al desarrollo de proyectos de calidad.
         </p>
         <div className="CV p-1">
           <h6 className="currículum">CV:</h6>
