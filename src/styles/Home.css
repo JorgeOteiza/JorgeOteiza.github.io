@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jersey+15&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
 
 .Home {
   display: flex;
@@ -36,7 +36,7 @@
 
 .home-text h1 {
   align-self: flex-start;
-  font-family: "Jersey 15", serif;
+  font-family: "Jersey 25", sans-serif;
   font-weight: 400;
   font-size: 6rem;
   font-style: normal;

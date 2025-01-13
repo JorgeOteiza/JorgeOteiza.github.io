@@ -35,6 +35,7 @@ body {
 /* Contenedor SobreMi y Experiencia */
 .descripcionExp {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   align-items: stretch; /* Estira las columnas para alturas iguales */
@@ -84,12 +85,16 @@ body {
     padding: 0;
     margin: 0;
     margin-top: 3px;
+    margin-bottom: 3px;
     padding-top: 3px;
+    padding-bottom: 3px;
   }
 
   .descripcionExp {
-    margin: 0;
+    flex-direction: column;
     padding: 0;
+    margin: 0;
+    gap: 15px;
   }
 
   .contenedordescripción {
@@ -103,4 +108,26 @@ body {
     margin: 0;
     border-radius: 10px;
   }
+}
+
+.navbar {
+  padding: 10px;
+}
+
+.home-container {
+  flex-direction: column;
+  padding: 10px;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+}
+
+.home-text h1 {
+  font-size: 2rem;
+}
+
+.home-text p {
+  font-size: 1.2rem;
 }
