@@ -24,10 +24,10 @@ const Proyectos = () => {
   }, []);
   return (
     <section id="proyectos" className="proyectos py-5 my-5 mx-1">
-      <h2 className="title-prjct">Proyectos</h2>
-      <div className="col col-md-7 col-sm-11 col-lg-auto prjct">
+      <h2 className="title-prjct text-center">Proyectos</h2>
+      <div className="prjct row g-4 justify-content-center col-md-7 col-md-12 col-sm-11 col-lg-auto">
         {/* Primera tarjeta */}
-        <div className="project-card">
+        <div className="project-card col-12 col-sm-6 col-lg-4">
           <div className="image-container">
             <img
               src="/logoElRinconDelVino.png"
@@ -36,7 +36,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3 className="title">e-commerce</h3>
+            <h3 className="title">E-commerce</h3>
             <p>Aplicación para ventas de vinos elaborados en Chile.</p>
             <a
               href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
@@ -87,7 +87,7 @@ const Proyectos = () => {
         </div>
 
         {/* Segunda tarjeta */}
-        <div className="project-card">
+        <div className="project-card col-12 col-sm-6 col-lg-4">
           <div className="image-container">
             <img
               src="/registroCreadoAutenticacion.png"
@@ -150,7 +150,7 @@ const Proyectos = () => {
         </div>
 
         {/* Tercera tarjeta */}
-        <div className="project-card">
+        <div className="project-card col-12 col-sm-6 col-lg-4">
           <div className="image-container">
             <img
               src="/characterslistportfolio.png"

@@ -3,7 +3,7 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container-fluid mx-1 px-1">
         <a className="navbar-brand" href="#inicio">
           <img

@@ -14,7 +14,8 @@
 }
 
 .logo-portafolio {
-  width: auto;
+  width: 50px;
+  height: auto;
   max-width: 60px;
   max-height: 60px;
   object-fit: contain;
@@ -29,6 +30,10 @@
 .navbar-toggler {
   border: none;
   color: #ffffff;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 .navbar-toggler-icon {

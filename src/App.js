@@ -38,11 +38,11 @@ function App() {
       <Navbar />
       <Home />
       <div className="descripcionExp container my-3 col col-12 col-lg-12">
-        <div className="row gy-4 m-1 mb-5 p-3 col col-lg-10">
-          <div className="col-lg-6 col-12 h-auto">
+        <div className="contenedordescripción row gy-4 m-1 mb-5 p-3 col col-lg-10">
+          <div className="col-lg-6 col-12 col-md-6 h-auto">
             <SobreMi />
           </div>
-          <div className="col-lg-6 col-12 h-auto">
+          <div className="col-lg-6 col-12 col-md-6 h-auto">
             <Experiencia />
           </div>
         </div>

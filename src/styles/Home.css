@@ -50,13 +50,6 @@
   align-self: flex-start;
 }
 
-@media (max-width: 768px) {
-  .profile-photo img {
-    width: 150px;
-    height: 150px;
-  }
-}
-
 .home-text {
   display: flex;
   flex-direction: column;
@@ -95,5 +88,12 @@
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-photo img {
+    width: 150px;
+    height: 150px;
   }
 }
