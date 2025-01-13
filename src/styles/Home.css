@@ -91,9 +91,49 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .Home {
+    padding: 10px;
+    height: auto;
+  }
+
   .profile-photo img {
     width: 150px;
     height: 150px;
+  }
+
+  .home-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-text p {
+    font-size: 1.2rem;
+  }
+
+  .arrow-down {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Home {
+    text-align: center;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text p {
+    font-size: 1rem;
+  }
+
+  .arrow-down {
+    font-size: 1.8rem;
   }
 }
