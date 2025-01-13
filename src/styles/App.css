@@ -1,7 +1,8 @@
 body {
   margin: 20px;
   font-family: Arial, sans-serif;
-  background: url("https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fHw%3D");
+  background: url("https://images.unsplash.com/photo-1527467779599-34448b3fa6a7")
+    no-repeat center center fixed;
   color: #333;
   display: flex;
   justify-content: center;
@@ -10,9 +11,25 @@ body {
   padding-top: 30px;
   background-attachment: fixed;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-position: center;
   overflow-x: hidden;
   flex-direction: column;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: contrast(1.2) brightness(1.1);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .App {
@@ -38,7 +55,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  align-items: stretch; /* Estira las columnas para alturas iguales */
+  align-items: stretch;
 }
 
 .contenedordescripción {
@@ -129,4 +146,12 @@ body {
 
 .home-text p {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+  }
 }
