@@ -25,7 +25,7 @@
   transition: transform 0.3s ease;
   overflow: hidden;
   min-height: 500px;
-  border: solid chocolate;
+  border: solid #17b9dd;
 }
 
 .project-card:hover {
@@ -57,10 +57,10 @@
 }
 
 .project-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   align-content: center;
   margin: 10px 0;
-  min-height: 50px; /* Uniforma los títulos */
+  min-height: 50px;
 }
 
 .project-card p {
@@ -85,7 +85,7 @@
 .title-prjct {
   margin-bottom: 50px;
   color: beige;
-  font-size: 39px;
+  font-size: 45px;
   text-align: center;
   text-shadow: 0px 12px 12px rgb(74 188 191 / 111%);
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  background: linear-gradient(135deg, #5f3a59, #49dfb54f);
+  background: linear-gradient(303deg, #5f3a59, #49dfb594);
   color: #fff;
   padding: 30px;
   text-align: left;
@@ -17,7 +17,7 @@ h3 {
   color: #000000;
   margin-bottom: 33px;
   font-family: monospace;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   text-align: center;
   -webkit-text-stroke: thin;
   background: linear-gradient(52deg, #3c8cab, #00000024);
@@ -57,9 +57,9 @@ p {
 
 .currículum {
   padding: 3px;
+  margin-top: 3px;
   margin-right: 6px;
   color: blanchedalmond;
-  text-decoration: underline;
   text-decoration-color: slategray;
   font-size-adjust: 0.6;
 }
@@ -67,7 +67,7 @@ p {
 .cv-link {
   display: flex;
   justify-content: end;
-  color: lawngreen;
+  color: #49dfb5d1;
   font-size: xx-large;
   padding-right: 9px;
 }

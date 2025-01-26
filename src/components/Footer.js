@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="contenedorContacto col-md-6 mb-4 text-center">
             <h2 className="title-contact">Contacto</h2>
             <div className="datesContact">
-              <p>
+              <p className="dates-contact">
                 CORREO:{" "}
                 <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
                   OTEIZA.JOR@GMAIL.COM
