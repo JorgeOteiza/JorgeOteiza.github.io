@@ -5,12 +5,17 @@ const SobreMi = () => {
   return (
     <section id="sobre-mi" className="hero h-auto">
       <div className="sobreMi h-auto">
-        <h3>Sobre mí</h3>
+        <h3>SOBRE MÍ</h3>
         <p>
-        ¡Hola! Bienvenido a mi portafolio. Soy desarrollador Full Stack con experiencia en tecnologías modernas de Frontend y Backend. He trabajado en proyectos colaborativos aplicando herramientas y metodologías ágiles para crear soluciones funcionales e innovadoras.
+          ¡Hola! Bienvenido a mi portafolio. Soy desarrollador Full Stack con
+          experiencia en tecnologías modernas de Frontend y Backend. He
+          trabajado en proyectos colaborativos aplicando herramientas y
+          metodologías ágiles para crear soluciones funcionales e innovadoras.
         </p>
         <p>
-        Actualmente, busco oportunidades laborales que me permitan seguir creciendo profesionalmente mientras aporto valor al desarrollo de proyectos de calidad.
+          Actualmente, busco oportunidades laborales que me permitan seguir
+          creciendo profesionalmente mientras aporto valor al desarrollo de
+          proyectos de calidad.
         </p>
         <div className="CV p-1">
           <h6 className="currículum">CV:</h6>

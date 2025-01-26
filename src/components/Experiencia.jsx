@@ -5,7 +5,7 @@ const Experiencia = () => {
   return (
     <section id="experiencia" className="experiencia h-auto">
       <div>
-        <h4 className="title-exp h-auto">Experiencia</h4>
+        <h4 className="title-exp h-auto">EXPERIENCIA</h4>
         <ul>
           <li>
             Participé en el desarrollo de una aplicación web e-commerce como

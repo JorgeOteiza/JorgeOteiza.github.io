@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <div className="home-text">
           <h1>JORGE OTEIZA</h1>
-          <p>Desarrollador Full Stack</p>
+          <p className="px-3">Desarrollador Full Stack</p>
         </div>
       </div>
       <div className="arrow-down my-3 py-5" onClick={handleScroll}>

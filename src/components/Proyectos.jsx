@@ -24,7 +24,7 @@ const Proyectos = () => {
   }, []);
   return (
     <section id="proyectos" className="proyectos py-5 my-5 mx-1">
-      <h2 className="title-prjct text-center">Proyectos</h2>
+      <h2 className="title-prjct text-center">PROYECTOS</h2>
       <div className="prjct row g-4 justify-content-center col-md-7 col-md-12 col-sm-11 col-lg-auto">
         {/* Primera tarjeta */}
         <div className="project-card col-12 col-sm-6 col-lg-4">
