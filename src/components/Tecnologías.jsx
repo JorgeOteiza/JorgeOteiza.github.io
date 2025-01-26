@@ -55,6 +55,10 @@ const icons = [
     alt: "SQLAlchemy Logo",
   },
   {
+    src: "/JWTicon.png",
+    alt: "JWT Logo",
+  },
+  {
     src: "/LogoPostman.png",
     alt: "Postman Logo",
   },
@@ -62,9 +66,9 @@ const icons = [
 
 const Tecnologías = () => {
   return (
-    <section id="tecnologías" className="tecnologias col row-cols-lg-auto">
+    <section id="tecnologías" className="tecnologias col row-cols-lg-auto ">
       <h2 className="title-tecnologías">STACK TECNOLÓGICO</h2>
-      <div className="icon-container row col col-sm-10">
+      <div className="icon-container row col col-sm-10 col-sm-10 col-lg-9 column-gap-md-4 column-gap-lg-3">
         {icons.map((icon, index) => (
           <img src={icon.src} alt={icon.alt} className="icon" key={index} />
         ))}

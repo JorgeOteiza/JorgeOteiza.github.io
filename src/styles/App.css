@@ -39,7 +39,6 @@ body::before {
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  justify-content: flex-start;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;

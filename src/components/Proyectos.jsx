@@ -36,7 +36,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3 className="title">E-commerce</h3>
+            <h3 className="title">E-COMMERCE</h3>
             <p>Aplicación para ventas de vinos elaborados en Chile.</p>
             <a
               href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
@@ -82,6 +82,7 @@ const Proyectos = () => {
                 alt="SQLAlchemy Logo"
                 className="icon-mini"
               />
+              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
             </div>
           </div>
         </div>
@@ -96,7 +97,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>Autenticación</h3>
+            <h3>AUTENTICACIÓN</h3>
             <p>
               Proyecto Full-Stack diseñado para crear registros con id únicas y
               encriptación de contraseñas.
@@ -140,6 +141,7 @@ const Proyectos = () => {
                 alt="SQLAlchemy Logo"
                 className="icon-mini"
               />
+              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
               <img
                 src="/LogoPostman.png"
                 alt="Postman logo"
@@ -159,7 +161,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>Blog de Star Wars</h3>
+            <h3>BLOG DE STAR WARS</h3>
             <p>
               Desarrollo de un blog informativo sobre Star Wars, utilizando la
               API "SWAPI" para obtener datos.
@@ -207,10 +209,10 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>Acortador de Links</h3>
+            <h3>ACORTADOR DE LINKS</h3>
             <p>
               Aplicación web para acortar URLs utilizando la API de TinyURL, con
-              lógica backend en FastAPI e interfaz moderna en React.
+              lógica backend en FastAPI e interfaz moderna con React.
             </p>
             <a
               href="https://github.com/JorgeOteiza/Short-url"

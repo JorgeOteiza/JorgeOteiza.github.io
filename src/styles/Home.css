@@ -31,11 +31,10 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 0px 0px 20px 30px rgb(100 90 130 / 54%);
+  box-shadow: 0px 0px 18px 36px rgb(0 0 0 / 69%);
 }
 
 .home-text h1 {
-  align-self: flex-start;
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
   font-size: 7.3rem;
@@ -48,10 +47,10 @@
 
 .home-text p {
   font-size: 2.9rem;
-  color: #dbff63f0;
+  color: #000000f0;
   padding: 6px;
-  align-self: flex-start;
   background-color: cadetblue;
+  box-shadow: 0px 0px 33px lightsteelblue;
   border-radius: 39px;
 }
 
@@ -122,6 +121,7 @@
     max-width: 100%;
     border-radius: 120px;
     width: 206px;
+    padding-bottom: 36px;
   }
 
   .profile-photo img {
@@ -157,7 +157,6 @@
 
   .home-text p {
     font-size: 1.4rem;
-    padding-bottom: 20px;
   }
 
   .arrow-down {

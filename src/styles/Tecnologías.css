@@ -15,7 +15,7 @@
 .icon-container {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 6px;
   padding: 10px;
   background: #ffffff26;
   box-shadow: 0px 0px 36px 18px black;
@@ -23,12 +23,18 @@
 }
 
 .icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .icon:hover {
   transform: scale(1.5);
+}
+
+@media screen and (max-width: 480px) {
+  .icon-container {
+    width: 100px;
+  }
 }
