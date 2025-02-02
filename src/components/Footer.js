@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           {/* Sección de contacto */}
-          <div className="contenedorContacto col-md-6 mb-4 text-center">
+          <div className="contenedorContacto col-md-6 my-4 text-center">
             <h2 className="title-contact">Contacto</h2>
             <div className="datesContact">
               <p className="dates-contact">

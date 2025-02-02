@@ -34,7 +34,6 @@
 }
 
 .contenedorContacto {
-  margin-top: 25px;
   justify-items: center;
   border: solid 1px lightseagreen;
   box-shadow: 0px 0px 30px;
@@ -74,5 +73,12 @@
   }
   .rrssFooter {
     margin-top: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedorContacto {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
