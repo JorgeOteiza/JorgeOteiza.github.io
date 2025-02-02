@@ -156,7 +156,9 @@
   }
 
   .home-text p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin-right: 6px;
+    margin-left: 6px;
   }
 
   .arrow-down {
