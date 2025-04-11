@@ -251,6 +251,60 @@ const Proyectos = () => {
             </div>
           </div>
         </div>
+
+        {/* Quinta tarjeta */}
+        <div className="project-card">
+          <div className="image-container">
+            <img
+              src="/URL-SHORT-portfolio.png"
+              className="card-img-top"
+              alt="Characters add"
+            />
+          </div>
+          <div className="content-container">
+            <h3>Travel Calculator</h3>
+            <p>
+              Aplicación web para calcular el consumo de un vehículo tripulado
+              desde un lugar a otro, considerando diversos factores que puedan
+              interferir con su consumo.
+            </p>
+            <a
+              href="https://github.com/JorgeOteiza/Short-url"
+              className="repositorios-target"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="repositorios-targets fa-solid fa-link"></i>
+            </a>
+            <div className="logos-proyect">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
+                alt="JavaScript Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                alt="React Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
+                alt="Vite Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
+                alt="Python Logo"
+                className="icon-mini"
+              />
+              <img
+                src="/pngwing.com.png"
+                alt="Fast API"
+                className="icon-mini"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
