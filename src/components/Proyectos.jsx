@@ -264,12 +264,10 @@ const Proyectos = () => {
           <div className="content-container">
             <h3>Travel Calculator</h3>
             <p>
-              Aplicación web para calcular el consumo de un vehículo tripulado
-              desde un lugar a otro, considerando diversos factores que puedan
-              interferir con su consumo.
+              Aplicación web para calcular el consumo de vehículos, se consideran diversos factores externos e internos que puedan afectar su rendimiento.
             </p>
             <a
-              href="https://github.com/JorgeOteiza/Short-url"
+              href="https://github.com/JorgeOteiza/travel.calculator"
               className="repositorios-target"
               target="_blank"
               rel="noopener noreferrer"
