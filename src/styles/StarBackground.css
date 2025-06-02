@@ -1,0 +1,107 @@
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+/* Estilo base de todas las estrellas */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Parpadeo: sin duración ni delay definidas aquí */
+.twinkle-soft {
+  animation-name: twinkleSoft;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.twinkle-fast {
+  animation-name: twinkleFast;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.twinkle-irregular {
+  animation-name: twinkleIrregular;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Keyframes del parpadeo suave */
+@keyframes twinkleSoft {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  60% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  80% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+/* Keyframes del parpadeo rápido */
+@keyframes twinkleFast {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Keyframes del parpadeo irregular */
+@keyframes twinkleIrregular {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0.9;
+    transform: scale(1.3);
+  }
+  40% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+  55% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  90% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+}

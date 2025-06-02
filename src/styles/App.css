@@ -1,8 +1,6 @@
 body {
   margin: 20px;
   font-family: Arial, sans-serif;
-  background: url("https://images.unsplash.com/photo-1527467779599-34448b3fa6a7")
-    no-repeat center center fixed;
   color: #333;
   display: flex;
   justify-content: center;

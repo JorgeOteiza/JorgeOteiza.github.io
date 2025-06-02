@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./styles/App.css";
 import "./styles/Sections.css";
+import StarBackground from "./components/StarBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -29,12 +30,12 @@ function App() {
 
     ajustarAlturas();
     window.addEventListener("resize", ajustarAlturas);
-
     return () => window.removeEventListener("resize", ajustarAlturas);
   }, []);
 
   return (
     <div className="App mx-4 col col-12">
+      <StarBackground />
       <Navbar />
       <Home />
       <div className="descripcionExp container my-3 col col-12 col-lg-12">
