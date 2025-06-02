@@ -209,7 +209,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>ACORTADOR DE LINKS</h3>
+            <h3>Short Url</h3>
             <p>
               Aplicación web para acortar URLs utilizando la API de TinyURL, con
               lógica backend en FastAPI e interfaz moderna con React.
@@ -256,7 +256,7 @@ const Proyectos = () => {
         <div className="project-card">
           <div className="image-container">
             <img
-              src="/URL-SHORT-portfolio.png"
+              src="/captura-travelcalculator-4.png"
               className="card-img-top"
               alt="Characters add"
             />
@@ -264,7 +264,9 @@ const Proyectos = () => {
           <div className="content-container">
             <h3>Travel Calculator</h3>
             <p>
-              Aplicación web para calcular el consumo de vehículos, se consideran diversos factores externos e internos que puedan afectar su rendimiento.
+              Demo intuitiva que estima el consumo vehicular considerando
+              variables internas y externas mediante integración de APIs y base
+              de datos local.
             </p>
             <a
               href="https://github.com/JorgeOteiza/travel.calculator"
@@ -296,10 +298,21 @@ const Proyectos = () => {
                 className="icon-mini"
               />
               <img
-                src="/pngwing.com.png"
-                alt="Fast API"
+                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                alt="Flask Logo"
                 className="icon-mini"
               />
+              <img
+                src="/logo-postgreSQL.png"
+                alt="PostgreSQL Logo"
+                className="icon-mini"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
+                alt="SQLAlchemy Logo"
+                className="icon-mini"
+              />
+              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
             </div>
           </div>
         </div>
