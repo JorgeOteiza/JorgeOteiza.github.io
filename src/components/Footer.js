@@ -4,8 +4,8 @@ import "../styles/Footer.css";
 const Footer = () => {
   return (
     <footer className="footer p-3 m-auto" id="contacto">
-      <div className="container">
-        <div className="row">
+      <div className="container containerFooter">
+        <div className="row contenedorFooter">
           {/* Sección de contacto */}
           <div className="contenedorContacto col-md-6 my-4 text-center">
             <h2 className="title-contact">Contacto</h2>
