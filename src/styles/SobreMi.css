@@ -17,12 +17,12 @@ h3 {
   color: #000000;
   margin-bottom: 33px;
   font-family: monospace;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   -webkit-text-stroke: thin;
   background: linear-gradient(52deg, #3c8cab, #00000024);
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 30px;
   box-shadow: 3px 3px 6pc 6px cornflowerblue;
 }
 
