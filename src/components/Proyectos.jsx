@@ -209,7 +209,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>Short Url</h3>
+            <h3>SHORT URL</h3>
             <p>
               Aplicación web para acortar URLs utilizando la API de TinyURL, con
               lógica backend en FastAPI e interfaz moderna con React.
@@ -262,7 +262,7 @@ const Proyectos = () => {
             />
           </div>
           <div className="content-container">
-            <h3>Travel Calculator</h3>
+            <h3>TRAVEL CALCULATOR</h3>
             <p>
               Demo intuitiva que estima el consumo vehicular considerando
               variables internas y externas mediante integración de APIs y base

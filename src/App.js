@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles/App.css";
 import "./styles/Sections.css";
-import StarBackground from "./components/StarBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -12,13 +11,12 @@ import Proyectos from "./components/Proyectos";
 
 function App() {
   useEffect(() => {
-    // Ajuste dinámico de alturas
     const ajustarAlturas = () => {
       const columnas = document.querySelectorAll(".col-lg-6.col-12");
       let alturaMaxima = 0;
 
       columnas.forEach((col) => {
-        col.style.height = "auto"; // Resetear altura
+        col.style.height = "auto";
         const altura = col.offsetHeight;
         if (altura > alturaMaxima) alturaMaxima = altura;
       });
@@ -35,7 +33,11 @@ function App() {
 
   return (
     <div className="App mx-4 col col-12">
-      <StarBackground />
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src="/backgroundEstrellado.mp4" type="video/mp4" />
+        Tu navegador no soporta el video en segundo plano.
+      </video>
+
       <Navbar />
       <Home />
       <div className="descripcionExp container my-3 col col-12 col-lg-12">
