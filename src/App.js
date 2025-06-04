@@ -33,10 +33,35 @@ function App() {
 
   return (
     <div className="App mx-4 col col-12">
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src="/backgroundEstrellado.mp4" type="video/mp4" />
-        Tu navegador no soporta el video en segundo plano.
-      </video>
+      <div className="video-container">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="background-video"
+        >
+          <source
+            src={`${process.env.PUBLIC_URL}/backgroundEstrellado.mp4`}
+            type="video/mp4"
+          />
+          Tu navegador no soporta el video.
+        </video>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="background-video duplicate"
+        >
+          <source
+            src={`${process.env.PUBLIC_URL}/backgroundEstrellado.mp4`}
+            type="video/mp4"
+          />
+        </video>
+      </div>
 
       <Navbar />
       <Home />

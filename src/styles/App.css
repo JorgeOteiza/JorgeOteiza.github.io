@@ -153,18 +153,46 @@ body::before {
   }
 }
 
-.background-video {
+.video-container {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -999;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  overflow: hidden;
 }
 
-body,
-html,
-.App {
-  background: transparent;
+.background-video,
+.background-video.duplicate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 0.99;
+  animation: fadeLoop 40s linear infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.background-video.duplicate {
+  animation-delay: 20s;
+}
+
+@keyframes fadeLoop {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+  }
 }

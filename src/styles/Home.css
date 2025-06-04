@@ -19,6 +19,7 @@
   width: 100%;
   background: #959eb04a;
   border-radius: 150px;
+  box-shadow: 0px 0px 39px 36px rgb(87 112 79 / 69%);
   padding: 0px;
   box-sizing: border-box;
   text-align: center;
@@ -31,7 +32,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 0px 0px 39px 36px rgb(0 0 0 / 69%);
+  box-shadow: 0px 0px 39px 39px rgb(33 29 29);
 }
 
 .home-text h1 {
