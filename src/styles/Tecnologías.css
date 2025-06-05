@@ -8,8 +8,11 @@
 .title-tecnologías {
   margin-bottom: 50px;
   color: beige;
-  font-size: 69px;
   text-shadow: 0px 12px 12px rgb(74 188 191 / 111%);
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-size: 4.5rem;
+  font-style: normal;
 }
 
 .icon-container {
@@ -18,7 +21,7 @@
   gap: 6px;
   padding: 10px;
   background: #7884a38f;
-  box-shadow: 0px 0px 36px 30px black;
+  box-shadow: 0px 0px 36px 30px #817532;
   border-radius: 30px;
 }
 

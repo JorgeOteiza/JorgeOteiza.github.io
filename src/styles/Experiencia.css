@@ -21,7 +21,10 @@
   color: #000000;
   margin-bottom: 33px;
   font-family: monospace;
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
   font-size: 3rem;
+  font-style: normal;
   -webkit-text-stroke: thin;
   background: linear-gradient(52deg, #3c8cab, #00000024);
   padding: 6px;

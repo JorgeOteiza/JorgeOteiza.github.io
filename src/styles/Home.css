@@ -19,7 +19,7 @@
   width: 100%;
   background: #959eb04a;
   border-radius: 150px;
-  box-shadow: 0px 0px 39px 36px rgb(87 112 79 / 69%);
+  box-shadow: 0px 0px 30px 39px rgb(149 158 176 / 29%);
   padding: 0px;
   box-sizing: border-box;
   text-align: center;
@@ -47,11 +47,12 @@
 }
 
 .home-text p {
-  font-size: 3rem;
-  color: #000000f0;
+  font-family: monospace;
+  font-size: 2.5rem;
+  color: #e8e5bfe8;
   padding: 6px;
-  background-color: cadetblue;
-  box-shadow: 0px 0px 39px lightsteelblue;
+  background-color: #442b3a;
+  box-shadow: 0px 0px 39px 39px #442b3a;
   border-radius: 39px;
 }
 
@@ -61,7 +62,7 @@
   justify-content: center;
   align-self: center;
   gap: 22px;
-  margin-left: 15px;
+  margin-left: inherit;
   margin-right: 15px;
   padding: 6px;
   font-family: monospace;

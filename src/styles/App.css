@@ -1,33 +1,68 @@
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.background-video,
+.background-video.duplicate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  animation: fadeLoop 40s linear infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.background-video.duplicate {
+  animation-delay: 20s;
+}
+
+@keyframes fadeLoop {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* Mantener visibilidad general */
+body,
+html,
+.App {
+  background: transparent;
+  color: #333;
+}
+
 body {
   margin: 20px;
   font-family: Arial, sans-serif;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding-top: 30px;
   background-attachment: fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-position: center;
   overflow-x: hidden;
   flex-direction: column;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  filter: contrast(1.2) brightness(1.1);
-  z-index: -1;
-  pointer-events: none;
 }
 
 .App {
@@ -46,7 +81,7 @@ body::before {
     5px 0 34px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor SobreMi y Experiencia */
+/* Resto del CSS (sin cambios) */
 .descripcionExp {
   display: flex;
   flex-wrap: wrap;
@@ -65,14 +100,11 @@ body::before {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 39px;
-  padding: 20px;
-  padding-right: 4px;
-  padding-left: 4px;
+  padding: 20px 4px;
   text-align: left;
   border: 1px;
 }
 
-/* Asegura que las secciones hijas ocupen toda la altura */
 .hero,
 .experiencia {
   display: flex;
@@ -81,7 +113,6 @@ body::before {
   flex-grow: 1;
 }
 
-/* Media Query */
 @media screen and (max-width: 528px) {
   .descripcionExp {
     flex-direction: column;
@@ -150,49 +181,5 @@ body::before {
     background-attachment: scroll;
     background-size: cover;
     image-rendering: -webkit-optimize-contrast;
-  }
-}
-
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -999;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.background-video,
-.background-video.duplicate {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  opacity: 0.99;
-  animation: fadeLoop 40s linear infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.background-video.duplicate {
-  animation-delay: 20s;
-}
-
-@keyframes fadeLoop {
-  0% {
-    opacity: 1;
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.99;
-  }
-  100% {
-    opacity: 0.99;
   }
 }
