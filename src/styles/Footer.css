@@ -28,17 +28,6 @@
   color: #ffdf85;
 }
 
-.contenedorFooter {
-  border-style: solid;
-  border-color: var(--bs-warning-text-emphasis);
-  padding-top: 4px;
-  padding-right: 30px;
-  padding-bottom: 4px;
-  padding-left: 30px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 20px 0px;
-}
-
 .containerFooter {
   padding-top: 30px;
 }
