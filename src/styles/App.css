@@ -88,6 +88,7 @@ body {
   justify-content: center;
   gap: 20px;
   align-items: stretch;
+  padding-bottom: 39px;
 }
 
 .contenedordescripción {

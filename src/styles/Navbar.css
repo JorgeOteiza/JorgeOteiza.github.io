@@ -3,8 +3,8 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   box-shadow: 0px 4px 9px rgba(66, 67, 79, 0.42);
   background: rgba(0, 0, 0, 0.8);
   transition: all 0.3s ease-in-out;

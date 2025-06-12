@@ -66,7 +66,7 @@ const icons = [
 
 const Tecnologías = () => {
   return (
-    <section id="tecnologías" className="tecnologias col row-cols-lg-auto ">
+    <section id="tecnologías" className="tecnologias col row-cols-lg-auto pb-5">
       <h2 className="title-tecnologías">STACK TECNOLÓGICO</h2>
       <div className="icon-container row col col-sm-10 col-sm-10 col-lg-9 column-gap-md-4 column-gap-lg-3">
         {icons.map((icon, index) => (
