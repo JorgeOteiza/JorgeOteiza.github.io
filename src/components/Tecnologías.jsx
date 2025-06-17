@@ -31,7 +31,7 @@ const icons = [
     alt: "Vite Logo",
   },
   {
-    src: "https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png",
+    src: "/Jest-test.png",
     alt: "Jest Logo",
   },
   {
@@ -47,7 +47,7 @@ const icons = [
     alt: "PostgreSQL Logo",
   },
   {
-    src: "https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb",
+    src: "/logo-flask.2.png",
     alt: "Flask Logo",
   },
   {

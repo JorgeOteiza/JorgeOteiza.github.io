@@ -68,7 +68,7 @@ const Proyectos = () => {
                 className="icon-mini"
               />
               <img
-                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                src="/logo-flask.2.png"
                 alt="Flask Logo"
                 className="icon-mini"
               />
@@ -127,7 +127,7 @@ const Proyectos = () => {
                 className="icon-mini"
               />
               <img
-                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                src="/logo-flask.2.png"
                 alt="Flask Logo"
                 className="icon-mini"
               />
@@ -298,7 +298,7 @@ const Proyectos = () => {
                 className="icon-mini"
               />
               <img
-                src="https://repository-images.githubusercontent.com/596892/cc2c69ec-9251-4b33-8283-b86a8659c9cb"
+                src="/logo-flask.2.png"
                 alt="Flask Logo"
                 className="icon-mini"
               />
