@@ -100,7 +100,11 @@ const Proyectos = () => {
         {/* Segunda tarjeta */}
         <div className="project-card col-12 col-sm-6 col-lg-4">
           <div className="image-container">
-            <img src="" className="card-img-top" alt="" />
+            <img
+              src="/minimarket-pos.png"
+              className="card-img-top"
+              alt="Minimarket-Pos"
+            />
           </div>
           <div className="content-container">
             <h3 className="title">MINIMARKET POS</h3>

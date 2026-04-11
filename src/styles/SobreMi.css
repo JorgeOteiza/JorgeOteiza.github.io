@@ -53,8 +53,8 @@ p {
   margin-bottom: 20px;
 }
 
-.centerText {
-  justify-items: center;
+.descriptionForMe {
+  text-align: start;
 }
 
 .CV {
