@@ -60,15 +60,6 @@ const Navbar = () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="#experiencia"
-                onClick={(e) => scrollToId(e, "#experiencia")}
-              >
-                Experiencia
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
                 href="#tecnologías"
                 onClick={(e) => scrollToId(e, "#tecnologías")}
               >

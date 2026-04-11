@@ -53,6 +53,10 @@ p {
   margin-bottom: 20px;
 }
 
+.centerText {
+  justify-items: center;
+}
+
 .CV {
   display: flex;
   justify-content: end;

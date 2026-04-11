@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import SobreMi from "./components/SobreMi";
-import Experiencia from "./components/Experiencia";
 import Tecnologías from "./components/Tecnologías";
 import Proyectos from "./components/Proyectos";
 
@@ -80,7 +79,7 @@ function App() {
         window.history.replaceState(
           null,
           "",
-          window.location.pathname + window.location.search
+          window.location.pathname + window.location.search,
         );
         window.scrollTo({ top: 0, behavior: "auto" });
       }
@@ -122,12 +121,9 @@ function App() {
       <Navbar />
       <Home />
       <div className="descripcionExp container my-3 col col-12 col-lg-12">
-        <div className="contenedordescripción row gy-4 m-1 mb-5 p-3 col col-lg-10">
+        <div className="contenedordescripción row gy-4 m-1 mb-5 p-3 col col-lg-10 row-cols-xl-auto">
           <div className="col-lg-6 col-12 col-md-6 h-auto">
             <SobreMi />
-          </div>
-          <div className="col-lg-6 col-12 col-md-6 h-auto">
-            <Experiencia />
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ const Home = () => {
         <div className="home-text">
           <h1>JORGE OTEIZA</h1>
           <p className="px-3">
-            <strong>Desarrollador Full Stack</strong>
+            <strong>Full Stack Developer</strong>
           </p>
         </div>
       </div>

@@ -7,20 +7,22 @@ const SobreMi = () => {
       <div className="sobreMi h-auto">
         <h3>SOBRE MÍ</h3>
         <p>
-          ¡Hola! Bienvenido a mi portafolio. Soy desarrollador Full Stack con
-          experiencia en tecnologías modernas de Frontend y Backend. He
-          trabajado en proyectos colaborativos aplicando herramientas y
-          metodologías ágiles para crear soluciones funcionales e innovadoras.
+          Desarrollador Full Stack enfocado en la construcción de aplicaciones
+          web modernas utilizando React en frontend y Flask en backend. He
+          desarrollado proyectos full stack donde implemento APIs REST,
+          autenticación con JWT y manejo de bases de datos con PostgreSQL.
+          Experiencia trabajando en equipo bajo metodologías ágiles (Kanban),
+          participando en el desarrollo de soluciones desde el diseño hasta la
+          implementación.
         </p>
         <p>
-          Actualmente, busco oportunidades laborales que me permitan seguir
-          creciendo profesionalmente mientras aporto valor al desarrollo de
-          proyectos de calidad.
+          Actualmente busco mi primera oportunidad profesional como
+          desarrollador.
         </p>
         <div className="CV p-1">
           <h6 className="currículum">CV:</h6>
           <a
-            href="https://storage.googleapis.com/breathecode-user-attachments/78cf50be9bd854a08d1c19a013bda739c326fcd7dd69f6a3133d36568957d822"
+            href="https://flowcv.com/resume/ub597hln6vj6"
             className="cv-link"
             target="_blank"
             rel="noopener noreferrer"
