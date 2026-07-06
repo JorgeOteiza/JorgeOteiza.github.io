@@ -66,11 +66,13 @@ const icons = [
 
 const Tecnologías = () => {
   return (
-    <section id="tecnologías" className="tecnologias col row-cols-lg-auto pb-5">
-      <h2 className="title-tecnologías">STACK TECNOLÓGICO</h2>
-      <div className="icon-container row col col-sm-10 col-sm-10 col-lg-9 column-gap-md-4 column-gap-lg-3">
-        {icons.map((icon, index) => (
-          <img src={icon.src} alt={icon.alt} className="icon" key={index} />
+    <section id="tecnologías" className="tecnologias">
+      <h2 className="title-tecnologias">Stack tecnológico</h2>
+      <div className="icon-container">
+        {icons.map((icon) => (
+          <span className="skill-icon-card" key={icon.alt}>
+            <img src={icon.src} alt={icon.alt} className="icon" loading="lazy" />
+          </span>
         ))}
       </div>
     </section>

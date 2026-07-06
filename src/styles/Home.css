@@ -1,84 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
-
 .Home {
+  position: relative;
   display: flex;
+  min-height: 76vh;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 20px 33px;
-  height: 75vh;
+  justify-content: center;
+  padding: 80px 24px 32px;
   text-align: left;
-  position: relative;
 }
 
 .home-container {
   display: flex;
-  flex-direction: row;
+  width: min(980px, 100%);
   align-items: center;
-  gap: 20px;
-  width: 100%;
-  background: #959eb04a;
-  border-radius: 150px;
-  box-shadow: 0px 0px 30px 39px rgb(149 158 176 / 29%);
-  padding: 0px;
-  box-sizing: border-box;
-  text-align: center;
-  margin: auto;
-  margin-left: 63px;
-  margin-right: 63px;
+  gap: clamp(24px, 5vw, 56px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  padding: clamp(22px, 4vw, 40px);
+  background: rgba(8, 22, 28, 0.72);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
 }
 
 .profile-photo img {
-  width: 300px;
-  height: 300px;
+  width: clamp(160px, 24vw, 260px);
+  height: clamp(160px, 24vw, 260px);
+  display: block;
+  border: 4px solid rgba(34, 211, 238, 0.28);
   border-radius: 50%;
-  box-shadow: 0px 0px 39px 39px rgb(146 195 130 / 21%);
-}
-
-.home-text h1 {
-  font-family: "Jersey 25", sans-serif;
-  font-weight: 400;
-  font-size: 6.3rem;
-  font-style: normal;
-  color: darkturquoise;
-  border-bottom-right-radius: 9px;
-  border-bottom-left-radius: 9px;
-  padding: 6px;
-}
-
-.home-text p {
-  font-family: monospace;
-  font-size: 2.5rem;
-  color: #e8e5bfe8;
-  padding: 6px;
-  background-color: #442b3a;
-  box-shadow: 0px 0px 39px 39px #442b3a;
-  border-radius: 39px;
+  object-fit: cover;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
 }
 
 .home-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  gap: 22px;
-  margin-left: inherit;
-  margin-right: inherit;
-  padding: 6px;
-  font-family: monospace;
+  display: grid;
+  gap: 14px;
+}
+
+.home-text h1 {
+  margin: 0;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.home-text p {
+  width: fit-content;
+  margin: 0;
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: var(--color-muted-light);
+  background: rgba(34, 211, 238, 0.08);
+  font-size: clamp(1.08rem, 2vw, 1.4rem);
 }
 
 .arrow-down {
-  padding-top: 69px;
-  font-size: 2.5rem;
-  color: #ffffffe3;
+  margin-top: 34px;
+  color: var(--color-muted-light);
   cursor: pointer;
+  font-size: 2.4rem;
   animation: bounce 1.5s infinite;
-  font-size: 60px;
+  transition: color 0.2s ease;
 }
 
 .arrow-down:hover {
-  color: #0056b3;
+  color: var(--color-primary);
 }
 
 @keyframes bounce {
@@ -97,73 +87,19 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .Home {
-    padding: 10px;
-    height: auto;
-  }
-
-  .profile-photo img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .home-text h1 {
-    font-size: 3rem;
-  }
-
-  .arrow-down {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 768px) {
+  .Home {
+    min-height: auto;
+    padding: 92px 10px 34px;
+    text-align: center;
+  }
+
   .home-container {
     flex-direction: column;
-    max-width: 100%;
-    border-radius: 120px;
-    width: 206px;
-    padding-bottom: 36px;
-  }
-
-  .profile-photo img {
-    max-width: 200px;
-    height: auto;
-  }
-
-  .home-text h1 {
-    font-size: 2.5rem;
-    text-align: center;
+    border-radius: 26px;
   }
 
   .home-text p {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .Home {
-    text-align: center;
-  }
-
-  .profile-photo img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .home-text h1 {
-    font-size: 3.3rem;
-    align-self: center;
-  }
-
-  .home-text p {
-    font-size: 1.3rem;
-    margin-right: 6px;
-    margin-left: 6px;
-  }
-
-  .arrow-down {
-    font-size: 1.8rem;
+    margin: 0 auto;
   }
 }

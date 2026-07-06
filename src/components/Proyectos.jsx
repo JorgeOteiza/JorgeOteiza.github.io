@@ -1,457 +1,541 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Proyectos.css";
 
+const iconos = {
+  figma: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+    alt: "Figma",
+  },
+  javascript: {
+    src: "https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png",
+    alt: "JavaScript",
+  },
+  typescript: {
+    src: "https://www.svgrepo.com/show/349540/typescript.svg",
+    alt: "TypeScript",
+  },
+  react: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    alt: "React",
+  },
+  vite: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+    alt: "Vite",
+  },
+  python: {
+    src: "https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api",
+    alt: "Python",
+  },
+  flask: {
+    src: "/logo-flask.2.png",
+    alt: "Flask",
+  },
+  fastapi: {
+    src: "/pngwing.com.png",
+    alt: "FastAPI",
+  },
+  postgres: {
+    src: "/logo-postgreSQL.png",
+    alt: "PostgreSQL",
+  },
+  sqlite: {
+    src: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
+    alt: "SQLite",
+  },
+  sqlalchemy: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg",
+    alt: "SQLAlchemy",
+  },
+  jwt: {
+    src: "/JWTicon.png",
+    alt: "JWT",
+  },
+  postman: {
+    src: "/LogoPostman.png",
+    alt: "Postman",
+  },
+  pytest: {
+    src: "https://docs.pytest.org/en/stable/_static/pytest_logo_curves.svg",
+    alt: "Pytest",
+  },
+  bootstrap: {
+    src: "/logoBootstrap.png",
+    alt: "Bootstrap",
+  },
+};
+
+const proyectos = [
+  {
+    titulo: "Minimarket POS",
+    imagen: "/minimarket-pos.png",
+    alt: "Captura de Minimarket POS",
+    resumen: "Sistema de punto de venta local para un minimarket.",
+    repo: "https://github.com/JorgeOteiza/minimarket-pos",
+    demo: "",
+    rol: "Desarrollo full stack",
+    enfoque:
+      "Aplicación diseñada para usarse localmente en un solo equipo, sin servidor remoto ni conexión a internet obligatoria. Permite registrar productos, controlar stock, vender desde una caja web, revisar análisis de inventario y mantener respaldos locales de la base de datos. El pago ocurre fuera de la aplicación: el sistema registra la venta, descuenta inventario y conserva la información necesaria para reportes.",
+    media: [
+      {
+        src: "/minimarket-pos.png",
+        alt: "Pantalla principal de Minimarket POS",
+      },
+    ],
+    detalles: [
+      "Registro y edición de productos.",
+      "Control de inventario, stock mínimo y ajustes manuales.",
+      "Carrito y registro de ventas.",
+      "Validación de stock insuficiente y productos sin precio.",
+      "Reportes, analytics y generación de PDFs.",
+      "Backups locales manuales y respaldo automático diario.",
+      "Importación de productos desde CSV.",
+      "Módulo de reposición de sacos y productos a granel.",
+      "Configuración local de datos del negocio.",
+    ],
+    stack: {
+      Backend: [
+        "Python 3.12",
+        "Flask",
+        "SQLAlchemy",
+        "Flask-Migrate / Alembic",
+        "SQLite local",
+        "Marshmallow",
+        "Pytest",
+      ],
+      Frontend: [
+        "Node.js 20.19.0 o superior",
+        "React",
+        "TypeScript",
+        "Vite",
+        "React Router",
+        "Recharts",
+      ],
+    },
+    tecnologias: [
+      "typescript",
+      "react",
+      "vite",
+      "python",
+      "flask",
+      "sqlite",
+      "sqlalchemy",
+      "pytest",
+    ],
+    destacado: true,
+  },
+  {
+    titulo: "E-commerce",
+    imagen: "/logoElRinconDelVino.png",
+    alt: "Logo del proyecto E-commerce",
+    resumen: "Aplicación web full stack para la venta de productos.",
+    repo: "https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce",
+    demo: "",
+    rol: "Frontend y backend en equipo",
+    enfoque:
+      "Construcción de un flujo completo de tienda online, desde autenticación hasta consumo de APIs y persistencia de datos.",
+    media: [
+      {
+        src: "/logoElRinconDelVino.png",
+        alt: "Logo de El Rincon del Vino",
+      },
+    ],
+    detalles: [
+      "Autenticación de usuarios con JWT.",
+      "Desarrollo de APIs REST con Flask.",
+      "Manejo de estado y consumo de datos en React.",
+      "Trabajo en equipo bajo metodología Kanban.",
+    ],
+    tecnologias: [
+      "figma",
+      "javascript",
+      "react",
+      "python",
+      "flask",
+      "postgres",
+      "sqlalchemy",
+      "jwt",
+    ],
+  },
+  {
+    titulo: "Travel Calculator",
+    imagen: "/captura-travelcalculator-4.png",
+    alt: "Captura de Travel Calculator",
+    imageFit: "contain",
+    resumen:
+      "Aplicación para estimar consumo vehicular en base a múltiples variables.",
+    repo: "https://github.com/JorgeOteiza/travel.calculator",
+    demo: "",
+    rol: "Desarrollo full stack",
+    enfoque:
+      "Herramienta para estimar consumo vehicular a partir de datos del viaje, vehículo y cálculos del backend.",
+    media: [
+      {
+        src: "/captura-travelcalculator-4.png",
+        alt: "Resumen de cálculo de Travel Calculator",
+      },
+    ],
+    detalles: [
+      "Lógica de cálculo implementada en backend.",
+      "Integración de APIs externas para obtener datos.",
+      "Persistencia de información en base de datos local.",
+      "Interfaz interactiva para ingreso y visualización de datos.",
+    ],
+    tecnologias: [
+      "javascript",
+      "react",
+      "vite",
+      "python",
+      "flask",
+      "postgres",
+      "sqlalchemy",
+      "jwt",
+    ],
+  },
+  {
+    titulo: "Autenticación",
+    imagen: "/registroCreadoAutenticacion.png",
+    alt: "Pantalla de usuario creado en proyecto de autenticación",
+    imageFit: "contain",
+    resumen:
+      "Sistema full stack para registro, inicio de sesión y gestión de usuarios.",
+    repo: "https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask",
+    demo: "",
+    rol: "Desarrollo full stack",
+    enfoque:
+      "Proyecto centrado en seguridad de usuarios, protección de rutas y comunicación entre frontend y backend.",
+    media: [
+      {
+        src: "/registroCreadoAutenticacion.png",
+        alt: "Registro creado en el sistema de autenticación",
+      },
+    ],
+    detalles: [
+      "APIs REST desarrolladas con Flask.",
+      "Autenticación mediante tokens JWT.",
+      "Encriptación de contraseñas para seguridad.",
+      "Protección de rutas en frontend con React.",
+    ],
+    tecnologias: [
+      "javascript",
+      "react",
+      "python",
+      "flask",
+      "postgres",
+      "sqlalchemy",
+      "jwt",
+      "postman",
+    ],
+  },
+  {
+    titulo: "Blog de Star Wars",
+    imagen: "/characterslistportfolio.png",
+    alt: "Listado de personajes del blog de Star Wars",
+    resumen: "Aplicación web para visualizar información desde una API externa.",
+    repo: "https://github.com/JorgeOteiza/project_Blog_de_StarWars",
+    demo: "",
+    rol: "Frontend",
+    enfoque:
+      "Exploración de consumo de API externa, renderizado dinámico y manejo de estado en React.",
+    media: [
+      {
+        src: "/characterslistportfolio.png",
+        alt: "Listado de personajes del blog de Star Wars",
+      },
+    ],
+    detalles: [
+      "Consumo de datos desde la API pública SWAPI.",
+      "Renderizado dinámico de información en React.",
+      "Manejo de estado para actualizar contenido.",
+      "Diseño de interfaz con Bootstrap y prototipado en Figma.",
+    ],
+    tecnologias: ["figma", "bootstrap", "javascript", "react"],
+    secundario: true,
+  },
+  {
+    titulo: "Short URL",
+    imagen: "/URL-SHORT-portfolio.png",
+    alt: "Captura del proyecto Short URL",
+    resumen: "Aplicación web para acortar enlaces con una API externa.",
+    repo: "https://github.com/JorgeOteiza/Short-url",
+    demo: "",
+    rol: "Frontend y backend",
+    enfoque:
+      "Integración de un backend ligero con FastAPI para consumir servicios externos y devolver enlaces cortos.",
+    media: [
+      {
+        src: "/URL-SHORT-portfolio.png",
+        alt: "Pantalla del acortador de URL",
+      },
+    ],
+    detalles: [
+      "Consumo de TinyURL para generar enlaces cortos.",
+      "Backend desarrollado con FastAPI.",
+      "Procesamiento de solicitudes HTTP y respuestas.",
+      "Interfaz desarrollada con React y Vite.",
+    ],
+    tecnologias: ["javascript", "react", "vite", "python", "fastapi"],
+    secundario: true,
+  },
+];
+
 const Proyectos = () => {
+  const [proyectoActivo, setProyectoActivo] = useState(null);
+  const [mediaActiva, setMediaActiva] = useState(0);
+
+  const abrirDetalle = (proyecto) => {
+    setProyectoActivo(proyecto);
+    setMediaActiva(0);
+  };
+
+  const cerrarDetalle = () => {
+    setProyectoActivo(null);
+    setMediaActiva(0);
+  };
+
   useEffect(() => {
-    const cards = document.querySelectorAll(".project-card");
+    if (!proyectoActivo) return undefined;
 
-    if (cards.length > 0) {
-      let maxHeight = 0;
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        cerrarDetalle();
+      }
+    };
 
-      // Encuentra la altura máxima
-      cards.forEach((card) => {
-        const cardHeight = card.offsetHeight;
-        if (cardHeight > maxHeight) {
-          maxHeight = cardHeight;
-        }
-      });
+    document.body.classList.add("modal-open");
+    window.addEventListener("keydown", handleKeyDown);
 
-      // Asigna la altura máxima a todas las tarjetas
-      cards.forEach((card) => {
-        card.style.height = `${maxHeight}px`;
-      });
-    }
-  }, []);
+    return () => {
+      document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [proyectoActivo]);
+
+  const mediaSeleccionada = proyectoActivo?.media?.[mediaActiva];
+  const proyectosPrincipales = proyectos.filter((proyecto) => !proyecto.secundario);
+  const proyectosSecundarios = proyectos.filter((proyecto) => proyecto.secundario);
+
   return (
-    <section id="proyectos" className="proyectos py-5 my-5 mx-1">
-      <h2 className="title-prjct text-center">PROYECTOS</h2>
-      <div className="prjct row g-4 justify-content-center col-md-7 col-md-12 col-sm-11 col-lg-auto">
-        {/* Primera tarjeta */}
-        <div className="project-card col-12 col-sm-6 col-lg-4">
-          <div className="image-container">
-            <img
-              src="/logoElRinconDelVino.png"
-              className="card-img-top"
-              alt="Logo del proyecto e-commerce"
-            />
-          </div>
-          <div className="content-container">
-            <h3 className="title">E-COMMERCE</h3>
-            <p>
-              <i>Aplicación web full stack para la venta de productos.</i>
-              <div className="descriptionText">
-                <ul>
-                  <li>Implementación de autenticación de usuarios con JWT.</li>
-                  <li>Desarrollo de APIs REST con Flask.</li>
-                  <li>Manejo de estado y consumo de datos en React.</li>
-                  <li>Trabajo en equipo bajo metodología Kanban.</li>
+    <section id="proyectos" className="proyectos">
+      <div className="projects-heading">
+        <h2 className="title-prjct">Proyectos</h2>
+        <p>
+          Una selección de aplicaciones donde combino frontend, backend,
+          APIs REST, autenticación y bases de datos.
+        </p>
+      </div>
+
+      <div className="projects-grid">
+        {proyectosPrincipales.map((proyecto) => (
+          <article
+            className={`project-card ${proyecto.destacado ? "featured" : ""}`}
+            key={proyecto.titulo}
+            onClick={() => abrirDetalle(proyecto)}
+            tabIndex="0"
+            role="button"
+            aria-label={`Ver detalles de ${proyecto.titulo}`}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                abrirDetalle(proyecto);
+              }
+            }}
+          >
+            <div className="image-container">
+              <img
+                src={proyecto.imagen}
+                className="card-img-top"
+                alt={proyecto.alt}
+                data-fit={proyecto.imageFit || "cover"}
+                loading="lazy"
+              />
+            </div>
+
+            <div className="content-container">
+              <div>
+                <h3>{proyecto.titulo}</h3>
+                <p className="project-summary">{proyecto.resumen}</p>
+                <ul className="descriptionText">
+                  {proyecto.detalles.map((detalle) => (
+                    <li key={detalle}>{detalle}</li>
+                  ))}
                 </ul>
               </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-                alt="Figma Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />{" "}
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-                alt="Python Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-flask.2.png"
-                alt="Flask Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-postgreSQL.png"
-                alt="PostgreSQL Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
-                alt="SQLAlchemy Logo"
-                className="icon-mini"
-              />
-              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
+
+              <div className="project-footer">
+                <a
+                  href={proyecto.repo}
+                  className="repositorios-target"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver repositorio de ${proyecto.titulo}`}
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <i className="repositorios-targets fa-solid fa-link"></i>
+                  <span>Repositorio</span>
+                </a>
+
+                <div className="logos-proyect" aria-label="Tecnologías usadas">
+                  {proyecto.tecnologias.map((tecnologia) => (
+                    <img
+                      key={tecnologia}
+                      src={iconos[tecnologia].src}
+                      alt={iconos[tecnologia].alt}
+                      title={iconos[tecnologia].alt}
+                      className="icon-mini"
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="other-projects">
+        <div className="other-projects-heading">
+          <h3>Otros proyectos</h3>
+          <p>
+            Ejercicios y aplicaciones más acotadas que también muestran consumo
+            de APIs, integraciones y práctica con React.
+          </p>
         </div>
 
-        {/* Segunda tarjeta */}
-        <div className="project-card col-12 col-sm-6 col-lg-4">
-          <div className="image-container">
-            <img
-              src="/minimarket-pos.png"
-              className="card-img-top"
-              alt="Minimarket-Pos"
-            />
-          </div>
-          <div className="content-container">
-            <h3 className="title">MINIMARKET POS</h3>
-            <p>
-              <i>
-                Sistema de punto de venta para gestión de productos, inventario
-                y ventas.
-              </i>
-              <div className="descriptionText">
-                <ul>
-                  <li>Desarrollo de API REST con Flask y SQLAlchemy.</li>
-                  <li>
-                    Gestión de inventario y lógica de negocio en backend .
-                  </li>
-                  <li>Interfaz en React con TypeScript y manejo de estado.</li>
-                  <li>Arquitectura modular para escalabilidad del sistema.</li>
-                </ul>
-              </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/minimarket-pos"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className="other-projects-list">
+          {proyectosSecundarios.map((proyecto) => (
+            <button
+              type="button"
+              className="other-project-card"
+              key={proyecto.titulo}
+              onClick={() => abrirDetalle(proyecto)}
             >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://www.svgrepo.com/show/349540/typescript.svg"
-                alt="TypeScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />{" "}
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-                alt="Python Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-flask.2.png"
-                alt="Flask Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-postgreSQL.png"
-                alt="PostgreSQL Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
-                alt="SQLAlchemy Logo"
-                className="icon-mini"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Tercera tarjeta */}
-        <div className="project-card col-12 col-sm-6 col-lg-4">
-          <div className="image-container">
-            <img
-              src="/registroCreadoAutenticacion.png"
-              className="card-img-top"
-              alt="usuario creado"
-            />
-          </div>
-          <div className="content-container">
-            <h3>AUTENTICACIÓN</h3>
-            <p>
-              <i>
-                Sistema de autenticación full stack para registro y gestión de
-                usuarios.
-              </i>
-              <div className="descriptionText">
-                <ul>
-                  <li>Desarrollo de APIs REST con Flask.</li>
-                  <li>Implementación de autenticación con JWT.</li>
-                  <li>Encriptación de contraseñas para seguridad.</li>
-                  <li>Protección de rutas en frontend con React.</li>
-                </ul>
-              </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-                alt="Python Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-flask.2.png"
-                alt="Flask Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-postgreSQL.png"
-                alt="PostgreSQL Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
-                alt="SQLAlchemy Logo"
-                className="icon-mini"
-              />
-              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
-              <img
-                src="/LogoPostman.png"
-                alt="Postman logo"
-                className="icon-mini"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Cuarta tarjeta */}
-        <div className="project-card">
-          <div className="image-container">
-            <img
-              src="/captura-travelcalculator-4.png"
-              className="card-img-top"
-              alt="Characters add"
-            />
-          </div>
-          <div className="content-container">
-            <h3>TRAVEL CALCULATOR</h3>
-            <p>
-              <i>
-                Aplicación para estimar consumo vehicular en base a múltiples
-                variables.
-              </i>
-              <div className="descriptionText">
-                <ul>
-                  <li>Implementación de lógica de cálculo en backend.</li>
-                  <li>Integración de APIs externas para obtención de datos.</li>
-                  <li>Persistencia de información en base de datos local.</li>
-                  <li>
-                    Interfaz interactiva para ingreso y visualización de datos.
-                  </li>
-                </ul>
-              </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/travel.calculator"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
-                alt="Vite Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-                alt="Python Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-flask.2.png"
-                alt="Flask Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logo-postgreSQL.png"
-                alt="PostgreSQL Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d7/SQLAlchemy.svg"
-                alt="SQLAlchemy Logo"
-                className="icon-mini"
-              />
-              <img src="/JWTicon.png" alt="JWT Logo" className="icon-mini" />
-            </div>
-          </div>
-        </div>
-
-        {/* Quinta tarjeta */}
-        <div className="project-card col-12 col-sm-6 col-lg-4">
-          <div className="image-container">
-            <img
-              src="/characterslistportfolio.png"
-              className="card-img-top"
-              alt="Characters add"
-            />
-          </div>
-          <div className="content-container">
-            <h3>BLOG DE STAR WARS</h3>
-            <p>
-              <i>
-                Aplicación web para visualización de información utilizando una
-                API externa.
-              </i>
-              <div className="descriptionText">
-                <ul>
-                  <li>Consumo de datos desde la API pública SWAPI.</li>
-                  <li>
-                    Renderizado dinámico de información en interfaz React.
-                  </li>
-                  <li>Manejo de estado para actualización de contenido.</li>
-                  <li>
-                    Diseño de interfaz utilizando Bootstrap y prototipado en
-                    Figma.
-                  </li>
-                </ul>
-              </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/project_Blog_de_StarWars"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-                alt="Figma Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/logoBootstrap.png"
-                alt="Bootstrap logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Sexta tarjeta */}
-        <div className="project-card">
-          <div className="image-container">
-            <img
-              src="/URL-SHORT-portfolio.png"
-              className="card-img-top"
-              alt="Characters add"
-            />
-          </div>
-          <div className="content-container">
-            <h3>SHORT URL</h3>
-            <p>
-              <i>
-                Aplicación web para acortar enlaces mediante integración con API
-                externa.
-              </i>
-              <div className="descriptionText">
-                <ul>
-                  <li>
-                    Consumo de API de TinyURL para generación de enlaces cortos.
-                  </li>
-                  <li>Implementación de lógica backend con FastAPI.</li>
-                  <li>
-                    Manejo de solicitudes HTTP y procesamiento de respuestas.
-                  </li>
-                  <li>Interfaz desarrollada con React y Vite.</li>
-                </ul>
-              </div>
-            </p>
-            <a
-              href="https://github.com/JorgeOteiza/Short-url"
-              className="repositorios-target"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="repositorios-targets fa-solid fa-link"></i>
-            </a>
-            <div className="logos-proyect">
-              <img
-                src="https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png"
-                alt="JavaScript Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg"
-                alt="Vite Logo"
-                className="icon-mini"
-              />
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.dJToM1TiZiJA0GYwzDHwjQHaHY&pid=Api"
-                alt="Python Logo"
-                className="icon-mini"
-              />
-              <img
-                src="/pngwing.com.png"
-                alt="Fast API"
-                className="icon-mini"
-              />
-            </div>
-          </div>
+              <span>{proyecto.titulo}</span>
+              <small>{proyecto.resumen}</small>
+            </button>
+          ))}
         </div>
       </div>
+
+      {proyectoActivo && (
+        <div
+          className="project-modal-backdrop"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              cerrarDetalle();
+            }
+          }}
+        >
+          <section
+            className="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+          >
+            <button
+              type="button"
+              className="project-modal-close"
+              onClick={cerrarDetalle}
+              aria-label="Cerrar detalle del proyecto"
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+
+            <div className="project-modal-media">
+              {mediaSeleccionada?.type === "video" ? (
+                <video src={mediaSeleccionada.src} controls playsInline />
+              ) : (
+                <img
+                  src={mediaSeleccionada?.src || proyectoActivo.imagen}
+                  alt={mediaSeleccionada?.alt || proyectoActivo.alt}
+                />
+              )}
+
+              {proyectoActivo.media.length > 1 && (
+                <div className="project-thumbnails">
+                  {proyectoActivo.media.map((item, index) => (
+                    <button
+                      type="button"
+                      className={index === mediaActiva ? "active" : ""}
+                      key={item.src}
+                      onClick={() => setMediaActiva(index)}
+                      aria-label={`Ver imagen ${index + 1} de ${proyectoActivo.titulo}`}
+                    >
+                      <img src={item.src} alt="" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="project-modal-content">
+              <span className="section-kicker">Detalle del proyecto</span>
+              <h2 id="project-modal-title">{proyectoActivo.titulo}</h2>
+              <p className="project-modal-summary">{proyectoActivo.enfoque}</p>
+
+              <div className="project-meta">
+                <div>
+                  <span>Rol</span>
+                  <strong>{proyectoActivo.rol}</strong>
+                </div>
+                <div>
+                  <span>Stack</span>
+                  <strong>
+                    {proyectoActivo.tecnologias
+                      .map((tecnologia) => iconos[tecnologia].alt)
+                      .join(", ")}
+                  </strong>
+                </div>
+              </div>
+
+              {proyectoActivo.stack && (
+                <div className="project-stack-detail">
+                  {Object.entries(proyectoActivo.stack).map(([area, items]) => (
+                    <div className="stack-group" key={area}>
+                      <h3>{area}</h3>
+                      <ul>
+                        {items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <h3>Qué resuelve</h3>
+              <ul className="modal-detail-list">
+                {proyectoActivo.detalles.map((detalle) => (
+                  <li key={detalle}>{detalle}</li>
+                ))}
+              </ul>
+
+              <div className="project-modal-actions">
+                <a
+                  href={proyectoActivo.repo}
+                  className="repositorios-target"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                  <span>Ver repositorio</span>
+                </a>
+                {proyectoActivo.demo && (
+                  <a
+                    href={proyectoActivo.demo}
+                    className="repositorios-target secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fa-solid fa-up-right-from-square"></i>
+                    <span>Ver demo</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
     </section>
   );
 };

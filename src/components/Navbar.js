@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from "react";
 import "../styles/Navbar.css";
 
@@ -14,7 +13,6 @@ const Navbar = () => {
 
     window.scrollTo({ top: y, behavior: "smooth" });
 
-    // cerrar el menú móvil si está abierto
     const collapse = document.getElementById("navbarNav");
     if (collapse && collapse.classList.contains("show")) {
       collapse.classList.remove("show");
@@ -32,7 +30,7 @@ const Navbar = () => {
           <img
             src="/logo_portafolio.png"
             className="logo-portafolio"
-            alt="logo portafolio"
+            alt="Logo del portfolio"
           />
         </a>
         <button
@@ -42,7 +40,7 @@ const Navbar = () => {
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="Abrir navegación"
         >
           <i className="fa-solid fa-bars"></i>
         </button>

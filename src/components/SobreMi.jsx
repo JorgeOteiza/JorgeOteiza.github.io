@@ -5,7 +5,7 @@ const SobreMi = () => {
   return (
     <section id="sobre-mi" className="hero h-auto">
       <div className="sobreMi h-auto">
-        <h3>SOBRE MÍ</h3>
+        <h3>Sobre mí</h3>
         <div className="descriptionForMe">
           <p>
             Desarrollador Full Stack enfocado en la construcción de aplicaciones
@@ -22,7 +22,7 @@ const SobreMi = () => {
           </p>
         </div>
         <div className="CV p-1">
-          <h6 className="currículum">CV:</h6>
+          <h6 className="curriculum">CV:</h6>
           <a
             href="https://flowcv.com/resume/ub597hln6vj6"
             className="cv-link"

@@ -1,4 +1,48 @@
+:root {
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --color-bg: #071014;
+  --color-bg-soft: rgba(10, 24, 30, 0.78);
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-surface-dark: rgba(9, 22, 28, 0.82);
+  --color-text: #102027;
+  --color-text-muted: #526670;
+  --color-text-light: #eef8fa;
+  --color-muted-light: #b8d6dc;
+  --color-primary: #22d3ee;
+  --color-primary-dark: #0e7490;
+  --color-accent: #facc15;
+  --color-border: rgba(148, 163, 184, 0.24);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.28);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }

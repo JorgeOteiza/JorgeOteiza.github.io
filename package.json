@@ -1,7 +1,19 @@
 {
-  "name": "mi_primer_portafolio",
+  "name": "jorgeoteiza.github.io",
   "version": "0.1.0",
   "private": true,
+  "description": "Portfolio profesional de Jorge Oteiza, desarrollador Full Stack especializado en React, Flask y aplicaciones web.",
+  "homepage": "https://jorgeoteiza.github.io",
+  "main": "index.js",
+  "author": "Jorge Oteiza",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeOteiza/JorgeOteiza.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JorgeOteiza/JorgeOteiza.github.io/issues"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
@@ -47,17 +59,10 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.3.0"
   },
-  "description": "---> Este proyecto es un portafolio desarrollado en React. Incluye tecnologías como HTML, CSS, Bootstrap, JavaScript y React.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JorgeOteiza/mi_primer_Portafolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JorgeOteiza/mi_primer_Portafolio/issues"
-  },
-  "homepage": "https://jorgeoteiza.github.io/"
+  "keywords": [
+    "portfolio",
+    "react",
+    "full-stack",
+    "github-pages"
+  ]
 }

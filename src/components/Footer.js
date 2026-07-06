@@ -3,56 +3,55 @@ import "../styles/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer p-3 px-5 mt-5 m-auto" id="contacto">
-      <div className="container containerFooter">
-        <div className="row">
-          {/* Sección de contacto */}
-          <div className="contenedorContacto col-md-6 my-4 text-center">
+    <footer className="footer" id="contacto">
+      <div className="containerFooter">
+        <div className="footer-grid">
+          <section className="footer-panel contenedorContacto">
             <h2 className="title-contact">Contacto</h2>
             <div className="datesContact">
-              <p className="dates-contact">
-                CORREO:{" "}
+              <p>
+                <span>Correo</span>
                 <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
-                  OTEIZA.JOR@GMAIL.COM
+                  oteiza.jor@gmail.com
                 </a>
               </p>
               <p>
-                TELÉFONO:{" "}
-                <a href="tel:+569649XXXX" className="footer-link">
+                <span>Teléfono</span>
+                <a href="tel:+56964944102" className="footer-link">
                   +569-649-44-102
                 </a>
               </p>
             </div>
-          </div>
+          </section>
 
-          {/* Redes Sociales */}
-          <div className="rrssFooter text-center col-md-6 align-content-center">
-            <a
-              href="https://github.com/JorgeOteiza"
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-github"></i> GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jorgecancinooteiza/"
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-linkedin"></i> LinkedIn
-            </a>
-          </div>
+          <section className="footer-panel rrssFooter">
+            <h2 className="title-contact">Redes</h2>
+            <div className="social-links">
+              <a
+                href="https://github.com/JorgeOteiza"
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jorgecancinooteiza/"
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </section>
         </div>
 
-        <div className="row mt-4">
-          <div className="col-12 text-center">
-            <small className="copyright">
-              Jorge Oteiza | Desarrollador Full Stack |
-            </small>
-          </div>
-        </div>
+        <small className="copyright">
+          Jorge Oteiza | Desarrollador Full Stack
+        </small>
       </div>
     </footer>
   );
