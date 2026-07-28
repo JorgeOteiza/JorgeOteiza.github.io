@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Proyectos.css";
 
 const iconos = {
@@ -281,8 +281,11 @@ const proyectos = [
 const Proyectos = () => {
   const [proyectoActivo, setProyectoActivo] = useState(null);
   const [mediaActiva, setMediaActiva] = useState(0);
+  const dialogRef = useRef(null);
+  const triggerRef = useRef(null);
 
   const abrirDetalle = (proyecto) => {
+    triggerRef.current = document.activeElement;
     setProyectoActivo(proyecto);
     setMediaActiva(0);
   };
@@ -299,14 +302,34 @@ const Proyectos = () => {
       if (event.key === "Escape") {
         cerrarDetalle();
       }
+
+      if (event.key === "Tab" && dialogRef.current) {
+        const focusables = dialogRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
     };
 
     document.body.classList.add("modal-open");
     window.addEventListener("keydown", handleKeyDown);
+    dialogRef.current
+      ?.querySelector(".project-modal-close")
+      ?.focus();
 
     return () => {
       document.body.classList.remove("modal-open");
       window.removeEventListener("keydown", handleKeyDown);
+      triggerRef.current?.focus();
     };
   }, [proyectoActivo]);
 
@@ -317,74 +340,72 @@ const Proyectos = () => {
   return (
     <section id="proyectos" className="proyectos">
       <div className="projects-heading">
-        <h2 className="title-prjct">Proyectos</h2>
-        <p>
-          Una selección de aplicaciones donde combino frontend, backend,
-          APIs REST, autenticación y bases de datos.
+        <div className="projects-title-row">
+          <span className="section-number">01</span>
+          <div>
+            <span className="section-eyebrow">Trabajo seleccionado</span>
+            <h2 className="title-prjct">Productos que viven más allá del código.</h2>
+          </div>
+        </div>
+        <p className="projects-intro">
+          Cada dispositivo abre una historia: el problema, las decisiones y la
+          tecnología que convirtió una idea en una aplicación funcional.
         </p>
       </div>
 
       <div className="projects-grid">
-        {proyectosPrincipales.map((proyecto) => (
+        {proyectosPrincipales.map((proyecto, projectIndex) => (
           <article
-            className={`project-card ${proyecto.destacado ? "featured" : ""}`}
+            className={`phone-project ${proyecto.destacado ? "featured" : ""}`}
             key={proyecto.titulo}
-            onClick={() => abrirDetalle(proyecto)}
-            tabIndex="0"
-            role="button"
-            aria-label={`Ver detalles de ${proyecto.titulo}`}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                abrirDetalle(proyecto);
-              }
-            }}
           >
-            <div className="image-container">
-              <img
-                src={proyecto.imagen}
-                className="card-img-top"
-                alt={proyecto.alt}
-                data-fit={proyecto.imageFit || "cover"}
-                loading="lazy"
-              />
-            </div>
-
-            <div className="content-container">
-              <div>
-                <h3>{proyecto.titulo}</h3>
-                <p className="project-summary">{proyecto.resumen}</p>
-                <ul className="descriptionText">
-                  {proyecto.detalles.map((detalle) => (
-                    <li key={detalle}>{detalle}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="project-footer">
-                <a
-                  href={proyecto.repo}
-                  className="repositorios-target"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Ver repositorio de ${proyecto.titulo}`}
-                  onClick={(event) => event.stopPropagation()}
-                >
-                  <i className="repositorios-targets fa-solid fa-link"></i>
-                  <span>Repositorio</span>
-                </a>
-
-                <div className="logos-proyect" aria-label="Tecnologías usadas">
-                  {proyecto.tecnologias.map((tecnologia) => (
+            <div className="phone-stage">
+              {proyecto.destacado && (
+                <span className="featured-label">Proyecto destacado</span>
+              )}
+              <div className="phone-shadow" aria-hidden="true"></div>
+              <div className="phone-device">
+                <div className="phone-side-button phone-volume" aria-hidden="true"></div>
+                <div className="phone-side-button phone-power" aria-hidden="true"></div>
+                <div className="phone-screen">
+                  <div className="phone-status" aria-hidden="true">
+                    <span>9:41</span>
+                    <div className="phone-island"></div>
+                    <span className="status-icons">
+                      <i className="fa-solid fa-signal"></i>
+                      <i className="fa-solid fa-battery-three-quarters"></i>
+                    </span>
+                  </div>
+                  <div className="phone-media">
                     <img
-                      key={tecnologia}
-                      src={iconos[tecnologia].src}
-                      alt={iconos[tecnologia].alt}
-                      title={iconos[tecnologia].alt}
-                      className="icon-mini"
-                      loading="lazy"
+                      src={proyecto.imagen}
+                      alt={proyecto.alt}
+                      data-fit={proyecto.imageFit || "cover"}
+                      loading={projectIndex === 0 ? "eager" : "lazy"}
                     />
-                  ))}
+                  </div>
+                  <div className="phone-content">
+                    <div className="phone-project-number">
+                      Proyecto {String(projectIndex + 1).padStart(2, "0")}
+                    </div>
+                    <h3>{proyecto.titulo}</h3>
+                    <p>{proyecto.resumen}</p>
+                    <div className="phone-tags" aria-label="Tecnologías principales">
+                      {proyecto.tecnologias.slice(0, 3).map((tecnologia) => (
+                        <span key={tecnologia}>{iconos[tecnologia].alt}</span>
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      className="phone-open-project"
+                      onClick={() => abrirDetalle(proyecto)}
+                      aria-label={`Ver caso completo de ${proyecto.titulo}`}
+                    >
+                      Explorar proyecto
+                      <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div className="phone-home-indicator" aria-hidden="true"></div>
                 </div>
               </div>
             </div>
@@ -394,11 +415,8 @@ const Proyectos = () => {
 
       <div className="other-projects">
         <div className="other-projects-heading">
+          <span className="section-eyebrow">Más exploraciones</span>
           <h3>Otros proyectos</h3>
-          <p>
-            Ejercicios y aplicaciones más acotadas que también muestran consumo
-            de APIs, integraciones y práctica con React.
-          </p>
         </div>
 
         <div className="other-projects-list">
@@ -431,6 +449,7 @@ const Proyectos = () => {
             role="dialog"
             aria-modal="true"
             aria-labelledby="project-modal-title"
+            ref={dialogRef}
           >
             <button
               type="button"

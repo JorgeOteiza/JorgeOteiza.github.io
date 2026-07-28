@@ -64,15 +64,47 @@ const icons = [
   },
 ];
 
+const groups = [
+  {
+    title: "Frontend",
+    items: ["HTML Logo", "CSS Logo", "JavaScript Logo", "React Logo", "Vite Logo", "Bootstrap Logo"],
+  },
+  {
+    title: "Backend y datos",
+    items: ["Python Logo", "Flask Logo", "PostgreSQL Logo", "SQLAlchemy Logo", "JWT Logo"],
+  },
+  {
+    title: "Flujo de trabajo",
+    items: ["Git Logo", "Figma Logo", "Postman Logo", "Jest Logo"],
+  },
+];
+
 const Tecnologías = () => {
   return (
     <section id="tecnologías" className="tecnologias">
-      <h2 className="title-tecnologias">Stack tecnológico</h2>
-      <div className="icon-container">
-        {icons.map((icon) => (
-          <span className="skill-icon-card" key={icon.alt}>
-            <img src={icon.src} alt={icon.alt} className="icon" loading="lazy" />
-          </span>
+      <div className="technology-heading">
+        <span className="section-number">02</span>
+        <div>
+          <span className="section-eyebrow">Herramientas que uso</span>
+          <h2 className="title-tecnologias">Un stack para construir, medir y mejorar.</h2>
+        </div>
+      </div>
+      <div className="technology-groups">
+        {groups.map((group) => (
+          <article className="technology-group" key={group.title}>
+            <h3>{group.title}</h3>
+            <div className="icon-container">
+              {group.items.map((name) => {
+                const icon = icons.find((item) => item.alt === name);
+                return (
+                  <span className="skill-icon-card" key={icon.alt}>
+                    <img src={icon.src} alt="" className="icon" loading="lazy" />
+                    <span>{icon.alt.replace(" Logo", "")}</span>
+                  </span>
+                );
+              })}
+            </div>
+          </article>
         ))}
       </div>
     </section>

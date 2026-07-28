@@ -5,28 +5,23 @@ const Footer = () => {
   return (
     <footer className="footer" id="contacto">
       <div className="containerFooter">
-        <div className="footer-grid">
-          <section className="footer-panel contenedorContacto">
-            <h2 className="title-contact">Contacto</h2>
-            <div className="datesContact">
-              <p>
-                <span>Correo</span>
-                <a href="mailto:oteiza.jor@gmail.com" className="footer-link">
-                  oteiza.jor@gmail.com
-                </a>
-              </p>
-              <p>
-                <span>Teléfono</span>
-                <a href="tel:+56964944102" className="footer-link">
-                  +569-649-44-102
-                </a>
-              </p>
-            </div>
-          </section>
-
-          <section className="footer-panel rrssFooter">
-            <h2 className="title-contact">Redes</h2>
-            <div className="social-links">
+        <span className="footer-eyebrow">¿Construimos algo juntos?</span>
+        <h2 className="title-contact">
+          Tengo ganas de llevar la próxima idea <em>a producción.</em>
+        </h2>
+        <p className="footer-copy">
+          Busco mi primera oportunidad profesional como desarrollador Full Stack.
+          Si tienes un desafío, conversemos.
+        </p>
+        <a href="mailto:oteiza.jor@gmail.com" className="contact-cta">
+          Escríbeme
+          <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <div className="footer-bottom">
+          <a href="mailto:oteiza.jor@gmail.com" className="footer-email">
+            oteiza.jor@gmail.com
+          </a>
+          <div className="social-links">
               <a
                 href="https://github.com/JorgeOteiza"
                 className="social-link"
@@ -45,13 +40,11 @@ const Footer = () => {
                 <i className="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
               </a>
-            </div>
-          </section>
+          </div>
+          <small className="copyright">
+            © {new Date().getFullYear()} Jorge Oteiza
+          </small>
         </div>
-
-        <small className="copyright">
-          Jorge Oteiza | Desarrollador Full Stack
-        </small>
       </div>
     </footer>
   );

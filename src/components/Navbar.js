@@ -11,6 +11,7 @@ const Navbar = () => {
     const navH = nav ? nav.offsetHeight : 0;
     const y = el.getBoundingClientRect().top + window.pageYOffset - (navH + 12);
 
+    window.history.pushState(null, "", hash);
     window.scrollTo({ top: y, behavior: "smooth" });
 
     const collapse = document.getElementById("navbarNav");
@@ -28,7 +29,7 @@ const Navbar = () => {
           onClick={(e) => scrollToId(e, "#inicio")}
         >
           <img
-            src="/logo_portafolio.png"
+            src={`${process.env.PUBLIC_URL}/logo_portafolio.png`}
             className="logo-portafolio"
             alt="Logo del portfolio"
           />
@@ -49,10 +50,10 @@ const Navbar = () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="#sobre-mi"
-                onClick={(e) => scrollToId(e, "#sobre-mi")}
+                href="#proyectos"
+                onClick={(e) => scrollToId(e, "#proyectos")}
               >
-                Sobre mí
+                Proyectos
               </a>
             </li>
             <li className="nav-item">
@@ -67,10 +68,10 @@ const Navbar = () => {
             <li className="nav-item">
               <a
                 className="nav-link"
-                href="#proyectos"
-                onClick={(e) => scrollToId(e, "#proyectos")}
+                href="#sobre-mi"
+                onClick={(e) => scrollToId(e, "#sobre-mi")}
               >
-                Proyectos
+                Sobre mí
               </a>
             </li>
             <li className="nav-item">

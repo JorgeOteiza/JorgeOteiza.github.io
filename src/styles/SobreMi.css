@@ -1,30 +1,74 @@
-.hero {
+.about-section {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+.about-heading,
+.projects-title-row {
   display: flex;
-  width: 100%;
-  scroll-margin-top: 104px;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.section-number {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.section-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-heading h2 {
+  margin: 0;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.sobreMi,
+.about-facts {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(8, 22, 28, 0.7);
 }
 
 .sobreMi {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-lg);
-  padding: clamp(24px, 4vw, 40px);
-  color: var(--color-text-light);
-  background:
-    linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(15, 23, 42, 0.62)),
-    var(--color-surface-dark);
-  box-shadow: var(--shadow-soft);
-  text-align: left;
+  padding: clamp(26px, 4vw, 46px);
 }
 
-.sobreMi h3 {
-  margin: 0 0 22px;
+.about-lead {
+  margin: 0 0 26px;
   color: var(--color-text-light);
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1;
-  text-align: left;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .descriptionForMe {
@@ -35,53 +79,63 @@
 .descriptionForMe p {
   margin: 0;
   color: var(--color-muted-light);
-  font-size: 1.12rem;
+  font-size: 1.04rem;
   line-height: 1.75;
 }
 
-.CV {
-  display: flex;
+.about-cv-link {
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 28px;
+  color: var(--color-primary);
+  font-weight: 800;
+  text-decoration: none;
 }
 
-.curriculum {
+.about-cv-link:hover {
+  color: var(--color-text-light);
+}
+
+.about-facts {
+  display: grid;
+  overflow: hidden;
+}
+
+.about-facts article {
+  position: relative;
+  padding: 28px 30px;
+}
+
+.about-facts article + article {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-facts span {
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.about-facts h3 {
+  margin: 7px 0;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+
+.about-facts p {
   margin: 0;
   color: var(--color-muted-light);
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  line-height: 1.55;
 }
 
-.cv-link {
-  display: inline-grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border: 1px solid rgba(34, 211, 238, 0.26);
-  border-radius: 50%;
-  color: var(--color-primary);
-  background: rgba(34, 211, 238, 0.1);
-  font-size: 1.35rem;
-  text-decoration: none;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
+@media (max-width: 820px) {
+  .about-section {
+    padding: 70px 16px;
+  }
 
-.cv-link:hover,
-.cv-link:focus-visible {
-  color: var(--color-text-light);
-  background: rgba(34, 211, 238, 0.2);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 480px) {
-  .sobreMi {
-    padding: 22px;
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 }

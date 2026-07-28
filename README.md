@@ -8,6 +8,27 @@ Sitio publicado en:
 https://jorgeoteiza.github.io
 ```
 
+## Requisitos
+
+- Node.js 20 LTS
+- npm 10 o superior
+
+## Desarrollo
+
+```bash
+npm install
+npm start
+```
+
+El entorno local estará disponible en `http://localhost:3000`.
+
+## Validación
+
+```bash
+npm test -- --watchAll=false --runInBand
+npm run build
+```
+
 ## Tecnologías
 
 - React
@@ -16,38 +37,12 @@ https://jorgeoteiza.github.io
 - Bootstrap
 - GitHub Pages
 
-## Scripts
+## Despliegue
 
-Instalar dependencias:
-
-```bash
-npm install
-```
-
-Ejecutar en desarrollo:
-
-```bash
-npm run start
-```
-
-Generar build de producción:
-
-```bash
-npm run build
-```
-
-Publicar en GitHub Pages:
+El proyecto está configurado para publicarse en `https://jorgeoteiza.github.io`.
 
 ```bash
 npm run deploy
 ```
 
-## Despliegue
-
-El proyecto está configurado para GitHub Pages mediante:
-
-```json
-"homepage": "https://jorgeoteiza.github.io"
-```
-
-El comando `npm run deploy` genera el build y publica el contenido de `build/` usando `gh-pages`.
+Este comando genera el build y publica el contenido mediante `gh-pages`.

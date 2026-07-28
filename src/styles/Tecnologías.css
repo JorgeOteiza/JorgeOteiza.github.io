@@ -1,85 +1,98 @@
 .tecnologias {
-  width: min(1100px, 100%);
+  width: min(1120px, 100%);
   margin: 0 auto;
-  padding: 64px 16px;
-  text-align: center;
+  padding: 100px 24px;
+}
+
+.technology-heading {
+  display: flex;
+  max-width: 850px;
+  align-items: flex-start;
+  gap: 18px;
 }
 
 .title-tecnologias {
-  margin: 0 0 36px;
+  margin: 0;
   color: var(--color-text-light);
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 4.5rem);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  text-shadow: 0 16px 32px rgba(0, 0, 0, 0.34);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-align: left;
+}
+
+.technology-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 50px;
+}
+
+.technology-group {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 24px;
+  background: rgba(8, 22, 28, 0.68);
+}
+
+.technology-group h3 {
+  margin: 0 0 22px;
+  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
 }
 
 .icon-container {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(8, 22, 28, 0.58);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(8px);
+  gap: 10px;
 }
 
 .skill-icon-card {
-  display: grid;
-  width: 82px;
-  height: 82px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 7px 10px;
+  color: var(--color-muted-light);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .skill-icon-card:hover {
-  background: #ffffff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.35);
+  background: rgba(34, 211, 238, 0.08);
+  transform: translateY(-2px);
 }
 
 .icon {
-  width: 58px;
-  height: 58px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
   object-fit: contain;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .technology-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
   .tecnologias {
-    padding: 48px 10px;
+    padding: 70px 16px;
+  }
+
+  .technology-heading {
+    gap: 12px;
   }
 
   .title-tecnologias {
-    margin-bottom: 26px;
-    font-size: clamp(2.8rem, 13vw, 4rem);
-  }
-
-  .icon-container {
-    gap: 10px;
-    padding: 12px;
-  }
-
-  .skill-icon-card {
-    width: 70px;
-    height: 70px;
-    border-radius: 14px;
-  }
-
-  .icon {
-    width: 48px;
-    height: 48px;
+    font-size: clamp(2.7rem, 12vw, 4rem);
   }
 }

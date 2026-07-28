@@ -27,6 +27,11 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id],
+footer[id] {
+  scroll-margin-top: 104px;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
