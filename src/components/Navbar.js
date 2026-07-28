@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const isNearTop = currentScrollY < 80;
+      const isScrollingDown = currentScrollY > lastScrollY.current;
+
+      setIsHidden(!isNearTop && isScrollingDown);
+      lastScrollY.current = currentScrollY;
+    };
+
+    lastScrollY.current = window.scrollY;
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToId = (e, hash) => {
     e.preventDefault();
     const el = document.querySelector(hash);
@@ -21,7 +40,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark fixed-top ${
+        isHidden ? "navbar-hidden" : ""
+      }`}
+    >
       <div className="container-fluid mx-1 px-1">
         <a
           className="navbar-brand"

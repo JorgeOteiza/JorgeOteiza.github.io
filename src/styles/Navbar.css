@@ -8,6 +8,16 @@
   background: rgba(5, 15, 20, 0.84);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(12px);
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+  will-change: transform;
+}
+
+.navbar.navbar-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-100% - 24px));
 }
 
 .logo-portafolio {

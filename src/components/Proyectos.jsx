@@ -173,6 +173,10 @@ const proyectos = [
         src: "/captura-travelcalculator-4.png",
         alt: "Resumen de cálculo de Travel Calculator",
       },
+      {
+        src: "/deleteVehicle.png",
+        alt: "Gestión de vehículos en Travel Calculator",
+      },
     ],
     detalles: [
       "Lógica de cálculo implementada en backend.",
@@ -278,6 +282,86 @@ const proyectos = [
   },
 ];
 
+const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const touchStartX = useRef(null);
+  const slides = proyecto.media?.length
+    ? proyecto.media
+    : [{ src: proyecto.imagen, alt: proyecto.alt }];
+  const hasMultipleSlides = slides.length > 1;
+  const currentSlide = slides[activeSlide];
+
+  const showPrevious = () => {
+    setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
+  };
+
+  const showNext = () => {
+    setActiveSlide((current) => (current + 1) % slides.length);
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) return;
+
+    const distance = touchStartX.current - event.changedTouches[0].clientX;
+    touchStartX.current = null;
+
+    if (Math.abs(distance) < 42) return;
+    if (distance > 0) showNext();
+    else showPrevious();
+  };
+
+  return (
+    <div
+      className="phone-media"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <img
+        key={currentSlide.src}
+        src={currentSlide.src}
+        alt={currentSlide.alt}
+        loading={eager ? "eager" : "lazy"}
+      />
+      {hasMultipleSlides && (
+        <>
+          <button
+            type="button"
+            className="phone-gallery-control previous"
+            onClick={showPrevious}
+            aria-label={`Ver imagen anterior de ${proyecto.titulo}`}
+          >
+            <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            className="phone-gallery-control next"
+            onClick={showNext}
+            aria-label={`Ver imagen siguiente de ${proyecto.titulo}`}
+          >
+            <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div className="phone-gallery-dots" aria-label="Imágenes del proyecto">
+            {slides.map((slide, index) => (
+              <button
+                type="button"
+                className={index === activeSlide ? "active" : ""}
+                key={slide.src}
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Ver imagen ${index + 1} de ${proyecto.titulo}`}
+                aria-current={index === activeSlide ? "true" : undefined}
+              ></button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 const Proyectos = () => {
   const [proyectoActivo, setProyectoActivo] = useState(null);
   const [mediaActiva, setMediaActiva] = useState(0);
@@ -376,14 +460,10 @@ const Proyectos = () => {
                       <i className="fa-solid fa-battery-three-quarters"></i>
                     </span>
                   </div>
-                  <div className="phone-media">
-                    <img
-                      src={proyecto.imagen}
-                      alt={proyecto.alt}
-                      data-fit={proyecto.imageFit || "cover"}
-                      loading={projectIndex === 0 ? "eager" : "lazy"}
-                    />
-                  </div>
+                  <PhoneMediaCarousel
+                    proyecto={proyecto}
+                    eager={projectIndex === 0}
+                  />
                   <div className="phone-content">
                     <div className="phone-project-number">
                       Proyecto {String(projectIndex + 1).padStart(2, "0")}

@@ -688,17 +688,8 @@ body.modal-open {
   min-width: 0;
 }
 
-.phone-project:nth-child(2) {
-  padding-top: 70px;
-}
-
-.phone-project:nth-child(3) {
-  padding-top: 22px;
-}
-
 .phone-project:nth-child(4) {
   grid-column: 2;
-  padding-top: 10px;
 }
 
 .phone-stage {
@@ -808,9 +799,12 @@ body.modal-open {
 }
 
 .phone-media {
+  position: relative;
   height: 285px;
   overflow: hidden;
-  background: #d8e2e5;
+  background:
+    radial-gradient(circle at 50% 45%, #edf4f5, #cbd8dc);
+  touch-action: pan-y;
 }
 
 .phone-media::after {
@@ -827,18 +821,86 @@ body.modal-open {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  padding: 35px 10px 18px;
+  object-fit: contain;
+  animation: phoneImageIn 0.28s ease;
   transition: transform 0.5s ease;
 }
 
-.phone-media img[data-fit="contain"] {
-  padding: 22px 10px 0;
-  background: #e7eef0;
-  object-fit: contain;
+@keyframes phoneImageIn {
+  from {
+    opacity: 0.35;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .phone-project:hover .phone-media img {
-  transform: scale(1.045);
+  transform: scale(1.025);
+}
+
+.phone-gallery-control {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(4, 12, 16, 0.68);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(7px);
+}
+
+.phone-gallery-control.previous {
+  left: 10px;
+}
+
+.phone-gallery-control.next {
+  right: 10px;
+}
+
+.phone-gallery-control:hover,
+.phone-gallery-control:focus-visible {
+  color: #041014;
+  background: var(--color-primary);
+  outline: 2px solid rgba(34, 211, 238, 0.35);
+}
+
+.phone-gallery-dots {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.phone-gallery-dots button {
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: rgba(4, 12, 16, 0.4);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.phone-gallery-dots button.active {
+  width: 21px;
+  background: var(--color-primary);
 }
 
 .phone-content {
@@ -976,9 +1038,6 @@ body.modal-open {
     padding-top: 0;
   }
 
-  .phone-project:nth-child(even) {
-    padding-top: 64px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -1020,7 +1079,12 @@ body.modal-open {
 
 @media (prefers-reduced-motion: reduce) {
   .phone-device,
-  .phone-media img {
+  .phone-media img,
+  .phone-gallery-dots button {
     transition: none;
+  }
+
+  .phone-media img {
+    animation: none;
   }
 }

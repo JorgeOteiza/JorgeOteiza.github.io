@@ -24,3 +24,21 @@ test("abre y cierra el detalle de un proyecto con Escape", () => {
   fireEvent.keyDown(window, { key: "Escape" });
   expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
 });
+
+test("permite recorrer las imágenes dentro del teléfono", () => {
+  render(<App />);
+
+  expect(
+    screen.getByAltText(/resumen de cálculo de travel calculator/i),
+  ).toBeInTheDocument();
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver imagen siguiente de travel calculator/i,
+    }),
+  );
+
+  expect(
+    screen.getByAltText(/gestión de vehículos en travel calculator/i),
+  ).toBeInTheDocument();
+});
