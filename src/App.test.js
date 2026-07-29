@@ -80,3 +80,27 @@ test("separa la galería breve y el detalle completo de Minimarket POS", () => {
     screen.getByAltText(/productos más vendidos y alertas de inventario/i),
   ).toBeInTheDocument();
 });
+
+test("permite arrastrar con el mouse la galería del celular", () => {
+  render(<App />);
+
+  const firstImage = screen.getByAltText(
+    /punto de venta de minimarket pos/i,
+  );
+  const carousel = firstImage.closest(".phone-media");
+
+  const dispatchPointer = (type, clientX) => {
+    const event = new Event(type, { bubbles: true });
+    Object.defineProperties(event, {
+      pointerId: { value: 1 },
+      clientX: { value: clientX },
+    });
+    fireEvent(carousel, event);
+  };
+
+  dispatchPointer("pointerdown", 180);
+  dispatchPointer("pointermove", 90);
+  dispatchPointer("pointerup", 90);
+
+  expect(screen.getByAltText(/ajuste manual de inventario/i)).toBeInTheDocument();
+});

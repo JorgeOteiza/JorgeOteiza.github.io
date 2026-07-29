@@ -1235,7 +1235,13 @@ body.modal-open {
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 45%, #edf4f5, #cbd8dc);
+  cursor: grab;
   touch-action: pan-y;
+  user-select: none;
+}
+
+.phone-media.is-dragging {
+  cursor: grabbing;
 }
 
 .phone-media::after {
@@ -1254,8 +1260,10 @@ body.modal-open {
   display: block;
   padding: 35px 10px 18px;
   object-fit: contain;
+  pointer-events: none;
+  transform: translateX(var(--phone-drag-offset, 0));
   animation: phoneImageIn 0.28s ease;
-  transition: transform 0.5s ease;
+  transition: transform 0.28s ease;
 }
 
 @keyframes phoneImageIn {
@@ -1270,7 +1278,14 @@ body.modal-open {
 }
 
 .phone-project:hover .phone-media img {
-  transform: scale(1.025);
+  transform: translateX(var(--phone-drag-offset, 0)) scale(1.025);
+}
+
+.phone-media.is-dragging img,
+.phone-project:hover .phone-media.is-dragging img {
+  transform: translateX(var(--phone-drag-offset, 0));
+  transition: none;
+  will-change: transform;
 }
 
 .phone-gallery-control {

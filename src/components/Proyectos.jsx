@@ -336,7 +336,9 @@ const formatCurrentDateTime = (date) => ({
 
 const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const touchStartX = useRef(null);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const pointerStart = useRef(null);
   const slides = proyecto.phoneMedia?.length
     ? proyecto.phoneMedia
     : proyecto.media?.length
@@ -353,32 +355,63 @@ const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
     setActiveSlide((current) => (current + 1) % slides.length);
   };
 
-  const handleTouchStart = (event) => {
-    touchStartX.current = event.touches[0].clientX;
+  const handlePointerDown = (event) => {
+    if (event.target.closest("button")) return;
+
+    pointerStart.current = {
+      id: event.pointerId,
+      x: event.clientX,
+    };
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
   };
 
-  const handleTouchEnd = (event) => {
-    if (touchStartX.current === null) return;
+  const handlePointerMove = (event) => {
+    if (pointerStart.current?.id !== event.pointerId) return;
 
-    const distance = touchStartX.current - event.changedTouches[0].clientX;
-    touchStartX.current = null;
+    const distance = event.clientX - pointerStart.current.x;
+    const dragLimit = event.currentTarget.clientWidth
+      ? event.currentTarget.clientWidth * 0.88
+      : 280;
+    setDragOffset(Math.max(-dragLimit, Math.min(dragLimit, distance)));
+  };
+
+  const finishPointerDrag = (event) => {
+    if (pointerStart.current?.id !== event.pointerId) return;
+
+    const distance = pointerStart.current.x - event.clientX;
+    pointerStart.current = null;
+    setDragOffset(0);
+    setIsDragging(false);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
 
     if (Math.abs(distance) < 42) return;
     if (distance > 0) showNext();
     else showPrevious();
   };
 
+  const cancelPointerDrag = (event) => {
+    if (pointerStart.current?.id !== event.pointerId) return;
+    pointerStart.current = null;
+    setDragOffset(0);
+    setIsDragging(false);
+  };
+
   return (
     <div
-      className="phone-media"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      className={`phone-media ${isDragging ? "is-dragging" : ""}`}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={finishPointerDrag}
+      onPointerCancel={cancelPointerDrag}
+      style={{ "--phone-drag-offset": `${dragOffset}px` }}
     >
       <img
         key={currentSlide.src}
         src={currentSlide.src}
         alt={currentSlide.alt}
         loading={eager ? "eager" : "lazy"}
+        draggable="false"
       />
       {hasMultipleSlides && (
         <>
