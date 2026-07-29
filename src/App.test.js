@@ -19,7 +19,9 @@ test("muestra la presentación y las secciones principales", () => {
 test("abre y cierra el detalle de un proyecto con Escape", () => {
   render(<App />);
   fireEvent.click(
-    screen.getByRole("button", { name: /ver caso completo de minimarket pos/i }),
+    screen.getByRole("button", {
+      name: /ver caso completo de minimarket manager/i,
+    }),
   );
   expect(screen.getByRole("dialog")).toBeInTheDocument();
 
@@ -45,19 +47,19 @@ test("muestra las capturas adicionales en el proyecto correcto", () => {
   expect(screen.getByAltText(/listado de vehículos y favoritos/i)).toBeInTheDocument();
 });
 
-test("separa la galería breve y el detalle completo de Minimarket POS", () => {
+test("separa la galería breve y el detalle completo de Minimarket Manager", () => {
   render(<App />);
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen siguiente de minimarket pos/i,
+      name: /ver imagen siguiente de minimarket manager/i,
     }),
   );
   expect(screen.getByAltText(/ajuste manual de inventario/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver caso completo de minimarket pos/i,
+      name: /ver caso completo de minimarket manager/i,
     }),
   );
   fireEvent.keyDown(window, { key: "ArrowRight" });
@@ -67,12 +69,12 @@ test("separa la galería breve y el detalle completo de Minimarket POS", () => {
 
     fireEvent.keyDown(window, { key: "ArrowLeft" });
     expect(
-      screen.getByAltText(/punto de venta de minimarket pos/i),
+      screen.getByAltText(/punto de venta de minimarket manager/i),
     ).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 10 de minimarket pos/i,
+      name: /ver imagen 10 de minimarket manager/i,
     }),
   );
 
@@ -85,7 +87,7 @@ test("permite arrastrar con el mouse la galería del celular", () => {
   render(<App />);
 
   const firstImage = screen.getByAltText(
-    /punto de venta de minimarket pos/i,
+    /punto de venta de minimarket manager/i,
   );
   const carousel = firstImage.closest(".phone-media");
 

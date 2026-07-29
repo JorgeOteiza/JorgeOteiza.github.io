@@ -67,19 +67,19 @@ const iconos = {
 const minimarketMedia = [
   {
     src: "/projects/minimarket-pos/caja-carrito.png",
-    alt: "Punto de venta de Minimarket POS con productos en el carrito",
+    alt: "Punto de venta de Minimarket Manager con productos en el carrito",
   },
   {
     src: "/projects/minimarket-pos/ajuste-inventario.png",
-    alt: "Ajuste manual de inventario en Minimarket POS",
+    alt: "Ajuste manual de inventario en Minimarket Manager",
   },
   {
     src: "/projects/minimarket-pos/estadisticas-resumen.png",
-    alt: "Dashboard de estadísticas y resumen comercial de Minimarket POS",
+    alt: "Dashboard de estadísticas y resumen comercial de Minimarket Manager",
   },
   {
     src: "/projects/minimarket-pos/lista-productos.png",
-    alt: "Listado y búsqueda de productos en Minimarket POS",
+    alt: "Listado y búsqueda de productos en Minimarket Manager",
   },
   {
     src: "/projects/minimarket-pos/edicion-producto.png",
@@ -87,7 +87,7 @@ const minimarketMedia = [
   },
   {
     src: "/projects/minimarket-pos/reportes-ventas.png",
-    alt: "Reporte de ventas por periodo de Minimarket POS",
+    alt: "Reporte de ventas por periodo de Minimarket Manager",
   },
   {
     src: "/projects/minimarket-pos/reposicion-sacos-paquetes.png",
@@ -99,7 +99,7 @@ const minimarketMedia = [
   },
   {
     src: "/projects/minimarket-pos/atajos.png",
-    alt: "Panel de atajos de teclado de Minimarket POS",
+    alt: "Panel de atajos de teclado de Minimarket Manager",
   },
   {
     src: "/projects/minimarket-pos/estadisticas-inventario.png",
@@ -109,10 +109,11 @@ const minimarketMedia = [
 
 const proyectos = [
   {
-    titulo: "Minimarket POS",
+    titulo: "Minimarket Manager",
     imagen: minimarketMedia[0].src,
     alt: minimarketMedia[0].alt,
-    resumen: "Sistema de punto de venta local para un minimarket.",
+    resumen:
+      "Sistema local de gestión comercial para ventas, inventario, reportes y respaldos.",
     repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
     rol: "Desarrollo full stack",

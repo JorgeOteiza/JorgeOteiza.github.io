@@ -24,7 +24,7 @@ const SobreMi = () => {
               de datos y convierto necesidades reales en herramientas completas.
           </p>
           <p>
-              Minimarket POS resume muy bien mi forma de trabajar: entender el
+              Minimarket Manager resume muy bien mi forma de trabajar: entender el
               negocio, cuidar los detalles y construir una solución que pueda
               utilizarse de verdad. Actualmente busco mi primera oportunidad
               profesional para aportar, aprender y seguir creciendo.
