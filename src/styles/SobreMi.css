@@ -139,3 +139,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-height: 820px) and (min-width: 821px) {
+  .about-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .about-heading h2 {
+    font-size: clamp(3rem, 5vw, 4.25rem);
+  }
+
+  .about-grid {
+    gap: 22px;
+    margin-top: 36px;
+  }
+
+  .sobreMi {
+    padding: 30px;
+  }
+
+  .about-lead {
+    margin-bottom: 20px;
+    font-size: clamp(1.6rem, 2.5vw, 2.05rem);
+  }
+
+  .descriptionForMe p {
+    line-height: 1.62;
+  }
+
+  .about-facts article {
+    padding: 22px 26px;
+  }
+}

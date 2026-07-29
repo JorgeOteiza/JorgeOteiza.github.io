@@ -129,3 +129,23 @@
     margin-top: 55px;
   }
 }
+
+@media (max-height: 820px) and (min-width: 761px) {
+  .footer {
+    margin-top: 50px;
+    padding: 54px;
+  }
+
+  .title-contact {
+    max-width: 760px;
+    font-size: clamp(3rem, 5.5vw, 4.8rem);
+  }
+
+  .contact-cta {
+    margin-top: 26px;
+  }
+
+  .footer-bottom {
+    margin-top: 50px;
+  }
+}

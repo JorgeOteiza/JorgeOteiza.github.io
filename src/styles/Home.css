@@ -264,6 +264,71 @@
   }
 }
 
+@media (max-height: 820px) and (min-width: 981px) {
+  .Home {
+    gap: 28px;
+    padding: 100px 24px 38px;
+  }
+
+  .home-container {
+    gap: clamp(42px, 6vw, 82px);
+  }
+
+  .availability {
+    margin-bottom: 15px;
+    padding: 6px 11px;
+  }
+
+  .home-text h1 {
+    font-size: clamp(3rem, 5vw, 4.7rem);
+  }
+
+  .hero-description {
+    margin-top: 19px;
+    font-size: 1.05rem;
+    line-height: 1.58;
+  }
+
+  .hero-actions {
+    margin-top: 23px;
+  }
+
+  .hero-links {
+    margin-top: 18px;
+  }
+
+  .hero-visual {
+    min-height: 390px;
+  }
+
+  .profile-photo img {
+    width: clamp(235px, 24vw, 300px);
+  }
+
+  .orbit-one {
+    width: 390px;
+    height: 390px;
+  }
+
+  .orbit-two {
+    width: 470px;
+    height: 290px;
+  }
+
+  .floating-code-card {
+    bottom: 42px;
+  }
+
+  .floating-code-card.backend {
+    top: 72px;
+  }
+
+  .hero-proof span {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
 @media (max-width: 640px) {
   .Home {
     gap: 34px;

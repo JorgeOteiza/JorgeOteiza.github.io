@@ -55,7 +55,7 @@ const iconos = {
     alt: "Postman",
   },
   pytest: {
-    src: "https://docs.pytest.org/en/stable/_static/pytest_logo_curves.svg",
+    src: "/pytest-logo.svg",
     alt: "Pytest",
   },
   bootstrap: {
@@ -64,23 +64,62 @@ const iconos = {
   },
 };
 
+const minimarketMedia = [
+  {
+    src: "/projects/minimarket-pos/caja-carrito.png",
+    alt: "Punto de venta de Minimarket POS con productos en el carrito",
+  },
+  {
+    src: "/projects/minimarket-pos/ajuste-inventario.png",
+    alt: "Ajuste manual de inventario en Minimarket POS",
+  },
+  {
+    src: "/projects/minimarket-pos/estadisticas-resumen.png",
+    alt: "Dashboard de estadísticas y resumen comercial de Minimarket POS",
+  },
+  {
+    src: "/projects/minimarket-pos/lista-productos.png",
+    alt: "Listado y búsqueda de productos en Minimarket POS",
+  },
+  {
+    src: "/projects/minimarket-pos/edicion-producto.png",
+    alt: "Edición de costos, precios y stock de un producto",
+  },
+  {
+    src: "/projects/minimarket-pos/reportes-ventas.png",
+    alt: "Reporte de ventas por periodo de Minimarket POS",
+  },
+  {
+    src: "/projects/minimarket-pos/reposicion-sacos-paquetes.png",
+    alt: "Registro de reposición de sacos y paquetes",
+  },
+  {
+    src: "/projects/minimarket-pos/historial-reposiciones.png",
+    alt: "Historial de reposiciones de productos a granel",
+  },
+  {
+    src: "/projects/minimarket-pos/atajos.png",
+    alt: "Panel de atajos de teclado de Minimarket POS",
+  },
+  {
+    src: "/projects/minimarket-pos/estadisticas-inventario.png",
+    alt: "Productos más vendidos y alertas de inventario",
+  },
+];
+
 const proyectos = [
   {
     titulo: "Minimarket POS",
-    imagen: "/minimarket-pos.png",
-    alt: "Captura de Minimarket POS",
+    imagen: minimarketMedia[0].src,
+    alt: minimarketMedia[0].alt,
     resumen: "Sistema de punto de venta local para un minimarket.",
     repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
     rol: "Desarrollo full stack",
     enfoque:
       "Aplicación diseñada para usarse localmente en un solo equipo, sin servidor remoto ni conexión a internet obligatoria. Permite registrar productos, controlar stock, vender desde una caja web, revisar análisis de inventario y mantener respaldos locales de la base de datos. El pago ocurre fuera de la aplicación: el sistema registra la venta, descuenta inventario y conserva la información necesaria para reportes.",
-    media: [
-      {
-        src: "/minimarket-pos.png",
-        alt: "Pantalla principal de Minimarket POS",
-      },
-    ],
+    phoneMedia: minimarketMedia.slice(0, 3),
+    media: minimarketMedia,
     detalles: [
       "Registro y edición de productos.",
       "Control de inventario, stock mínimo y ajustes manuales.",
@@ -173,10 +212,6 @@ const proyectos = [
         src: "/captura-travelcalculator-4.png",
         alt: "Resumen de cálculo de Travel Calculator",
       },
-      {
-        src: "/deleteVehicle.png",
-        alt: "Gestión de vehículos en Travel Calculator",
-      },
     ],
     detalles: [
       "Lógica de cálculo implementada en backend.",
@@ -245,6 +280,10 @@ const proyectos = [
         src: "/characterslistportfolio.png",
         alt: "Listado de personajes del blog de Star Wars",
       },
+      {
+        src: "/deleteVehicle.png",
+        alt: "Listado de vehículos y favoritos del blog de Star Wars",
+      },
     ],
     detalles: [
       "Consumo de datos desde la API pública SWAPI.",
@@ -282,11 +321,26 @@ const proyectos = [
   },
 ];
 
+const formatCurrentDateTime = (date) => ({
+  time: new Intl.DateTimeFormat("es-CL", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(date),
+  date: new Intl.DateTimeFormat("es-CL", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(date),
+});
+
 const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const touchStartX = useRef(null);
-  const slides = proyecto.media?.length
-    ? proyecto.media
+  const slides = proyecto.phoneMedia?.length
+    ? proyecto.phoneMedia
+    : proyecto.media?.length
+      ? proyecto.media
     : [{ src: proyecto.imagen, alt: proyecto.alt }];
   const hasMultipleSlides = slides.length > 1;
   const currentSlide = slides[activeSlide];
@@ -365,6 +419,9 @@ const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
 const Proyectos = () => {
   const [proyectoActivo, setProyectoActivo] = useState(null);
   const [mediaActiva, setMediaActiva] = useState(0);
+  const [currentDateTime, setCurrentDateTime] = useState(() =>
+    formatCurrentDateTime(new Date()),
+  );
   const dialogRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -380,11 +437,36 @@ const Proyectos = () => {
   };
 
   useEffect(() => {
+    const updateCurrentDateTime = () => {
+      setCurrentDateTime(formatCurrentDateTime(new Date()));
+    };
+    const clockInterval = window.setInterval(updateCurrentDateTime, 30000);
+
+    return () => window.clearInterval(clockInterval);
+  }, []);
+
+  useEffect(() => {
     if (!proyectoActivo) return undefined;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         cerrarDetalle();
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        setMediaActiva((current) => {
+          const total = proyectoActivo.media?.length || 1;
+          return (current + 1) % total;
+        });
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        setMediaActiva((current) => {
+          const total = proyectoActivo.media?.length || 1;
+          return (current - 1 + total) % total;
+        });
       }
 
       if (event.key === "Tab" && dialogRef.current) {
@@ -420,6 +502,18 @@ const Proyectos = () => {
   const mediaSeleccionada = proyectoActivo?.media?.[mediaActiva];
   const proyectosPrincipales = proyectos.filter((proyecto) => !proyecto.secundario);
   const proyectosSecundarios = proyectos.filter((proyecto) => proyecto.secundario);
+  const mostrarMediaAnterior = () => {
+    setMediaActiva((current) => {
+      const total = proyectoActivo?.media?.length || 1;
+      return (current - 1 + total) % total;
+    });
+  };
+  const mostrarMediaSiguiente = () => {
+    setMediaActiva((current) => {
+      const total = proyectoActivo?.media?.length || 1;
+      return (current + 1) % total;
+    });
+  };
 
   return (
     <section id="proyectos" className="proyectos">
@@ -449,11 +543,20 @@ const Proyectos = () => {
               )}
               <div className="phone-shadow" aria-hidden="true"></div>
               <div className="phone-device">
-                <div className="phone-side-button phone-volume" aria-hidden="true"></div>
+                <div
+                  className="phone-side-button phone-volume phone-volume-up"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  className="phone-side-button phone-volume phone-volume-down"
+                  aria-hidden="true"
+                ></div>
                 <div className="phone-side-button phone-power" aria-hidden="true"></div>
                 <div className="phone-screen">
                   <div className="phone-status" aria-hidden="true">
-                    <span>9:41</span>
+                    <time dateTime={new Date().toISOString()}>
+                      {currentDateTime.time}
+                    </time>
                     <div className="phone-island"></div>
                     <span className="status-icons">
                       <i className="fa-solid fa-signal"></i>
@@ -541,14 +644,74 @@ const Proyectos = () => {
             </button>
 
             <div className="project-modal-media">
-              {mediaSeleccionada?.type === "video" ? (
-                <video src={mediaSeleccionada.src} controls playsInline />
-              ) : (
-                <img
-                  src={mediaSeleccionada?.src || proyectoActivo.imagen}
-                  alt={mediaSeleccionada?.alt || proyectoActivo.alt}
-                />
-              )}
+              <div className="project-modal-featured-media">
+                <div className="project-monitor">
+                  <div className="project-monitor-bar" aria-hidden="true">
+                    <div className="project-monitor-dots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <span className="project-monitor-label">
+                      Vista del sistema · {proyectoActivo.titulo}
+                    </span>
+                    {proyectoActivo.media.length > 1 && (
+                      <span className="project-monitor-keyboard-hint">
+                        ← → teclado
+                      </span>
+                    )}
+                  </div>
+                  <div className="project-monitor-screen">
+                    {mediaSeleccionada?.type === "video" ? (
+                      <video src={mediaSeleccionada.src} controls playsInline />
+                    ) : (
+                      <img
+                        key={mediaSeleccionada?.src || proyectoActivo.imagen}
+                        src={mediaSeleccionada?.src || proyectoActivo.imagen}
+                        alt={mediaSeleccionada?.alt || proyectoActivo.alt}
+                      />
+                    )}
+
+                    {proyectoActivo.media.length > 1 && (
+                      <>
+                        <button
+                          type="button"
+                          className="phone-gallery-control modal-gallery-control previous"
+                          onClick={mostrarMediaAnterior}
+                          aria-label={`Ver imagen anterior de ${proyectoActivo.titulo} en detalle`}
+                        >
+                          <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button
+                          type="button"
+                          className="phone-gallery-control modal-gallery-control next"
+                          onClick={mostrarMediaSiguiente}
+                          aria-label={`Ver imagen siguiente de ${proyectoActivo.titulo} en detalle`}
+                        >
+                          <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        </button>
+                        <span className="project-modal-media-count">
+                          {mediaActiva + 1} / {proyectoActivo.media.length}
+                        </span>
+                      </>
+                    )}
+                    <time
+                      className="project-monitor-datetime"
+                      dateTime={new Date().toISOString()}
+                      aria-label={`${currentDateTime.time}, ${currentDateTime.date}`}
+                    >
+                      <strong>{currentDateTime.time}</strong>
+                      <small>{currentDateTime.date}</small>
+                    </time>
+                  </div>
+                  <div className="project-monitor-chin" aria-hidden="true">
+                    <span className="project-monitor-power"></span>
+                  </div>
+                </div>
+                <div className="project-monitor-stand" aria-hidden="true">
+                  <span></span>
+                </div>
+              </div>
 
               {proyectoActivo.media.length > 1 && (
                 <div className="project-thumbnails">

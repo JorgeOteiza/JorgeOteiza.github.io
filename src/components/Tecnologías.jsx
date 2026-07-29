@@ -11,6 +11,10 @@ const icons = [
     alt: "CSS Logo",
   },
   {
+    src: "https://www.svgrepo.com/show/349540/typescript.svg",
+    alt: "TypeScript Logo",
+  },
+  {
     src: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
     alt: "Git Logo",
   },
@@ -35,6 +39,10 @@ const icons = [
     alt: "Jest Logo",
   },
   {
+    src: "/pytest-logo.svg",
+    alt: "pytest Logo",
+  },
+  {
     src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
     alt: "Figma Logo",
   },
@@ -43,8 +51,17 @@ const icons = [
     alt: "Python Logo",
   },
   {
+    src: "/skills-rest-api.svg",
+    invert: true,
+    alt: "REST APIs Logo",
+  },
+  {
     src: "/logo-postgreSQL.png",
     alt: "PostgreSQL Logo",
+  },
+  {
+    src: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
+    alt: "SQLite Logo",
   },
   {
     src: "/logo-flask.2.png",
@@ -62,20 +79,80 @@ const icons = [
     src: "/LogoPostman.png",
     alt: "Postman Logo",
   },
+  {
+    src: "/skills-github.svg",
+    invert: true,
+    alt: "GitHub Logo",
+  },
+  {
+    src: "/skills-pyinstaller.png",
+    alt: "PyInstaller Logo",
+  },
+  {
+    src: "/skills-openai.svg",
+    invert: true,
+    alt: "ChatGPT Logo",
+  },
+  {
+    src: "/skills-codex.png",
+    alt: "Codex Logo",
+  },
+  {
+    src: "/skills-github-copilot.svg",
+    invert: true,
+    alt: "GitHub Copilot Logo",
+  },
+  {
+    src: "/skills-prompt-engineering.svg",
+    invert: true,
+    alt: "Prompt Engineering Logo",
+  },
 ];
 
 const groups = [
   {
     title: "Frontend",
-    items: ["HTML Logo", "CSS Logo", "JavaScript Logo", "React Logo", "Vite Logo", "Bootstrap Logo"],
+    items: [
+      "HTML Logo",
+      "CSS Logo",
+      "JavaScript Logo",
+      "TypeScript Logo",
+      "React Logo",
+      "Vite Logo",
+      "Bootstrap Logo",
+    ],
   },
   {
-    title: "Backend y datos",
-    items: ["Python Logo", "Flask Logo", "PostgreSQL Logo", "SQLAlchemy Logo", "JWT Logo"],
+    title: "Backend y Datos",
+    items: [
+      "Python Logo",
+      "Flask Logo",
+      "REST APIs Logo",
+      "JWT Logo",
+      "SQLAlchemy Logo",
+      "PostgreSQL Logo",
+      "SQLite Logo",
+      "pytest Logo",
+    ],
   },
   {
-    title: "Flujo de trabajo",
-    items: ["Git Logo", "Figma Logo", "Postman Logo", "Jest Logo"],
+    title: "Herramientas y Flujo de Trabajo",
+    items: [
+      "Git Logo",
+      "GitHub Logo",
+      "Postman Logo",
+      "Figma Logo",
+      "PyInstaller Logo",
+    ],
+  },
+  {
+    title: "IA y Productividad",
+    items: [
+      "ChatGPT Logo",
+      "Codex Logo",
+      "GitHub Copilot Logo",
+      "Prompt Engineering Logo",
+    ],
   },
 ];
 
@@ -98,7 +175,19 @@ const Tecnologías = () => {
                 const icon = icons.find((item) => item.alt === name);
                 return (
                   <span className="skill-icon-card" key={icon.alt}>
-                    <img src={icon.src} alt="" className="icon" loading="lazy" />
+                    {icon.src ? (
+                      <img
+                        src={icon.src}
+                        alt=""
+                        className={`icon ${icon.invert ? "icon-invert" : ""}`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <i
+                        className={`${icon.iconClass} skill-symbol`}
+                        aria-hidden="true"
+                      ></i>
+                    )}
                     <span>{icon.alt.replace(" Logo", "")}</span>
                   </span>
                 );
