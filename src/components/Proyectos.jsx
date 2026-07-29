@@ -646,63 +646,63 @@ const Proyectos = () => {
             <div className="project-modal-media">
               <div className="project-modal-featured-media">
                 <div className="project-monitor">
-                  <div className="project-monitor-bar" aria-hidden="true">
-                    <div className="project-monitor-dots">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <span className="project-monitor-label">
-                      Vista del sistema · {proyectoActivo.titulo}
-                    </span>
-                    {proyectoActivo.media.length > 1 && (
-                      <span className="project-monitor-keyboard-hint">
-                        ← → teclado
-                      </span>
-                    )}
-                  </div>
                   <div className="project-monitor-screen">
-                    {mediaSeleccionada?.type === "video" ? (
-                      <video src={mediaSeleccionada.src} controls playsInline />
-                    ) : (
-                      <img
-                        key={mediaSeleccionada?.src || proyectoActivo.imagen}
-                        src={mediaSeleccionada?.src || proyectoActivo.imagen}
-                        alt={mediaSeleccionada?.alt || proyectoActivo.alt}
-                      />
-                    )}
-
-                    {proyectoActivo.media.length > 1 && (
-                      <>
-                        <button
-                          type="button"
-                          className="phone-gallery-control modal-gallery-control previous"
-                          onClick={mostrarMediaAnterior}
-                          aria-label={`Ver imagen anterior de ${proyectoActivo.titulo} en detalle`}
-                        >
-                          <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                        </button>
-                        <button
-                          type="button"
-                          className="phone-gallery-control modal-gallery-control next"
-                          onClick={mostrarMediaSiguiente}
-                          aria-label={`Ver imagen siguiente de ${proyectoActivo.titulo} en detalle`}
-                        >
-                          <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                        </button>
-                        <span className="project-modal-media-count">
-                          {mediaActiva + 1} / {proyectoActivo.media.length}
+                    <div className="project-monitor-toolbar" aria-hidden="true">
+                      <div className="project-monitor-window-controls">
+                        <span>
+                          <i className="fa-solid fa-xmark"></i>
                         </span>
-                      </>
-                    )}
-                    <time
-                      className="project-monitor-datetime"
-                      dateTime={new Date().toISOString()}
-                      aria-label={`${currentDateTime.time}, ${currentDateTime.date}`}
-                    >
-                      <strong>{currentDateTime.time}</strong>
-                      <small>{currentDateTime.date}</small>
-                    </time>
+                        <span>
+                          <i className="fa-solid fa-minus"></i>
+                        </span>
+                        <span>
+                          <i className="fa-solid fa-plus"></i>
+                        </span>
+                      </div>
+                      <time
+                        className="project-monitor-datetime"
+                        dateTime={new Date().toISOString()}
+                        aria-label={`${currentDateTime.time}, ${currentDateTime.date}`}
+                      >
+                        <strong>{currentDateTime.time}</strong>
+                        <small>{currentDateTime.date}</small>
+                      </time>
+                    </div>
+                    <div className="project-monitor-display">
+                      {mediaSeleccionada?.type === "video" ? (
+                        <video src={mediaSeleccionada.src} controls playsInline />
+                      ) : (
+                        <img
+                          key={mediaSeleccionada?.src || proyectoActivo.imagen}
+                          src={mediaSeleccionada?.src || proyectoActivo.imagen}
+                          alt={mediaSeleccionada?.alt || proyectoActivo.alt}
+                        />
+                      )}
+
+                      {proyectoActivo.media.length > 1 && (
+                        <>
+                          <button
+                            type="button"
+                            className="phone-gallery-control modal-gallery-control previous"
+                            onClick={mostrarMediaAnterior}
+                            aria-label={`Ver imagen anterior de ${proyectoActivo.titulo} en detalle`}
+                          >
+                            <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                          </button>
+                          <button
+                            type="button"
+                            className="phone-gallery-control modal-gallery-control next"
+                            onClick={mostrarMediaSiguiente}
+                            aria-label={`Ver imagen siguiente de ${proyectoActivo.titulo} en detalle`}
+                          >
+                            <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                          </button>
+                          <span className="project-modal-media-count">
+                            {mediaActiva + 1} / {proyectoActivo.media.length}
+                          </span>
+                        </>
+                      )}
+                    </div>
                   </div>
                   <div className="project-monitor-chin" aria-hidden="true">
                     <span className="project-monitor-power"></span>
