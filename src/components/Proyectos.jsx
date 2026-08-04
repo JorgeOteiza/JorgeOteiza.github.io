@@ -66,28 +66,32 @@ const iconos = {
 
 const minimarketMedia = [
   {
-    src: "/projects/minimarket-pos/caja-carrito.png",
-    alt: "Punto de venta de Minimarket Manager con productos en el carrito",
-  },
-  {
-    src: "/projects/minimarket-pos/ajuste-inventario.png",
-    alt: "Ajuste manual de inventario en Minimarket Manager",
-  },
-  {
     src: "/projects/minimarket-pos/estadisticas-resumen.png",
     alt: "Dashboard de estadísticas y resumen comercial de Minimarket Manager",
+  },
+  {
+    src: "/projects/minimarket-pos/estadisticas-inventario.png",
+    alt: "Productos más vendidos y alertas de inventario",
   },
   {
     src: "/projects/minimarket-pos/lista-productos.png",
     alt: "Listado y búsqueda de productos en Minimarket Manager",
   },
   {
-    src: "/projects/minimarket-pos/edicion-producto.png",
-    alt: "Edición de costos, precios y stock de un producto",
+    src: "/projects/minimarket-pos/ajuste-inventario.png",
+    alt: "Ajuste manual de inventario en Minimarket Manager",
+  },
+  {
+    src: "/projects/minimarket-pos/caja-carrito.png",
+    alt: "Punto de venta de Minimarket Manager con productos en el carrito",
   },
   {
     src: "/projects/minimarket-pos/reportes-ventas.png",
     alt: "Reporte de ventas por periodo de Minimarket Manager",
+  },
+  {
+    src: "/projects/minimarket-pos/edicion-producto.png",
+    alt: "Edición de costos, precios y stock de un producto",
   },
   {
     src: "/projects/minimarket-pos/reposicion-sacos-paquetes.png",
@@ -101,17 +105,15 @@ const minimarketMedia = [
     src: "/projects/minimarket-pos/atajos.png",
     alt: "Panel de atajos de teclado de Minimarket Manager",
   },
-  {
-    src: "/projects/minimarket-pos/estadisticas-inventario.png",
-    alt: "Productos más vendidos y alertas de inventario",
-  },
+];
+
+const minimarketPhoneMedia = [
+  minimarketMedia[0],
+  minimarketMedia[2],
+  minimarketMedia[4],
 ];
 
 const ecommercePhoneMedia = [
-  {
-    src: "/projects/ecommerce/mobile-showcase.png",
-    alt: "Vitrina de vinos de El Rincón del Vino en vista móvil",
-  },
   {
     src: "/projects/ecommerce/responsive-catalog-filters.png",
     alt: "Catálogo responsive con filtros aplicados en El Rincón del Vino",
@@ -119,6 +121,10 @@ const ecommercePhoneMedia = [
   {
     src: "/projects/ecommerce/product-detail.png",
     alt: "Detalle responsive de un vino en El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/mobile-showcase.png",
+    alt: "Vitrina de vinos de El Rincón del Vino en vista móvil",
   },
 ];
 
@@ -131,7 +137,7 @@ const ecommerceMedia = [
     src: "/projects/ecommerce/favorites.png",
     alt: "Selección de vinos favoritos de El Rincón del Vino",
   },
-  ecommercePhoneMedia[2],
+  ecommercePhoneMedia[1],
   {
     src: "/projects/ecommerce/cart.png",
     alt: "Carrito y resumen de compra de El Rincón del Vino",
@@ -156,8 +162,8 @@ const ecommerceMedia = [
     src: "/projects/ecommerce/contact.png",
     alt: "Formulario de contacto de El Rincón del Vino",
   },
+  ecommercePhoneMedia[2],
   ecommercePhoneMedia[0],
-  ecommercePhoneMedia[1],
 ];
 
 const proyectos = [
@@ -172,7 +178,7 @@ const proyectos = [
     rol: "Desarrollo full stack",
     enfoque:
       "Aplicación diseñada para usarse localmente en un solo equipo, sin servidor remoto ni conexión a internet obligatoria. Permite registrar productos, controlar stock, vender desde una caja web, revisar análisis de inventario y mantener respaldos locales de la base de datos. El pago ocurre fuera de la aplicación: el sistema registra la venta, descuenta inventario y conserva la información necesaria para reportes.",
-    phoneMedia: minimarketMedia.slice(0, 3),
+    phoneMedia: minimarketPhoneMedia,
     media: minimarketMedia,
     detalles: [
       "Registro y edición de productos.",

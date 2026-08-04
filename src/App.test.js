@@ -55,7 +55,7 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
       name: /ver imagen siguiente de minimarket manager/i,
     }),
   );
-  expect(screen.getByAltText(/ajuste manual de inventario/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/listado y búsqueda de productos/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
@@ -64,13 +64,13 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
   );
   fireEvent.keyDown(window, { key: "ArrowRight" });
   expect(
-    screen.getAllByAltText(/ajuste manual de inventario/i),
-  ).toHaveLength(2);
+    screen.getByAltText(/productos más vendidos y alertas de inventario/i),
+  ).toBeInTheDocument();
 
-    fireEvent.keyDown(window, { key: "ArrowLeft" });
-    expect(
-      screen.getByAltText(/punto de venta de minimarket manager/i),
-    ).toBeInTheDocument();
+  fireEvent.keyDown(window, { key: "ArrowLeft" });
+  expect(
+    screen.getByAltText(/dashboard de estadísticas y resumen comercial/i),
+  ).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
@@ -79,7 +79,7 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
   );
 
   expect(
-    screen.getByAltText(/productos más vendidos y alertas de inventario/i),
+    screen.getByAltText(/panel de atajos de teclado/i),
   ).toBeInTheDocument();
 });
 
@@ -87,7 +87,7 @@ test("permite arrastrar con el mouse la galería del celular", () => {
   render(<App />);
 
   const firstImage = screen.getByAltText(
-    /punto de venta de minimarket manager/i,
+    /dashboard de estadísticas y resumen comercial/i,
   );
   const carousel = firstImage.closest(".phone-media");
 
@@ -104,7 +104,7 @@ test("permite arrastrar con el mouse la galería del celular", () => {
   dispatchPointer("pointermove", 90);
   dispatchPointer("pointerup", 90);
 
-  expect(screen.getByAltText(/ajuste manual de inventario/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/listado y búsqueda de productos/i)).toBeInTheDocument();
 });
 
 test("presenta una galería responsive y el flujo completo del E-commerce", () => {
@@ -116,7 +116,7 @@ test("presenta una galería responsive y el flujo completo del E-commerce", () =
     }),
   );
   expect(
-    screen.getByAltText(/catálogo responsive con filtros aplicados/i),
+    screen.getByAltText(/detalle responsive de un vino/i),
   ).toBeInTheDocument();
 
   fireEvent.click(
