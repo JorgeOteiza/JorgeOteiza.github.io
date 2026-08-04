@@ -106,3 +106,37 @@ test("permite arrastrar con el mouse la galería del celular", () => {
 
   expect(screen.getByAltText(/ajuste manual de inventario/i)).toBeInTheDocument();
 });
+
+test("presenta una galería responsive y el flujo completo del E-commerce", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver imagen siguiente de e-commerce/i,
+    }),
+  );
+  expect(
+    screen.getByAltText(/catálogo responsive con filtros aplicados/i),
+  ).toBeInTheDocument();
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de e-commerce/i,
+    }),
+  );
+  expect(screen.getByAltText(/página principal de el rincón del vino/i)).toBeInTheDocument();
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver imagen 7 de e-commerce/i,
+    }),
+  );
+  expect(screen.getByAltText(/historial de compras de el rincón del vino/i)).toBeInTheDocument();
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver imagen 8 de e-commerce/i,
+    }),
+  );
+  expect(screen.getByAltText(/perfil y accesos rápidos del usuario/i)).toBeInTheDocument();
+});

@@ -107,6 +107,59 @@ const minimarketMedia = [
   },
 ];
 
+const ecommercePhoneMedia = [
+  {
+    src: "/projects/ecommerce/mobile-showcase.png",
+    alt: "Vitrina de vinos de El Rincón del Vino en vista móvil",
+  },
+  {
+    src: "/projects/ecommerce/responsive-catalog-filters.png",
+    alt: "Catálogo responsive con filtros aplicados en El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/product-detail.png",
+    alt: "Detalle responsive de un vino en El Rincón del Vino",
+  },
+];
+
+const ecommerceMedia = [
+  {
+    src: "/projects/ecommerce/home.png",
+    alt: "Página principal de El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/favorites.png",
+    alt: "Selección de vinos favoritos de El Rincón del Vino",
+  },
+  ecommercePhoneMedia[2],
+  {
+    src: "/projects/ecommerce/cart.png",
+    alt: "Carrito y resumen de compra de El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/payment.png",
+    alt: "Selección de método de pago de El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/order-confirmation.png",
+    alt: "Confirmación de compra de El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/purchase-history.png",
+    alt: "Historial de compras de El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/profile.png",
+    alt: "Perfil y accesos rápidos del usuario en El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/contact.png",
+    alt: "Formulario de contacto de El Rincón del Vino",
+  },
+  ecommercePhoneMedia[0],
+  ecommercePhoneMedia[1],
+];
+
 const proyectos = [
   {
     titulo: "Minimarket Manager",
@@ -165,20 +218,16 @@ const proyectos = [
   },
   {
     titulo: "E-commerce",
-    imagen: "/logoElRinconDelVino.png",
-    alt: "Logo del proyecto E-commerce",
-    resumen: "Aplicación web full stack para la venta de productos.",
+    imagen: ecommerceMedia[0].src,
+    alt: ecommerceMedia[0].alt,
+    resumen: "Tienda online de vinos con catálogo, compra y experiencia responsive.",
     repo: "https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce",
     demo: "",
     rol: "Frontend y backend en equipo",
     enfoque:
-      "Construcción de un flujo completo de tienda online, desde autenticación hasta consumo de APIs y persistencia de datos.",
-    media: [
-      {
-        src: "/logoElRinconDelVino.png",
-        alt: "Logo de El Rincon del Vino",
-      },
-    ],
+      "Construcción en equipo de una experiencia e-commerce completa para descubrir vinos, filtrar el catálogo, guardar favoritos y recorrer el proceso de compra desde cualquier dispositivo.",
+    phoneMedia: ecommercePhoneMedia,
+    media: ecommerceMedia,
     detalles: [
       "Autenticación de usuarios con JWT.",
       "Desarrollo de APIs REST con Flask.",
@@ -474,7 +523,7 @@ const Proyectos = () => {
     const updateCurrentDateTime = () => {
       setCurrentDateTime(formatCurrentDateTime(new Date()));
     };
-    const clockInterval = window.setInterval(updateCurrentDateTime, 30000);
+    const clockInterval = window.setInterval(updateCurrentDateTime, 1000);
 
     return () => window.clearInterval(clockInterval);
   }, []);
