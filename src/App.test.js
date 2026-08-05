@@ -138,5 +138,5 @@ test("presenta una galería responsive y el flujo completo del E-commerce", () =
       name: /ver imagen 11 de e-commerce/i,
     }),
   );
-  expect(screen.getByAltText(/perfil y accesos rápidos del usuario/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/control de consumo responsable/i)).toBeInTheDocument();
 });

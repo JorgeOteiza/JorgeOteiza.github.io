@@ -1192,6 +1192,127 @@ body.modal-open {
   top: 108px;
 }
 
+.desktop-card-stage {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 430px;
+  min-height: 568px;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  padding-top: 34px;
+}
+
+.desktop-card-monitor {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(215, 234, 238, 0.58);
+  border-radius: 14px;
+  padding: 5px;
+  background: linear-gradient(145deg, #748288, #111a1e 18%, #05090b 84%, #647278);
+  box-shadow:
+    0 26px 50px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.desktop-card-toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 22px;
+  padding: 0 6px;
+  color: rgba(229, 242, 245, 0.78);
+  font-size: 0.53rem;
+}
+
+.desktop-card-toolbar strong {
+  font-size: 0.56rem;
+  font-weight: 700;
+}
+
+.desktop-card-toolbar time {
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.desktop-card-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.desktop-card-controls i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef6b67;
+}
+
+.desktop-card-controls i:nth-child(2) {
+  background: #eabf58;
+}
+
+.desktop-card-controls i:last-child {
+  background: #51b878;
+}
+
+.desktop-card-monitor .phone-media {
+  height: auto;
+  aspect-ratio: 2.02 / 1;
+  border-radius: 8px;
+  background: #071216;
+}
+
+.desktop-card-monitor .phone-media::after {
+  display: none;
+}
+
+.desktop-card-monitor .phone-media > img {
+  padding: 0;
+  object-fit: contain;
+}
+
+.desktop-card-monitor .phone-gallery-dots {
+  bottom: 8px;
+}
+
+.desktop-card-stand {
+  width: 44%;
+  height: 34px;
+  background: linear-gradient(90deg, #111a1e, #758389 50%, #111a1e);
+  clip-path: polygon(39% 0, 61% 0, 68% 68%, 92% 80%, 100% 100%, 0 100%, 8% 80%, 32% 68%);
+  filter: drop-shadow(0 7px 6px rgba(0, 0, 0, 0.38));
+}
+
+.desktop-card-content {
+  display: flex;
+  width: 100%;
+  min-height: 268px;
+  flex: 1;
+  flex-direction: column;
+  border: 1px solid rgba(34, 211, 238, 0.12);
+  border-radius: 18px;
+  padding: 20px 22px 22px;
+  color: #eef8fa;
+  background: linear-gradient(180deg, rgba(10, 29, 34, 0.96), #071418);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.24);
+}
+
+.desktop-card-content h3 {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  letter-spacing: -0.035em;
+}
+
+.desktop-card-content > p {
+  margin: 9px 0 14px;
+  color: #a9c3c9;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
 /* Las capturas responsive conservan el dispositivo que representan dentro
    del detalle, en lugar de quedar flotando dentro de un monitor panorámico. */
 .project-monitor.project-preview-tablet,

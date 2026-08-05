@@ -111,7 +111,7 @@ const minimarketPhoneMedia = [
   minimarketMedia[0],
   minimarketMedia[2],
   minimarketMedia[4],
-].map((item) => ({ ...item, cardFrame: "monitor" }));
+];
 
 const ecommercePhoneMedia = [
   {
@@ -164,14 +164,6 @@ const ecommerceMedia = [
   {
     src: "/projects/ecommerce/purchase-history.png",
     alt: "Historial de compras de El Rincón del Vino",
-  },
-  {
-    src: "/projects/ecommerce/profile.png",
-    alt: "Perfil y accesos rápidos del usuario en El Rincón del Vino",
-  },
-  {
-    src: "/projects/ecommerce/contact.png",
-    alt: "Formulario de contacto de El Rincón del Vino",
   },
   {
     src: "/projects/ecommerce/ipad-responsible-consumption.png",
@@ -239,6 +231,7 @@ const proyectos = [
       "sqlalchemy",
       "pytest",
     ],
+    cardDevice: "desktop",
     destacado: true,
   },
   {
@@ -727,9 +720,51 @@ const Proyectos = () => {
               proyecto.phoneMedia?.every((item) => item.device === "phone")
                 ? "phone-project-native"
                 : ""
-            }`}
+            } ${proyecto.cardDevice === "desktop" ? "desktop-project-card" : ""}`}
             key={proyecto.titulo}
           >
+            {proyecto.cardDevice === "desktop" ? (
+              <div className="desktop-card-stage">
+                {proyecto.destacado && (
+                  <span className="featured-label">Proyecto destacado</span>
+                )}
+                <div className="desktop-card-monitor">
+                  <div className="desktop-card-toolbar" aria-hidden="true">
+                    <span className="desktop-card-controls">
+                      <i></i><i></i><i></i>
+                    </span>
+                    <strong>{proyecto.titulo}</strong>
+                    <time>{currentDateTime.time}</time>
+                  </div>
+                  <PhoneMediaCarousel
+                    proyecto={proyecto}
+                    eager={projectIndex === 0}
+                  />
+                </div>
+                <div className="desktop-card-stand" aria-hidden="true"></div>
+                <div className="desktop-card-content">
+                  <div className="phone-project-number">
+                    Proyecto {String(projectIndex + 1).padStart(2, "0")}
+                  </div>
+                  <h3>{proyecto.titulo}</h3>
+                  <p>{proyecto.resumen}</p>
+                  <div className="phone-tags" aria-label="Tecnologías principales">
+                    {proyecto.tecnologias.slice(0, 3).map((tecnologia) => (
+                      <span key={tecnologia}>{iconos[tecnologia].alt}</span>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    className="phone-open-project"
+                    onClick={() => abrirDetalle(proyecto)}
+                    aria-label={`Ver caso completo de ${proyecto.titulo}`}
+                  >
+                    Explorar proyecto
+                    <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            ) : (
             <div className="phone-stage">
               {proyecto.destacado && (
                 <span className="featured-label">Proyecto destacado</span>
@@ -785,6 +820,7 @@ const Proyectos = () => {
                 </div>
               </div>
             </div>
+            )}
           </article>
         ))}
       </div>
