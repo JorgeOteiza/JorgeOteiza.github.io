@@ -116,7 +116,7 @@ test("presenta una galería responsive y el flujo completo del E-commerce", () =
     }),
   );
   expect(
-    screen.getByAltText(/detalle responsive de un vino/i),
+    screen.getByAltText(/carrito desplegable.+iphone 12 pro/i),
   ).toBeInTheDocument();
 
   fireEvent.click(
@@ -128,14 +128,14 @@ test("presenta una galería responsive y el flujo completo del E-commerce", () =
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 7 de e-commerce/i,
+      name: /ver imagen 10 de e-commerce/i,
     }),
   );
   expect(screen.getByAltText(/historial de compras de el rincón del vino/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 8 de e-commerce/i,
+      name: /ver imagen 11 de e-commerce/i,
     }),
   );
   expect(screen.getByAltText(/perfil y accesos rápidos del usuario/i)).toBeInTheDocument();

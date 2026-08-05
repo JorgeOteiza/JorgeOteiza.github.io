@@ -411,6 +411,13 @@ button.repositorios-target {
   position: relative;
   min-height: 0;
   align-self: center;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.project-modal-featured-media.is-dragging {
+  cursor: grabbing;
 }
 
 .project-monitor {
@@ -425,6 +432,13 @@ button.repositorios-target {
     0 0 48px rgba(34, 211, 238, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.34),
     inset 0 0 0 1px rgba(0, 0, 0, 0.7);
+  transform: translateX(var(--modal-drag-offset, 0));
+  transition: transform 0.25s ease;
+}
+
+.project-modal-featured-media.is-dragging .project-monitor {
+  transition: none;
+  will-change: transform;
 }
 
 .project-monitor-screen {
@@ -514,6 +528,19 @@ button.repositorios-target {
 
 .modal-gallery-control {
   top: 50%;
+  width: 34px;
+  height: 34px;
+  color: #dff9fd;
+  background: rgba(6, 20, 25, 0.88);
+  opacity: 0.92;
+}
+
+.modal-gallery-control.previous {
+  left: -20px;
+}
+
+.modal-gallery-control.next {
+  right: -20px;
 }
 
 .project-monitor-chin {
@@ -603,6 +630,15 @@ button.repositorios-target {
   padding: 4px 2px 6px;
   scrollbar-color: rgba(34, 211, 238, 0.45) rgba(255, 255, 255, 0.06);
   scrollbar-width: thin;
+  cursor: grab;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: auto;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.project-thumbnails:active {
+  cursor: grabbing;
 }
 
 .project-thumbnails button {
@@ -627,6 +663,7 @@ button.repositorios-target {
   height: 100%;
   display: block;
   object-fit: cover;
+  -webkit-user-drag: none;
 }
 
 .project-modal-content {
@@ -1109,10 +1146,10 @@ body.modal-open {
 
 .phone-device {
   position: relative;
-  width: min(100%, 322px);
-  padding: 9px;
+  width: min(100%, 286px);
+  padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 46px;
+  border-radius: 42px;
   background:
     linear-gradient(145deg, #64747a 0%, #10191d 17%, #05090b 74%, #738087 100%);
   box-shadow:
@@ -1152,25 +1189,72 @@ body.modal-open {
 }
 
 .phone-volume-up {
-  top: 120px;
+  top: 108px;
+}
+
+/* Las capturas responsive conservan el dispositivo que representan dentro
+   del detalle, en lugar de quedar flotando dentro de un monitor panorámico. */
+.project-monitor.project-preview-tablet,
+.project-monitor.project-preview-phone {
+  margin-inline: auto;
+  padding: 9px;
+  border-color: rgba(214, 233, 237, 0.5);
+  background: linear-gradient(145deg, #78878d, #10191d 18%, #05090b 82%, #66747a);
+}
+
+.project-monitor.project-preview-tablet {
+  width: min(72%, 450px);
+  border-radius: 30px;
+}
+
+.project-monitor.project-preview-phone {
+  width: min(47%, 286px);
+  border-radius: 40px;
+}
+
+.project-preview-tablet .project-monitor-screen,
+.project-preview-phone .project-monitor-screen {
+  grid-template-rows: minmax(0, 1fr);
+  border-radius: 22px;
+}
+
+.project-preview-tablet .project-monitor-screen {
+  aspect-ratio: 3 / 4;
+}
+
+.project-preview-phone .project-monitor-screen {
+  aspect-ratio: 390 / 844;
+  border-radius: 31px;
+}
+
+.project-preview-tablet .project-monitor-toolbar,
+.project-preview-phone .project-monitor-toolbar,
+.project-preview-tablet .project-monitor-chin,
+.project-preview-phone .project-monitor-chin {
+  display: none;
+}
+
+.project-preview-tablet .project-monitor-display > img,
+.project-preview-phone .project-monitor-display > img {
+  object-position: center;
 }
 
 .phone-volume-down {
-  top: 166px;
+  top: 151px;
 }
 
 .phone-power {
-  top: 146px;
+  top: 132px;
   right: -4px;
-  height: 78px;
+  height: 70px;
   border-radius: 0 3px 3px 0;
 }
 
 .phone-screen {
   position: relative;
-  min-height: 620px;
+  height: 568px;
   overflow: hidden;
-  border-radius: 38px;
+  border-radius: 35px;
   color: #eef8fa;
   background: #071418;
 }
@@ -1231,7 +1315,7 @@ body.modal-open {
 
 .phone-media {
   position: relative;
-  height: 270px;
+  height: 300px;
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 45%, #edf4f5, #cbd8dc);
@@ -1246,7 +1330,7 @@ body.modal-open {
 
 .phone-media::after {
   position: absolute;
-  top: 175px;
+  top: 208px;
   right: 0;
   left: 0;
   height: 110px;
@@ -1258,12 +1342,67 @@ body.modal-open {
   width: 100%;
   height: 100%;
   display: block;
-  padding: 35px 10px 18px;
+  padding: 35px 8px 14px;
   object-fit: contain;
   pointer-events: none;
   transform: translateX(var(--phone-drag-offset, 0));
   animation: phoneImageIn 0.28s ease;
   transition: transform 0.28s ease;
+}
+
+.phone-monitor-preview {
+  position: absolute;
+  top: 92px;
+  right: 8px;
+  left: 8px;
+  z-index: 1;
+  aspect-ratio: 2.02 / 1;
+  border: 0;
+  border-radius: 6px;
+  padding: 0;
+  background: transparent;
+  box-shadow:
+    0 0 0 2px #172328,
+    0 0 0 3px rgba(205, 226, 231, 0.58),
+    0 12px 22px rgba(0, 0, 0, 0.34);
+  transform: translateX(var(--phone-drag-offset, 0));
+  animation: phoneImageIn 0.28s ease;
+  transition: transform 0.28s ease;
+}
+
+.phone-monitor-preview::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 34%;
+  height: 18px;
+  background: linear-gradient(90deg, #111a1e, #718086 50%, #111a1e);
+  clip-path: polygon(39% 0, 61% 0, 69% 66%, 94% 78%, 100% 100%, 0 100%, 6% 78%, 31% 66%);
+  filter: drop-shadow(0 5px 4px rgba(0, 0, 0, 0.3));
+  content: "";
+  transform: translateX(-50%);
+}
+
+.phone-media-monitor .phone-monitor-preview img,
+.phone-project:hover .phone-media-monitor .phone-monitor-preview img,
+.phone-media-monitor.is-dragging .phone-monitor-preview img {
+  padding: 0;
+  border-radius: 5px;
+  object-fit: contain;
+  transform: none;
+  animation: none;
+  transition: none;
+}
+
+.phone-project:hover .phone-media-monitor .phone-monitor-preview {
+  transform: translateX(var(--phone-drag-offset, 0)) scale(1.025);
+}
+
+.phone-media-monitor.is-dragging .phone-monitor-preview,
+.phone-project:hover .phone-media-monitor.is-dragging .phone-monitor-preview {
+  transform: translateX(var(--phone-drag-offset, 0));
+  transition: none;
+  will-change: transform;
 }
 
 @keyframes phoneImageIn {
@@ -1327,7 +1466,7 @@ body.modal-open {
 .phone-gallery-dots {
   position: absolute;
   right: 0;
-  bottom: 18px;
+  bottom: 13px;
   left: 0;
   z-index: 4;
   display: flex;
@@ -1356,13 +1495,13 @@ body.modal-open {
   position: relative;
   z-index: 2;
   display: flex;
-  min-height: 330px;
+  height: 268px;
   flex-direction: column;
-  padding: 2px 24px 35px;
+  padding: 0 20px 28px;
 }
 
 .phone-project-number {
-  margin-bottom: 11px;
+  margin-bottom: 7px;
   color: var(--color-primary);
   font-size: 0.65rem;
   font-weight: 800;
@@ -1374,16 +1513,20 @@ body.modal-open {
   margin: 0;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 1.72rem;
+  font-size: 1.42rem;
   font-weight: 700;
   letter-spacing: -0.035em;
 }
 
 .phone-content > p {
-  margin: 11px 0 17px;
+  display: -webkit-box;
+  margin: 8px 0 11px;
+  overflow: hidden;
   color: #a9c3c9;
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: 0.78rem;
+  line-height: 1.42;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .phone-tags {
@@ -1397,17 +1540,17 @@ body.modal-open {
 .phone-tags span {
   border: 1px solid rgba(34, 211, 238, 0.18);
   border-radius: 999px;
-  padding: 5px 8px;
+  padding: 4px 7px;
   color: #bdebf2;
   background: rgba(34, 211, 238, 0.07);
-  font-size: 0.64rem;
+  font-size: 0.59rem;
   font-weight: 700;
 }
 
 .phone-open-project {
   display: flex;
   width: 100%;
-  min-height: 44px;
+  min-height: 40px;
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
@@ -1425,6 +1568,48 @@ body.modal-open {
 .phone-open-project:focus-visible {
   background: #67e8f9;
   outline: 3px solid rgba(103, 232, 249, 0.25);
+}
+
+/* Las capturas creadas en iPhone usan toda la pantalla del dispositivo. El
+   contenido del proyecto se presenta como una ficha translúcida inferior. */
+.phone-project-native .phone-media {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  background: #071418;
+}
+
+.phone-project-native .phone-media::after {
+  top: auto;
+  bottom: 0;
+  z-index: 1;
+  height: 72%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(7, 20, 24, 0.72) 24%,
+    #071418 56%
+  );
+}
+
+.phone-project-native .phone-media img {
+  padding: 0;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.phone-project-native .phone-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 246px;
+  padding-top: 18px;
+}
+
+.phone-project-native .phone-gallery-dots {
+  bottom: 252px;
 }
 
 .phone-home-indicator {
@@ -1518,7 +1703,7 @@ body.modal-open {
   }
 
   .phone-device {
-    width: min(100%, 330px);
+    width: min(100%, 286px);
   }
 
   .other-projects {

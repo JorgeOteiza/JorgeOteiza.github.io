@@ -111,20 +111,23 @@ const minimarketPhoneMedia = [
   minimarketMedia[0],
   minimarketMedia[2],
   minimarketMedia[4],
-];
+].map((item) => ({ ...item, cardFrame: "monitor" }));
 
 const ecommercePhoneMedia = [
   {
-    src: "/projects/ecommerce/responsive-catalog-filters.png",
-    alt: "Catálogo responsive con filtros aplicados en El Rincón del Vino",
+    src: "/projects/ecommerce/iphone-navigation-home.png",
+    device: "phone",
+    alt: "Menú móvil y portada principal de El Rincón del Vino en iPhone 12 Pro",
   },
   {
-    src: "/projects/ecommerce/product-detail.png",
-    alt: "Detalle responsive de un vino en El Rincón del Vino",
+    src: "/projects/ecommerce/iphone-cart-menu.png",
+    device: "phone",
+    alt: "Carrito desplegable de El Rincón del Vino en iPhone 12 Pro",
   },
   {
-    src: "/projects/ecommerce/mobile-showcase.png",
-    alt: "Vitrina de vinos de El Rincón del Vino en vista móvil",
+    src: "/projects/ecommerce/iphone-order-success.png",
+    device: "phone",
+    alt: "Confirmación de compra de El Rincón del Vino en iPhone 12 Pro",
   },
 ];
 
@@ -133,23 +136,31 @@ const ecommerceMedia = [
     src: "/projects/ecommerce/home.png",
     alt: "Página principal de El Rincón del Vino",
   },
+  ecommercePhoneMedia[0],
+  {
+    src: "/projects/ecommerce/ipad-premium-selection.png",
+    device: "tablet",
+    alt: "Selección Premium de El Rincón del Vino en iPad Air",
+  },
   {
     src: "/projects/ecommerce/favorites.png",
     alt: "Selección de vinos favoritos de El Rincón del Vino",
   },
-  ecommercePhoneMedia[1],
   {
-    src: "/projects/ecommerce/cart.png",
+    src: "/projects/ecommerce/product-detail.png",
+    alt: "Detalle responsive de un vino en El Rincón del Vino",
+  },
+  {
+    src: "/projects/ecommerce/tablet-cart.png",
+    device: "tablet",
     alt: "Carrito y resumen de compra de El Rincón del Vino",
   },
+  ecommercePhoneMedia[1],
   {
     src: "/projects/ecommerce/payment.png",
     alt: "Selección de método de pago de El Rincón del Vino",
   },
-  {
-    src: "/projects/ecommerce/order-confirmation.png",
-    alt: "Confirmación de compra de El Rincón del Vino",
-  },
+  ecommercePhoneMedia[2],
   {
     src: "/projects/ecommerce/purchase-history.png",
     alt: "Historial de compras de El Rincón del Vino",
@@ -162,8 +173,16 @@ const ecommerceMedia = [
     src: "/projects/ecommerce/contact.png",
     alt: "Formulario de contacto de El Rincón del Vino",
   },
-  ecommercePhoneMedia[2],
-  ecommercePhoneMedia[0],
+  {
+    src: "/projects/ecommerce/ipad-responsible-consumption.png",
+    device: "tablet",
+    alt: "Control de consumo responsable de El Rincón del Vino en iPad Air",
+  },
+  {
+    src: "/projects/ecommerce/responsive-catalog-filters.png",
+    device: "tablet",
+    alt: "Catálogo responsive con filtros aplicados en El Rincón del Vino",
+  },
 ];
 
 const proyectos = [
@@ -455,20 +474,33 @@ const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
 
   return (
     <div
-      className={`phone-media ${isDragging ? "is-dragging" : ""}`}
+      className={`phone-media ${
+        currentSlide.cardFrame === "monitor" ? "phone-media-monitor" : ""
+      } ${isDragging ? "is-dragging" : ""}`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={finishPointerDrag}
       onPointerCancel={cancelPointerDrag}
       style={{ "--phone-drag-offset": `${dragOffset}px` }}
     >
-      <img
-        key={currentSlide.src}
-        src={currentSlide.src}
-        alt={currentSlide.alt}
-        loading={eager ? "eager" : "lazy"}
-        draggable="false"
-      />
+      {currentSlide.cardFrame === "monitor" ? (
+        <div className="phone-monitor-preview" key={currentSlide.src}>
+          <img
+            src={currentSlide.src}
+            alt={currentSlide.alt}
+            loading={eager ? "eager" : "lazy"}
+            draggable="false"
+          />
+        </div>
+      ) : (
+        <img
+          key={currentSlide.src}
+          src={currentSlide.src}
+          alt={currentSlide.alt}
+          loading={eager ? "eager" : "lazy"}
+          draggable="false"
+        />
+      )}
       {hasMultipleSlides && (
         <>
           <button
@@ -508,11 +540,17 @@ const PhoneMediaCarousel = ({ proyecto, eager = false }) => {
 const Proyectos = () => {
   const [proyectoActivo, setProyectoActivo] = useState(null);
   const [mediaActiva, setMediaActiva] = useState(0);
+  const [modalDragOffset, setModalDragOffset] = useState(0);
+  const [isModalDragging, setIsModalDragging] = useState(false);
   const [currentDateTime, setCurrentDateTime] = useState(() =>
     formatCurrentDateTime(new Date()),
   );
   const dialogRef = useRef(null);
   const triggerRef = useRef(null);
+  const modalPointerStart = useRef(null);
+  const thumbnailStripRef = useRef(null);
+  const thumbnailPointerStart = useRef(null);
+  const thumbnailDidDrag = useRef(false);
 
   const abrirDetalle = (proyecto) => {
     triggerRef.current = document.activeElement;
@@ -523,6 +561,8 @@ const Proyectos = () => {
   const cerrarDetalle = () => {
     setProyectoActivo(null);
     setMediaActiva(0);
+    setModalDragOffset(0);
+    setIsModalDragging(false);
   };
 
   useEffect(() => {
@@ -604,6 +644,66 @@ const Proyectos = () => {
     });
   };
 
+  const iniciarArrastreModal = (event) => {
+    if (event.target.closest("button") || !proyectoActivo?.media?.length) return;
+    modalPointerStart.current = { id: event.pointerId, x: event.clientX };
+    setIsModalDragging(true);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const moverArrastreModal = (event) => {
+    if (modalPointerStart.current?.id !== event.pointerId) return;
+    const distance = event.clientX - modalPointerStart.current.x;
+    const limit = Math.max(120, event.currentTarget.clientWidth * 0.72);
+    setModalDragOffset(Math.max(-limit, Math.min(limit, distance)));
+  };
+
+  const finalizarArrastreModal = (event) => {
+    if (modalPointerStart.current?.id !== event.pointerId) return;
+    const distance = modalPointerStart.current.x - event.clientX;
+    modalPointerStart.current = null;
+    setModalDragOffset(0);
+    setIsModalDragging(false);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+    if (Math.abs(distance) < 55) return;
+    if (distance > 0) mostrarMediaSiguiente();
+    else mostrarMediaAnterior();
+  };
+
+  const cancelarArrastreModal = (event) => {
+    if (modalPointerStart.current?.id !== event.pointerId) return;
+    modalPointerStart.current = null;
+    setModalDragOffset(0);
+    setIsModalDragging(false);
+  };
+
+  const iniciarArrastreMiniaturas = (event) => {
+    const strip = thumbnailStripRef.current;
+    if (!strip) return;
+    thumbnailDidDrag.current = false;
+    thumbnailPointerStart.current = {
+      id: event.pointerId,
+      x: event.clientX,
+      scrollLeft: strip.scrollLeft,
+    };
+    strip.setPointerCapture?.(event.pointerId);
+  };
+
+  const moverArrastreMiniaturas = (event) => {
+    const start = thumbnailPointerStart.current;
+    const strip = thumbnailStripRef.current;
+    if (!strip || start?.id !== event.pointerId) return;
+    const distance = event.clientX - start.x;
+    if (Math.abs(distance) > 5) thumbnailDidDrag.current = true;
+    strip.scrollLeft = start.scrollLeft - distance;
+  };
+
+  const finalizarArrastreMiniaturas = (event) => {
+    if (thumbnailPointerStart.current?.id !== event.pointerId) return;
+    thumbnailPointerStart.current = null;
+    thumbnailStripRef.current?.releasePointerCapture?.(event.pointerId);
+  };
+
   return (
     <section id="proyectos" className="proyectos">
       <div className="projects-heading">
@@ -623,7 +723,11 @@ const Proyectos = () => {
       <div className="projects-grid">
         {proyectosPrincipales.map((proyecto, projectIndex) => (
           <article
-            className={`phone-project ${proyecto.destacado ? "featured" : ""}`}
+            className={`phone-project ${proyecto.destacado ? "featured" : ""} ${
+              proyecto.phoneMedia?.every((item) => item.device === "phone")
+                ? "phone-project-native"
+                : ""
+            }`}
             key={proyecto.titulo}
           >
             <div className="phone-stage">
@@ -733,8 +837,17 @@ const Proyectos = () => {
             </button>
 
             <div className="project-modal-media">
-              <div className="project-modal-featured-media">
-                <div className="project-monitor">
+              <div
+                className={`project-modal-featured-media ${isModalDragging ? "is-dragging" : ""}`}
+                onPointerDown={iniciarArrastreModal}
+                onPointerMove={moverArrastreModal}
+                onPointerUp={finalizarArrastreModal}
+                onPointerCancel={cancelarArrastreModal}
+                style={{ "--modal-drag-offset": `${modalDragOffset}px` }}
+              >
+                <div
+                  className={`project-monitor project-preview-${mediaSeleccionada?.device || "desktop"}`}
+                >
                   <div className="project-monitor-screen">
                     <div className="project-monitor-toolbar" aria-hidden="true">
                       <div className="project-monitor-window-controls">
@@ -765,31 +878,14 @@ const Proyectos = () => {
                           key={mediaSeleccionada?.src || proyectoActivo.imagen}
                           src={mediaSeleccionada?.src || proyectoActivo.imagen}
                           alt={mediaSeleccionada?.alt || proyectoActivo.alt}
+                          draggable="false"
                         />
                       )}
 
                       {proyectoActivo.media.length > 1 && (
-                        <>
-                          <button
-                            type="button"
-                            className="phone-gallery-control modal-gallery-control previous"
-                            onClick={mostrarMediaAnterior}
-                            aria-label={`Ver imagen anterior de ${proyectoActivo.titulo} en detalle`}
-                          >
-                            <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                          </button>
-                          <button
-                            type="button"
-                            className="phone-gallery-control modal-gallery-control next"
-                            onClick={mostrarMediaSiguiente}
-                            aria-label={`Ver imagen siguiente de ${proyectoActivo.titulo} en detalle`}
-                          >
-                            <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                          </button>
-                          <span className="project-modal-media-count">
-                            {mediaActiva + 1} / {proyectoActivo.media.length}
-                          </span>
-                        </>
+                        <span className="project-modal-media-count">
+                          {mediaActiva + 1} / {proyectoActivo.media.length}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -797,22 +893,58 @@ const Proyectos = () => {
                     <span className="project-monitor-power"></span>
                   </div>
                 </div>
-                <div className="project-monitor-stand" aria-hidden="true">
-                  <span></span>
-                </div>
+                {(mediaSeleccionada?.device || "desktop") === "desktop" && (
+                  <div className="project-monitor-stand" aria-hidden="true">
+                    <span></span>
+                  </div>
+                )}
+                {proyectoActivo.media.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      className="phone-gallery-control modal-gallery-control previous"
+                      onClick={mostrarMediaAnterior}
+                      aria-label={`Ver imagen anterior de ${proyectoActivo.titulo} en detalle`}
+                    >
+                      <i className="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      type="button"
+                      className="phone-gallery-control modal-gallery-control next"
+                      onClick={mostrarMediaSiguiente}
+                      aria-label={`Ver imagen siguiente de ${proyectoActivo.titulo} en detalle`}
+                    >
+                      <i className="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </>
+                )}
               </div>
 
               {proyectoActivo.media.length > 1 && (
-                <div className="project-thumbnails">
+                <div
+                  className="project-thumbnails"
+                  ref={thumbnailStripRef}
+                  onPointerDown={iniciarArrastreMiniaturas}
+                  onPointerMove={moverArrastreMiniaturas}
+                  onPointerUp={finalizarArrastreMiniaturas}
+                  onPointerCancel={finalizarArrastreMiniaturas}
+                  onDragStart={(event) => event.preventDefault()}
+                >
                   {proyectoActivo.media.map((item, index) => (
                     <button
                       type="button"
                       className={index === mediaActiva ? "active" : ""}
                       key={item.src}
-                      onClick={() => setMediaActiva(index)}
+                      onClick={() => {
+                        if (thumbnailDidDrag.current) {
+                          thumbnailDidDrag.current = false;
+                          return;
+                        }
+                        setMediaActiva(index);
+                      }}
                       aria-label={`Ver imagen ${index + 1} de ${proyectoActivo.titulo}`}
                     >
-                      <img src={item.src} alt="" />
+                      <img src={item.src} alt="" draggable="false" />
                     </button>
                   ))}
                 </div>
