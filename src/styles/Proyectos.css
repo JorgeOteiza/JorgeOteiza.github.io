@@ -635,6 +635,8 @@ button.repositorios-target {
   scroll-behavior: auto;
   touch-action: pan-y;
   user-select: none;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
 }
 
 .project-thumbnails:active {
@@ -650,6 +652,10 @@ button.repositorios-target {
   border-radius: 10px;
   padding: 0;
   background: transparent;
+  cursor: pointer;
+  scroll-snap-align: center;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .project-thumbnails button.active,
@@ -905,8 +911,22 @@ body.modal-open {
   }
 
   .project-thumbnails {
+    width: 100%;
     padding-bottom: 9px;
+    scroll-padding-inline: 12px;
   }
+
+  .project-monitor.project-preview-tablet {
+    width: min(82%, 450px);
+  }
+
+  .project-monitor.project-preview-phone {
+    width: min(58%, 286px);
+  }
+}
+
+.project-meta.role-only {
+  grid-template-columns: 1fr;
 }
 
 @media (max-width: 600px) {
@@ -935,7 +955,32 @@ body.modal-open {
 
   .project-modal-media {
     gap: 9px;
-    padding: 58px 10px 14px;
+    padding: 58px 14px 14px;
+  }
+
+  .project-modal-featured-media {
+    width: 100%;
+    padding-inline: 28px;
+  }
+
+  .project-monitor.project-preview-tablet {
+    width: min(100%, 410px);
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .project-monitor.project-preview-phone {
+    width: min(72%, 270px);
+    padding: 5px;
+    border-radius: 31px;
+  }
+
+  .project-preview-tablet .project-monitor-screen {
+    border-radius: 15px;
+  }
+
+  .project-preview-phone .project-monitor-screen {
+    border-radius: 25px;
   }
 
   .project-monitor {
@@ -976,11 +1021,11 @@ body.modal-open {
   }
 
   .modal-gallery-control.previous {
-    left: 6px;
+    left: 0;
   }
 
   .modal-gallery-control.next {
-    right: 6px;
+    right: 0;
   }
 
   .project-thumbnails {
@@ -989,8 +1034,8 @@ body.modal-open {
   }
 
   .project-thumbnails button {
-    width: 68px;
-    height: 46px;
+    width: 72px;
+    height: 50px;
     border-radius: 8px;
   }
 
@@ -1129,7 +1174,36 @@ body.modal-open {
   position: relative;
   display: grid;
   justify-items: center;
+  padding-top: 34px;
   perspective: 1200px;
+}
+
+.project-impact-line {
+  margin: -6px 0 12px;
+  color: #087f93;
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.project-technical-highlight {
+  margin-top: 24px;
+  border: 1px solid rgba(8, 145, 178, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  background: #eef7fa;
+}
+
+.project-technical-highlight h3 {
+  margin-bottom: 8px;
+}
+
+.project-technical-highlight p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .phone-shadow {
@@ -1311,6 +1385,85 @@ body.modal-open {
   color: #a9c3c9;
   font-size: 0.84rem;
   line-height: 1.5;
+}
+
+.tablet-card-stage {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+  min-height: 568px;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  padding-top: 34px;
+}
+
+.tablet-card-device {
+  position: relative;
+  width: min(100%, 300px);
+  border: 1px solid rgba(219, 236, 240, 0.58);
+  border-radius: 21px;
+  padding: 7px 5px;
+  background: linear-gradient(145deg, #75848a, #10191d 15%, #05090b 86%, #66747a);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.tablet-card-camera {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  z-index: 3;
+  border-radius: 50%;
+  background: #071820;
+  box-shadow: 0 0 0 1px rgba(118, 171, 190, 0.35);
+  transform: translateX(-50%);
+}
+
+.tablet-card-screen {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e9f5fa;
+}
+
+.tablet-card-screen .phone-media {
+  height: auto;
+  aspect-ratio: 574 / 826;
+  background: #e9f5fa;
+}
+
+.tablet-card-screen .phone-media::after {
+  display: none;
+}
+
+.tablet-card-screen .phone-media > img {
+  padding: 0;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.tablet-card-screen .phone-gallery-dots {
+  bottom: 10px;
+}
+
+.tablet-card-screen .phone-gallery-control {
+  opacity: 0.72;
+}
+
+.tablet-card-content {
+  width: min(100%, 330px);
+  min-height: 224px;
+  margin-top: 16px;
+  z-index: 2;
+  padding-top: 18px;
+}
+
+.tablet-card-content .phone-open-project {
+  margin-top: 22px;
 }
 
 /* Las capturas responsive conservan el dispositivo que representan dentro
@@ -1731,6 +1884,24 @@ body.modal-open {
 
 .phone-project-native .phone-gallery-dots {
   bottom: 252px;
+}
+
+/* La interfaz móvil de El Rincón del Vino comienza debajo de la barra de
+   estado, como en una aplicación real, en lugar de quedar tapada por ella. */
+.ecommerce-phone-card .phone-screen {
+  background: #821f27;
+}
+
+.ecommerce-phone-card .phone-status {
+  min-height: 38px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  background: #821f27;
+  text-shadow: none;
+}
+
+.ecommerce-phone-card .phone-media {
+  inset: 38px 0 0;
 }
 
 .phone-home-indicator {

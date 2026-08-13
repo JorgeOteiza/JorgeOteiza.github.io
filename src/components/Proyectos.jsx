@@ -177,6 +177,38 @@ const ecommerceMedia = [
   },
 ];
 
+const travelCalculatorTabletMedia = [
+  {
+    src: "/projects/travel-calculator/ipad-hero.png",
+    device: "tablet",
+    alt: "Portada responsive de Travel Calculator en iPad",
+  },
+  {
+    src: "/projects/travel-calculator/ipad-calculator.png",
+    device: "tablet",
+    alt: "Calculadora de ruta con formulario y mapa en iPad",
+  },
+  {
+    src: "/projects/travel-calculator/ipad-result.png",
+    device: "tablet",
+    alt: "Resultado de costo y consumo de Travel Calculator en iPad",
+  },
+];
+
+const travelCalculatorMedia = [
+  ...travelCalculatorTabletMedia,
+  { src: "/projects/travel-calculator/desktop-calculator-route.png", alt: "Calculadora con ruta activa en la vista de escritorio" },
+  { src: "/projects/travel-calculator/desktop-result.png", alt: "Resumen del cálculo de viaje en la vista de escritorio" },
+  { src: "/projects/travel-calculator/desktop-analysis.png", alt: "Análisis detallado con elevación y consumo por segmento" },
+  { src: "/projects/travel-calculator/desktop-profile.png", alt: "Historial de viajes guardados en la vista de escritorio" },
+  { src: "/projects/travel-calculator/ipad-analysis.png", device: "tablet", alt: "Análisis detallado de un viaje en iPad" },
+  { src: "/projects/travel-calculator/ipad-share.png", device: "tablet", alt: "Opciones para compartir una estimación en iPad" },
+  { src: "/projects/travel-calculator/ipad-profile.png", device: "tablet", alt: "Perfil e historial de estimaciones en iPad" },
+  { src: "/projects/travel-calculator/ipad-about.png", device: "tablet", alt: "Metodología y arquitectura de Travel Calculator en iPad" },
+  { src: "/projects/travel-calculator/iphone-calculator.png", device: "phone", alt: "Formulario de Travel Calculator en iPhone" },
+  { src: "/projects/travel-calculator/iphone-profile.png", device: "phone", alt: "Historial de Travel Calculator en iPhone" },
+];
+
 const proyectos = [
   {
     titulo: "Minimarket Manager",
@@ -186,34 +218,32 @@ const proyectos = [
       "Sistema local de gestión comercial para ventas, inventario, reportes y respaldos.",
     repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
-    rol: "Desarrollo full stack",
+    rol: "Desarrollo full stack: diseño de interfaz, arquitectura frontend, API REST, modelado de datos, reglas de negocio, respaldos y empaquetado para Windows.",
     enfoque:
-      "Aplicación diseñada para usarse localmente en un solo equipo, sin servidor remoto ni conexión a internet obligatoria. Permite registrar productos, controlar stock, vender desde una caja web, revisar análisis de inventario y mantener respaldos locales de la base de datos. El pago ocurre fuera de la aplicación: el sistema registra la venta, descuenta inventario y conserva la información necesaria para reportes.",
+      "Sistema local de gestión comercial para operar ventas, inventario, reportes y respaldos desde un solo equipo, sin servidor remoto ni conexión permanente a internet. Registra cada venta, actualiza automáticamente el stock y conserva la información necesaria para analizar la operación del negocio.",
     phoneMedia: minimarketPhoneMedia,
     media: minimarketMedia,
     detalles: [
-      "Registro y edición de productos.",
-      "Control de inventario, stock mínimo y ajustes manuales.",
-      "Carrito y registro de ventas.",
-      "Validación de stock insuficiente y productos sin precio.",
-      "Reportes, analytics y generación de PDFs.",
-      "Backups locales manuales y respaldo automático diario.",
-      "Importación de productos desde CSV.",
-      "Módulo de reposición de sacos y productos a granel.",
-      "Configuración local de datos del negocio.",
+      "Centraliza productos, precios, stock y ventas.",
+      "Registra ventas y descuenta automáticamente el inventario.",
+      "Detecta productos con stock insuficiente o sin precio.",
+      "Permite administrar productos unitarios, sacos y ventas a granel.",
+      "Genera reportes, estadísticas comerciales y documentos PDF.",
+      "Importa productos desde archivos CSV.",
+      "Mantiene respaldos manuales y automáticos de la información.",
+      "Permite configurar localmente los datos del negocio.",
     ],
     stack: {
-      Backend: [
+      "Backend y datos": [
         "Python 3.12",
         "Flask",
         "SQLAlchemy",
         "Flask-Migrate / Alembic",
         "SQLite local",
         "Marshmallow",
-        "Pytest",
+        "pytest",
       ],
       Frontend: [
-        "Node.js 20.19.0 o superior",
         "React",
         "TypeScript",
         "Vite",
@@ -221,6 +251,8 @@ const proyectos = [
         "Recharts",
       ],
     },
+    aporteTecnico:
+      "Aplicación preparada para funcionar localmente y distribuirse como programa de escritorio en Windows, con persistencia en SQLite, migraciones de base de datos, pruebas automatizadas y respaldos integrados.",
     tecnologias: [
       "typescript",
       "react",
@@ -231,27 +263,44 @@ const proyectos = [
       "sqlalchemy",
       "pytest",
     ],
+    tecnologiasTarjeta: ["react", "flask", "sqlite"],
     cardDevice: "desktop",
     destacado: true,
   },
   {
-    titulo: "E-commerce",
+    titulo: "El Rincón del Vino",
     imagen: ecommerceMedia[0].src,
     alt: ecommerceMedia[0].alt,
-    resumen: "Tienda online de vinos con catálogo, compra y experiencia responsive.",
+    resumen:
+      "E-commerce full stack de vinos con catálogo, favoritos y compra responsive.",
     repo: "https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce",
     demo: "",
-    rol: "Frontend y backend en equipo",
+    rol: "Desarrollo full stack en equipo y posterior mantenimiento y evolución individual.",
     enfoque:
-      "Construcción en equipo de una experiencia e-commerce completa para descubrir vinos, filtrar el catálogo, guardar favoritos y recorrer el proceso de compra desde cualquier dispositivo.",
+      "Aplicación e-commerce desarrollada originalmente en equipo para descubrir vinos, filtrar el catálogo, guardar favoritos y completar un flujo de compra desde distintos dispositivos.",
+    stack: {
+      Frontend: ["React", "JavaScript"],
+      "Backend y datos": [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "JWT",
+      ],
+      "Diseño y colaboración": ["Figma", "Kanban"],
+    },
     phoneMedia: ecommercePhoneMedia,
     media: ecommerceMedia,
     detalles: [
-      "Autenticación de usuarios con JWT.",
-      "Desarrollo de APIs REST con Flask.",
-      "Manejo de estado y consumo de datos en React.",
-      "Trabajo en equipo bajo metodología Kanban.",
+      "Autenticación y protección de rutas mediante JWT.",
+      "API REST para usuarios, productos, favoritos y compras.",
+      "Catálogo con búsqueda, filtros, stock y precios promocionales.",
+      "Carrito y flujo de compra responsive de principio a fin.",
+      "Gestión de estado y consumo de datos desde React.",
+      "Desarrollo colaborativo con metodología Kanban.",
     ],
+    aporteTecnico:
+      "Flujo de compra responsive conectado a una API REST, con autenticación JWT y persistencia en PostgreSQL para usuarios, productos, favoritos y compras.",
     tecnologias: [
       "figma",
       "javascript",
@@ -262,31 +311,46 @@ const proyectos = [
       "sqlalchemy",
       "jwt",
     ],
+    tecnologiasTarjeta: ["react", "flask", "postgres"],
   },
   {
     titulo: "Travel Calculator",
-    imagen: "/captura-travelcalculator-4.png",
-    alt: "Captura de Travel Calculator",
-    imageFit: "contain",
+    imagen: travelCalculatorTabletMedia[0].src,
+    alt: travelCalculatorTabletMedia[0].alt,
     resumen:
-      "Aplicación para estimar consumo vehicular en base a múltiples variables.",
+      "Estima el consumo y costo de una ruta según el vehículo, rendimiento, pendientes, clima, tráfico y carga.",
+    fraseImpacto:
+      "Una estimación de combustible que entiende el vehículo y la ruta completa.",
     repo: "https://github.com/JorgeOteiza/travel.calculator",
     demo: "",
-    rol: "Desarrollo full stack",
+    rol: "Desarrollo full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia y pruebas automatizadas.",
     enfoque:
-      "Herramienta para estimar consumo vehicular a partir de datos del viaje, vehículo y cálculos del backend.",
-    media: [
-      {
-        src: "/captura-travelcalculator-4.png",
-        alt: "Resumen de cálculo de Travel Calculator",
-      },
-    ],
+      "Travel Calculator transforma los datos del vehículo y las condiciones del recorrido en una estimación contextual y explicable. Además del resultado rápido, permite revisar el consumo por segmento, el perfil de elevación y los factores que modificaron el cálculo.",
+    stack: {
+      Frontend: ["React", "JavaScript", "Vite"],
+      "Backend y datos": [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "JWT",
+      ],
+      "Servicios externos": ["Google Maps", "Open-Meteo"],
+    },
+    phoneMedia: travelCalculatorTabletMedia,
+    media: travelCalculatorMedia,
     detalles: [
-      "Lógica de cálculo implementada en backend.",
-      "Integración de APIs externas para obtener datos.",
-      "Persistencia de información en base de datos local.",
-      "Interfaz interactiva para ingreso y visualización de datos.",
+      "Mejora las estimaciones basadas únicamente en distancia y consumo promedio.",
+      "Adapta el rendimiento estándar o informado por el usuario al contexto de la ruta.",
+      "Considera pendientes, elevación, clima, tipo de vía, tráfico horario, pasajeros, carga y estilo de conducción.",
+      "Presenta un resumen inmediato y un análisis detallado con gráficos por segmento.",
+      "Permite buscar rutas, utilizar la ubicación actual y consultar viajes guardados.",
+      "Mantiene un historial autenticado con vistas de cuadrícula y lista.",
+      "Utiliza proveedores gratuitos para clima y elevación y bloquea servicios pagados del backend por defecto.",
+      "Persistencia de usuarios e historial de viajes en PostgreSQL mediante SQLAlchemy.",
     ],
+    aporteTecnico:
+      "Modelo de consumo modular y probado mediante 17 casos automatizados, con cálculo segmentado de la ruta, persistencia en PostgreSQL y una experiencia responsive optimizada para escritorio, iPad y dispositivos móviles.",
     tecnologias: [
       "javascript",
       "react",
@@ -297,6 +361,8 @@ const proyectos = [
       "sqlalchemy",
       "jwt",
     ],
+    tecnologiasTarjeta: ["react", "flask", "postgres"],
+    cardDevice: "tablet",
   },
   {
     titulo: "Autenticación",
@@ -304,10 +370,10 @@ const proyectos = [
     alt: "Pantalla de usuario creado en proyecto de autenticación",
     imageFit: "contain",
     resumen:
-      "Sistema full stack para registro, inicio de sesión y gestión de usuarios.",
+      "Sistema full stack de registro, inicio de sesión y gestión segura de usuarios.",
     repo: "https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask",
     demo: "",
-    rol: "Desarrollo full stack",
+    rol: "Desarrollo full stack: interfaz de registro e inicio de sesión, API REST, autenticación JWT, persistencia y protección de rutas.",
     enfoque:
       "Proyecto centrado en seguridad de usuarios, protección de rutas y comunicación entre frontend y backend.",
     media: [
@@ -322,6 +388,19 @@ const proyectos = [
       "Encriptación de contraseñas para seguridad.",
       "Protección de rutas en frontend con React.",
     ],
+    stack: {
+      Frontend: ["React", "JavaScript"],
+      "Backend y datos": [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "JWT",
+      ],
+      Herramientas: ["Postman"],
+    },
+    aporteTecnico:
+      "Flujo de autenticación de extremo a extremo con contraseñas cifradas, tokens JWT y rutas protegidas tanto en la API como en la interfaz.",
     tecnologias: [
       "javascript",
       "react",
@@ -340,7 +419,7 @@ const proyectos = [
     resumen: "Aplicación web para visualizar información desde una API externa.",
     repo: "https://github.com/JorgeOteiza/project_Blog_de_StarWars",
     demo: "",
-    rol: "Frontend",
+    rol: "Desarrollo frontend: integración de una API externa, modelado del estado y construcción de una interfaz responsive.",
     enfoque:
       "Exploración de consumo de API externa, renderizado dinámico y manejo de estado en React.",
     media: [
@@ -359,6 +438,13 @@ const proyectos = [
       "Manejo de estado para actualizar contenido.",
       "Diseño de interfaz con Bootstrap y prototipado en Figma.",
     ],
+    stack: {
+      Frontend: ["React", "JavaScript", "Bootstrap"],
+      Diseño: ["Figma"],
+      "Servicio externo": ["SWAPI"],
+    },
+    aporteTecnico:
+      "Integración de SWAPI con renderizado dinámico y manejo de estado para presentar personajes y vehículos en una experiencia de navegación consistente.",
     tecnologias: ["figma", "bootstrap", "javascript", "react"],
     secundario: true,
   },
@@ -369,7 +455,7 @@ const proyectos = [
     resumen: "Aplicación web para acortar enlaces con una API externa.",
     repo: "https://github.com/JorgeOteiza/Short-url",
     demo: "",
-    rol: "Frontend y backend",
+    rol: "Desarrollo full stack: interfaz de usuario, backend ligero e integración con un servicio externo de acortamiento de enlaces.",
     enfoque:
       "Integración de un backend ligero con FastAPI para consumir servicios externos y devolver enlaces cortos.",
     media: [
@@ -384,6 +470,13 @@ const proyectos = [
       "Procesamiento de solicitudes HTTP y respuestas.",
       "Interfaz desarrollada con React y Vite.",
     ],
+    stack: {
+      Frontend: ["React", "JavaScript", "Vite"],
+      Backend: ["Python", "FastAPI"],
+      "Servicio externo": ["TinyURL"],
+    },
+    aporteTecnico:
+      "Separación entre la interfaz y un backend ligero que procesa solicitudes HTTP, consume TinyURL y devuelve una respuesta lista para utilizarse desde React.",
     tecnologias: ["javascript", "react", "vite", "python", "fastapi"],
     secundario: true,
   },
@@ -637,6 +730,18 @@ const Proyectos = () => {
     });
   };
 
+  useEffect(() => {
+    if (!proyectoActivo || !thumbnailStripRef.current) return;
+    const activeThumbnail = thumbnailStripRef.current.querySelector(
+      `button[data-media-index="${mediaActiva}"]`,
+    );
+    activeThumbnail?.scrollIntoView?.({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [mediaActiva, proyectoActivo]);
+
   const iniciarArrastreModal = (event) => {
     if (event.target.closest("button") || !proyectoActivo?.media?.length) return;
     modalPointerStart.current = { id: event.pointerId, x: event.clientX };
@@ -672,14 +777,15 @@ const Proyectos = () => {
 
   const iniciarArrastreMiniaturas = (event) => {
     const strip = thumbnailStripRef.current;
-    if (!strip) return;
+    if (!strip || (event.button !== undefined && event.button !== 0)) return;
+    const thumbnail = event.target.closest("button[data-media-index]");
     thumbnailDidDrag.current = false;
     thumbnailPointerStart.current = {
       id: event.pointerId,
       x: event.clientX,
       scrollLeft: strip.scrollLeft,
+      mediaIndex: thumbnail ? Number(thumbnail.dataset.mediaIndex) : null,
     };
-    strip.setPointerCapture?.(event.pointerId);
   };
 
   const moverArrastreMiniaturas = (event) => {
@@ -687,14 +793,40 @@ const Proyectos = () => {
     const strip = thumbnailStripRef.current;
     if (!strip || start?.id !== event.pointerId) return;
     const distance = event.clientX - start.x;
-    if (Math.abs(distance) > 5) thumbnailDidDrag.current = true;
+    if (Math.abs(distance) > 7 && !thumbnailDidDrag.current) {
+      thumbnailDidDrag.current = true;
+      strip.setPointerCapture?.(event.pointerId);
+    }
     strip.scrollLeft = start.scrollLeft - distance;
   };
 
   const finalizarArrastreMiniaturas = (event) => {
     if (thumbnailPointerStart.current?.id !== event.pointerId) return;
+    const { mediaIndex } = thumbnailPointerStart.current;
+    const huboArrastre = thumbnailDidDrag.current;
     thumbnailPointerStart.current = null;
-    thumbnailStripRef.current?.releasePointerCapture?.(event.pointerId);
+    if (thumbnailStripRef.current?.hasPointerCapture?.(event.pointerId)) {
+      thumbnailStripRef.current.releasePointerCapture(event.pointerId);
+    }
+    if (!huboArrastre && Number.isInteger(mediaIndex)) {
+      setMediaActiva(mediaIndex);
+    }
+    // El clic sintético que sigue a un arrastre se ignora, pero el próximo
+    // clic normal sobre cualquier miniatura vuelve a quedar disponible.
+    if (huboArrastre) {
+      window.setTimeout(() => {
+        thumbnailDidDrag.current = false;
+      }, 0);
+    }
+  };
+
+  const cancelarArrastreMiniaturas = (event) => {
+    if (thumbnailPointerStart.current?.id !== event.pointerId) return;
+    thumbnailPointerStart.current = null;
+    thumbnailDidDrag.current = false;
+    if (thumbnailStripRef.current?.hasPointerCapture?.(event.pointerId)) {
+      thumbnailStripRef.current.releasePointerCapture(event.pointerId);
+    }
   };
 
   return (
@@ -720,7 +852,11 @@ const Proyectos = () => {
               proyecto.phoneMedia?.every((item) => item.device === "phone")
                 ? "phone-project-native"
                 : ""
-            } ${proyecto.cardDevice === "desktop" ? "desktop-project-card" : ""}`}
+            } ${proyecto.titulo === "El Rincón del Vino" ? "ecommerce-phone-card" : ""} ${
+              proyecto.cardDevice === "desktop" ? "desktop-project-card" : ""
+            } ${
+              proyecto.cardDevice === "tablet" ? "tablet-project-card" : ""
+            }`}
             key={proyecto.titulo}
           >
             {proyecto.cardDevice === "desktop" ? (
@@ -744,12 +880,45 @@ const Proyectos = () => {
                 <div className="desktop-card-stand" aria-hidden="true"></div>
                 <div className="desktop-card-content">
                   <div className="phone-project-number">
-                    Proyecto {String(projectIndex + 1).padStart(2, "0")}
+                    Caso {String(projectIndex + 1).padStart(2, "0")}
                   </div>
                   <h3>{proyecto.titulo}</h3>
                   <p>{proyecto.resumen}</p>
                   <div className="phone-tags" aria-label="Tecnologías principales">
-                    {proyecto.tecnologias.slice(0, 3).map((tecnologia) => (
+                    {(proyecto.tecnologiasTarjeta || proyecto.tecnologias.slice(0, 3)).map((tecnologia) => (
+                      <span key={tecnologia}>{iconos[tecnologia].alt}</span>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    className="phone-open-project"
+                    onClick={() => abrirDetalle(proyecto)}
+                    aria-label={`Ver caso completo de ${proyecto.titulo}`}
+                  >
+                    Explorar proyecto
+                    <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            ) : proyecto.cardDevice === "tablet" ? (
+              <div className="tablet-card-stage">
+                <div className="tablet-card-device">
+                  <span className="tablet-card-camera" aria-hidden="true"></span>
+                  <div className="tablet-card-screen">
+                    <PhoneMediaCarousel
+                      proyecto={proyecto}
+                      eager={projectIndex === 0}
+                    />
+                  </div>
+                </div>
+                <div className="desktop-card-content tablet-card-content">
+                  <div className="phone-project-number">
+                    Caso {String(projectIndex + 1).padStart(2, "0")}
+                  </div>
+                  <h3>{proyecto.titulo}</h3>
+                  <p>{proyecto.resumen}</p>
+                  <div className="phone-tags" aria-label="Tecnologías principales">
+                    {(proyecto.tecnologiasTarjeta || proyecto.tecnologias.slice(0, 3)).map((tecnologia) => (
                       <span key={tecnologia}>{iconos[tecnologia].alt}</span>
                     ))}
                   </div>
@@ -797,12 +966,12 @@ const Proyectos = () => {
                   />
                   <div className="phone-content">
                     <div className="phone-project-number">
-                      Proyecto {String(projectIndex + 1).padStart(2, "0")}
+                      Caso {String(projectIndex + 1).padStart(2, "0")}
                     </div>
                     <h3>{proyecto.titulo}</h3>
                     <p>{proyecto.resumen}</p>
                     <div className="phone-tags" aria-label="Tecnologías principales">
-                      {proyecto.tecnologias.slice(0, 3).map((tecnologia) => (
+                      {(proyecto.tecnologiasTarjeta || proyecto.tecnologias.slice(0, 3)).map((tecnologia) => (
                         <span key={tecnologia}>{iconos[tecnologia].alt}</span>
                       ))}
                     </div>
@@ -963,7 +1132,7 @@ const Proyectos = () => {
                   onPointerDown={iniciarArrastreMiniaturas}
                   onPointerMove={moverArrastreMiniaturas}
                   onPointerUp={finalizarArrastreMiniaturas}
-                  onPointerCancel={finalizarArrastreMiniaturas}
+                  onPointerCancel={cancelarArrastreMiniaturas}
                   onDragStart={(event) => event.preventDefault()}
                 >
                   {proyectoActivo.media.map((item, index) => (
@@ -971,13 +1140,12 @@ const Proyectos = () => {
                       type="button"
                       className={index === mediaActiva ? "active" : ""}
                       key={item.src}
+                      data-media-index={index}
                       onClick={() => {
-                        if (thumbnailDidDrag.current) {
-                          thumbnailDidDrag.current = false;
-                          return;
-                        }
+                        if (thumbnailDidDrag.current) return;
                         setMediaActiva(index);
                       }}
+                      aria-current={index === mediaActiva ? "true" : undefined}
                       aria-label={`Ver imagen ${index + 1} de ${proyectoActivo.titulo}`}
                     >
                       <img src={item.src} alt="" draggable="false" />
@@ -990,21 +1158,27 @@ const Proyectos = () => {
             <div className="project-modal-content">
               <span className="section-kicker">Detalle del proyecto</span>
               <h2 id="project-modal-title">{proyectoActivo.titulo}</h2>
+              {proyectoActivo.fraseImpacto && (
+                <p className="project-impact-line">{proyectoActivo.fraseImpacto}</p>
+              )}
               <p className="project-modal-summary">{proyectoActivo.enfoque}</p>
 
-              <div className="project-meta">
+              <div className={`project-meta ${proyectoActivo.stack ? "role-only" : ""}`}>
                 <div>
                   <span>Rol</span>
                   <strong>{proyectoActivo.rol}</strong>
                 </div>
-                <div>
-                  <span>Stack</span>
-                  <strong>
-                    {proyectoActivo.tecnologias
-                      .map((tecnologia) => iconos[tecnologia].alt)
-                      .join(", ")}
-                  </strong>
-                </div>
+                {!proyectoActivo.stack && (
+                  <div>
+                    <span>Stack</span>
+                    <strong>
+                      {proyectoActivo.stackTexto ||
+                        proyectoActivo.tecnologias
+                          .map((tecnologia) => iconos[tecnologia].alt)
+                          .join(", ")}
+                    </strong>
+                  </div>
+                )}
               </div>
 
               {proyectoActivo.stack && (
@@ -1028,6 +1202,13 @@ const Proyectos = () => {
                   <li key={detalle}>{detalle}</li>
                 ))}
               </ul>
+
+              {proyectoActivo.aporteTecnico && (
+                <div className="project-technical-highlight">
+                  <h3>Aporte técnico destacado</h3>
+                  <p>{proyectoActivo.aporteTecnico}</p>
+                </div>
+              )}
 
               <div className="project-modal-actions">
                 <a

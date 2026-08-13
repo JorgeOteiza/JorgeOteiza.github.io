@@ -10,6 +10,10 @@ const dispatchPointer = (target, type, clientX) => {
   fireEvent(target, event);
 };
 
+beforeAll(() => {
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+});
+
 test("permite deslizar la imagen grande y la tira de miniaturas", () => {
   render(<App />);
 
@@ -32,4 +36,50 @@ test("permite deslizar la imagen grande y la tira de miniaturas", () => {
   dispatchPointer(thumbnails, "pointermove", 80);
   expect(thumbnails.scrollLeft).toBe(100);
   dispatchPointer(thumbnails, "pointerup", 80);
+});
+
+test("selecciona una miniatura sin interferir con el arrastre del carrusel", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de minimarket manager/i,
+    }),
+  );
+
+  const thumbnail = screen
+    .getAllByRole("button", {
+      name: /ver imagen 3 de minimarket manager/i,
+    })
+    .find((button) => button.querySelector("img"));
+  dispatchPointer(thumbnail, "pointerdown", 120);
+  dispatchPointer(thumbnail, "pointerup", 120);
+
+  expect(thumbnail).toHaveAttribute("aria-current", "true");
+});
+
+test("permite tocar miniaturas de vistas tablet y teléfono", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de travel calculator/i,
+    }),
+  );
+
+  const tabletThumbnail = screen
+    .getAllByRole("button", {
+      name: /ver imagen 2 de travel calculator/i,
+    })
+    .find((button) => button.querySelector("img"));
+  dispatchPointer(tabletThumbnail, "pointerdown", 120);
+  dispatchPointer(tabletThumbnail, "pointerup", 120);
+  expect(tabletThumbnail).toHaveAttribute("aria-current", "true");
+
+  const phoneThumbnail = screen.getByRole("button", {
+    name: /ver imagen 13 de travel calculator/i,
+  });
+  dispatchPointer(phoneThumbnail, "pointerdown", 120);
+  dispatchPointer(phoneThumbnail, "pointerup", 120);
+  expect(phoneThumbnail).toHaveAttribute("aria-current", "true");
 });

@@ -24,10 +24,10 @@ const SobreMi = () => {
               de datos y convierto necesidades reales en herramientas completas.
           </p>
           <p>
-              Minimarket Manager resume muy bien mi forma de trabajar: entender el
-              negocio, cuidar los detalles y construir una solución que pueda
-              utilizarse de verdad. Actualmente busco mi primera oportunidad
-              profesional para aportar, aprender y seguir creciendo.
+              Minimarket Manager resume mi forma de trabajar: comprender el
+              negocio, cuidar los detalles y transformar una necesidad real en
+              una solución utilizable. Actualmente busco mi primera oportunidad
+              profesional para aportar, aprender y seguir creciendo junto a un equipo.
           </p>
           </div>
           <a

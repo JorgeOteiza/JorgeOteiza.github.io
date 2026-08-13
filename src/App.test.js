@@ -13,7 +13,7 @@ test("muestra la presentación y las secciones principales", () => {
     screen.getByRole("heading", { name: /productos que viven/i }),
   ).toBeInTheDocument();
   expect(screen.getByText(/pytest/i)).toBeInTheDocument();
-  expect(screen.getByText("Prompt Engineering")).toBeInTheDocument();
+  expect(screen.getByText("Diseño de prompts")).toBeInTheDocument();
 });
 
 test("abre y cierra el detalle de un proyecto con Escape", () => {
@@ -107,12 +107,12 @@ test("permite arrastrar con el mouse la galería del celular", () => {
   expect(screen.getByAltText(/listado y búsqueda de productos/i)).toBeInTheDocument();
 });
 
-test("presenta una galería responsive y el flujo completo del E-commerce", () => {
+test("presenta una galería responsive y el flujo completo de El Rincón del Vino", () => {
   render(<App />);
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen siguiente de e-commerce/i,
+      name: /ver imagen siguiente de el rincón del vino/i,
     }),
   );
   expect(
@@ -121,21 +121,21 @@ test("presenta una galería responsive y el flujo completo del E-commerce", () =
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver caso completo de e-commerce/i,
+      name: /ver caso completo de el rincón del vino/i,
     }),
   );
   expect(screen.getByAltText(/página principal de el rincón del vino/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 10 de e-commerce/i,
+      name: /ver imagen 10 de el rincón del vino/i,
     }),
   );
   expect(screen.getByAltText(/historial de compras de el rincón del vino/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 11 de e-commerce/i,
+      name: /ver imagen 11 de el rincón del vino/i,
     }),
   );
   expect(screen.getByAltText(/control de consumo responsable/i)).toBeInTheDocument();

@@ -7,11 +7,12 @@ const Footer = () => {
       <div className="containerFooter">
         <span className="footer-eyebrow">¿Construimos algo juntos?</span>
         <h2 className="title-contact">
-          Tengo ganas de llevar la próxima idea <em>a producción.</em>
+          Convirtamos la próxima idea <em>en un producto real.</em>
         </h2>
         <p className="footer-copy">
-          Busco mi primera oportunidad profesional como desarrollador Full Stack.
-          Si tienes un desafío, conversemos.
+          Estoy disponible para colaborar en productos digitales y sumarme a un
+          equipo donde pueda aportar desde el frontend hasta el backend. Si tienes
+          un desafío, conversemos.
         </p>
         <a href="mailto:oteiza.jor@gmail.com" className="contact-cta">
           Escríbeme

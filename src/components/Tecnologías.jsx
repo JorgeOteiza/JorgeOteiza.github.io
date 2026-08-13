@@ -105,7 +105,7 @@ const icons = [
   {
     src: "/skills-prompt-engineering.svg",
     invert: true,
-    alt: "Prompt Engineering Logo",
+    alt: "Diseño de prompts Logo",
   },
 ];
 
@@ -151,7 +151,7 @@ const groups = [
       "ChatGPT Logo",
       "Codex Logo",
       "GitHub Copilot Logo",
-      "Prompt Engineering Logo",
+      "Diseño de prompts Logo",
     ],
   },
 ];
