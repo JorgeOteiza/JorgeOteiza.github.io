@@ -1206,6 +1206,25 @@ body.modal-open {
   line-height: 1.6;
 }
 
+.project-context-block {
+  margin-top: 14px;
+  border: 1px solid rgba(14, 116, 144, 0.14);
+  border-radius: 14px;
+  padding: 16px;
+  background: #f8fbfc;
+}
+
+.project-context-block h3 {
+  margin-bottom: 8px;
+}
+
+.project-context-block p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
 .phone-shadow {
   position: absolute;
   right: 12%;
@@ -1904,6 +1923,132 @@ body.modal-open {
   inset: 38px 0 0;
 }
 
+/* AuthFlow utiliza una interfaz clara. La barra de estado ocupa su propia
+   franja, igual que en iOS, para no superponerse al logotipo de la captura. */
+.authflow-phone-card .phone-screen {
+  background: #f7f7ff;
+}
+
+.authflow-phone-card .phone-status {
+  min-height: 38px;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  color: #11182d;
+  background: #f7f7ff;
+  text-shadow: none;
+}
+
+.authflow-phone-card .phone-media {
+  inset: 38px 0 0;
+}
+
+/* Proporciones y materiales compartidos por todos los dispositivos. */
+.phone-device {
+  width: min(100%, 282px);
+  padding: 6px;
+  border-color: rgba(213, 225, 229, 0.48);
+  border-radius: 43px;
+  background: linear-gradient(145deg, #69767b 0%, #151d21 11%, #05090b 84%, #59666b 100%);
+  box-shadow:
+    inset 0 0 0 1px #030506,
+    inset 0 0 0 2px rgba(255, 255, 255, 0.07),
+    0 32px 66px rgba(0, 0, 0, 0.42);
+}
+
+.phone-screen {
+  height: auto;
+  aspect-ratio: 390 / 844;
+  border-radius: 37px;
+}
+
+.phone-side-button {
+  width: 2px;
+  background: linear-gradient(180deg, #9aa5a9, #3f4a4f 22%, #242d31 78%, #7c898e);
+}
+
+.phone-volume {
+  left: -3px;
+}
+
+.phone-power {
+  right: -3px;
+}
+
+.tablet-card-device {
+  width: min(100%, 300px);
+  padding: 5px 2px 3px;
+  border: 1px solid rgba(207, 220, 225, 0.5);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #778389 0%, #303b40 10%, #11181b 88%, #69757a 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.72),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 25px 52px rgba(0, 0, 0, 0.4);
+}
+
+.tablet-card-screen {
+  border: 0;
+  border-radius: 15px;
+}
+
+.tablet-card-camera {
+  top: 1px;
+  width: 3px;
+  height: 3px;
+  background: #091217;
+  box-shadow: 0 0 0 1px rgba(111, 159, 178, 0.22);
+}
+
+.project-monitor.project-preview-tablet {
+  width: min(74%, 450px);
+  padding: 5px 2px 3px;
+  border-width: 1px;
+  border-color: rgba(207, 220, 225, 0.48);
+  border-radius: 23px;
+  background: linear-gradient(145deg, #778389 0%, #303b40 9%, #11181b 90%, #69757a 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.72),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 25px 52px rgba(0, 0, 0, 0.4);
+}
+
+.project-preview-tablet .project-monitor-screen {
+  aspect-ratio: 574 / 826;
+  border-width: 0;
+  border-radius: 19px;
+}
+
+.project-monitor.project-preview-phone {
+  width: min(46%, 282px);
+  padding: 5px;
+  border-width: 1px;
+  border-radius: 39px;
+  background: linear-gradient(145deg, #69767b 0%, #151d21 11%, #05090b 84%, #59666b 100%);
+}
+
+.project-preview-phone .project-monitor-screen {
+  border-radius: 33px;
+}
+
+/* El monitor de escritorio adopta la relación de aspecto de cada captura.
+   Así no reserva una franja negra debajo de imágenes más panorámicas. */
+.project-preview-desktop .project-monitor-screen {
+  grid-template-rows: 24px auto;
+  aspect-ratio: auto;
+}
+
+.project-preview-desktop .project-monitor-display {
+  height: auto;
+  min-height: 0;
+  line-height: 0;
+}
+
+.project-preview-desktop .project-monitor-display > img,
+.project-preview-desktop .project-monitor-display > video {
+  height: auto;
+  object-fit: contain;
+}
+
 .phone-home-indicator {
   position: absolute;
   right: 35%;
@@ -1995,13 +2140,115 @@ body.modal-open {
   }
 
   .phone-device {
-    width: min(100%, 286px);
+    width: min(100%, 282px);
+    transform: none;
+  }
+
+  .phone-project:nth-child(even) .phone-device {
+    transform: none;
+  }
+
+  .tablet-card-device {
+    width: min(100%, 296px);
+  }
+
+  .project-monitor.project-preview-tablet {
+    width: min(92%, 410px);
+    padding: 4px 2px 3px;
+    border-radius: 19px;
+  }
+
+  .project-preview-tablet .project-monitor-screen {
+    border-radius: 16px;
+  }
+
+  .project-monitor.project-preview-phone {
+    width: min(76%, 270px);
+    padding: 4px;
+    border-radius: 36px;
+  }
+
+  .project-preview-phone .project-monitor-screen {
+    border-radius: 31px;
   }
 
   .other-projects {
     grid-template-columns: 1fr;
     margin-top: 70px;
     padding: 24px;
+  }
+}
+
+@media (max-width: 430px) {
+  .proyectos {
+    padding-inline: 10px;
+  }
+
+  .phone-stage,
+  .tablet-card-stage,
+  .desktop-card-stage {
+    padding-top: 26px;
+  }
+
+  .phone-device {
+    width: min(76vw, 282px);
+  }
+
+  .phone-status {
+    padding-inline: 18px;
+  }
+
+  .phone-content {
+    padding-inline: 17px;
+  }
+
+  .phone-project-native .phone-content {
+    height: 250px;
+  }
+
+  .phone-project-native .phone-gallery-dots {
+    bottom: 256px;
+  }
+
+  .phone-tags {
+    gap: 5px;
+  }
+
+  .phone-tags span {
+    padding: 4px 6px;
+    font-size: 0.56rem;
+  }
+
+  .project-modal-media {
+    padding-inline: 10px;
+  }
+
+  .project-modal-featured-media {
+    padding-inline: 25px;
+  }
+
+  .project-modal-content {
+    padding: 26px 16px 40px;
+  }
+
+  .project-stack-detail {
+    gap: 9px;
+  }
+
+  .stack-group li {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .modal-detail-list {
+    gap: 8px;
+    padding-left: 18px;
+    font-size: 0.94rem;
+  }
+
+  .project-technical-highlight,
+  .project-context-block {
+    padding: 14px;
   }
 }
 

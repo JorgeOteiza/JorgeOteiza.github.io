@@ -58,6 +58,10 @@ const iconos = {
     src: "/pytest-logo.svg",
     alt: "Pytest",
   },
+  redis: {
+    src: "https://www.svgrepo.com/show/354272/redis.svg",
+    alt: "Redis",
+  },
   bootstrap: {
     src: "/logoBootstrap.png",
     alt: "Bootstrap",
@@ -207,6 +211,35 @@ const travelCalculatorMedia = [
   { src: "/projects/travel-calculator/ipad-about.png", device: "tablet", alt: "Metodología y arquitectura de Travel Calculator en iPad" },
   { src: "/projects/travel-calculator/iphone-calculator.png", device: "phone", alt: "Formulario de Travel Calculator en iPhone" },
   { src: "/projects/travel-calculator/iphone-profile.png", device: "phone", alt: "Historial de Travel Calculator en iPhone" },
+];
+
+const authflowPhoneMedia = [
+  {
+    src: "/projects/authflow/iphone-hero.png",
+    device: "phone",
+    alt: "Portada de AuthFlow en iPhone 12 Pro",
+  },
+  {
+    src: "/projects/authflow/iphone-signup.png",
+    device: "phone",
+    alt: "Creación de cuenta de AuthFlow en iPhone 12 Pro",
+  },
+  {
+    src: "/projects/authflow/iphone-profile.png",
+    device: "phone",
+    alt: "Perfil protegido de AuthFlow en iPhone 12 Pro",
+  },
+];
+
+const authflowMedia = [
+  { src: "/projects/authflow/desktop-hero.png", alt: "Portada de AuthFlow en escritorio" },
+  { src: "/projects/authflow/desktop-signup.png", alt: "Creación de cuenta de AuthFlow en escritorio" },
+  { src: "/projects/authflow/ipad-hero.png", device: "tablet", alt: "Portada responsive de AuthFlow en iPad Air" },
+  { src: "/projects/authflow/ipad-profile.png", device: "tablet", alt: "Perfil y seguridad de cuenta de AuthFlow en iPad Air" },
+  ...authflowPhoneMedia,
+  { src: "/projects/authflow/iphone-email-verified.png", device: "phone", alt: "Confirmación de correo verificado en AuthFlow" },
+  { src: "/projects/authflow/iphone-delete-confirmation.png", device: "phone", alt: "Confirmación segura para eliminar una cuenta en AuthFlow" },
+  { src: "/projects/authflow/iphone-account-deleted.png", device: "phone", alt: "Cuenta eliminada correctamente en AuthFlow" },
 ];
 
 const proyectos = [
@@ -365,42 +398,63 @@ const proyectos = [
     cardDevice: "tablet",
   },
   {
-    titulo: "Autenticación",
-    imagen: "/registroCreadoAutenticacion.png",
-    alt: "Pantalla de usuario creado en proyecto de autenticación",
-    imageFit: "contain",
+    titulo: "AuthFlow",
+    imagen: authflowPhoneMedia[0].src,
+    alt: authflowPhoneMedia[0].alt,
     resumen:
-      "Sistema full stack de registro, inicio de sesión y gestión segura de usuarios.",
-    repo: "https://github.com/JorgeOteiza/Project_autenticacion-login--React-flask",
+      "Plataforma full stack de autenticación con sesiones JWT en cookies HttpOnly, verificación de correo y gestión segura de cuentas.",
+    fraseImpacto:
+      "Autenticación full stack con JWT en cookies HttpOnly, protección CSRF, rotación y revocación de sesiones, PostgreSQL, Redis y pruebas E2E responsive.",
+    repo: "https://github.com/JorgeOteiza/authflow-react-flask",
     demo: "",
-    rol: "Desarrollo full stack: interfaz de registro e inicio de sesión, API REST, autenticación JWT, persistencia y protección de rutas.",
+    rol: "Diseño y desarrollo full stack. Implementé la interfaz responsive, la API REST, el modelo de datos, la gestión de sesiones, los controles de seguridad, las migraciones y la estrategia de pruebas automatizadas.",
     enfoque:
-      "Proyecto centrado en seguridad de usuarios, protección de rutas y comunicación entre frontend y backend.",
-    media: [
-      {
-        src: "/registroCreadoAutenticacion.png",
-        alt: "Registro creado en el sistema de autenticación",
-      },
-    ],
+      "Sistema full stack de autenticación diseñado para gestionar el ciclo completo de una cuenta: registro, verificación de correo, inicio y renovación de sesión, recuperación de contraseña, edición del perfil y eliminación segura.",
+    phoneMedia: authflowPhoneMedia,
+    media: authflowMedia,
     detalles: [
-      "APIs REST desarrolladas con Flask.",
-      "Autenticación mediante tokens JWT.",
-      "Encriptación de contraseñas para seguridad.",
-      "Protección de rutas en frontend con React.",
+      "Registro con normalización de correo y política de contraseñas.",
+      "Verificación de correo mediante tokens de un solo uso y duración limitada.",
+      "Inicio de sesión con protección frente a intentos de fuerza bruta.",
+      "Sesiones mediante access tokens de 15 minutos y refresh tokens de 7 días.",
+      "Rotación del refresh token e invalidación del token anterior.",
+      "Revocación efectiva de sesiones al cerrar sesión o eliminar la cuenta.",
+      "Recuperación segura de contraseña mediante enlaces temporales.",
+      "Perfil privado que obtiene la identidad directamente desde el JWT.",
+      "Actualización y eliminación de la propia cuenta verificando la contraseña actual.",
+      "Límites de solicitudes compartidos mediante Redis.",
+      "Persistencia en PostgreSQL y migraciones administradas con Alembic.",
+      "Interfaz responsive validada en escritorio, iPad, iPhone 12 Pro y Galaxy.",
     ],
     stack: {
-      Frontend: ["React", "JavaScript"],
-      "Backend y datos": [
-        "Python",
-        "Flask",
-        "SQLAlchemy",
-        "PostgreSQL",
-        "JWT",
+      Frontend: ["React 19", "JavaScript", "React Router", "Context API", "Webpack"],
+      "Backend y datos": ["Python", "Flask", "SQLAlchemy", "Alembic", "PostgreSQL", "Redis"],
+      Seguridad: [
+        "JWT en cookies HttpOnly",
+        "Protección CSRF",
+        "Access y refresh tokens",
+        "Rotación y revocación de tokens",
+        "Verificación de correo",
+        "Recuperación de contraseña",
+        "Hash seguro de contraseñas",
+        "Rate limiting",
+        "Registro de eventos de seguridad",
       ],
-      Herramientas: ["Postman"],
+      "Pruebas e infraestructura": [
+        "Pytest",
+        "Vitest",
+        "Playwright",
+        "Docker Compose",
+        "GitHub Actions",
+        "Render",
+      ],
     },
     aporteTecnico:
-      "Flujo de autenticación de extremo a extremo con contraseñas cifradas, tokens JWT y rutas protegidas tanto en la API como en la interfaz.",
+      "Diseñé un flujo de autenticación de extremo a extremo donde los JWT no se almacenan en localStorage ni sessionStorage, sino en cookies HttpOnly. La aplicación combina protección CSRF, access tokens breves, rotación de refresh tokens, revocación persistente y control de versión de sesión para invalidar credenciales comprometidas. También implementé verificación de correo, recuperación de contraseña con tokens de un solo uso, comprobación opcional de contraseñas comprometidas mediante k-anonymity y auditoría interna de eventos de seguridad.",
+    calidadValidacion:
+      "La API cuenta con pruebas de autenticación, permisos, CSRF, revocación, rotación, rate limiting y preflights CORS. El frontend utiliza pruebas con Vitest y el recorrido completo se verifica con Playwright en escritorio y dispositivos móviles, utilizando un entorno E2E aislado con SQLite en memoria.",
+    origenProyecto:
+      "AuthFlow comenzó como un ejercicio de autenticación durante un bootcamp full stack. Posteriormente fue reconstruido, ampliado y mantenido de forma independiente, incorporando una arquitectura propia, controles de seguridad modernos, PostgreSQL, Redis, pruebas automatizadas y una nueva interfaz responsive.",
     tecnologias: [
       "javascript",
       "react",
@@ -409,8 +463,10 @@ const proyectos = [
       "postgres",
       "sqlalchemy",
       "jwt",
-      "postman",
+      "pytest",
+      "redis",
     ],
+    tecnologiasTarjeta: ["react", "flask", "postgres", "redis"],
   },
   {
     titulo: "Blog de Star Wars",
@@ -853,6 +909,8 @@ const Proyectos = () => {
                 ? "phone-project-native"
                 : ""
             } ${proyecto.titulo === "El Rincón del Vino" ? "ecommerce-phone-card" : ""} ${
+              proyecto.titulo === "AuthFlow" ? "authflow-phone-card" : ""
+            } ${
               proyecto.cardDevice === "desktop" ? "desktop-project-card" : ""
             } ${
               proyecto.cardDevice === "tablet" ? "tablet-project-card" : ""
@@ -1207,6 +1265,20 @@ const Proyectos = () => {
                 <div className="project-technical-highlight">
                   <h3>Aporte técnico destacado</h3>
                   <p>{proyectoActivo.aporteTecnico}</p>
+                </div>
+              )}
+
+              {proyectoActivo.calidadValidacion && (
+                <div className="project-context-block">
+                  <h3>Calidad y validación</h3>
+                  <p>{proyectoActivo.calidadValidacion}</p>
+                </div>
+              )}
+
+              {proyectoActivo.origenProyecto && (
+                <div className="project-context-block">
+                  <h3>Origen del proyecto</h3>
+                  <p>{proyectoActivo.origenProyecto}</p>
                 </div>
               )}
 
