@@ -242,6 +242,44 @@ const authflowMedia = [
   { src: "/projects/authflow/iphone-account-deleted.png", device: "phone", alt: "Cuenta eliminada correctamente en AuthFlow" },
 ];
 
+const starWarsMedia = [
+  {
+    src: "/projects/star-wars-blog/desktop-home.png",
+    alt: "Portada del archivo galáctico de Star Wars en escritorio",
+  },
+  {
+    src: "/projects/star-wars-blog/desktop-collections.png",
+    alt: "Colecciones de personajes, vehículos y planetas en escritorio",
+  },
+  {
+    src: "/projects/star-wars-blog/desktop-characters.png",
+    alt: "Catálogo de personajes de Star Wars en escritorio",
+  },
+  {
+    src: "/projects/star-wars-blog/desktop-character-detail.png",
+    alt: "Ficha detallada de Yoda en el archivo galáctico",
+  },
+  {
+    src: "/projects/star-wars-blog/desktop-favorites.png",
+    alt: "Colección de favoritos abierta sobre el catálogo de planetas",
+  },
+  {
+    src: "/projects/star-wars-blog/tablet-collections.png",
+    device: "tablet",
+    alt: "Colecciones del archivo galáctico en vista tablet",
+  },
+  {
+    src: "/projects/star-wars-blog/iphone-home.png",
+    device: "phone",
+    alt: "Portada responsive del blog de Star Wars en iPhone 12 Pro",
+  },
+  {
+    src: "/projects/star-wars-blog/iphone-menu.png",
+    device: "phone",
+    alt: "Menú móvil y colecciones del blog de Star Wars en iPhone 12 Pro",
+  },
+];
+
 const proyectos = [
   {
     titulo: "Minimarket Manager",
@@ -469,39 +507,44 @@ const proyectos = [
     tecnologiasTarjeta: ["react", "flask", "postgres", "redis"],
   },
   {
-    titulo: "Blog de Star Wars",
-    imagen: "/characterslistportfolio.png",
-    alt: "Listado de personajes del blog de Star Wars",
-    resumen: "Aplicación web para visualizar información desde una API externa.",
+    titulo: "Archivo Galáctico de Star Wars",
+    imagen: starWarsMedia[0].src,
+    alt: starWarsMedia[0].alt,
+    resumen:
+      "Aplicación React para explorar personajes, vehículos y planetas mediante SWAPI, con catálogos paginados, fichas detalladas y favoritos persistentes.",
+    fraseImpacto:
+      "Una experiencia de exploración galáctica construida a partir de datos públicos.",
     repo: "https://github.com/JorgeOteiza/project_Blog_de_StarWars",
     demo: "",
-    rol: "Desarrollo frontend: integración de una API externa, modelado del estado y construcción de una interfaz responsive.",
+    rol: "Desarrollo frontend integral: arquitectura de componentes en React, integración y normalización de SWAPI, estado global, persistencia local, interfaz responsive y gestión de estados de carga, errores e imágenes alternativas.",
     enfoque:
-      "Exploración de consumo de API externa, renderizado dinámico y manejo de estado en React.",
-    media: [
-      {
-        src: "/characterslistportfolio.png",
-        alt: "Listado de personajes del blog de Star Wars",
-      },
-      {
-        src: "/deleteVehicle.png",
-        alt: "Listado de vehículos y favoritos del blog de Star Wars",
-      },
-    ],
+      "Aplicación web interactiva que transforma los datos de SWAPI en un archivo galáctico visual y responsive, con navegación por categorías, catálogos paginados, fichas detalladas y una colección de favoritos persistente.",
+    media: starWarsMedia,
     detalles: [
-      "Consumo de datos desde la API pública SWAPI.",
-      "Renderizado dinámico de información en React.",
-      "Manejo de estado para actualizar contenido.",
-      "Diseño de interfaz con Bootstrap y prototipado en Figma.",
+      "Explora personajes, vehículos y planetas de Star Wars.",
+      "Presenta catálogos paginados y fichas individuales con información detallada.",
+      "Carga progresivamente nuevos registros desde SWAPI.",
+      "Permite añadir y eliminar elementos de una colección de favoritos.",
+      "Conserva los favoritos entre sesiones mediante LocalStorage.",
+      "Gestiona estados de carga, errores e imágenes alternativas.",
+      "Adapta la navegación a teléfonos, tablets, notebooks y monitores.",
     ],
     stack: {
-      Frontend: ["React", "JavaScript", "Bootstrap"],
-      Diseño: ["Figma"],
+      Frontend: [
+        "React",
+        "JavaScript",
+        "React Router",
+        "Context API",
+        "HTML5",
+        "CSS3",
+      ],
+      Herramientas: ["Webpack", "Babel", "ESLint", "npm"],
       "Servicio externo": ["SWAPI"],
+      Persistencia: ["LocalStorage"],
     },
     aporteTecnico:
-      "Integración de SWAPI con renderizado dinámico y manejo de estado para presentar personajes y vehículos en una experiencia de navegación consistente.",
-    tecnologias: ["figma", "bootstrap", "javascript", "react"],
+      "Implementé una capa centralizada para consultar y transformar los datos de SWAPI, acompañada de componentes reutilizables para representar diferentes tipos de recursos sin duplicar lógica entre categorías. La aplicación gestiona paginación, estados de carga, errores, rutas dinámicas y favoritos persistentes. También incorpora un sistema de respaldo de imágenes que recurre a fuentes alternativas o placeholders locales cuando el recurso principal no está disponible.",
+    tecnologias: ["javascript", "react"],
     secundario: true,
   },
   {

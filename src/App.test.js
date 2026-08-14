@@ -34,17 +34,19 @@ test("muestra las capturas adicionales en el proyecto correcto", () => {
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /blog de star wars aplicación web/i,
+      name: /archivo galáctico de star wars aplicación react/i,
     }),
   );
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: /ver imagen 2 de blog de star wars/i,
+      name: /ver imagen 2 de archivo galáctico de star wars/i,
     }),
   );
 
-  expect(screen.getByAltText(/listado de vehículos y favoritos/i)).toBeInTheDocument();
+  expect(
+    screen.getByAltText(/colecciones de personajes, vehículos y planetas/i),
+  ).toBeInTheDocument();
 });
 
 test("separa la galería breve y el detalle completo de Minimarket Manager", () => {
