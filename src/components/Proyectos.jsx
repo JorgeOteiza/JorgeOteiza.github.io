@@ -551,12 +551,13 @@ const proyectos = [
     titulo: "Short URL",
     imagen: "/URL-SHORT-portfolio.png",
     alt: "Captura del proyecto Short URL",
-    resumen: "Aplicación web para acortar enlaces con una API externa.",
+    resumen:
+      "Acortador de enlaces full stack con redirecciones propias, persistencia y una interfaz accesible.",
     repo: "https://github.com/JorgeOteiza/Short-url",
-    demo: "",
-    rol: "Desarrollo full stack: interfaz de usuario, backend ligero e integración con un servicio externo de acortamiento de enlaces.",
+    demo: "https://short-url-jorge.onrender.com",
+    rol: "Diseño y desarrollo full stack: experiencia responsive, API REST, persistencia, seguridad básica, pruebas y despliegue con Docker.",
     enfoque:
-      "Integración de un backend ligero con FastAPI para consumir servicios externos y devolver enlaces cortos.",
+      "Aplicación autocontenida que transforma enlaces extensos en identificadores cortos propios, conserva su destino y resuelve cada visita mediante una redirección HTTP real.",
     media: [
       {
         src: "/URL-SHORT-portfolio.png",
@@ -564,19 +565,37 @@ const proyectos = [
       },
     ],
     detalles: [
-      "Consumo de TinyURL para generar enlaces cortos.",
-      "Backend desarrollado con FastAPI.",
-      "Procesamiento de solicitudes HTTP y respuestas.",
-      "Interfaz desarrollada con React y Vite.",
+      "Generación segura de identificadores cortos sin depender de servicios externos.",
+      "Persistencia mediante SQLite en desarrollo y PostgreSQL en producción.",
+      "Redirecciones HTTP reales y reutilización de URLs ya registradas.",
+      "Validación en frontend y backend, estados accesibles y copia al portapapeles.",
+      "Rate limiting configurable, health check y logs estructurados.",
+      "Pruebas automatizadas y pipeline de calidad con GitHub Actions.",
+      "Despliegue gratuito en Render con PostgreSQL administrado por Neon.",
     ],
     stack: {
       Frontend: ["React", "JavaScript", "Vite"],
-      Backend: ["Python", "FastAPI"],
-      "Servicio externo": ["TinyURL"],
+      "Backend y datos": [
+        "Python",
+        "FastAPI",
+        "SQLAlchemy",
+        "SQLite",
+        "PostgreSQL",
+      ],
+      Infraestructura: ["Docker", "GitHub Actions", "Render"],
     },
     aporteTecnico:
-      "Separación entre la interfaz y un backend ligero que procesa solicitudes HTTP, consume TinyURL y devuelve una respuesta lista para utilizarse desde React.",
-    tecnologias: ["javascript", "react", "vite", "python", "fastapi"],
+      "Reemplacé una integración que exponía credenciales en el navegador por una arquitectura full stack propia. La API genera identificadores con aleatoriedad criptográfica, persiste los destinos y sirve la compilación de React desde el mismo contenedor.",
+    tecnologias: [
+      "javascript",
+      "react",
+      "vite",
+      "python",
+      "fastapi",
+      "sqlite",
+      "sqlalchemy",
+      "postgres",
+    ],
     secundario: true,
   },
 ];
