@@ -107,6 +107,42 @@ const icons = [
     invert: true,
     alt: "Diseño de prompts Logo",
   },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg",
+    alt: "React Router Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+    alt: "FastAPI Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
+    alt: "Redis Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    alt: "Docker Logo",
+  },
+  {
+    src: "https://cdn.simpleicons.org/neon/00E699",
+    alt: "Neon Logo",
+  },
+  {
+    src: "https://cdn.simpleicons.org/render/46E3B7",
+    alt: "Render Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
+    alt: "Vitest Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg",
+    alt: "Playwright Logo",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
+    alt: "GitHub Actions Logo",
+  },
 ];
 
 const groups = [
@@ -118,36 +154,50 @@ const groups = [
       "JavaScript Logo",
       "TypeScript Logo",
       "React Logo",
+      "React Router Logo",
       "Vite Logo",
       "Bootstrap Logo",
     ],
   },
   {
-    title: "Backend y Datos",
+    title: "Backend y APIs",
     items: [
       "Python Logo",
       "Flask Logo",
+      "FastAPI Logo",
       "REST APIs Logo",
       "JWT Logo",
       "SQLAlchemy Logo",
+    ],
+  },
+  {
+    title: "Datos e Infraestructura",
+    items: [
       "PostgreSQL Logo",
       "SQLite Logo",
-      "pytest Logo",
+      "Redis Logo",
+      "Docker Logo",
+      "Neon Logo",
+      "Render Logo",
     ],
   },
   {
-    title: "Herramientas y Flujo de Trabajo",
+    title: "Pruebas y Flujo de Trabajo",
     items: [
+      "pytest Logo",
+      "Vitest Logo",
+      "Playwright Logo",
       "Git Logo",
       "GitHub Logo",
+      "GitHub Actions Logo",
       "Postman Logo",
-      "Figma Logo",
-      "PyInstaller Logo",
     ],
   },
   {
-    title: "IA y Productividad",
+    title: "Diseño, IA y Productividad",
     items: [
+      "Figma Logo",
+      "PyInstaller Logo",
       "ChatGPT Logo",
       "Codex Logo",
       "GitHub Copilot Logo",

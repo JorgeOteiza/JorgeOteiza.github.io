@@ -295,7 +295,19 @@ button.repositorios-target {
   gap: 16px;
 }
 
+.other-project-card-shell {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0;
+}
+
+.other-project-card-shell:has(.other-project-demo) {
+  gap: 9px;
+}
+
 .other-project-card {
+  width: 100%;
+  height: 100%;
   display: grid;
   position: relative;
   gap: 8px;
@@ -414,6 +426,37 @@ button.repositorios-target {
   cursor: grab;
   touch-action: pan-y;
   user-select: none;
+}
+
+.other-project-card em {
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.other-project-demo {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  border-radius: 12px;
+  color: #071418;
+  background: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.other-project-demo:hover,
+.other-project-demo:focus-visible {
+  color: #071418;
+  background: #67e8f9;
+  outline: 3px solid rgba(103, 232, 249, 0.2);
 }
 
 .project-modal-featured-media.is-dragging {
@@ -1861,6 +1904,15 @@ body.modal-open {
 .phone-open-project:focus-visible {
   background: #67e8f9;
   outline: 3px solid rgba(103, 232, 249, 0.25);
+}
+
+.phone-project-category {
+  margin-bottom: 5px;
+  color: #8daab0;
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Las capturas creadas en iPhone usan toda la pantalla del dispositivo. El

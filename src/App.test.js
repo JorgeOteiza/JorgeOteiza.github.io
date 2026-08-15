@@ -13,7 +13,16 @@ test("muestra la presentación y las secciones principales", () => {
     screen.getByRole("heading", { name: /productos que viven/i }),
   ).toBeInTheDocument();
   expect(screen.getByText(/pytest/i)).toBeInTheDocument();
+  expect(screen.getByText("FastAPI")).toBeInTheDocument();
+  expect(screen.getByText("Docker")).toBeInTheDocument();
+  expect(screen.getByText("GitHub Actions")).toBeInTheDocument();
+  expect(screen.getByText("Playwright")).toBeInTheDocument();
   expect(screen.getByText("Diseño de prompts")).toBeInTheDocument();
+  expect(screen.getByText("Cómo trabajo")).toBeInTheDocument();
+  expect(screen.getAllByText(/full stack/i).length).toBeGreaterThanOrEqual(4);
+  expect(
+    screen.getByRole("link", { name: /ver aplicación/i }),
+  ).toHaveAttribute("href", "https://short-url-cl.onrender.com/");
 });
 
 test("abre y cierra el detalle de un proyecto con Escape", () => {

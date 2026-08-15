@@ -280,9 +280,45 @@ const starWarsMedia = [
   },
 ];
 
+const shortUrlMedia = [
+  {
+    src: "/projects/short-url/desktop-home.png",
+    alt: "Portada de Short URL con el formulario para acortar enlaces",
+  },
+  {
+    src: "/projects/short-url/desktop-shortened-link.png",
+    alt: "Enlace acortado con contador de visitas en Short URL",
+  },
+  {
+    src: "/projects/short-url/desktop-qr.png",
+    alt: "Generador de códigos QR de Short URL en escritorio",
+  },
+  {
+    src: "/projects/short-url/ipad-qr-form.png",
+    device: "tablet",
+    alt: "Generador de códigos QR de Short URL en iPad Air",
+  },
+  {
+    src: "/projects/short-url/ipad-qr-result.png",
+    device: "tablet",
+    alt: "Código QR generado y enlaces recientes en iPad Air",
+  },
+  {
+    src: "/projects/short-url/iphone-home.png",
+    device: "phone",
+    alt: "Vista inicial responsive de Short URL en iPhone 12 Pro",
+  },
+  {
+    src: "/projects/short-url/iphone-qr-result.png",
+    device: "phone",
+    alt: "Código QR generado por Short URL en iPhone 12 Pro",
+  },
+];
+
 const proyectos = [
   {
     titulo: "Minimarket Manager",
+    categoria: "Aplicación local · Full stack",
     imagen: minimarketMedia[0].src,
     alt: minimarketMedia[0].alt,
     resumen:
@@ -340,6 +376,7 @@ const proyectos = [
   },
   {
     titulo: "El Rincón del Vino",
+    categoria: "E-commerce · Full stack",
     imagen: ecommerceMedia[0].src,
     alt: ecommerceMedia[0].alt,
     resumen:
@@ -386,6 +423,7 @@ const proyectos = [
   },
   {
     titulo: "Travel Calculator",
+    categoria: "Datos y rutas · Full stack",
     imagen: travelCalculatorTabletMedia[0].src,
     alt: travelCalculatorTabletMedia[0].alt,
     resumen:
@@ -437,6 +475,7 @@ const proyectos = [
   },
   {
     titulo: "AuthFlow",
+    categoria: "Seguridad · Full stack",
     imagen: authflowPhoneMedia[0].src,
     alt: authflowPhoneMedia[0].alt,
     resumen:
@@ -508,6 +547,7 @@ const proyectos = [
   },
   {
     titulo: "Archivo Galáctico de Star Wars",
+    categoria: "Exploración · Frontend",
     imagen: starWarsMedia[0].src,
     alt: starWarsMedia[0].alt,
     resumen:
@@ -549,51 +589,39 @@ const proyectos = [
   },
   {
     titulo: "Short URL",
-    imagen: "/URL-SHORT-portfolio.png",
-    alt: "Captura del proyecto Short URL",
+    categoria: "Productividad · Full stack",
+    imagen: shortUrlMedia[0].src,
+    alt: shortUrlMedia[0].alt,
     resumen:
-      "Acortador de enlaces full stack con redirecciones propias, persistencia y una interfaz accesible.",
+      "Aplicación web para acortar enlaces, generar códigos QR y consultar estadísticas de uso.",
     repo: "https://github.com/JorgeOteiza/Short-url",
-    demo: "https://short-url-jorge.onrender.com",
-    rol: "Diseño y desarrollo full stack: experiencia responsive, API REST, persistencia, seguridad básica, pruebas y despliegue con Docker.",
+    demo: "https://short-url-cl.onrender.com/",
+    demoLabel: "Ver aplicación",
+    apiDocs: "https://short-url-cl.onrender.com/docs",
+    rol: "Desarrollo full stack: diseño responsive, construcción de la API, persistencia de datos y despliegue en producción.",
     enfoque:
-      "Aplicación autocontenida que transforma enlaces extensos en identificadores cortos propios, conserva su destino y resuelve cada visita mediante una redirección HTTP real.",
-    media: [
-      {
-        src: "/URL-SHORT-portfolio.png",
-        alt: "Pantalla del acortador de URL",
-      },
-    ],
+      "Aplicación full stack con FastAPI y React que permite crear enlaces cortos, compartirlos mediante códigos QR y registrar sus visitas.",
+    media: shortUrlMedia,
     detalles: [
-      "Generación segura de identificadores cortos sin depender de servicios externos.",
-      "Persistencia mediante SQLite en desarrollo y PostgreSQL en producción.",
-      "Redirecciones HTTP reales y reutilización de URLs ya registradas.",
-      "Validación en frontend y backend, estados accesibles y copia al portapapeles.",
-      "Rate limiting configurable, health check y logs estructurados.",
-      "Pruebas automatizadas y pipeline de calidad con GitHub Actions.",
-      "Despliegue gratuito en Render con PostgreSQL administrado por Neon.",
+      "Creación y redirección de enlaces cortos.",
+      "Generación y descarga de códigos QR.",
+      "Consulta de visitas por enlace.",
+      "Validación de URLs y protección ante solicitudes abusivas.",
+      "Persistencia de datos en PostgreSQL.",
     ],
     stack: {
       Frontend: ["React", "JavaScript", "Vite"],
-      "Backend y datos": [
-        "Python",
-        "FastAPI",
-        "SQLAlchemy",
-        "SQLite",
-        "PostgreSQL",
-      ],
-      Infraestructura: ["Docker", "GitHub Actions", "Render"],
+      Backend: ["Python", "FastAPI", "PostgreSQL"],
+      Infraestructura: ["Neon", "Render", "GitHub Actions"],
     },
     aporteTecnico:
-      "Reemplacé una integración que exponía credenciales en el navegador por una arquitectura full stack propia. La API genera identificadores con aleatoriedad criptográfica, persiste los destinos y sirve la compilación de React desde el mismo contenedor.",
+      "Arquitectura full stack desplegada en producción, con frontend responsive, API documentada, almacenamiento persistente y un flujo automatizado de pruebas y despliegue.",
     tecnologias: [
       "javascript",
       "react",
       "vite",
       "python",
       "fastapi",
-      "sqlite",
-      "sqlalchemy",
       "postgres",
     ],
     secundario: true,
@@ -999,6 +1027,7 @@ const Proyectos = () => {
                 </div>
                 <div className="desktop-card-stand" aria-hidden="true"></div>
                 <div className="desktop-card-content">
+                  <div className="phone-project-category">{proyecto.categoria}</div>
                   <div className="phone-project-number">
                     Caso {String(projectIndex + 1).padStart(2, "0")}
                   </div>
@@ -1032,6 +1061,7 @@ const Proyectos = () => {
                   </div>
                 </div>
                 <div className="desktop-card-content tablet-card-content">
+                  <div className="phone-project-category">{proyecto.categoria}</div>
                   <div className="phone-project-number">
                     Caso {String(projectIndex + 1).padStart(2, "0")}
                   </div>
@@ -1085,6 +1115,7 @@ const Proyectos = () => {
                     eager={projectIndex === 0}
                   />
                   <div className="phone-content">
+                    <div className="phone-project-category">{proyecto.categoria}</div>
                     <div className="phone-project-number">
                       Caso {String(projectIndex + 1).padStart(2, "0")}
                     </div>
@@ -1122,15 +1153,28 @@ const Proyectos = () => {
 
         <div className="other-projects-list">
           {proyectosSecundarios.map((proyecto) => (
-            <button
-              type="button"
-              className="other-project-card"
-              key={proyecto.titulo}
-              onClick={() => abrirDetalle(proyecto)}
-            >
-              <span>{proyecto.titulo}</span>
-              <small>{proyecto.resumen}</small>
-            </button>
+            <article className="other-project-card-shell" key={proyecto.titulo}>
+              <button
+                type="button"
+                className="other-project-card"
+                onClick={() => abrirDetalle(proyecto)}
+              >
+                <em>{proyecto.categoria}</em>
+                <span>{proyecto.titulo}</span>
+                <small>{proyecto.resumen}</small>
+              </button>
+              {proyecto.demo && (
+                <a
+                  href={proyecto.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="other-project-demo"
+                >
+                  {proyecto.demoLabel || "Ver aplicación"}
+                  <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              )}
+            </article>
           ))}
         </div>
       </div>
@@ -1276,7 +1320,9 @@ const Proyectos = () => {
             </div>
 
             <div className="project-modal-content">
-              <span className="section-kicker">Detalle del proyecto</span>
+              <span className="section-kicker">
+                Detalle del proyecto · {proyectoActivo.categoria}
+              </span>
               <h2 id="project-modal-title">{proyectoActivo.titulo}</h2>
               {proyectoActivo.fraseImpacto && (
                 <p className="project-impact-line">{proyectoActivo.fraseImpacto}</p>
@@ -1362,7 +1408,18 @@ const Proyectos = () => {
                     rel="noopener noreferrer"
                   >
                     <i className="fa-solid fa-up-right-from-square"></i>
-                    <span>Ver demo</span>
+                    <span>{proyectoActivo.demoLabel || "Ver demo"}</span>
+                  </a>
+                )}
+                {proyectoActivo.apiDocs && (
+                  <a
+                    href={proyectoActivo.apiDocs}
+                    className="repositorios-target secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fa-solid fa-book-open"></i>
+                    <span>Ver documentación API</span>
                   </a>
                 )}
               </div>

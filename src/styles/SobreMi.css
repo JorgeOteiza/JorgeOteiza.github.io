@@ -102,6 +102,16 @@
   overflow: hidden;
 }
 
+.about-process-label {
+  margin: 0;
+  padding: 22px 30px 12px;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .about-facts article {
   position: relative;
   padding: 28px 30px;

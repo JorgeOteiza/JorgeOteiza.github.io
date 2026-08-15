@@ -19,15 +19,17 @@ const SobreMi = () => {
           </p>
           <div className="descriptionForMe">
           <p>
-              Soy desarrollador Full Stack especializado en React y Flask. En
-              mis proyectos diseño interfaces, construyo APIs REST, modelo bases
-              de datos y convierto necesidades reales en herramientas completas.
+              Soy desarrollador Full Stack especializado en React, Flask y
+              FastAPI. Diseño interfaces, construyo APIs REST, modelo datos con
+              PostgreSQL y convierto necesidades reales en productos completos.
           </p>
           <p>
               Minimarket Manager resume mi forma de trabajar: comprender el
               negocio, cuidar los detalles y transformar una necesidad real en
-              una solución utilizable. Actualmente busco mi primera oportunidad
-              profesional para aportar, aprender y seguir creciendo junto a un equipo.
+              una solución utilizable. También trabajo con autenticación segura,
+              pruebas automatizadas, contenedores y despliegues en producción.
+              Actualmente busco mi primera oportunidad profesional para aportar,
+              aprender y seguir creciendo junto a un equipo.
           </p>
           </div>
           <a
@@ -42,20 +44,26 @@ const SobreMi = () => {
           </a>
         </div>
         <div className="about-facts">
+          <p className="about-process-label">Cómo trabajo</p>
           <article>
             <span>01</span>
-            <h3>Producto completo</h3>
-            <p>Pienso en la experiencia, los datos y la operación como un solo sistema.</p>
+            <h3>Entender el problema</h3>
+            <p>Traduzco la necesidad del usuario y del negocio en un alcance concreto.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>Backend con propósito</h3>
-            <p>APIs, autenticación y reglas de negocio diseñadas para resolver necesidades reales.</p>
+            <h3>Diseñar la arquitectura</h3>
+            <p>Conecto interfaz, API, datos y reglas de negocio como un solo producto.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>Aprendizaje constante</h3>
-            <p>Itero, pruebo y mejoro cada proyecto hasta convertirlo en una solución sólida.</p>
+            <h3>Probar e iterar</h3>
+            <p>Valido recorridos críticos, automatizo pruebas y refino la experiencia.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Publicar y observar</h3>
+            <p>Preparo el despliegue, la persistencia y la operación del producto.</p>
           </article>
         </div>
       </div>

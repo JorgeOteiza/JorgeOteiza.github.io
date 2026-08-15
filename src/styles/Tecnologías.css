@@ -36,6 +36,10 @@
   background: rgba(8, 22, 28, 0.68);
 }
 
+.technology-group:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .technology-group h3 {
   margin: 0 0 22px;
   color: var(--color-text-light);
@@ -96,6 +100,10 @@
 @media (max-width: 900px) {
   .technology-groups {
     grid-template-columns: 1fr;
+  }
+
+  .technology-group:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 }
 
