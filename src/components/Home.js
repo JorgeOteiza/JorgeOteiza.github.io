@@ -32,11 +32,11 @@ const Home = () => {
             </button>
             <a
               className="button-secondary"
-              href="https://flowcv.com/resume/ub597hln6vj6"
+              href={`${process.env.PUBLIC_URL}/CV_Jorge_Oteiza_Full_Stack_Developer.pdf`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Descargar CV
+              Ver CV
               <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
           </div>

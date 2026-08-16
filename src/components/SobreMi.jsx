@@ -33,7 +33,7 @@ const SobreMi = () => {
           </p>
           </div>
           <a
-            href="https://flowcv.com/resume/ub597hln6vj6"
+            href={`${process.env.PUBLIC_URL}/CV_Jorge_Oteiza_Full_Stack_Developer.pdf`}
             className="about-cv-link"
             target="_blank"
             rel="noopener noreferrer"
