@@ -52,9 +52,9 @@ const Navbar = () => {
           onClick={(e) => scrollToId(e, "#inicio")}
         >
           <img
-            src={`${process.env.PUBLIC_URL}/logo_portafolio.png`}
+            src={`${process.env.PUBLIC_URL}/logo_portafolio_fullstack_enduro.svg`}
             className="logo-portafolio"
-            alt="Logo del portfolio"
+            alt="Logo Full Stack Enduro de Jorge Oteiza"
           />
         </a>
         <button
