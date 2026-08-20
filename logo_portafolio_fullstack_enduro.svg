@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Full Stack Enduro</title>
+  <desc id="desc">Marca personal que combina desarrollo full stack con una rueda de bicicleta de enduro.</desc>
+
+  <defs>
+    <radialGradient id="badge" cx="50%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#0c2633"/>
+      <stop offset="1" stop-color="#061116"/>
+    </radialGradient>
+    <clipPath id="wheel-clip">
+      <circle cx="256" cy="256" r="219"/>
+    </clipPath>
+  </defs>
+
+  <!-- Cubierta de enduro: todos los círculos comparten el centro 256,256. -->
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#07141f" stroke-width="34"/>
+  <circle cx="256" cy="256" r="231" fill="none" stroke="#243b55" stroke-width="10"
+          stroke-dasharray="13 8"/>
+  <circle cx="256" cy="256" r="210" fill="url(#badge)" stroke="#f7fbff" stroke-width="5"/>
+  <circle cx="256" cy="256" r="195" fill="none" stroke="#31485a" stroke-width="2"/>
+
+  <!-- Flujo full stack: interfaz, API y datos. -->
+  <path d="M91 222 A178 178 0 0 1 421 222" fill="none" stroke="#22d3ee" stroke-width="6"
+        stroke-linecap="round"/>
+  <g fill="#07141f" stroke="#22d3ee" stroke-width="5">
+    <polygon points="150,112 162,105 174,112 174,126 162,133 150,126"/>
+    <rect x="247" y="77" width="18" height="18" rx="2"/>
+    <path d="M344 112l12-7 12 7v14l-12 7-12-7z"/>
+  </g>
+
+  <!-- Símbolo de código, elevado para dejar libre el centro mecánico. -->
+  <g fill="none" stroke="#f7fbff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M198 137l-46 39 46 39"/>
+    <path d="M314 137l46 39-46 39"/>
+    <path d="M282 124l-52 104"/>
+  </g>
+
+  <!-- Ocho rayos exclusivamente en la mitad inferior. -->
+  <g clip-path="url(#wheel-clip)" stroke="#f7fbff" stroke-width="4" stroke-linecap="round">
+    <line x1="256" y1="256" x2="432" y2="313"/>
+    <line x1="256" y1="256" x2="401" y2="371"/>
+    <line x1="256" y1="256" x2="351" y2="415"/>
+    <line x1="256" y1="256" x2="289" y2="438"/>
+    <line x1="256" y1="256" x2="223" y2="438"/>
+    <line x1="256" y1="256" x2="161" y2="415"/>
+    <line x1="256" y1="256" x2="111" y2="371"/>
+    <line x1="256" y1="256" x2="80" y2="313"/>
+  </g>
+
+  <!-- Rotor, buje y eje: centro matemático exacto 256,256. -->
+  <g>
+    <circle cx="256" cy="256" r="61" fill="#07141f" stroke="#f7fbff" stroke-width="10"
+            stroke-dasharray="15 6"/>
+    <circle cx="256" cy="256" r="48" fill="#07141f" stroke="#f7fbff" stroke-width="5"/>
+    <g fill="#07141f" stroke="#f7fbff" stroke-width="4">
+      <circle cx="256" cy="216" r="6"/>
+      <circle cx="291" cy="236" r="6"/>
+      <circle cx="291" cy="276" r="6"/>
+      <circle cx="256" cy="296" r="6"/>
+      <circle cx="221" cy="276" r="6"/>
+      <circle cx="221" cy="236" r="6"/>
+    </g>
+    <circle cx="256" cy="256" r="27" fill="#07141f" stroke="#f7fbff" stroke-width="8"/>
+    <circle cx="256" cy="256" r="7" fill="#22d3ee" stroke="#f7fbff" stroke-width="4"/>
+  </g>
+
+  <!-- Pinza de freno MTB a las tres en punto, secundaria y compacta. -->
+  <path d="M310 220c15 3 24 15 24 36s-9 33-24 36l-12-15c7-5 10-12 10-21s-3-16-10-21z"
+        fill="#22d3ee" stroke="#07141f" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="316" cy="238" r="5" fill="#f7fbff"/>
+  <circle cx="316" cy="274" r="5" fill="#f7fbff"/>
+</svg>
