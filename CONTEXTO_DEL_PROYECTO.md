@@ -4,7 +4,9 @@ Revisión del código local: 8 de septiembre de 2026.
 
 ## Propósito y voz
 
-Portafolio de Jorge Oteiza orientado a mostrar productos funcionales y su capacidad de desarrollo full stack. La presentación indica que busca su primera oportunidad profesional. Mantener esa descripción coherente con su situación real cuando se actualice.
+Portafolio de Jorge Oteiza orientado a mostrar productos funcionales y su capacidad de desarrollo full stack. Busca incorporarse a un equipo de desarrollo y tiene especial afinidad por el frontend y la experiencia de usuario. Su interés abarca frontend y backend; no presentarlo como alguien que prioriza trabajar en backend.
+
+Su experiencia comprende proyectos personales desde noviembre de 2024 y Minimarket Manager, proyecto independiente para un negocio real iniciado el 27 de marzo de 2026. El uso de IA se presenta como apoyo: definir contexto y requisitos, revisar el código generado y validar su integración y funcionamiento. No atribuirle experiencia en entrenamiento de modelos ni resultados medidos que no haya confirmado.
 
 El contenido utiliza español, con referencias regionales `es-CL`, un tono profesional, cercano y directo, y primera persona para describir la participación del autor. Los términos React, frontend, backend, API REST y full stack forman parte del vocabulario habitual.
 
