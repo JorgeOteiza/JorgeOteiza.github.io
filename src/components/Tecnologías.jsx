@@ -132,7 +132,7 @@ const icons = [
     alt: "Supabase Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/render/46E3B7",
+    src: "https://cdn.simpleicons.org/render/FFFFFF",
     alt: "Render Logo",
   },
   {
