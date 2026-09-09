@@ -128,6 +128,10 @@ const icons = [
     alt: "Neon Logo",
   },
   {
+    src: "https://cdn.simpleicons.org/supabase/3FCF8E",
+    alt: "Supabase Logo",
+  },
+  {
     src: "https://cdn.simpleicons.org/render/46E3B7",
     alt: "Render Logo",
   },
@@ -171,18 +175,19 @@ const groups = [
     ],
   },
   {
-    title: "Datos e Infraestructura",
+    title: "Datos e infraestructura",
     items: [
       "PostgreSQL Logo",
       "SQLite Logo",
       "Redis Logo",
       "Docker Logo",
       "Neon Logo",
+      "Supabase Logo",
       "Render Logo",
     ],
   },
   {
-    title: "Pruebas y Flujo de Trabajo",
+    title: "Pruebas y flujo de trabajo",
     items: [
       "pytest Logo",
       "Vitest Logo",
@@ -194,7 +199,7 @@ const groups = [
     ],
   },
   {
-    title: "Diseño, IA y Productividad",
+    title: "Diseño, IA y productividad",
     items: [
       "Figma Logo",
       "PyInstaller Logo",

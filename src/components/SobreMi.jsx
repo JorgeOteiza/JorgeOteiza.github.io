@@ -19,17 +19,27 @@ const SobreMi = () => {
           </p>
           <div className="descriptionForMe">
           <p>
-              Soy desarrollador Full Stack especializado en React, Flask y
-              FastAPI. Diseño interfaces, construyo APIs REST, modelo datos con
-              PostgreSQL y convierto necesidades reales en productos completos.
+              Soy desarrollador full stack y trabajo principalmente con React,
+              Flask y FastAPI. Diseño interfaces, construyo APIs REST y modelo
+              datos con PostgreSQL y SQLite para resolver necesidades reales.
+              Me interesa el desarrollo de productos completos, con especial
+              afinidad por el frontend y la experiencia de usuario.
           </p>
           <p>
-              Minimarket Manager resume mi forma de trabajar: comprender el
-              negocio, cuidar los detalles y transformar una necesidad real en
-              una solución utilizable. También trabajo con autenticación segura,
-              pruebas automatizadas, contenedores y despliegues en producción.
-              Actualmente busco mi primera oportunidad profesional para aportar,
-              aprender y seguir creciendo junto a un equipo.
+              Uso asistentes de IA como apoyo al desarrollo: defino el contexto
+              y los requisitos, reviso el código generado y valido cómo se
+              integra y funciona dentro del proyecto.
+          </p>
+          <p>
+              Minimarket Manager resume mi forma de trabajar: entender la
+              operación de un negocio real y construir una solución que permita
+              seguir vendiendo sin internet, con sincronización y administración
+              remota cuando hay conexión.
+          </p>
+          <p>
+              También trabajo con autenticación, pruebas automatizadas,
+              contenedores y despliegues en producción. Busco incorporarme a un
+              equipo de desarrollo donde pueda aportar, aprender y seguir creciendo.
           </p>
           </div>
           <a

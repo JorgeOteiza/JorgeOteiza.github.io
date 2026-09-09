@@ -22,8 +22,8 @@ const Home = () => {
             Desarrollo productos digitales <em>de principio a fin.</em>
           </h1>
           <p className="hero-description">
-            Construyo aplicaciones completas con React, Flask y bases de datos:
-            desde la experiencia de usuario hasta la lógica que mueve el negocio.
+            Desarrollo aplicaciones con React y Python, desde la interfaz y las
+            APIs hasta los datos y el despliegue.
           </p>
           <div className="hero-actions">
             <button type="button" className="button-primary" onClick={handleScroll}>

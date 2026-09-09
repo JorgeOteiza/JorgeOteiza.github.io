@@ -1,6 +1,6 @@
 # Jorge Oteiza | Portfolio Full Stack
 
-Portfolio profesional desarrollado en React para presentar proyectos, stack tecnológico, experiencia y datos de contacto.
+Portafolio profesional desarrollado en React para presentar proyectos, tecnologías, perfil y datos de contacto. Incluye casos de desarrollo full stack, como Minimarket Manager, con POS offline y administración remota.
 
 Sitio publicado en:
 

@@ -352,7 +352,7 @@ const proyectos = [
       "Permite a administradoras con cuentas autorizadas acceder a una vista web solo de administración.",
       "Adapta la administración remota a celulares y tablets para usuarias no técnicas.",
       "Incorpora estados de carga, opción para ver la contraseña y mensajes claros de sincronización.",
-      "Mejora la continuidad de la interfaz ante recargas y la carga inicial en el plan gratuito de Render.",
+      "Conserva la información visible ante recargas y comunica el progreso de carga.",
     ],
     stack: {
       "Backend y datos": [
@@ -377,7 +377,7 @@ const proyectos = [
       ],
     },
     aporteTecnico:
-      "Extendí una aplicación diseñada para un solo PC con una capa de sincronización, autenticación y administración web, manteniendo la operación local sin internet. El desafío fue conectar la persistencia local en SQLite con los servicios remotos de Supabase y separar el uso del POS de la administración a distancia. También trabajé en conservar la información visible ante recargas, comunicar los estados de carga y sincronización y reducir las interrupciones durante el uso.",
+      "Conecté la persistencia local en SQLite con los servicios remotos de Supabase, manteniendo el POS operativo sin internet y separando la administración web del punto de venta. También ajusté la continuidad de la interfaz ante recargas, los mensajes de sincronización y la experiencia de carga inicial en el plan gratuito de Render.",
     origenProyecto:
       "Nació para cubrir la operación diaria de un minimarket real desde un PC. La necesidad de administrar el negocio a distancia impulsó su evolución hacia una solución local con servicios remotos, cuidando que la interfaz siguiera siendo clara para personas no técnicas.",
     tecnologias: [
@@ -469,7 +469,7 @@ const proyectos = [
     phoneMedia: travelCalculatorTabletMedia,
     media: travelCalculatorMedia,
     detalles: [
-      "Mejora las estimaciones basadas únicamente en distancia y consumo promedio.",
+      "Incorpora factores adicionales a la distancia y al consumo promedio para estimar combustible.",
       "Adapta el rendimiento estándar o informado por el usuario al contexto de la ruta.",
       "Considera pendientes, elevación, clima, tipo de vía, tráfico horario, pasajeros, carga y estilo de conducción.",
       "Presenta un resumen inmediato y un análisis detallado con gráficos por segmento.",
@@ -479,7 +479,7 @@ const proyectos = [
       "Persistencia de usuarios e historial de viajes en PostgreSQL mediante SQLAlchemy.",
     ],
     aporteTecnico:
-      "Modelo de consumo modular y probado mediante 17 casos automatizados, con cálculo segmentado de la ruta, persistencia en PostgreSQL y una experiencia responsive optimizada para escritorio, iPad y dispositivos móviles.",
+      "Modelo de consumo modular con cálculo segmentado de la ruta y pruebas automatizadas de cálculo e integración. Incluye persistencia en PostgreSQL y una interfaz responsive para escritorio, tablet y celular.",
     tecnologias: [
       "javascript",
       "react",
@@ -501,7 +501,7 @@ const proyectos = [
     resumen:
       "Plataforma full stack de autenticación con sesiones JWT en cookies HttpOnly, verificación de correo y gestión segura de cuentas.",
     fraseImpacto:
-      "Autenticación full stack con JWT en cookies HttpOnly, protección CSRF, rotación y revocación de sesiones, PostgreSQL, Redis y pruebas E2E responsive.",
+      "Gestión de cuentas y sesiones, desde el registro hasta la recuperación de acceso.",
     repo: "https://github.com/JorgeOteiza/authflow-react-flask",
     demo: "",
     rol: "Diseño y desarrollo full stack. Implementé la interfaz responsive, la API REST, el modelo de datos, la gestión de sesiones, los controles de seguridad, las migraciones y la estrategia de pruebas automatizadas.",

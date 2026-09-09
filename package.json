@@ -2,7 +2,7 @@
   "name": "jorgeoteiza.github.io",
   "version": "0.1.0",
   "private": true,
-  "description": "Portfolio profesional de Jorge Oteiza, desarrollador Full Stack especializado en React, Flask y aplicaciones web.",
+  "description": "Portafolio de Jorge Oteiza, desarrollador full stack. Aplicaciones con React, Python, Flask y FastAPI.",
   "homepage": "https://jorgeoteiza.github.io",
   "main": "index.js",
   "author": "Jorge Oteiza",
