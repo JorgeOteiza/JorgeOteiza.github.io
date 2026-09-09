@@ -4,7 +4,7 @@ Revisión del código local: 8 de septiembre de 2026.
 
 ## Propósito y voz
 
-Portafolio de Jorge Oteiza orientado a mostrar productos funcionales y su capacidad de desarrollo full stack. Busca incorporarse a un equipo de desarrollo y tiene especial afinidad por el frontend y la experiencia de usuario. Su interés abarca frontend y backend; no presentarlo como alguien que prioriza trabajar en backend.
+Portafolio de Jorge Oteiza orientado a mostrar productos funcionales y su capacidad de desarrollo full stack. Busca incorporarse a un equipo de desarrollo y construir productos completos, integrando experiencia de usuario, lógica de negocio y datos. Presentar un perfil full stack equilibrado, sin expresar preferencia por frontend ni backend.
 
 Su experiencia comprende proyectos personales desde noviembre de 2024 y Minimarket Manager, proyecto independiente para un negocio real iniciado el 27 de marzo de 2026. El uso de IA se presenta como apoyo: definir contexto y requisitos, revisar el código generado y validar su integración y funcionamiento. No atribuirle experiencia en entrenamiento de modelos ni resultados medidos que no haya confirmado.
 

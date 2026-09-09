@@ -22,8 +22,8 @@ const SobreMi = () => {
               Soy desarrollador full stack y trabajo principalmente con React,
               Flask y FastAPI. Diseño interfaces, construyo APIs REST y modelo
               datos con PostgreSQL y SQLite para resolver necesidades reales.
-              Me interesa el desarrollo de productos completos, con especial
-              afinidad por el frontend y la experiencia de usuario.
+              Me interesa construir productos completos, conectando la experiencia
+              de usuario, la lógica de negocio y los datos.
           </p>
           <p>
               Uso asistentes de IA como apoyo al desarrollo: defino el contexto
