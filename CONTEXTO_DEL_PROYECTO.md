@@ -8,6 +8,8 @@ Portafolio de Jorge Oteiza orientado a mostrar productos funcionales y su capaci
 
 Su experiencia comprende proyectos personales desde noviembre de 2024 y Minimarket Manager, proyecto independiente para un negocio real iniciado el 27 de marzo de 2026. El uso de IA se presenta como apoyo: definir contexto y requisitos, revisar el código generado y validar su integración y funcionamiento. No atribuirle experiencia en entrenamiento de modelos ni resultados medidos que no haya confirmado.
 
+Fechas confirmadas: bootcamp de 4Geeks Academy de julio a diciembre de 2023; proyecto final El Rincón del Vino de noviembre a diciembre de 2023. Su experiencia anterior incluye trabajos temporales durante vacaciones desde 2011 y trabajo como personal trainer aproximadamente de 2017 a 2023. No presentar toda la trayectoria desde 2011 como empleo continuo ni inferir meses exactos para el período 2017-2023.
+
 El contenido utiliza español, con referencias regionales `es-CL`, un tono profesional, cercano y directo, y primera persona para describir la participación del autor. Los términos React, frontend, backend, API REST y full stack forman parte del vocabulario habitual.
 
 La explicación parte del problema y la utilidad del producto, continúa con el rol y las funcionalidades y profundiza en decisiones técnicas. Las tarjetas resumen; los detalles desarrollan la historia. Ejemplos del tono: «Me gusta convertir problemas cotidianos en productos claros, rápidos y fáciles de usar» y «Qué resuelve».
