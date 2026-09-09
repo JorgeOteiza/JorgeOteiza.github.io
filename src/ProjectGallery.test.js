@@ -29,7 +29,7 @@ test("permite deslizar la imagen grande y la tira de miniaturas", () => {
   dispatchPointer(featuredMedia, "pointerdown", 220);
   dispatchPointer(featuredMedia, "pointermove", 110);
   dispatchPointer(featuredMedia, "pointerup", 110);
-  expect(screen.getByAltText(/productos más vendidos/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/punto de venta de minimarket manager/i)).toBeInTheDocument();
 
   Object.defineProperty(thumbnails, "scrollLeft", { value: 0, writable: true });
   dispatchPointer(thumbnails, "pointerdown", 180);

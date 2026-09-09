@@ -72,49 +72,61 @@ const minimarketMedia = [
   {
     src: "/projects/minimarket-pos/estadisticas-resumen.png",
     alt: "Dashboard de estadísticas y resumen comercial de Minimarket Manager",
-  },
-  {
-    src: "/projects/minimarket-pos/estadisticas-inventario.png",
-    alt: "Productos más vendidos y alertas de inventario",
-  },
-  {
-    src: "/projects/minimarket-pos/lista-productos.png",
-    alt: "Listado y búsqueda de productos en Minimarket Manager",
-  },
-  {
-    src: "/projects/minimarket-pos/ajuste-inventario.png",
-    alt: "Ajuste manual de inventario en Minimarket Manager",
+    caption: "Administración local · Resumen comercial y evolución de ventas",
   },
   {
     src: "/projects/minimarket-pos/caja-carrito.png",
     alt: "Punto de venta de Minimarket Manager con productos en el carrito",
+    caption: "POS local · Venta preparada en la caja con operación offline",
   },
   {
-    src: "/projects/minimarket-pos/reportes-ventas.png",
-    alt: "Reporte de ventas por periodo de Minimarket Manager",
+    src: "/projects/minimarket-pos/lista-productos.png",
+    alt: "Listado y búsqueda de productos en Minimarket Manager",
+    caption: "Administración local · Búsqueda, precios y estados del inventario",
   },
   {
     src: "/projects/minimarket-pos/edicion-producto.png",
-    alt: "Edición de costos, precios y stock de un producto",
+    alt: "Edición de costos, precios y margen de un producto en Minimarket Manager",
+    caption: "Administración local · Edición de costos, precios y margen",
   },
   {
     src: "/projects/minimarket-pos/reposicion-sacos-paquetes.png",
     alt: "Registro de reposición de sacos y paquetes",
+    caption: "Administración local · Reposición y precios de venta a granel",
   },
   {
-    src: "/projects/minimarket-pos/historial-reposiciones.png",
-    alt: "Historial de reposiciones de productos a granel",
+    src: "/projects/minimarket-pos/reportes-ventas.png",
+    alt: "Reporte de ventas por periodo de Minimarket Manager",
+    caption: "Administración local · Reportes por periodo y exportación PDF",
   },
   {
-    src: "/projects/minimarket-pos/atajos.png",
-    alt: "Panel de atajos de teclado de Minimarket Manager",
+    src: "/projects/minimarket-pos/estadisticas-inventario.png",
+    alt: "Productos más vendidos y alertas de inventario",
+    caption: "Administración local · Productos más vendidos y alertas de inventario",
+  },
+  {
+    src: "/projects/minimarket-pos/remoto-reportes-desktop.png",
+    alt: "Reportes de ventas en la administración remota de Minimarket Manager",
+    caption: "Administración remota · Consulta de ventas desde la web",
+  },
+  {
+    src: "/projects/minimarket-pos/remoto-productos-phone.png",
+    alt: "Gestión de productos en la administración remota de Minimarket Manager desde celular",
+    device: "phone",
+    caption: "Administración remota · Gestión de productos desde celular",
+  },
+  {
+    src: "/projects/minimarket-pos/remoto-sincronizacion-tablet.png",
+    alt: "Reposición de sacos y paquetes con el estado de sincronización pendiente en iPad Air",
+    device: "tablet",
+    caption: "Administración remota · Reposición y estado de sincronización en tablet",
   },
 ];
 
 const minimarketPhoneMedia = [
   minimarketMedia[0],
-  minimarketMedia[2],
-  minimarketMedia[4],
+  minimarketMedia[1],
+  minimarketMedia[7],
 ];
 
 const ecommercePhoneMedia = [
@@ -318,27 +330,29 @@ const shortUrlMedia = [
 const proyectos = [
   {
     titulo: "Minimarket Manager",
-    categoria: "Aplicación local · Full stack",
+    categoria: "Comercio · Full stack",
     imagen: minimarketMedia[0].src,
     alt: minimarketMedia[0].alt,
     resumen:
-      "Sistema local de gestión comercial para ventas, inventario, reportes y respaldos.",
+      "Gestión para un minimarket real: POS offline, sincronización y administración web remota.",
+    fraseImpacto:
+      "La operación sigue en el local; la administración también puede hacerse a distancia.",
     repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
-    rol: "Desarrollo full stack: diseño de interfaz, arquitectura frontend, API REST, modelado de datos, reglas de negocio, respaldos y empaquetado para Windows.",
+    rol: "Desarrollo full stack: POS local, interfaz, API REST, modelado de datos, respaldos y empaquetado para Windows. Evolución del sistema con sincronización, autenticación de administradoras y despliegue de la administración web remota.",
     enfoque:
-      "Sistema local de gestión comercial para operar ventas, inventario, reportes y respaldos desde un solo equipo, sin servidor remoto ni conexión permanente a internet. Registra cada venta, actualiza automáticamente el stock y conserva la información necesaria para analizar la operación del negocio.",
+      "Aplicación para un minimarket real que comenzó como un POS local y evolucionó para permitir la administración a distancia. El PC principal conserva el punto de venta y la administración, con Flask y SQLite para funcionar sin internet. Cuando hay conexión, sincroniza información con Supabase, que aporta almacenamiento remoto y autenticación para cuentas autorizadas. La vista web desplegada en Render ofrece solo administración y se adapta a celulares y tablets.",
     phoneMedia: minimarketPhoneMedia,
     media: minimarketMedia,
     detalles: [
-      "Centraliza productos, precios, stock y ventas.",
-      "Registra ventas y descuenta automáticamente el inventario.",
-      "Detecta productos con stock insuficiente o sin precio.",
-      "Permite administrar productos unitarios, sacos y ventas a granel.",
-      "Genera reportes, estadísticas comerciales y documentos PDF.",
-      "Importa productos desde archivos CSV.",
-      "Mantiene respaldos manuales y automáticos de la información.",
-      "Permite configurar localmente los datos del negocio.",
+      "Registra ventas y descuenta stock en el PC principal, incluso sin conexión a internet.",
+      "Administra productos, precios, stock base, inventario, sacos, paquetes y ajustes del negocio.",
+      "Reúne reportes, estadísticas e historial de movimientos para revisar la operación.",
+      "Mantiene respaldos locales y agrega almacenamiento y sincronización remotos cuando hay conexión.",
+      "Permite a administradoras con cuentas autorizadas acceder a una vista web solo de administración.",
+      "Adapta la administración remota a celulares y tablets para usuarias no técnicas.",
+      "Incorpora estados de carga, opción para ver la contraseña y mensajes claros de sincronización.",
+      "Mejora la continuidad de la interfaz ante recargas y la carga inicial en el plan gratuito de Render.",
     ],
     stack: {
       "Backend y datos": [
@@ -357,9 +371,15 @@ const proyectos = [
         "React Router",
         "Recharts",
       ],
+      "Servicios remotos": [
+        "Supabase · base de datos y autenticación",
+        "Render · administración web",
+      ],
     },
     aporteTecnico:
-      "Aplicación preparada para funcionar localmente y distribuirse como programa de escritorio en Windows, con persistencia en SQLite, migraciones de base de datos, pruebas automatizadas y respaldos integrados.",
+      "Extendí una aplicación diseñada para un solo PC con una capa de sincronización, autenticación y administración web, manteniendo la operación local sin internet. El desafío fue conectar la persistencia local en SQLite con los servicios remotos de Supabase y separar el uso del POS de la administración a distancia. También trabajé en conservar la información visible ante recargas, comunicar los estados de carga y sincronización y reducir las interrupciones durante el uso.",
+    origenProyecto:
+      "Nació para cubrir la operación diaria de un minimarket real desde un PC. La necesidad de administrar el negocio a distancia impulsó su evolución hacia una solución local con servicios remotos, cuidando que la interfaz siguiera siendo clara para personas no técnicas.",
     tecnologias: [
       "typescript",
       "react",
@@ -1289,6 +1309,12 @@ const Proyectos = () => {
                 )}
               </div>
 
+              {mediaSeleccionada?.caption && (
+                <p className="project-gallery-caption" aria-live="polite">
+                  {mediaSeleccionada.caption}
+                </p>
+              )}
+
               {proyectoActivo.media.length > 1 && (
                 <div
                   className="project-thumbnails"
@@ -1305,6 +1331,7 @@ const Proyectos = () => {
                       className={index === mediaActiva ? "active" : ""}
                       key={item.src}
                       data-media-index={index}
+                      title={item.caption || item.alt}
                       onClick={() => {
                         if (thumbnailDidDrag.current) return;
                         setMediaActiva(index);

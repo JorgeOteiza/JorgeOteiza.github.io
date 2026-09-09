@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import App from "./App";
 
 test("muestra la presentación y las secciones principales", () => {
@@ -66,7 +66,7 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
       name: /ver imagen siguiente de minimarket manager/i,
     }),
   );
-  expect(screen.getByAltText(/listado y búsqueda de productos/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/punto de venta de minimarket manager/i)).toBeInTheDocument();
 
   fireEvent.click(
     screen.getByRole("button", {
@@ -75,7 +75,7 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
   );
   fireEvent.keyDown(window, { key: "ArrowRight" });
   expect(
-    screen.getByAltText(/productos más vendidos y alertas de inventario/i),
+    within(screen.getByRole("dialog")).getByAltText(/punto de venta de minimarket manager/i),
   ).toBeInTheDocument();
 
   fireEvent.keyDown(window, { key: "ArrowLeft" });
@@ -90,8 +90,14 @@ test("separa la galería breve y el detalle completo de Minimarket Manager", () 
   );
 
   expect(
-    screen.getByAltText(/panel de atajos de teclado/i),
+    screen.getByAltText(/reposición de sacos y paquetes con el estado de sincronización/i),
   ).toBeInTheDocument();
+  expect(document.querySelector(".project-preview-tablet")).toBeInTheDocument();
+  expect(screen.getByText(/administración remota · reposición y estado/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole("button", { name: /ver imagen 9 de minimarket manager/i }));
+  expect(document.querySelector(".project-preview-phone")).toBeInTheDocument();
+  expect(screen.getByAltText(/minimarket manager desde celular/i)).toBeInTheDocument();
 });
 
 test("permite arrastrar con el mouse la galería del celular", () => {
@@ -115,7 +121,7 @@ test("permite arrastrar con el mouse la galería del celular", () => {
   dispatchPointer("pointermove", 90);
   dispatchPointer("pointerup", 90);
 
-  expect(screen.getByAltText(/listado y búsqueda de productos/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/punto de venta de minimarket manager/i)).toBeInTheDocument();
 });
 
 test("presenta una galería responsive y el flujo completo de El Rincón del Vino", () => {

@@ -682,6 +682,15 @@ button.repositorios-target {
   -webkit-overflow-scrolling: touch;
 }
 
+.project-gallery-caption {
+  margin: 0;
+  color: var(--color-muted-light);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+}
+
 .project-thumbnails:active {
   cursor: grabbing;
 }
