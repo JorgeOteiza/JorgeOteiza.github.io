@@ -81,6 +81,7 @@
   color: var(--color-muted-light);
   font-size: 1.04rem;
   line-height: 1.75;
+  text-align: left;
 }
 
 .about-cv-link {
@@ -100,6 +101,7 @@
 .about-facts {
   display: grid;
   overflow: hidden;
+  text-align: left;
 }
 
 .about-process-label {

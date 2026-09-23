@@ -20,8 +20,9 @@ test("muestra la presentación y las secciones principales", () => {
   expect(screen.getByText("Diseño de prompts")).toBeInTheDocument();
   expect(screen.getByText("Cómo trabajo")).toBeInTheDocument();
   expect(screen.getAllByText(/full stack/i).length).toBeGreaterThanOrEqual(4);
+  const shortUrlCard = screen.getByText("Short URL").closest(".other-project-card-shell");
   expect(
-    screen.getByRole("link", { name: /ver aplicación/i }),
+    within(shortUrlCard).getByRole("link", { name: /ver aplicación/i }),
   ).toHaveAttribute("href", "https://short-url-cl.onrender.com/");
 });
 

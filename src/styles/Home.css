@@ -26,11 +26,11 @@
   align-items: center;
   gap: 9px;
   margin-bottom: 24px;
-  border: 1px solid rgba(134, 239, 172, 0.24);
+  border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 999px;
   padding: 8px 13px;
-  color: #bbf7d0;
-  background: rgba(34, 197, 94, 0.08);
+  color: var(--color-primary);
+  background: rgba(34, 211, 238, 0.08);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -40,8 +40,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 14px #4ade80;
+  background: var(--color-primary);
+  box-shadow: 0 0 14px var(--color-primary);
 }
 
 .hero-kicker {

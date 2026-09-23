@@ -451,20 +451,28 @@ const proyectos = [
     fraseImpacto:
       "Una estimación de combustible que entiende el vehículo y la ruta completa.",
     repo: "https://github.com/JorgeOteiza/travel.calculator",
-    demo: "",
-    rol: "Desarrollo full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia y pruebas automatizadas.",
+    demo: "https://travel-calculator-44v.pages.dev/",
+    demoLabel: "Ver aplicación",
+    rol: "Desarrollo full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia, gestión de sesión y pruebas automatizadas.",
     enfoque:
-      "Travel Calculator transforma los datos del vehículo y las condiciones del recorrido en una estimación contextual y explicable. Además del resultado rápido, permite revisar el consumo por segmento, el perfil de elevación y los factores que modificaron el cálculo.",
+      "Travel Calculator transforma los datos del vehículo y las condiciones del recorrido en una estimación contextual y explicable, incluso cuando el vehículo no está en el catálogo y se declara manualmente. Permite calcular un viaje como invitado o iniciar sesión para guardarlo en el historial, y además del resultado rápido, permite revisar el consumo por segmento, el perfil de elevación y los factores que modificaron el cálculo.",
     stack: {
       Frontend: ["React", "JavaScript", "Vite"],
       "Backend y datos": [
         "Python",
         "Flask",
+        "Flask-Limiter",
         "SQLAlchemy",
         "PostgreSQL",
         "JWT",
       ],
       "Servicios externos": ["Google Maps", "Open-Meteo"],
+      Pruebas: ["Playwright"],
+      Infraestructura: [
+        "Cloudflare Pages · frontend",
+        "Render · backend",
+        "Neon · PostgreSQL",
+      ],
     },
     phoneMedia: travelCalculatorTabletMedia,
     media: travelCalculatorMedia,
@@ -472,14 +480,19 @@ const proyectos = [
       "Incorpora factores adicionales a la distancia y al consumo promedio para estimar combustible.",
       "Adapta el rendimiento estándar o informado por el usuario al contexto de la ruta.",
       "Considera pendientes, elevación, clima, tipo de vía, tráfico horario, pasajeros, carga y estilo de conducción.",
+      "Permite declarar un vehículo personalizado con marca, modelo, año, combustible y rendimiento cuando no aparece en el catálogo.",
       "Presenta un resumen inmediato y un análisis detallado con gráficos por segmento.",
+      "Permite calcular un viaje como invitado, sin crear una cuenta, o iniciar sesión para guardarlo en el historial.",
+      "Si la sesión expira durante un cálculo autenticado, cierra sesión de forma segura y reintenta automáticamente como invitado.",
       "Permite buscar rutas, utilizar la ubicación actual y consultar viajes guardados.",
       "Mantiene un historial autenticado con vistas de cuadrícula y lista.",
       "Utiliza proveedores gratuitos para clima y elevación y bloquea servicios pagados del backend por defecto.",
       "Persistencia de usuarios e historial de viajes en PostgreSQL mediante SQLAlchemy.",
     ],
     aporteTecnico:
-      "Modelo de consumo modular con cálculo segmentado de la ruta y pruebas automatizadas de cálculo e integración. Incluye persistencia en PostgreSQL y una interfaz responsive para escritorio, tablet y celular.",
+      "El modelo de consumo es modular y calcula la ruta por segmentos, adaptando el rendimiento del vehículo —del catálogo o declarado a mano— al contexto de cada tramo. Diseñé el cálculo como invitado y el de vehículo personalizado sobre esa misma lógica de estimación, con una recuperación automática a modo invitado si el token expira a mitad de un cálculo autenticado. También invalido sesiones activas al cerrar sesión mediante una lista de revocación y una versión de sesión por usuario, y resolví en producción un incidente real de conexiones PostgreSQL muertas habilitando pool_pre_ping en SQLAlchemy.",
+    calidadValidacion:
+      "El backend incluye pruebas con unittest para cálculo, autenticación, vehículos personalizados y viajes como invitado. El frontend cuenta con una prueba E2E manual con Playwright para el flujo de invitado y la invalidación de sesión.",
     tecnologias: [
       "javascript",
       "react",
@@ -1092,15 +1105,28 @@ const Proyectos = () => {
                       <span key={tecnologia}>{iconos[tecnologia].alt}</span>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    className="phone-open-project"
-                    onClick={() => abrirDetalle(proyecto)}
-                    aria-label={`Ver caso completo de ${proyecto.titulo}`}
-                  >
-                    Explorar proyecto
-                    <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
-                  </button>
+                  <div className="tablet-card-actions">
+                    <button
+                      type="button"
+                      className="phone-open-project"
+                      onClick={() => abrirDetalle(proyecto)}
+                      aria-label={`Ver caso completo de ${proyecto.titulo}`}
+                    >
+                      <span>Explorar proyecto</span>
+                      <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                    {proyecto.demo && (
+                      <a
+                        href={proyecto.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="other-project-demo"
+                      >
+                        <span>{proyecto.demoLabel || "Ver aplicación"}</span>
+                        <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ) : (
@@ -1347,10 +1373,30 @@ const Proyectos = () => {
             </div>
 
             <div className="project-modal-content">
-              <span className="section-kicker">
-                Detalle del proyecto · {proyectoActivo.categoria}
-              </span>
+              <span className="section-kicker">{proyectoActivo.categoria}</span>
               <h2 id="project-modal-title">{proyectoActivo.titulo}</h2>
+              <div className="project-modal-quick-actions">
+                <a
+                  href={proyectoActivo.repo}
+                  className="repositorios-target compact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                  <span>Ver repositorio</span>
+                </a>
+                {proyectoActivo.demo && (
+                  <a
+                    href={proyectoActivo.demo}
+                    className="repositorios-target secondary compact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fa-solid fa-up-right-from-square"></i>
+                    <span>{proyectoActivo.demoLabel || "Ver aplicación"}</span>
+                  </a>
+                )}
+              </div>
               {proyectoActivo.fraseImpacto && (
                 <p className="project-impact-line">{proyectoActivo.fraseImpacto}</p>
               )}

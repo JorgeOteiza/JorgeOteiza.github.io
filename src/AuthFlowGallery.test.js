@@ -27,8 +27,12 @@ test("presenta AuthFlow como caso de seguridad full stack y muestra su galería 
   ).toBeInTheDocument();
   expect(screen.getByText("Calidad y validación")).toBeInTheDocument();
   expect(screen.getByText("Origen del proyecto")).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: /ver repositorio/i })).toHaveAttribute(
-    "href",
-    "https://github.com/JorgeOteiza/authflow-react-flask",
-  );
+  const repoLinks = screen.getAllByRole("link", { name: /ver repositorio/i });
+  expect(repoLinks.length).toBeGreaterThanOrEqual(2);
+  repoLinks.forEach((link) => {
+    expect(link).toHaveAttribute(
+      "href",
+      "https://github.com/JorgeOteiza/authflow-react-flask",
+    );
+  });
 });
