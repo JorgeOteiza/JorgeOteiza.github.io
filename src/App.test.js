@@ -17,6 +17,11 @@ test("muestra la presentación y las secciones principales", () => {
   expect(screen.getByText("Docker")).toBeInTheDocument();
   expect(screen.getByText("GitHub Actions")).toBeInTheDocument();
   expect(screen.getByText("Playwright")).toBeInTheDocument();
+  expect(screen.getByText("Cloudflare Pages")).toBeInTheDocument();
+  expect(screen.getByText("Google Maps")).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { name: /datos, servicios e infraestructura/i }),
+  ).toBeInTheDocument();
   expect(screen.getByText("Diseño de prompts")).toBeInTheDocument();
   expect(screen.getByText("Cómo trabajo")).toBeInTheDocument();
   expect(screen.getAllByText(/full stack/i).length).toBeGreaterThanOrEqual(4);

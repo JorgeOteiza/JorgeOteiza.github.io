@@ -136,6 +136,14 @@ const icons = [
     alt: "Render Logo",
   },
   {
+    src: "https://cdn.simpleicons.org/cloudflare/F38020",
+    alt: "Cloudflare Pages Logo",
+  },
+  {
+    src: "https://cdn.simpleicons.org/googlemaps/4285F4",
+    alt: "Google Maps Logo",
+  },
+  {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
     alt: "Vitest Logo",
   },
@@ -175,7 +183,7 @@ const groups = [
     ],
   },
   {
-    title: "Datos e infraestructura",
+    title: "Datos, servicios e infraestructura",
     items: [
       "PostgreSQL Logo",
       "SQLite Logo",
@@ -184,6 +192,8 @@ const groups = [
       "Neon Logo",
       "Supabase Logo",
       "Render Logo",
+      "Cloudflare Pages Logo",
+      "Google Maps Logo",
     ],
   },
   {

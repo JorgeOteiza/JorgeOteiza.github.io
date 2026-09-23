@@ -66,6 +66,14 @@ const iconos = {
     src: "/logoBootstrap.png",
     alt: "Bootstrap",
   },
+  cloudflare: {
+    src: "https://cdn.simpleicons.org/cloudflare/F38020",
+    alt: "Cloudflare Pages",
+  },
+  googlemaps: {
+    src: "https://cdn.simpleicons.org/googlemaps/4285F4",
+    alt: "Google Maps",
+  },
 };
 
 const minimarketMedia = [
@@ -438,6 +446,8 @@ const proyectos = [
       "postgres",
       "sqlalchemy",
       "jwt",
+      "googlemaps",
+      "cloudflare",
     ],
     tecnologiasTarjeta: ["react", "flask", "postgres"],
   },
