@@ -17,7 +17,7 @@ const Home = () => {
             <span aria-hidden="true"></span>
             Disponible para nuevos desafíos
           </span>
-          <p className="hero-kicker">Hola, soy Jorge Oteiza</p>
+          <p className="hero-kicker">Jorge Oteiza · Full Stack Developer Junior</p>
           <h1>
             Desarrollo productos digitales <em>de principio a fin.</em>
           </h1>

@@ -112,6 +112,10 @@ const icons = [
     alt: "FastAPI Logo",
   },
   {
+    src: "https://cdn.simpleicons.org/maplibre/396CB2",
+    alt: "MapLibre Logo",
+  },
+  {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     alt: "Redis Logo",
   },
@@ -136,8 +140,8 @@ const icons = [
     alt: "Cloudflare Pages Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/googlemaps/4285F4",
-    alt: "Google Maps Logo",
+    iconClass: "fa-solid fa-location-dot",
+    alt: "LocationIQ Logo",
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
@@ -191,7 +195,8 @@ const groups = [
       "Docker Logo",
       "Render Logo",
       "Cloudflare Pages Logo",
-      "Google Maps Logo",
+      "MapLibre Logo",
+      "LocationIQ Logo",
       "Redis Logo",
     ],
   },

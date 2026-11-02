@@ -12,13 +12,27 @@ test("muestra la presentación y las secciones principales", () => {
   expect(
     screen.getByRole("heading", { name: /productos que viven/i }),
   ).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Ver CV" })).toHaveAttribute(
+    "href",
+    expect.stringContaining("/CV_Jorge_Oteiza_Full_Stack_Developer.pdf"),
+  );
+  expect(
+    screen.getByRole("link", {
+      name: "Abrir currículum de Jorge Oteiza en una pestaña nueva",
+    }),
+  ).toHaveAttribute(
+    "href",
+    expect.stringContaining("/CV_Jorge_Oteiza_Full_Stack_Developer.pdf"),
+  );
   expect(screen.getByText(/pytest/i)).toBeInTheDocument();
   expect(screen.getByText("FastAPI")).toBeInTheDocument();
   expect(screen.getByText("Docker")).toBeInTheDocument();
   expect(screen.getByText("GitHub Actions")).toBeInTheDocument();
   expect(screen.getByText("Playwright")).toBeInTheDocument();
   expect(screen.getByText("Cloudflare Pages")).toBeInTheDocument();
-  expect(screen.getByText("Google Maps")).toBeInTheDocument();
+  expect(screen.getByText("MapLibre")).toBeInTheDocument();
+  expect(screen.getByText("LocationIQ")).toBeInTheDocument();
+  expect(screen.queryByText("Google Maps")).not.toBeInTheDocument();
   expect(
     screen.getByRole("heading", { name: /datos e infraestructura/i }),
   ).toBeInTheDocument();
@@ -32,11 +46,29 @@ test("muestra la presentación y las secciones principales", () => {
   document
     .querySelectorAll("#tecnologías .skill-icon-card")
     .forEach((card) => {
-      expect(card.querySelector("img")).toHaveAttribute("src");
+      const image = card.querySelector("img");
+      expect(image || card.querySelector(".skill-symbol")).toBeTruthy();
+      if (image) {
+        expect(image).toHaveAttribute("src");
+      }
       expect(card.querySelector("span:last-child")).not.toBeEmptyDOMElement();
     });
   expect(screen.getByText("Cómo trabajo")).toBeInTheDocument();
   expect(screen.getAllByText(/full stack/i).length).toBeGreaterThanOrEqual(4);
+  expect(screen.getByText(/Full Stack Developer Junior/i)).toBeInTheDocument();
+  expect(
+    screen.getByText(/mi primera oportunidad profesional en desarrollo de software/i),
+  ).toBeInTheDocument();
+  expect(
+    Array.from(document.querySelectorAll(".projects-grid .phone-project h3")).map(
+      (heading) => heading.textContent,
+    ),
+  ).toEqual([
+    "Minimarket Manager",
+    "Travel Calculator",
+    "El Rincón del Vino",
+    "AuthFlow",
+  ]);
   const shortUrlCard = screen.getByText("Short URL").closest(".other-project-card-shell");
   expect(
     within(shortUrlCard).getByRole("link", { name: /ver aplicación/i }),
@@ -52,8 +84,17 @@ test("distingue el origen independiente y colaborativo de los proyectos", () => 
     }),
   );
   expect(
-    screen.getByText(/proyecto colaborativo desarrollado en equipo durante la formación en 4geeks academy/i),
+    screen.getByText(/proyecto colaborativo desarrollado junto a un equipo de cuatro personas durante la formación en 4geeks academy/i),
   ).toBeInTheDocument();
+  expect(
+    screen
+      .getAllByRole("link", { name: /ver repositorio/i })
+      .every(
+        (link) =>
+          link.getAttribute("href") ===
+          "https://github.com/JorgeOteiza/Sitio.Web_E-Comerce-wine",
+      ),
+  ).toBe(true);
 
   fireEvent.keyDown(window, { key: "Escape" });
   fireEvent.click(
@@ -67,8 +108,39 @@ test("distingue el origen independiente y colaborativo de los proyectos", () => 
 
   fireEvent.keyDown(window, { key: "Escape" });
   expect(
-    screen.getByText(/aplicación personal full stack publicada/i),
+    screen.getByText(/aplicación personal full stack con una versión publicada/i),
   ).toBeInTheDocument();
+});
+
+test("no expone repositorios privados y aclara el estado publicado de Travel Calculator", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de travel calculator/i,
+    }),
+  );
+  expect(
+    screen.getByText(/no todas las mejoras locales descritas están integradas/i),
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByRole("link", { name: /ver repositorio/i }),
+  ).not.toBeInTheDocument();
+  expect(
+    screen.getAllByRole("link", { name: /ver aplicación/i }).some(
+      (link) => link.getAttribute("href") === "https://travel-calculator-44v.pages.dev/",
+    ),
+  ).toBe(true);
+
+  fireEvent.keyDown(window, { key: "Escape" });
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de minimarket manager/i,
+    }),
+  );
+  expect(
+    screen.queryByRole("link", { name: /ver repositorio/i }),
+  ).not.toBeInTheDocument();
 });
 
 test("abre y cierra el detalle de un proyecto con Escape", () => {

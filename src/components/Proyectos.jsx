@@ -66,14 +66,6 @@ const iconos = {
     src: "/logoBootstrap.png",
     alt: "Bootstrap",
   },
-  cloudflare: {
-    src: "https://cdn.simpleicons.org/cloudflare/F38020",
-    alt: "Cloudflare Pages",
-  },
-  googlemaps: {
-    src: "https://cdn.simpleicons.org/googlemaps/4285F4",
-    alt: "Google Maps",
-  },
 };
 
 const minimarketMedia = [
@@ -345,7 +337,6 @@ const proyectos = [
       "Solución para un minimarket familiar con POS offline, sincronización y administración web remota.",
     fraseImpacto:
       "La operación sigue en el local; la administración también puede hacerse a distancia.",
-    repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
     rol: "Desarrollo full stack independiente para un minimarket familiar: POS local, interfaz, API REST, modelado de datos, respaldos y empaquetado para Windows. Evolución del sistema con sincronización, autenticación de administradoras y despliegue de la administración web remota.",
     enfoque:
@@ -409,9 +400,9 @@ const proyectos = [
     alt: ecommerceMedia[0].alt,
     resumen:
       "E-commerce full stack de vinos con catálogo, favoritos y compra responsive.",
-    repo: "https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce",
+    repo: "https://github.com/JorgeOteiza/Sitio.Web_E-Comerce-wine",
     demo: "",
-    rol: "Proyecto colaborativo desarrollado en equipo durante la formación en 4Geeks Academy.",
+    rol: "Proyecto colaborativo desarrollado junto a un equipo de cuatro personas durante la formación en 4Geeks Academy.",
     enfoque:
       "E-commerce colaborativo realizado durante la formación en 4Geeks Academy para descubrir vinos, filtrar el catálogo, guardar favoritos y completar un flujo de compra desde distintos dispositivos.",
     stack: {
@@ -446,8 +437,6 @@ const proyectos = [
       "postgres",
       "sqlalchemy",
       "jwt",
-      "googlemaps",
-      "cloudflare",
     ],
     tecnologiasTarjeta: ["react", "flask", "postgres"],
   },
@@ -457,27 +446,30 @@ const proyectos = [
     imagen: travelCalculatorTabletMedia[0].src,
     alt: travelCalculatorTabletMedia[0].alt,
     resumen:
-      "Aplicación personal full stack publicada para estimar el consumo y costo de una ruta según el vehículo, rendimiento, pendientes, clima, tráfico y carga.",
+      "Aplicación personal Full Stack con una versión publicada para estimar el consumo y costo de una ruta según el vehículo y sus condiciones.",
     fraseImpacto:
-      "Una estimación de combustible que entiende el vehículo y la ruta completa.",
-    repo: "https://github.com/JorgeOteiza/travel.calculator",
+      "Una estimación de combustible que considera el vehículo y las condiciones de la ruta.",
     demo: "https://travel-calculator-44v.pages.dev/",
     demoLabel: "Ver aplicación",
+    estadoPublicacion:
+      "La demo está publicada en Cloudflare Pages; no todas las mejoras locales descritas están integradas en esa versión.",
     rol: "Desarrollo personal full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia, gestión de sesión y pruebas automatizadas.",
     enfoque:
       "Travel Calculator transforma los datos del vehículo y las condiciones del recorrido en una estimación contextual y explicable, incluso cuando el vehículo no está en el catálogo y se declara manualmente. Permite calcular un viaje como invitado o iniciar sesión para guardarlo en el historial, y además del resultado rápido, permite revisar el consumo por segmento, el perfil de elevación y los factores que modificaron el cálculo.",
     stack: {
-      Frontend: ["React", "JavaScript", "Vite"],
+      Frontend: ["React", "TypeScript", "JavaScript", "Vite"],
       "Backend y datos": [
         "Python",
         "Flask",
         "Flask-Limiter",
         "SQLAlchemy",
         "PostgreSQL",
+        "SQLite",
         "JWT",
       ],
-      "Servicios externos": ["Google Maps", "Open-Meteo"],
-      Pruebas: ["Playwright"],
+      Autenticación: ["JWT", "Google"],
+      "Mapas y servicios externos": ["MapLibre", "LocationIQ", "Open-Meteo"],
+      Pruebas: ["unittest · backend", "Playwright · validaciones funcionales"],
       Infraestructura: [
         "Cloudflare Pages · frontend",
         "Render · backend",
@@ -489,14 +481,14 @@ const proyectos = [
     detalles: [
       "Incorpora factores adicionales a la distancia y al consumo promedio para estimar combustible.",
       "Adapta el rendimiento estándar o informado por el usuario al contexto de la ruta.",
-      "Considera pendientes, elevación, clima, tipo de vía, tráfico horario, pasajeros, carga y estilo de conducción.",
+      "Considera pendientes, elevación, clima, tipo de vía, congestión estimada según el horario, pasajeros, carga y estilo de conducción. No utiliza datos de tráfico en tiempo real.",
       "Permite declarar un vehículo personalizado con marca, modelo, año, combustible y rendimiento cuando no aparece en el catálogo.",
       "Presenta un resumen inmediato y un análisis detallado con gráficos por segmento.",
       "Permite calcular un viaje como invitado, sin crear una cuenta, o iniciar sesión para guardarlo en el historial.",
       "Si la sesión expira durante un cálculo autenticado, cierra sesión de forma segura y reintenta automáticamente como invitado.",
+      "Permite iniciar sesión con Google y guardar los viajes en el historial.",
       "Permite buscar rutas, utilizar la ubicación actual y consultar viajes guardados.",
       "Mantiene un historial autenticado con vistas de cuadrícula y lista.",
-      "Utiliza proveedores gratuitos para clima y elevación y bloquea servicios pagados del backend por defecto.",
       "Persistencia de usuarios e historial de viajes en PostgreSQL mediante SQLAlchemy.",
     ],
     aporteTecnico:
@@ -518,11 +510,11 @@ const proyectos = [
   },
   {
     titulo: "AuthFlow",
-    categoria: "Seguridad · Full stack",
+    categoria: "Proyecto de práctica · Seguridad · Full stack",
     imagen: authflowPhoneMedia[0].src,
     alt: authflowPhoneMedia[0].alt,
     resumen:
-      "Plataforma full stack de autenticación con sesiones JWT en cookies HttpOnly, verificación de correo y gestión segura de cuentas.",
+      "Proyecto de práctica full stack de autenticación con sesiones JWT en cookies HttpOnly, verificación de correo y gestión de cuentas.",
     fraseImpacto:
       "Gestión de cuentas y sesiones, desde el registro hasta la recuperación de acceso.",
     repo: "https://github.com/JorgeOteiza/authflow-react-flask",
@@ -904,7 +896,19 @@ const Proyectos = () => {
   }, [proyectoActivo]);
 
   const mediaSeleccionada = proyectoActivo?.media?.[mediaActiva];
-  const proyectosPrincipales = proyectos.filter((proyecto) => !proyecto.secundario);
+  const ordenProyectosPrincipales = [
+    "Minimarket Manager",
+    "Travel Calculator",
+    "El Rincón del Vino",
+    "AuthFlow",
+  ];
+  const proyectosPrincipales = proyectos
+    .filter((proyecto) => !proyecto.secundario)
+    .sort(
+      (a, b) =>
+        ordenProyectosPrincipales.indexOf(a.titulo) -
+        ordenProyectosPrincipales.indexOf(b.titulo),
+    );
   const proyectosSecundarios = proyectos.filter((proyecto) => proyecto.secundario);
   const mostrarMediaAnterior = () => {
     setMediaActiva((current) => {
@@ -1385,32 +1389,43 @@ const Proyectos = () => {
             <div className="project-modal-content">
               <span className="section-kicker">{proyectoActivo.categoria}</span>
               <h2 id="project-modal-title">{proyectoActivo.titulo}</h2>
-              <div className="project-modal-quick-actions">
-                <a
-                  href={proyectoActivo.repo}
-                  className="repositorios-target compact"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-brands fa-github"></i>
-                  <span>Ver repositorio</span>
-                </a>
-                {proyectoActivo.demo && (
-                  <a
-                    href={proyectoActivo.demo}
-                    className="repositorios-target secondary compact"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i>
-                    <span>{proyectoActivo.demoLabel || "Ver aplicación"}</span>
-                  </a>
-                )}
-              </div>
+              {(proyectoActivo.repo || proyectoActivo.demo) && (
+                <div className="project-modal-quick-actions">
+                  {proyectoActivo.repo && (
+                    <a
+                      href={proyectoActivo.repo}
+                      className="repositorios-target compact"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i>
+                      <span>Ver repositorio</span>
+                    </a>
+                  )}
+                  {proyectoActivo.demo && (
+                    <a
+                      href={proyectoActivo.demo}
+                      className="repositorios-target secondary compact"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i>
+                      <span>{proyectoActivo.demoLabel || "Ver aplicación"}</span>
+                    </a>
+                  )}
+                </div>
+              )}
               {proyectoActivo.fraseImpacto && (
                 <p className="project-impact-line">{proyectoActivo.fraseImpacto}</p>
               )}
               <p className="project-modal-summary">{proyectoActivo.enfoque}</p>
+
+              {proyectoActivo.estadoPublicacion && (
+                <div className="project-context-block">
+                  <h3>Estado de publicación</h3>
+                  <p>{proyectoActivo.estadoPublicacion}</p>
+                </div>
+              )}
 
               <div className={`project-meta ${proyectoActivo.stack ? "role-only" : ""}`}>
                 <div>
@@ -1473,39 +1488,45 @@ const Proyectos = () => {
                 </div>
               )}
 
-              <div className="project-modal-actions">
-                <a
-                  href={proyectoActivo.repo}
-                  className="repositorios-target"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fa-brands fa-github"></i>
-                  <span>Ver repositorio</span>
-                </a>
-                {proyectoActivo.demo && (
-                  <a
-                    href={proyectoActivo.demo}
-                    className="repositorios-target secondary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i>
-                    <span>{proyectoActivo.demoLabel || "Ver demo"}</span>
-                  </a>
-                )}
-                {proyectoActivo.apiDocs && (
-                  <a
-                    href={proyectoActivo.apiDocs}
-                    className="repositorios-target secondary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-solid fa-book-open"></i>
-                    <span>Ver documentación API</span>
-                  </a>
-                )}
-              </div>
+              {(proyectoActivo.repo ||
+                proyectoActivo.demo ||
+                proyectoActivo.apiDocs) && (
+                <div className="project-modal-actions">
+                  {proyectoActivo.repo && (
+                    <a
+                      href={proyectoActivo.repo}
+                      className="repositorios-target"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-brands fa-github"></i>
+                      <span>Ver repositorio</span>
+                    </a>
+                  )}
+                  {proyectoActivo.demo && (
+                    <a
+                      href={proyectoActivo.demo}
+                      className="repositorios-target secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i>
+                      <span>{proyectoActivo.demoLabel || "Ver demo"}</span>
+                    </a>
+                  )}
+                  {proyectoActivo.apiDocs && (
+                    <a
+                      href={proyectoActivo.apiDocs}
+                      className="repositorios-target secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa-solid fa-book-open"></i>
+                      <span>Ver documentación API</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </section>
         </div>

@@ -39,7 +39,8 @@ const SobreMi = () => {
           <p>
               También trabajo con autenticación, pruebas automatizadas,
               contenedores y despliegues en producción. Busco incorporarme a un
-              equipo de desarrollo donde pueda aportar, aprender y seguir creciendo.
+              mi primera oportunidad profesional en desarrollo de software, dentro
+              de un equipo donde pueda aportar, aprender y seguir creciendo.
           </p>
           </div>
           <a
