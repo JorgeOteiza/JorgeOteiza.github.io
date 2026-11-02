@@ -36,6 +36,15 @@
   background: rgba(8, 22, 28, 0.68);
 }
 
+.technology-group-primary {
+  border-color: rgba(34, 211, 238, 0.22);
+  background: rgba(8, 22, 28, 0.82);
+}
+
+.technology-group-primary h3 {
+  color: #a5f3fc;
+}
+
 .technology-group:last-child:nth-child(odd) {
   grid-column: 1 / -1;
 }
@@ -47,16 +56,27 @@
   font-size: 1.15rem;
 }
 
+.technology-group-description {
+  margin: -10px 0 18px;
+  color: var(--color-muted-light);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .icon-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  column-gap: 16px;
+  row-gap: 14px;
 }
 
 .skill-icon-card {
   display: inline-flex;
   min-height: 40px;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: 7px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -65,6 +85,7 @@
   background: rgba(255, 255, 255, 0.05);
   font-size: 0.75rem;
   font-weight: 700;
+  text-align: center;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 

@@ -20,15 +20,55 @@ test("muestra la presentación y las secciones principales", () => {
   expect(screen.getByText("Cloudflare Pages")).toBeInTheDocument();
   expect(screen.getByText("Google Maps")).toBeInTheDocument();
   expect(
-    screen.getByRole("heading", { name: /datos, servicios e infraestructura/i }),
+    screen.getByRole("heading", { name: /datos e infraestructura/i }),
   ).toBeInTheDocument();
-  expect(screen.getByText("Diseño de prompts")).toBeInTheDocument();
+  expect(screen.getByText("Prompt Engineering")).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { name: "Herramientas complementarias" }),
+  ).toBeInTheDocument();
+  expect(
+    screen.getByText(/asistentes de IA utilizados como apoyo al desarrollo/i),
+  ).toBeInTheDocument();
+  document
+    .querySelectorAll("#tecnologías .skill-icon-card")
+    .forEach((card) => {
+      expect(card.querySelector("img")).toHaveAttribute("src");
+      expect(card.querySelector("span:last-child")).not.toBeEmptyDOMElement();
+    });
   expect(screen.getByText("Cómo trabajo")).toBeInTheDocument();
   expect(screen.getAllByText(/full stack/i).length).toBeGreaterThanOrEqual(4);
   const shortUrlCard = screen.getByText("Short URL").closest(".other-project-card-shell");
   expect(
     within(shortUrlCard).getByRole("link", { name: /ver aplicación/i }),
   ).toHaveAttribute("href", "https://short-url-cl.onrender.com/");
+});
+
+test("distingue el origen independiente y colaborativo de los proyectos", () => {
+  render(<App />);
+
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de el rincón del vino/i,
+    }),
+  );
+  expect(
+    screen.getByText(/proyecto colaborativo desarrollado en equipo durante la formación en 4geeks academy/i),
+  ).toBeInTheDocument();
+
+  fireEvent.keyDown(window, { key: "Escape" });
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: /ver caso completo de minimarket manager/i,
+    }),
+  );
+  expect(
+    screen.getByText(/desarrollo full stack independiente para un minimarket familiar/i),
+  ).toBeInTheDocument();
+
+  fireEvent.keyDown(window, { key: "Escape" });
+  expect(
+    screen.getByText(/aplicación personal full stack publicada/i),
+  ).toBeInTheDocument();
 });
 
 test("abre y cierra el detalle de un proyecto con Escape", () => {

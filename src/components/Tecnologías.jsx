@@ -35,10 +35,6 @@ const icons = [
     alt: "Vite Logo",
   },
   {
-    src: "/Jest-test.png",
-    alt: "Jest Logo",
-  },
-  {
     src: "/pytest-logo.svg",
     alt: "pytest Logo",
   },
@@ -105,7 +101,7 @@ const icons = [
   {
     src: "/skills-prompt-engineering.svg",
     invert: true,
-    alt: "Diseño de prompts Logo",
+    alt: "Prompt Engineering Logo",
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg",
@@ -160,12 +156,13 @@ const icons = [
 const groups = [
   {
     title: "Frontend",
+    primary: true,
     items: [
+      "React Logo",
+      "TypeScript Logo",
+      "JavaScript Logo",
       "HTML Logo",
       "CSS Logo",
-      "JavaScript Logo",
-      "TypeScript Logo",
-      "React Logo",
       "React Router Logo",
       "Vite Logo",
       "Bootstrap Logo",
@@ -173,31 +170,34 @@ const groups = [
   },
   {
     title: "Backend y APIs",
+    primary: true,
     items: [
       "Python Logo",
       "Flask Logo",
       "FastAPI Logo",
+      "SQLAlchemy Logo",
       "REST APIs Logo",
       "JWT Logo",
-      "SQLAlchemy Logo",
     ],
   },
   {
-    title: "Datos, servicios e infraestructura",
+    title: "Datos e infraestructura",
+    primary: true,
     items: [
       "PostgreSQL Logo",
       "SQLite Logo",
-      "Redis Logo",
-      "Docker Logo",
-      "Neon Logo",
       "Supabase Logo",
+      "Neon Logo",
+      "Docker Logo",
       "Render Logo",
       "Cloudflare Pages Logo",
       "Google Maps Logo",
+      "Redis Logo",
     ],
   },
   {
     title: "Pruebas y flujo de trabajo",
+    primary: true,
     items: [
       "pytest Logo",
       "Vitest Logo",
@@ -209,14 +209,16 @@ const groups = [
     ],
   },
   {
-    title: "Diseño, IA y productividad",
+    title: "Herramientas complementarias",
+    description:
+      "Diseño, empaquetado y asistentes de IA utilizados como apoyo al desarrollo.",
     items: [
       "Figma Logo",
       "PyInstaller Logo",
       "ChatGPT Logo",
       "Codex Logo",
       "GitHub Copilot Logo",
-      "Diseño de prompts Logo",
+      "Prompt Engineering Logo",
     ],
   },
 ];
@@ -227,14 +229,20 @@ const Tecnologías = () => {
       <div className="technology-heading">
         <span className="section-number">02</span>
         <div>
-          <span className="section-eyebrow">Herramientas que uso</span>
+          <span className="section-eyebrow">Tecnologías de mis proyectos</span>
           <h2 className="title-tecnologias">Un stack para construir, medir y mejorar.</h2>
         </div>
       </div>
       <div className="technology-groups">
         {groups.map((group) => (
-          <article className="technology-group" key={group.title}>
+          <article
+            className={`technology-group ${group.primary ? "technology-group-primary" : ""}`}
+            key={group.title}
+          >
             <h3>{group.title}</h3>
+            {group.description && (
+              <p className="technology-group-description">{group.description}</p>
+            )}
             <div className="icon-container">
               {group.items.map((name) => {
                 const icon = icons.find((item) => item.alt === name);

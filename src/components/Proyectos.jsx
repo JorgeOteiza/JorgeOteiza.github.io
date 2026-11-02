@@ -342,12 +342,12 @@ const proyectos = [
     imagen: minimarketMedia[0].src,
     alt: minimarketMedia[0].alt,
     resumen:
-      "Gestión para un minimarket real: POS offline, sincronización y administración web remota.",
+      "Solución para un minimarket familiar con POS offline, sincronización y administración web remota.",
     fraseImpacto:
       "La operación sigue en el local; la administración también puede hacerse a distancia.",
     repo: "https://github.com/JorgeOteiza/minimarket-pos",
     demo: "",
-    rol: "Desarrollo full stack: POS local, interfaz, API REST, modelado de datos, respaldos y empaquetado para Windows. Evolución del sistema con sincronización, autenticación de administradoras y despliegue de la administración web remota.",
+    rol: "Desarrollo full stack independiente para un minimarket familiar: POS local, interfaz, API REST, modelado de datos, respaldos y empaquetado para Windows. Evolución del sistema con sincronización, autenticación de administradoras y despliegue de la administración web remota.",
     enfoque:
       "Aplicación para un minimarket real que comenzó como un POS local y evolucionó para permitir la administración a distancia. El PC principal conserva el punto de venta y la administración, con Flask y SQLite para funcionar sin internet. Cuando hay conexión, sincroniza información con Supabase, que aporta almacenamiento remoto y autenticación para cuentas autorizadas. La vista web desplegada en Render ofrece solo administración y se adapta a celulares y tablets.",
     phoneMedia: minimarketPhoneMedia,
@@ -411,9 +411,9 @@ const proyectos = [
       "E-commerce full stack de vinos con catálogo, favoritos y compra responsive.",
     repo: "https://github.com/JorgeOteiza/final-project-FT22-g2_sitio.Web_E-Comerce",
     demo: "",
-    rol: "Desarrollo full stack en equipo y posterior mantenimiento y evolución individual.",
+    rol: "Proyecto colaborativo desarrollado en equipo durante la formación en 4Geeks Academy.",
     enfoque:
-      "Aplicación e-commerce desarrollada originalmente en equipo para descubrir vinos, filtrar el catálogo, guardar favoritos y completar un flujo de compra desde distintos dispositivos.",
+      "E-commerce colaborativo realizado durante la formación en 4Geeks Academy para descubrir vinos, filtrar el catálogo, guardar favoritos y completar un flujo de compra desde distintos dispositivos.",
     stack: {
       Frontend: ["React", "JavaScript"],
       "Backend y datos": [
@@ -457,13 +457,13 @@ const proyectos = [
     imagen: travelCalculatorTabletMedia[0].src,
     alt: travelCalculatorTabletMedia[0].alt,
     resumen:
-      "Estima el consumo y costo de una ruta según el vehículo, rendimiento, pendientes, clima, tráfico y carga.",
+      "Aplicación personal full stack publicada para estimar el consumo y costo de una ruta según el vehículo, rendimiento, pendientes, clima, tráfico y carga.",
     fraseImpacto:
       "Una estimación de combustible que entiende el vehículo y la ruta completa.",
     repo: "https://github.com/JorgeOteiza/travel.calculator",
     demo: "https://travel-calculator-44v.pages.dev/",
     demoLabel: "Ver aplicación",
-    rol: "Desarrollo full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia, gestión de sesión y pruebas automatizadas.",
+    rol: "Desarrollo personal full stack: diseño de interfaz responsive, arquitectura frontend, API REST, modelo de cálculo, integración de servicios externos, persistencia, gestión de sesión y pruebas automatizadas.",
     enfoque:
       "Travel Calculator transforma los datos del vehículo y las condiciones del recorrido en una estimación contextual y explicable, incluso cuando el vehículo no está en el catálogo y se declara manualmente. Permite calcular un viaje como invitado o iniciar sesión para guardarlo en el historial, y además del resultado rápido, permite revisar el consumo por segmento, el perfil de elevación y los factores que modificaron el cálculo.",
     stack: {
