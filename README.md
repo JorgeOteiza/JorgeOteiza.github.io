@@ -70,4 +70,4 @@ El proyecto está configurado para publicarse en `https://jorgeoteiza.github.io`
 npm run deploy
 ```
 
-Este comando genera el build y publica el contenido mediante `gh-pages`. La carpeta `build/` no se versiona.
+Este comando genera el build y publica el contenido mediante `gh-pages`, incluyendo `.nojekyll` para servir los archivos estáticos de React sin procesarlos con Jekyll. La carpeta `build/` no se versiona.
