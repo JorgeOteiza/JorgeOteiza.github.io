@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/Home.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Home = () => {
+  const { t } = useLanguage();
+
   const handleScroll = () => {
     const nextSection = document.querySelector("#proyectos");
     if (nextSection) {
@@ -15,32 +18,30 @@ const Home = () => {
         <div className="home-text">
           <span className="availability">
             <span aria-hidden="true"></span>
-            Disponible para nuevos desafíos
+            {t.home.availability}
           </span>
-          <p className="hero-kicker">Jorge Oteiza · Full Stack Developer Junior</p>
+          <p className="hero-kicker">{t.home.kicker}</p>
           <h1>
-            Desarrollo productos digitales <em>de principio a fin.</em>
+            {t.home.titleStart}
+            <em>{t.home.titleEm}</em>
           </h1>
-          <p className="hero-description">
-            Desarrollo aplicaciones con React y Python, desde la interfaz y las
-            APIs hasta los datos y el despliegue.
-          </p>
+          <p className="hero-description">{t.home.description}</p>
           <div className="hero-actions">
             <button type="button" className="button-primary" onClick={handleScroll}>
-              Ver proyectos
+              {t.home.viewProjects}
               <i className="fa-solid fa-arrow-down" aria-hidden="true"></i>
             </button>
             <a
               className="button-secondary"
-              href={`${process.env.PUBLIC_URL}/CV_Jorge_Oteiza_Full_Stack_Developer.pdf`}
+              href={`${process.env.PUBLIC_URL}${t.cv.url}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ver CV
+              {t.cv.label}
               <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
           </div>
-          <div className="hero-links" aria-label="Redes profesionales">
+          <div className="hero-links" aria-label={t.home.socialLabel}>
             <a href="https://github.com/JorgeOteiza" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-github" aria-hidden="true"></i> GitHub
             </a>
@@ -69,10 +70,9 @@ const Home = () => {
         </div>
       </div>
       <div className="hero-proof">
-        <span>Aplicaciones reales</span>
-        <span>APIs REST</span>
-        <span>Experiencia de usuario</span>
-        <span>Datos y automatización</span>
+        {t.home.proof.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
       </div>
     </section>
   );

@@ -1,81 +1,47 @@
 import React from "react";
 import "../styles/SobreMi.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const SobreMi = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="sobre-mi" className="about-section">
       <div className="about-heading">
         <span className="section-number">03</span>
         <div>
-          <span className="section-eyebrow">La persona detrás del código</span>
-          <h2>Sobre mí</h2>
+          <span className="section-eyebrow">{t.about.eyebrow}</span>
+          <h2>{t.about.title}</h2>
         </div>
       </div>
       <div className="about-grid">
         <div className="sobreMi">
-          <p className="about-lead">
-            Me gusta convertir problemas cotidianos en productos claros,
-            rápidos y fáciles de usar.
-          </p>
+          <p className="about-lead">{t.about.lead}</p>
           <div className="descriptionForMe">
-          <p>
-              Soy desarrollador full stack y trabajo principalmente con React,
-              Flask y FastAPI. Diseño interfaces, construyo APIs REST y modelo
-              datos con PostgreSQL y SQLite para resolver necesidades reales.
-              Me interesa construir productos completos, conectando la experiencia
-              de usuario, la lógica de negocio y los datos.
-          </p>
-          <p>
-              Uso asistentes de IA como apoyo al desarrollo: defino el contexto
-              y los requisitos, reviso el código generado y valido cómo se
-              integra y funciona dentro del proyecto.
-          </p>
-          <p>
-              Minimarket Manager resume mi forma de trabajar: entender la
-              operación de un negocio real y construir una solución que permita
-              seguir vendiendo sin internet, con sincronización y administración
-              remota cuando hay conexión.
-          </p>
-          <p>
-              También trabajo con autenticación, pruebas automatizadas,
-              contenedores y despliegues en producción. Busco incorporarme a un
-              mi primera oportunidad profesional en desarrollo de software, dentro
-              de un equipo donde pueda aportar, aprender y seguir creciendo.
-          </p>
+            {t.about.paragraphs.map((parrafo) => (
+              <p key={parrafo}>{parrafo}</p>
+            ))}
           </div>
           <a
-            href={`${process.env.PUBLIC_URL}/CV_Jorge_Oteiza_Full_Stack_Developer.pdf`}
+            href={`${process.env.PUBLIC_URL}${t.cv.url}`}
             className="about-cv-link"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Abrir currículum de Jorge Oteiza en una pestaña nueva"
+            aria-label={t.cv.ariaFull}
           >
-            Ver currículum completo
+            {t.cv.fullLabel}
             <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </div>
         <div className="about-facts">
-          <p className="about-process-label">Cómo trabajo</p>
-          <article>
-            <span>01</span>
-            <h3>Entender el problema</h3>
-            <p>Traduzco la necesidad del usuario y del negocio en un alcance concreto.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Diseñar la arquitectura</h3>
-            <p>Conecto interfaz, API, datos y reglas de negocio como un solo producto.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Probar e iterar</h3>
-            <p>Valido recorridos críticos, automatizo pruebas y refino la experiencia.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Publicar y observar</h3>
-            <p>Preparo el despliegue, la persistencia y la operación del producto.</p>
-          </article>
+          <p className="about-process-label">{t.about.processLabel}</p>
+          {t.about.process.map((paso, index) => (
+            <article key={paso.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{paso.title}</h3>
+              <p>{paso.text}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

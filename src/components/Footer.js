@@ -1,21 +1,21 @@
 import React from "react";
 import "../styles/Footer.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="footer" id="contacto">
       <div className="containerFooter">
-        <span className="footer-eyebrow">¿Construimos algo juntos?</span>
+        <span className="footer-eyebrow">{t.footer.eyebrow}</span>
         <h2 className="title-contact">
-          Convirtamos la próxima idea <em>en un producto real.</em>
+          {t.footer.titleStart}
+          <em>{t.footer.titleEm}</em>
         </h2>
-        <p className="footer-copy">
-          Estoy disponible para colaborar en productos digitales y sumarme a un
-          equipo donde pueda aportar desde el frontend hasta el backend. Si tienes
-          un desafío, conversemos.
-        </p>
+        <p className="footer-copy">{t.footer.copy}</p>
         <a href="mailto:oteiza.jor@gmail.com" className="contact-cta">
-          Escríbeme
+          {t.footer.cta}
           <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
         <div className="footer-bottom">
@@ -29,7 +29,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-github"></i>
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
                 <span>GitHub</span>
               </a>
               <a
@@ -38,7 +38,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
                 <span>LinkedIn</span>
               </a>
           </div>

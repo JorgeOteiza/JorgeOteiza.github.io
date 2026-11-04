@@ -37,6 +37,7 @@ test("muestra la presentación y las secciones principales", () => {
     screen.getByRole("heading", { name: /datos e infraestructura/i }),
   ).toBeInTheDocument();
   expect(screen.getByText("Prompt Engineering")).toBeInTheDocument();
+  expect(screen.getByText("Claude Code")).toBeInTheDocument();
   expect(
     screen.getByRole("heading", { name: "Herramientas complementarias" }),
   ).toBeInTheDocument();
@@ -44,7 +45,7 @@ test("muestra la presentación y las secciones principales", () => {
     screen.getByText(/asistentes de IA utilizados como apoyo al desarrollo/i),
   ).toBeInTheDocument();
   document
-    .querySelectorAll("#tecnologías .skill-icon-card")
+    .querySelectorAll("#tecnologias .skill-icon-card")
     .forEach((card) => {
       const image = card.querySelector("img");
       expect(image || card.querySelector(".skill-symbol")).toBeTruthy();

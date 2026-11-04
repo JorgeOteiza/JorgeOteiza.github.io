@@ -384,6 +384,9 @@ button.repositorios-target {
   width: min(1320px, 100%);
   height: min(760px, calc(100vh - 48px));
   max-height: calc(100vh - 48px);
+  /* Alto disponible para la tablet o el teléfono dentro de la galería:
+     alto del modal menos padding, leyenda y tira de miniaturas. */
+  --modal-device-max-h: calc(min(760px, 100vh - 48px) - 190px);
   overflow: hidden;
   border: 1px solid rgba(34, 211, 238, 0.35);
   border-radius: 22px;
@@ -1134,6 +1137,7 @@ body.modal-open {
   .project-modal {
     height: calc(100vh - 24px);
     max-height: calc(100vh - 24px);
+    --modal-device-max-h: calc(100vh - 24px - 150px);
   }
 
   .project-modal-media {
@@ -1240,6 +1244,29 @@ body.modal-open {
   justify-items: center;
   padding-top: 34px;
   perspective: 1200px;
+}
+
+.project-private-repo {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(8, 127, 147, 0.22);
+  border-radius: 10px;
+  background: rgba(34, 211, 238, 0.08);
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.project-private-repo i {
+  margin-top: 3px;
+  color: #087f93;
+}
+
+.project-private-repo strong {
+  color: var(--color-text);
 }
 
 .project-impact-line {
@@ -2093,7 +2120,7 @@ body.modal-open {
 }
 
 .project-monitor.project-preview-tablet {
-  width: min(74%, 450px);
+  width: min(74%, 450px, calc(var(--modal-device-max-h, 9999px) * 574 / 826));
   padding: 5px 2px 3px;
   border-width: 1px;
   border-color: rgba(207, 220, 225, 0.48);
@@ -2112,7 +2139,7 @@ body.modal-open {
 }
 
 .project-monitor.project-preview-phone {
-  width: min(46%, 282px);
+  width: min(46%, 282px, calc(var(--modal-device-max-h, 9999px) * 390 / 844));
   padding: 5px;
   border-width: 1px;
   border-radius: 39px;

@@ -4,6 +4,18 @@
   z-index: -999;
   overflow: hidden;
   pointer-events: none;
+  /* Cielo estático: es lo que se ve cuando el video no se carga (móvil o movimiento reducido). */
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 28% 72%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 46% 34%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 63% 82%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 78% 12%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 88% 56%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 6% 90%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 54% 6%, rgba(255, 255, 255, 0.45), transparent);
+  background-size: 320px 320px;
 }
 
 .video-container::after {

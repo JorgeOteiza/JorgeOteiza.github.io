@@ -1,37 +1,38 @@
 import React from "react";
 import "../styles/Tecnologías.css";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const icons = [
   {
-    src: "https://logodownload.org/wp-content/uploads/2016/10/html5-logo-1.png",
+    src: "/logos/html5.webp",
     alt: "HTML Logo",
   },
   {
-    src: "https://logodownload.org/wp-content/uploads/2017/04/css-3-logo.png",
+    src: "/logos/css3.webp",
     alt: "CSS Logo",
   },
   {
-    src: "https://www.svgrepo.com/show/349540/typescript.svg",
+    src: "/logos/typescript.svg",
     alt: "TypeScript Logo",
   },
   {
-    src: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+    src: "/logos/git.png",
     alt: "Git Logo",
   },
   {
-    src: "/logoBootstrap.png",
+    src: "/logos/bootstrap.webp",
     alt: "Bootstrap Logo",
   },
   {
-    src: "https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png",
+    src: "/logos/javascript.webp",
     alt: "JavaScript Logo",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    src: "/logos/react.svg",
     alt: "React Logo",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+    src: "/logos/vite.svg",
     alt: "Vite Logo",
   },
   {
@@ -39,11 +40,11 @@ const icons = [
     alt: "pytest Logo",
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+    src: "/logos/figma.svg",
     alt: "Figma Logo",
   },
   {
-    src: "/LogoNewPython.png",
+    src: "/logos/python.webp",
     alt: "Python Logo",
   },
   {
@@ -56,15 +57,15 @@ const icons = [
     alt: "PostgreSQL Logo",
   },
   {
-    src: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
+    src: "/logos/sqlite.svg",
     alt: "SQLite Logo",
   },
   {
-    src: "/logo-flask.2.png",
+    src: "/logos/flask.webp",
     alt: "Flask Logo",
   },
   {
-    src: "https://blog.desdelinux.net/wp-content/uploads/2023/02/sqlalchemy.png.webp",
+    src: "/logos/sqlalchemy.webp",
     alt: "SQLAlchemy Logo",
   },
   {
@@ -94,6 +95,10 @@ const icons = [
     alt: "Codex Logo",
   },
   {
+    src: "/logos/claude.svg",
+    alt: "Claude Code Logo",
+  },
+  {
     src: "/skills-github-copilot.svg",
     invert: true,
     alt: "GitHub Copilot Logo",
@@ -104,39 +109,39 @@ const icons = [
     alt: "Prompt Engineering Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg",
+    src: "/logos/reactrouter.svg",
     alt: "React Router Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+    src: "/logos/fastapi.svg",
     alt: "FastAPI Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/maplibre/396CB2",
+    src: "/logos/maplibre.svg",
     alt: "MapLibre Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
+    src: "/logos/redis.svg",
     alt: "Redis Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    src: "/logos/docker.svg",
     alt: "Docker Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/neon/00E699",
+    src: "/logos/neon.svg",
     alt: "Neon Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/supabase/3FCF8E",
+    src: "/logos/supabase.svg",
     alt: "Supabase Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/render/FFFFFF",
+    src: "/logos/render.svg",
     alt: "Render Logo",
   },
   {
-    src: "https://cdn.simpleicons.org/cloudflare/F38020",
+    src: "/logos/cloudflare.svg",
     alt: "Cloudflare Pages Logo",
   },
   {
@@ -144,22 +149,22 @@ const icons = [
     alt: "LocationIQ Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
+    src: "/logos/vitest.svg",
     alt: "Vitest Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg",
+    src: "/logos/playwright.svg",
     alt: "Playwright Logo",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
+    src: "/logos/githubactions.svg",
     alt: "GitHub Actions Logo",
   },
 ];
 
 const groups = [
   {
-    title: "Frontend",
+    key: "frontend",
     primary: true,
     items: [
       "React Logo",
@@ -173,7 +178,7 @@ const groups = [
     ],
   },
   {
-    title: "Backend y APIs",
+    key: "backend",
     primary: true,
     items: [
       "Python Logo",
@@ -185,7 +190,7 @@ const groups = [
     ],
   },
   {
-    title: "Datos e infraestructura",
+    key: "data",
     primary: true,
     items: [
       "PostgreSQL Logo",
@@ -201,7 +206,7 @@ const groups = [
     ],
   },
   {
-    title: "Pruebas y flujo de trabajo",
+    key: "testing",
     primary: true,
     items: [
       "pytest Logo",
@@ -214,14 +219,14 @@ const groups = [
     ],
   },
   {
-    title: "Herramientas complementarias",
-    description:
-      "Diseño, empaquetado y asistentes de IA utilizados como apoyo al desarrollo.",
+    key: "tools",
+    hasDescription: true,
     items: [
       "Figma Logo",
       "PyInstaller Logo",
       "ChatGPT Logo",
       "Codex Logo",
+      "Claude Code Logo",
       "GitHub Copilot Logo",
       "Prompt Engineering Logo",
     ],
@@ -229,24 +234,26 @@ const groups = [
 ];
 
 const Tecnologías = () => {
+  const { t } = useLanguage();
+
   return (
-    <section id="tecnologías" className="tecnologias">
+    <section id="tecnologias" className="tecnologias">
       <div className="technology-heading">
         <span className="section-number">02</span>
         <div>
-          <span className="section-eyebrow">Tecnologías de mis proyectos</span>
-          <h2 className="title-tecnologias">Un stack para construir, medir y mejorar.</h2>
+          <span className="section-eyebrow">{t.tech.eyebrow}</span>
+          <h2 className="title-tecnologias">{t.tech.title}</h2>
         </div>
       </div>
       <div className="technology-groups">
         {groups.map((group) => (
           <article
             className={`technology-group ${group.primary ? "technology-group-primary" : ""}`}
-            key={group.title}
+            key={group.key}
           >
-            <h3>{group.title}</h3>
-            {group.description && (
-              <p className="technology-group-description">{group.description}</p>
+            <h3>{t.tech.groups[group.key]}</h3>
+            {group.hasDescription && (
+              <p className="technology-group-description">{t.tech.toolsDescription}</p>
             )}
             <div className="icon-container">
               {group.items.map((name) => {
@@ -255,7 +262,7 @@ const Tecnologías = () => {
                   <span className="skill-icon-card" key={icon.alt}>
                     {icon.src ? (
                       <img
-                        src={icon.src}
+                        src={`${process.env.PUBLIC_URL}${icon.src}`}
                         alt=""
                         className={`icon ${icon.invert ? "icon-invert" : ""}`}
                         loading="lazy"

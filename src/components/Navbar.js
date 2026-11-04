@@ -1,8 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/Navbar.css";
+import { useLanguage } from "../i18n/LanguageContext";
+
+const IDIOMAS_MENU = [
+  { code: "es", label: "ES", name: "Español" },
+  { code: "en", label: "EN", name: "English" },
+];
+
+const SECCIONES = [
+  { hash: "#proyectos", key: "projects" },
+  { hash: "#tecnologias", key: "technologies" },
+  { hash: "#sobre-mi", key: "about" },
+  { hash: "#contacto", key: "contact" },
+];
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -11,7 +26,9 @@ const Navbar = () => {
       const isNearTop = currentScrollY < 80;
       const isScrollingDown = currentScrollY > lastScrollY.current;
 
-      setIsHidden(!isNearTop && isScrollingDown);
+      const shouldHide = !isNearTop && isScrollingDown;
+      setIsHidden(shouldHide);
+      if (shouldHide) setIsMenuOpen(false);
       lastScrollY.current = currentScrollY;
     };
 
@@ -33,10 +50,7 @@ const Navbar = () => {
     window.history.pushState(null, "", hash);
     window.scrollTo({ top: y, behavior: "smooth" });
 
-    const collapse = document.getElementById("navbarNav");
-    if (collapse && collapse.classList.contains("show")) {
-      collapse.classList.remove("show");
-    }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -54,58 +68,56 @@ const Navbar = () => {
           <img
             src={`${process.env.PUBLIC_URL}/logo_portafolio_fullstack_enduro.svg`}
             className="logo-portafolio"
-            alt="Logo Full Stack Enduro de Jorge Oteiza"
+            alt={t.nav.logoAlt}
           />
         </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Abrir navegación"
+        <div className="navbar-actions order-lg-last">
+          <div className="language-toggle" role="group" aria-label={t.nav.languageGroup}>
+            <i className="fa-solid fa-globe" aria-hidden="true"></i>
+            {IDIOMAS_MENU.map(({ code, label, name }) => (
+              <button
+                type="button"
+                key={code}
+                lang={code}
+                className={lang === code ? "active" : ""}
+                aria-pressed={lang === code}
+                aria-label={name}
+                onClick={() => setLang(code)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            aria-controls="navbarNav"
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? t.nav.close : t.nav.open}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <i
+              className={`fa-solid ${isMenuOpen ? "fa-xmark" : "fa-bars"}`}
+              aria-hidden="true"
+            ></i>
+          </button>
+        </div>
+        <div
+          className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+          id="navbarNav"
         >
-          <i className="fa-solid fa-bars"></i>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#proyectos"
-                onClick={(e) => scrollToId(e, "#proyectos")}
-              >
-                Proyectos
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#tecnologías"
-                onClick={(e) => scrollToId(e, "#tecnologías")}
-              >
-                Tecnologías
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#sobre-mi"
-                onClick={(e) => scrollToId(e, "#sobre-mi")}
-              >
-                Sobre mí
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#contacto"
-                onClick={(e) => scrollToId(e, "#contacto")}
-              >
-                Contacto
-              </a>
-            </li>
+            {SECCIONES.map(({ hash, key }) => (
+              <li className="nav-item" key={hash}>
+                <a
+                  className="nav-link"
+                  href={hash}
+                  onClick={(e) => scrollToId(e, hash)}
+                >
+                  {t.nav[key]}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
