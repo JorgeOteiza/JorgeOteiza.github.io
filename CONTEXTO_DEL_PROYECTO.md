@@ -1,6 +1,6 @@
 # Contexto y mantenimiento del portafolio
 
-Revisión del código local: 8 de septiembre de 2026.
+Revisión del código local: 8 de septiembre de 2026. Actualizado el 4 de noviembre de 2026 (versión bilingüe, optimización de recursos y reorganización de Proyectos).
 
 ## Propósito y voz
 
@@ -10,7 +10,7 @@ Su experiencia comprende proyectos personales desde noviembre de 2024 y Minimark
 
 Fechas confirmadas: bootcamp de 4Geeks Academy de julio a diciembre de 2023; proyecto final El Rincón del Vino de noviembre a diciembre de 2023. Su experiencia anterior incluye trabajos temporales durante vacaciones desde 2011 y trabajo como personal trainer aproximadamente de 2017 a 2023. No presentar toda la trayectoria desde 2011 como empleo continuo ni inferir meses exactos para el período 2017-2023.
 
-El contenido utiliza español, con referencias regionales `es-CL`, un tono profesional, cercano y directo, y primera persona para describir la participación del autor. Los términos React, frontend, backend, API REST y full stack forman parte del vocabulario habitual.
+El contenido utiliza español, con referencias regionales `es-CL`, un tono profesional, cercano y directo, y primera persona para describir la participación del autor. Desde noviembre de 2026 el sitio también tiene versión en inglés (`en-US`), porque Jorge busca además ofertas remotas o en inglés. Todo texto nuevo debe escribirse en ambos idiomas, manteniendo en inglés el mismo nivel de honestidad: no exagerar el rol ni los resultados al traducir. Los términos React, frontend, backend, API REST y full stack forman parte del vocabulario habitual.
 
 La explicación parte del problema y la utilidad del producto, continúa con el rol y las funcionalidades y profundiza en decisiones técnicas. Las tarjetas resumen; los detalles desarrollan la historia. Ejemplos del tono: «Me gusta convertir problemas cotidianos en productos claros, rápidos y fáciles de usar» y «Qué resuelve».
 
@@ -19,8 +19,9 @@ Al incorporar contenido, distinguir trabajo individual, colaboración y evoluci�
 ## Implementación del sitio
 
 - React 18, JavaScript y JSX; Create React App mediante `react-scripts` 5.
-- CSS propio por componente, variables globales, Bootstrap 5 y su bundle JavaScript.
-- Iconos mediante clases de Font Awesome cargadas desde CDN; también hay paquetes Font Awesome declarados en `package.json`.
+- CSS propio por componente, variables globales y Bootstrap 5 (solo CSS; el menú móvil se controla con estado de React, sin el bundle JavaScript de Bootstrap).
+- Iconos mediante clases de Font Awesome 6.7.2 cargadas desde cdnjs. No hay paquetes Font Awesome en `package.json`.
+- Internacionalización propia y sin dependencias: `src/i18n/LanguageContext.jsx` (`LanguageProvider`, `useLanguage()` y `localizar()`) y `src/i18n/ui.js` (textos de la interfaz). El idioma inicial sale de `?lang=es|en`, luego de `localStorage` (`portfolio-lang`) y por último del idioma del navegador (español si lo prefiere; inglés en otro caso). Las pruebas fijan el español en `src/setupTests.js`.
 - Página única con navegación por anclas. No hay backend ni React Router implementados en este repositorio.
 - Estado local con `useState`, referencias con `useRef` y efectos con limpieza de listeners e intervalos.
 - Jest y React Testing Library a través de `react-scripts`.
@@ -33,20 +34,24 @@ Las tecnologías descritas en las fichas y en la sección de habilidades no equi
 | Archivo o carpeta | Responsabilidad |
 | --- | --- |
 | `src/index.js` | Arranque de React, StrictMode y carga de Bootstrap |
-| `src/App.js` | Fondo de video y orden: Navbar, Home, Proyectos, Tecnologías, SobreMi, Footer |
+| `src/App.js` | `LanguageProvider`, fondo de video (solo ≥768 px y sin movimiento reducido) y orden: Navbar, Home, Proyectos, Tecnologías, SobreMi, Footer |
+| `src/data/proyectos.js` | Datos de los seis proyectos y sus capturas, con textos `t(es, en)`; el orden del arreglo es el de las tarjetas |
+| `src/i18n/` | Contexto de idioma y diccionario de textos de la interfaz |
 | `src/components/Home.js` | Presentación, disponibilidad, CV y redes |
-| `src/components/Proyectos.jsx` | Datos de seis proyectos, capturas, tarjetas de dispositivos, carruseles y modal |
+| `src/components/Proyectos.jsx` | Tarjetas de dispositivos, carruseles, relojes aislados (`HoraActual`, `FechaHoraActual`) y modal |
 | `src/components/Tecnologías.jsx` | Catálogo de iconos y habilidades agrupadas |
 | `src/components/SobreMi.jsx` | Perfil, proceso de trabajo y enlace al CV |
-| `src/components/Navbar.js` | Navegación por anclas, menú móvil y ocultación al bajar |
+| `src/components/Navbar.js` | Navegación por anclas, selector ES/EN, menú móvil y ocultación al bajar |
 | `src/components/Footer.js` | Contacto por correo, redes y año dinámico |
 | `src/styles/index.css` | Variables de color y tipografía, estilos base |
 | `src/styles/Proyectos.css` | Dispositivos, galerías, modal y adaptación responsive |
-| `public/projects/` | Capturas agrupadas por proyecto |
+| `public/projects/` | Capturas en WebP agrupadas por proyecto (máximo 1920 px de ancho, calidad 80) |
+| `public/logos/` | Logos de tecnologías alojados localmente |
 | `public/index.html` | Idioma, metadatos sociales, fuentes y Font Awesome |
-| `public/CV_Jorge_Oteiza_Full_Stack_Developer.pdf` | CV enlazado desde Home y SobreMi |
+| `public/CV_Jorge_Oteiza_Full_Stack_Developer.pdf` | CV en español, enlazado desde Home y SobreMi en modo español |
+| `public/CV_Jorge_Oteiza_Full_Stack_Developer_EN.pdf` | Traducción fiel al inglés del CV, con el mismo diseño, enlazada en modo inglés (`cv.url` en `src/i18n/ui.js`). Si cambia el CV en español, regenerar también la versión en inglés |
 
-`Experiencia.jsx` y su CSS existen, pero el componente no está montado en `App.js`.
+`Experiencia.jsx` y su CSS existen, pero el componente no está montado en `App.js`. Fue una decisión de Jorge: la experiencia ya aparece en el CV y en sus perfiles.
 
 ## Presentación de proyectos
 
@@ -56,7 +61,11 @@ La ficha de Minimarket Manager fue actualizada con el contexto proporcionado por
 
 La ficha de Travel Calculator se actualizó el 22 de septiembre de 2026 con contexto obtenido de dos sesiones de Claude Code que mantienen el desarrollo de ese proyecto (no de Jorge directamente), contrastado contra el bundle JavaScript servido en `https://travel-calculator-44v.pages.dev/`. Agrega: cálculo como invitado sin cuenta (antes solo había demo estática) además del guardado autenticado, declaración de un vehículo fuera de catálogo, manejo de sesión que reintenta como invitado si el token vence a mitad de un cálculo, límites de solicitudes con Flask-Limiter, corrección de condiciones de carrera del mapa de Google Maps, y el paso a producción real: frontend en Cloudflare Pages, backend en Render y base de datos migrada a Neon (antes Render PostgreSQL), con `pool_pre_ping` habilitado tras un incidente real de conexiones muertas. Se agregó el enlace de demo. El texto público ya no cita un número de pruebas ni atribuye un framework de pruebas al backend: la cifra de 56 provino de contar `def test_` en el código, no de una corrida verificada, y el propio README (desactualizado también en el estado de despliegue) todavía indica 17 pruebas con `unittest`, no con pytest. Antes de citar un número de pruebas o un framework de pruebas de backend específico en la ficha pública, confirmarlo directamente en el repositorio de Travel Calculator.
 
-El arreglo `proyectos` reúne título, categoría, resumen, repositorio, rol, enfoque, funcionalidades, stack y aporte técnico. Algunos proyectos agregan frase de presentación, calidad y validación u origen. `secundario`, `destacado` y `cardDevice` controlan la presentación.
+Minimarket Manager y Travel Calculator tienen repositorio privado por estar en producción; su ficha lo indica con `repoPrivado`. No agregar enlaces a esos repositorios. Jorge planea grabar videos: primero de Travel Calculator (para LinkedIn) y después de Minimarket Manager. El modal ya admite `type: "video"` en `media`.
+
+El arreglo `proyectos` reúne id, título, categoría, resumen, repositorio, rol, enfoque, funcionalidades, stack y aporte técnico. Algunos proyectos agregan frase de presentación, calidad y validación u origen. `secundario`, `destacado` y `cardDevice` controlan la presentación.
+
+`id` identifica al proyecto en el estado del modal y en las clases específicas de tarjeta; no usar el título para eso, porque cambia con el idioma. Los demos usan siempre la etiqueta «Ver aplicación» / «View app».
 
 `media` contiene la galería completa. `phoneMedia`, cuando existe, selecciona capturas para la tarjeta; también se utiliza para tarjetas de otros dispositivos. Cada captura identifica `src`, `alt` y, cuando corresponde, `device: "phone"` o `"tablet"`. Conservar las proporciones reales y el propósito de cada selección.
 
@@ -92,15 +101,16 @@ El README declara Node 20 y npm 10 o superior. El entorno de la revisión dispon
 
 ## Aspectos a considerar en futuras mejoras
 
-- `Proyectos.jsx` concentra datos, presentación e interacciones. Separarlos puede facilitar futuras ampliaciones, conservando el comportamiento cubierto por pruebas.
-- Fotos, fuentes y varios iconos dependen de servicios externos.
-- Se mezclan rutas absolutas desde `/` y rutas con `PUBLIC_URL`; revisar ambas si cambia el destino de publicación a una subcarpeta.
-- El reloj actualiza el estado de Proyectos cada segundo. Considerar aislarlo si se trabaja en rendimiento.
-- Hay componentes y estilos heredados; comprobar sus usos antes de retirarlos.
-- Algunos archivos de `build/` siguen versionados aunque la carpeta está en `.gitignore`. Compilar puede modificar esos archivos; revisar el estado de Git y evitar incluir resultados generados por accidente.
+- El selector de idioma es un control segmentado ES | EN que resalta el idioma activo (`aria-pressed`).
+- En el modal, el ancho de las vistas de tablet y teléfono también se limita por `--modal-device-max-h` (alto del modal menos leyenda y miniaturas), para que no se salgan en pantallas de poca altura, como un notebook de 14" al 100 %. Se verificó en Edge con 1536×730, 1366×768 y 1920×1080.
+- Los metadatos sociales de `public/index.html` están en español: el sitio es estático y los rastreadores sin JavaScript no ven el cambio de idioma. Se declararon `hreflang` y `og:locale:alternate`.
+- Siguen dependiendo de servicios externos las fuentes de Google, Font Awesome y la foto de perfil de GitHub.
+- Se mezclan rutas con `PUBLIC_URL` (componentes) y rutas absolutas desde `/` en los datos; `conPublicUrl()` las resuelve en Proyectos. Revisar ambas si cambia el destino de publicación a una subcarpeta.
+- Hay cinco capturas de El Rincón del Vino sin referenciar (`cart`, `contact`, `mobile-showcase`, `order-confirmation` y `profile`), conservadas por si se usan más adelante.
+- `build/` ya no se versiona. Se genera con `npm run build` o `npm run deploy`.
 
 ## Validación de esta revisión
 
-Las seis suites existentes pasaron: 13 pruebas en total. La compilación de producción terminó correctamente. Las 60 rutas de capturas referenciadas en Proyectos tienen su archivo local. Se observaron advertencias de `ReactDOMTestUtils.act` desde React Testing Library y de `fs.F_OK` durante la compilación. No se realizó una inspección visual en navegador.
+4 de noviembre de 2026: pasaron las siete suites, con 17 pruebas en total; se sumó `src/Language.test.js` para el cambio de idioma y el menú móvil. La compilación con `CI=true`, que convierte las advertencias en errores, terminó correctamente. Las 60 capturas referenciadas existen en WebP, y las capturas bajaron de unos 20 MB a 3 MB. Persisten las advertencias de `ReactDOMTestUtils.act` de React Testing Library. No se realizó una inspección visual en navegador: queda pendiente revisar en escritorio, tablet y móvil el selector de idioma, el fondo sin video en móvil y los textos en inglés más largos.
 
 Esta guía describe el repositorio local; no constituye una auditoría de los repositorios enlazados, de las demos ni del CV.
