@@ -1,0 +1,6 @@
+# Archivos binarios: sin conversión de fin de línea ni diff de texto.
+*.pdf binary
+*.png binary
+*.webp binary
+*.ico binary
+*.mp4 binary
